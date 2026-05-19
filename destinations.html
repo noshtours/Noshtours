@@ -1,0 +1,510 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pick Your Canvas · Nosh Tours</title>
+<style>
+
+
+
+
+
+
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --orange:#E89A3C;--od:#D4842B;--ink:#1F2937;--cream:#FFF4E0;
+  --pink:#FF3D8A;--teal:#00C2B5;--lime:#C8FF3B;--yellow:#FFE08A;
+  --shadow:6px 6px 0 #1F2937;--shadow-sm:4px 4px 0 #1F2937;
+}
+html,body{background:var(--cream);font-family:'Out',sans-serif;color:var(--ink);overflow-x:hidden;}
+
+/* ── NAV ── */
+nav{height:72px;background:var(--ink);display:flex;align-items:center;padding:0 48px;justify-content:space-between;position:sticky;top:0;z-index:100;border-bottom:3px solid var(--orange);}
+.nav-brand{display:flex;align-items:center;gap:12px;}
+.nav-brand img{height:40px;width:auto;}
+.nav-brand span{font-family:'Erica';font-size:1.3rem;color:var(--cream);letter-spacing:.04em;}
+.nav-brand span em{color:var(--orange);font-style:normal;}
+.nav-links{display:flex;gap:32px;}
+.nav-links a{font-family:'BS';font-size:.7rem;letter-spacing:.2em;color:rgba(255,244,224,.65);transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--orange);}
+.nav-wa{display:flex;align-items:center;gap:8px;background:#25D366;color:var(--ink);padding:10px 20px;border:3px solid var(--ink);box-shadow:4px 4px 0 var(--orange);font-family:'BS';font-size:.68rem;letter-spacing:.15em;text-decoration:none;transform:rotate(1deg);}
+.nav-wa svg{width:18px;height:18px;}
+
+/* ── HERO ── */
+.hero{min-height:92vh;background:var(--cream);padding:80px 64px 0;position:relative;overflow:hidden;display:flex;align-items:center;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(ellipse 60% 50% at 80% 20%,rgba(232,154,60,.15),transparent 65%),radial-gradient(ellipse 40% 40% at 20% 80%,rgba(255,61,138,.08),transparent 60%);pointer-events:none;}
+.hero::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(31,41,55,.018) 0,rgba(31,41,55,.018) 1px,transparent 1px,transparent 5px);pointer-events:none;}
+.hero-content{position:relative;z-index:2;max-width:860px;}
+.hero-pre{font-family:'Hand';font-size:3rem;color:var(--od);transform:rotate(-2deg);display:inline-block;margin-bottom:16px;line-height:1;}
+.hero-pre .hl{background:linear-gradient(180deg,transparent 58%,var(--yellow) 58%,var(--yellow) 94%,transparent 94%);padding:0 6px;}
+.hero-title{font-family:'Erica';font-size:8.5rem;line-height:.88;color:var(--ink);letter-spacing:-.015em;margin-bottom:20px;}
+.hero-title .orange{color:var(--orange);text-shadow:var(--shadow);display:inline-block;transform:rotate(-1.5deg);}
+.hero-title .pink{color:var(--pink);}
+.hero-sub{font-family:'Young';font-style:italic;font-size:1.5rem;color:var(--ink);line-height:1.45;max-width:600px;margin-bottom:44px;}
+.hero-sub em{font-style:normal;color:var(--orange);font-weight:bold;}
+.hero-ctas{display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
+.btn-ink{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--cream);padding:16px 32px;border:3px solid var(--ink);box-shadow:var(--shadow);font-family:'BS';font-size:.75rem;letter-spacing:.18em;text-decoration:none;}
+.btn-orange{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:var(--ink);padding:16px 32px;border:3px solid var(--ink);box-shadow:var(--shadow);font-family:'BS';font-size:.75rem;letter-spacing:.18em;text-decoration:none;}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--ink);padding:16px 32px;border:3px solid var(--ink);font-family:'BS';font-size:.75rem;letter-spacing:.18em;text-decoration:none;}
+/* Campaign sticker */
+.camp-sticker{position:absolute;top:88px;right:80px;background:var(--ink);color:var(--cream);padding:12px 18px;border:3px solid var(--orange);box-shadow:var(--shadow);transform:rotate(4deg);z-index:3;}
+.camp-sticker .cs-1{font-family:'BS';font-size:.62rem;letter-spacing:.24em;color:var(--orange);line-height:1;margin-bottom:5px;}
+.camp-sticker .cs-2{font-family:'Erica';font-size:1.1rem;color:var(--cream);line-height:1;}
+/* Hero deco scribbles */
+.scrib{position:absolute;font-family:'Hand';color:var(--od);pointer-events:none;}
+.sc-1{bottom:80px;right:120px;font-size:1.4rem;transform:rotate(-8deg);opacity:.6;}
+.sc-2{bottom:44px;right:148px;font-size:1.2rem;transform:rotate(5deg);opacity:.5;}
+/* Arrow SVG */
+.hero-arrow{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;opacity:.45;}
+.hero-arrow span{font-family:'BS';font-size:.6rem;letter-spacing:.22em;color:var(--ink);}
+
+/* ── SECTION HEADER SHARED ── */
+.sec-head{margin-bottom:52px;}
+.sec-pre{font-family:'Hand';font-size:2rem;color:var(--od);transform:rotate(-1.5deg);display:inline-block;line-height:1;margin-bottom:10px;}
+.sec-title{font-family:'Erica';font-size:4rem;line-height:.95;color:var(--ink);}
+.sec-title .orange{color:var(--orange);text-shadow:5px 5px 0 var(--ink);}
+.sec-title .pink{color:var(--pink);}
+
+/* ── DESTINATIONS GRID ── */
+.dest-section{padding:100px 64px;background:var(--cream);position:relative;}
+.dest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1280px;margin:0 auto;}
+.dest-grid .span2{grid-column:span 2;}
+.dest-card{background:#fff;border:3px solid var(--ink);box-shadow:var(--shadow);overflow:hidden;transition:transform .2s,box-shadow .2s;}
+.dest-card:hover{transform:translateY(-4px);box-shadow:8px 10px 0 var(--ink);}
+.dest-card.tilt-l{transform:rotate(-1.2deg);}
+.dest-card.tilt-l:hover{transform:rotate(-1.2deg) translateY(-4px);}
+.dest-card.tilt-r{transform:rotate(1.2deg);}
+.dest-card.tilt-r:hover{transform:rotate(1.2deg) translateY(-4px);}
+/* Scene top */
+.dc-scene{height:260px;position:relative;overflow:hidden;}
+.dc-scene.tall{height:340px;}
+.dc-content{padding:28px 24px;}
+.dc-sticker{display:inline-flex;align-items:center;gap:6px;background:var(--orange);color:var(--ink);padding:6px 14px;border:2px solid var(--ink);font-family:'BS';font-size:.62rem;letter-spacing:.2em;margin-bottom:14px;transform:rotate(-1deg);}
+.dc-name{font-family:'Erica';font-size:2.6rem;color:var(--ink);line-height:.95;margin-bottom:8px;}
+.dc-tagline{font-family:'Young';font-style:italic;font-size:1rem;color:var(--ink);opacity:.75;line-height:1.4;margin-bottom:20px;}
+.dc-highlights{display:flex;flex-direction:column;gap:6px;margin-bottom:24px;}
+.dc-highlight{display:flex;align-items:center;gap:8px;font-family:'Out';font-size:.85rem;color:var(--ink);line-height:1.3;}
+.dc-highlight::before{content:'✦';color:var(--orange);font-size:.75rem;flex-shrink:0;}
+.dc-cta{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--cream);padding:12px 22px;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--orange);font-family:'BS';font-size:.68rem;letter-spacing:.16em;}
+.dc-cta:hover{background:var(--orange);color:var(--ink);}
+/* Card 2-col layout for wide card */
+.dc-inner{display:grid;grid-template-columns:1.2fr 1fr;min-height:340px;}
+.dc-inner .dc-scene{height:100%;}
+
+/* Scene CSS art - Kashmir */
+.s-jk{background:linear-gradient(180deg,#E4EEF2 0%,#C8E0EA 30%,#74AECB 55%,#2A4538 72%,#0D1A14 100%);}
+.s-jk::after{content:'';position:absolute;bottom:0;left:0;right:0;height:45%;background:linear-gradient(180deg,transparent 0%,rgba(13,26,20,.7) 100%);}
+/* HP - cedar forest */
+.s-hp{background:linear-gradient(180deg,#B5CADA 0%,#8FB0C8 35%,#4A6A5A 60%,#1E3A2A 80%,#0A1410 100%);}
+/* Sikkim - tea estate green */
+.s-sk{background:linear-gradient(180deg,#C8D8D0 0%,#8EC0A8 40%,#3D7058 65%,#1A3A28 85%,#081408 100%);}
+/* NE - river green */
+.s-ne{background:linear-gradient(180deg,#A8C8B8 0%,#5A9878 40%,#2A5840 65%,#0A2818 100%);}
+/* Bhutan - purple mountain */
+.s-bh{background:linear-gradient(180deg,#C8C0DC 0%,#8878B0 40%,#2E2858 65%,#0A0820 100%);}
+.s-kl{background:linear-gradient(180deg,#A8D8B0 0%,#2A8050 40%,#0E3A22 65%,#040E08 100%);}
+.s-tn{background:linear-gradient(180deg,#D0885A 0%,#8A4A30 40%,#2A1810 65%,#0A0604 100%);}
+
+/* SVG scene overlays */
+.scene-svg-mtn{position:absolute;bottom:0;left:0;right:0;}
+
+/* ── WASHI TAPE DIVIDER ── */
+.washi{height:14px;background:repeating-linear-gradient(90deg,rgba(232,154,60,.7) 0,rgba(232,154,60,.7) 18px,rgba(255,61,138,.5) 18px,rgba(255,61,138,.5) 36px,rgba(0,194,181,.5) 36px,rgba(0,194,181,.5) 54px,rgba(232,154,60,.7) 54px);opacity:.55;}
+
+/* ── HOW IT WORKS TEASER ── */
+.how-section{padding:100px 64px;background:var(--ink);position:relative;overflow:hidden;}
+.how-section::before{content:'once you pick your canvas, here\'s what happens →';position:absolute;top:40px;left:64px;font-family:'Hand';font-size:2.2rem;color:rgba(232,154,60,.4);pointer-events:none;}
+.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1280px;margin:0 auto;}
+.how-step{background:rgba(255,244,224,.06);border:2px solid rgba(232,154,60,.25);padding:40px 32px;position:relative;overflow:hidden;}
+.how-step::before{content:attr(data-n);position:absolute;top:16px;right:20px;font-family:'Erica';font-size:5rem;color:rgba(232,154,60,.1);line-height:1;}
+.how-step .step-num{font-family:'BS';font-size:.65rem;letter-spacing:.25em;color:var(--orange);margin-bottom:20px;line-height:1;}
+.how-step h3{font-family:'Erica';font-size:2rem;color:var(--cream);line-height:1.05;margin-bottom:14px;}
+.how-step h3 em{color:var(--orange);font-style:normal;}
+.how-step p{font-family:'Out';font-size:.9rem;color:rgba(255,244,224,.65);line-height:1.65;}
+.how-step .step-hand{font-family:'Hand';font-size:1.4rem;color:var(--orange);margin-top:20px;transform:rotate(-2deg);display:block;}
+/* Secret badge */
+.secret-badge{display:inline-flex;align-items:center;gap:8px;background:var(--pink);color:var(--ink);padding:10px 20px;border:3px solid var(--ink);box-shadow:var(--shadow);font-family:'BS';font-size:.7rem;letter-spacing:.15em;transform:rotate(-2deg);margin-bottom:40px;}
+
+/* ── FINE PRINT ── */
+.fine-print{background:rgba(232,154,60,.1);border-top:2px solid rgba(232,154,60,.25);border-bottom:2px solid rgba(232,154,60,.25);padding:12px 64px;text-align:center;font-family:'BS';font-size:.6rem;letter-spacing:.18em;color:rgba(255,244,224,.5);}
+
+/* ── CTA SECTION ── */
+.cta-section{padding:100px 64px;background:var(--orange);position:relative;overflow:hidden;}
+.cta-section::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(31,41,55,.05) 0,rgba(31,41,55,.05) 1px,transparent 1px,transparent 5px);}
+.cta-inner{max-width:820px;margin:0 auto;text-align:center;position:relative;}
+.cta-hand{font-family:'Hand';font-size:2.5rem;color:var(--ink);transform:rotate(-1.5deg);display:block;margin-bottom:16px;}
+.cta-title{font-family:'Erica';font-size:5.5rem;line-height:.92;color:var(--ink);margin-bottom:24px;letter-spacing:-.02em;}
+.cta-title .cream{color:var(--cream);text-shadow:5px 5px 0 var(--ink);}
+.cta-sub{font-family:'Young';font-style:italic;font-size:1.2rem;color:var(--ink);margin-bottom:44px;line-height:1.5;}
+.wa-big{display:inline-flex;align-items:center;gap:14px;background:#25D366;color:var(--ink);padding:20px 48px;border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);font-family:'BS';font-size:.85rem;letter-spacing:.18em;text-decoration:none;}
+.wa-big svg{width:26px;height:26px;}
+.wa-big:hover{transform:translate(-2px,-2px);box-shadow:10px 10px 0 var(--ink);}
+.cta-note{margin-top:20px;font-family:'Hand';font-size:1.4rem;color:var(--ink);opacity:.65;}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:56px 64px;border-top:3px solid var(--orange);}
+.footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;max-width:1280px;margin:0 auto;}
+.footer-brand img{height:44px;margin-bottom:14px;}
+.footer-brand .ft-tag{font-family:'Young';font-style:italic;font-size:.95rem;color:rgba(255,244,224,.55);line-height:1.5;max-width:280px;}
+.footer-brand .ft-camp{font-family:'BS';font-size:.6rem;letter-spacing:.2em;color:var(--orange);margin-top:16px;}
+.footer-col .fc-title{font-family:'BS';font-size:.65rem;letter-spacing:.24em;color:var(--orange);margin-bottom:18px;line-height:1;}
+.footer-col ul li{margin-bottom:10px;}
+.footer-col ul li a{font-family:'Out';font-size:.875rem;color:rgba(255,244,224,.55);text-decoration:none;}
+.footer-col ul li a:hover{color:var(--orange);}
+.footer-bottom{max-width:1280px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(232,154,60,.2);display:flex;justify-content:space-between;align-items:center;font-family:'Out';font-size:.75rem;color:rgba(255,244,224,.3);}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Erica+One&family=Young+Serif&family=Nothing+You+Could+Do&family=Outfit:wght@400;700&family=Big+Shoulders+Text:wght@700&display=swap" rel="stylesheet"></head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-brand">
+    <img src="logo.png" alt="Nosh Tours"/>
+    <span>NOSH<em>·</em>TOURS</span>
+  </div>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="/destinations" class="active">Destinations</a>
+    <a href="/experience">Build Experience</a>
+    <a href="/how-it-works">How It Works</a>
+    <a href="#">About</a>
+  </div>
+  <a href="https://wa.me/919567632255" class="nav-wa">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.47c-.28-.14-1.65-.81-1.9-.9-.26-.1-.44-.14-.63.14s-.72.9-.88 1.09-.33.2-.6.07a7.6 7.6 0 0 1-2.24-1.38 8.4 8.4 0 0 1-1.55-1.93c-.16-.28 0-.42.12-.57.13-.13.28-.33.42-.5.13-.16.18-.28.27-.46.1-.18.05-.34-.02-.48-.07-.14-.63-1.52-.86-2.08-.23-.54-.46-.47-.63-.48h-.54c-.18 0-.48.07-.73.34s-.96.94-.96 2.29 1 2.65 1.13 2.83c.14.19 1.96 2.99 4.74 4.2.66.28 1.18.45 1.58.58.66.21 1.26.18 1.74.11.53-.08 1.64-.67 1.87-1.32s.23-1.2.16-1.32c-.07-.12-.26-.19-.54-.33z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.33A9.93 9.93 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.2c-1.64 0-3.16-.44-4.47-1.2l-.32-.19-3.01.79.8-2.94-.21-.34A8.18 8.18 0 0 1 3.8 12 8.2 8.2 0 0 1 12 3.8 8.2 8.2 0 0 1 20.2 12a8.2 8.2 0 0 1-8.2 8.2z"/></svg>
+    +91 95676 32255
+  </a>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="camp-sticker">
+    <div class="cs-1">DEKHO APNA DESH 2.0 🇮🇳</div>
+    <div class="cs-2">5 canvases. 0 spoilers.</div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-pre">okay, so — where are you going<span class="hl"> actually</span>?</div>
+    <h1 class="hero-title">
+      PICK YOUR<br>
+      <span class="orange">CANVAS.</span>
+    </h1>
+    <p class="hero-sub">We reveal the <em>region</em>. The hidden stays, the secret daily path, the surprise moments — strictly enclosed until you arrive. No spoilers. No itineraries. Just luxury.</p>
+    <div class="hero-ctas">
+      <a href="#canvases" class="btn-ink">↓ See All Five Canvases</a>
+      <a href="/experience" class="btn-outline">Build Experience →</a>
+    </div>
+  </div>
+  <div class="scrib sc-1">the journey is the secret. ↓</div>
+  <div class="hero-arrow"><span>SCROLL</span><svg width="16" height="24" viewBox="0 0 16 24" fill="none"><path d="M8 0v20M1 14l7 8 7-8" stroke="#1F2937" stroke-width="2" stroke-linecap="round"/></svg></div>
+</section>
+
+<!-- ── WASHI ── -->
+<div class="washi"></div>
+
+<!-- ── DESTINATIONS ── -->
+<section class="dest-section" id="canvases">
+  <div style="max-width:1280px;margin:0 auto;">
+    <div class="sec-head">
+      <div class="sec-pre">five regions to choose from —</div>
+      <h2 class="sec-title">all journeys kept a <span class="orange">strict secret.</span></h2>
+    </div>
+
+    <div class="dest-grid">
+
+      <!-- CARD 1: J&K — wide card -->
+      <div class="dest-card span2" style="transform:rotate(-1deg);">
+        <div class="dc-inner">
+          <div class="dc-scene s-jk">
+            <!-- Mountains + pine + lake scene -->
+            <svg viewBox="0 0 560 340" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;">
+              <path d="M0,340 L0,220 L60,175 L120,200 L200,140 L280,165 L360,100 L440,130 L510,90 L560,115 L560,340 Z" fill="#3A5870" opacity=".8"/>
+              <path d="M200,140 L215,158 L228,146 L200,140 Z M360,100 L375,116 L387,104 L360,100 Z M510,90 L524,106 L535,94 L510,90 Z" fill="rgba(240,244,248,.8)"/>
+              <path d="M0,340 L0,250 L50,218 L110,235 L180,195 L250,215 L320,175 L400,200 L470,168 L530,188 L560,175 L560,340 Z" fill="#1A3040"/>
+              <g fill="#0D1E14" opacity=".9"><path d="M0,340 L0,290 Q22,265 44,290 Q66,262 88,290 Q110,265 132,290 Q154,262 176,290 Q198,266 220,290 Q242,262 264,290 Q286,266 308,290 Q330,262 352,290 Q374,266 396,290 Q418,262 440,290 Q462,266 484,290 Q506,262 528,290 Q544,268 560,285 L560,340 Z"/></g>
+              <!-- Lake shimmer -->
+              <ellipse cx="280" cy="320" rx="180" ry="14" fill="rgba(100,160,200,.25)"/>
+              <path d="M160,318 Q280,310 400,318" stroke="rgba(232,154,60,.35)" stroke-width="1.5" fill="none"/>
+              <!-- Houseboat -->
+              <g fill="#0A1820" opacity=".8" transform="translate(220,300)"><rect x="0" y="0" width="80" height="18"/><path d="M0,0 L80,0 L72,-10 L8,-10 Z"/><rect x="10" y="-6" width="10" height="6" fill="rgba(232,154,60,.7)"/><rect x="30" y="-6" width="10" height="6" fill="rgba(232,154,60,.7)"/><rect x="50" y="-6" width="10" height="6" fill="rgba(232,154,60,.7)"/></g>
+            </svg>
+          </div>
+          <div class="dc-content">
+            <div class="dc-sticker" style="background:var(--orange);">THE CROWN · 01</div>
+            <div class="dc-name">Jammu &amp;<br>Kashmir</div>
+            <div class="dc-tagline">Alpine valleys, mirror lakes &amp; private mountain sanctuaries</div>
+            <div class="dc-highlights">
+              <div class="dc-highlight">Dal Lake houseboat stays</div>
+              <div class="dc-highlight">Gulmarg Gondola experience</div>
+              <div class="dc-highlight">Shikara sunrise on the lake</div>
+              <div class="dc-highlight">Hidden valley sanctuaries</div>
+            </div>
+            <a href="#" class="dc-cta">Explore The Crown →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2: Himachal -->
+      <div class="dest-card tilt-r">
+        <div class="dc-scene s-hp">
+          <svg viewBox="0 0 340 260" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;">
+            <path d="M0,260 L0,160 L50,125 L110,145 L180,90 L250,115 L300,80 L340,100 L340,260 Z" fill="#3A4A6A" opacity=".75"/>
+            <path d="M180,90 L194,108 L206,95 L180,90 Z M300,80 L313,96 L323,83 L300,80 Z" fill="rgba(240,244,248,.8)"/>
+            <path d="M0,260 L0,185 L40,165 L90,180 L150,150 L210,168 L270,142 L320,158 L340,148 L340,260 Z" fill="#1A2035"/>
+            <g fill="#0A1010"><path d="M0,260 L0,215 Q18,192 36,215 Q54,188 72,215 Q90,192 108,215 Q126,188 144,215 Q162,192 180,215 Q198,188 216,215 Q234,192 252,215 Q270,188 288,215 Q306,192 324,215 L340,218 L340,260 Z"/></g>
+            <!-- Snow on ground -->
+            <path d="M0,240 Q170,230 340,240 L340,260 L0,260 Z" fill="rgba(240,244,248,.15)"/>
+          </svg>
+        </div>
+        <div class="dc-content">
+          <div class="dc-sticker" style="background:var(--teal);color:var(--ink);">THE RIDGE · 02</div>
+          <div class="dc-name">Himachal Pradesh</div>
+          <div class="dc-tagline">Cedar woodlands, snow isolation &amp; alpine solitude</div>
+          <div class="dc-highlights">
+            <div class="dc-highlight">High-altitude boutique chalets</div>
+            <div class="dc-highlight">Cedar forest private drives</div>
+            <div class="dc-highlight">Snow landscape mystery paths</div>
+          </div>
+          <a href="#" class="dc-cta" style="background:var(--teal);">Explore The Ridge →</a>
+        </div>
+      </div>
+
+      <!-- CARD 3: Sikkim -->
+      <div class="dest-card tilt-l">
+        <div class="dc-scene s-sk">
+          <svg viewBox="0 0 340 260" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;">
+            <path d="M0,260 L0,170 L60,140 L120,158 L190,110 L260,132 L310,100 L340,118 L340,260 Z" fill="#2A4A38" opacity=".8"/>
+            <!-- Tea estate terraces -->
+            <g fill="#1A3A28" opacity=".7"><path d="M0,210 Q55,198 110,210 Q110,222 55,225 Q0,222 0,210 Z"/><path d="M120,200 Q185,190 250,200 Q250,212 185,215 Q120,212 120,200 Z"/><path d="M60,230 Q130,218 200,230 Q200,242 130,245 Q60,242 60,230 Z"/></g>
+            <g fill="#0A1E10"><path d="M0,260 L0,228 Q16,210 32,228 Q48,208 64,228 Q80,210 96,228 Q112,208 128,228 Q144,210 160,228 Q176,208 192,228 Q208,210 224,228 Q240,208 256,228 Q272,210 288,228 Q304,208 320,228 L340,224 L340,260 Z"/></g>
+          </svg>
+        </div>
+        <div class="dc-content">
+          <div class="dc-sticker" style="background:var(--lime);color:var(--ink);">THE MYSTIC EAST · 03</div>
+          <div class="dc-name">Sikkim &amp; Darjeeling</div>
+          <div class="dc-tagline">Private tea estates &amp; monastic ridges draped in mist</div>
+          <div class="dc-highlights">
+            <div class="dc-highlight">Estate bungalow hideaways</div>
+            <div class="dc-highlight">Monastery ridge viewpoints</div>
+            <div class="dc-highlight">Kanchenjunga panorama stays</div>
+          </div>
+          <a href="#" class="dc-cta" style="background:var(--lime);color:var(--ink);">Explore Mystic East →</a>
+        </div>
+      </div>
+
+      <!-- CARD 4: Assam+Meghalaya -->
+      <div class="dest-card tilt-r">
+        <div class="dc-scene s-ne">
+          <svg viewBox="0 0 340 260" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;">
+            <!-- River canyon -->
+            <path d="M0,260 L0,150 L60,120 L120,140 L190,95 L260,115 L310,88 L340,105 L340,260 Z" fill="#1E4A30" opacity=".8"/>
+            <!-- River shimmer -->
+            <path d="M60,220 Q170,205 280,215 Q250,240 140,240 Q80,240 60,220 Z" fill="rgba(70,140,120,.5)"/>
+            <path d="M90,218 Q170,210 240,218" stroke="rgba(200,230,220,.5)" stroke-width="2" fill="none"/>
+            <g fill="#0A1A10"><path d="M0,260 L0,228 Q22,200 44,228 Q66,195 88,228 Q110,200 132,228 Q154,195 176,228 Q198,200 220,228 Q242,195 264,228 Q286,200 308,228 L340,220 L340,260 Z"/></g>
+          </svg>
+        </div>
+        <div class="dc-content">
+          <div class="dc-sticker" style="background:var(--pink);color:var(--ink);">THE LIVING GREEN · 04</div>
+          <div class="dc-name">Assam &amp; Meghalaya</div>
+          <div class="dc-tagline">Crystal rivers, eco-luxury glamping &amp; living root bridges</div>
+          <div class="dc-highlights">
+            <div class="dc-highlight">River cliff private camps</div>
+            <div class="dc-highlight">Kaziranga wildlife drives</div>
+            <div class="dc-highlight">Eco-luxury hidden resorts</div>
+          </div>
+          <a href="#" class="dc-cta" style="background:var(--pink);">Explore Living Green →</a>
+        </div>
+      </div>
+
+      <!-- CARD 5: Bhutan/Nepal -->
+      <div class="dest-card tilt-l">
+        <div class="dc-scene s-bh" style="height:220px;">
+          <svg viewBox="0 0 340 220" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;">
+            <path d="M0,220 L0,120 L60,85 L120,105 L190,55 L260,80 L310,45 L340,65 L340,220 Z" fill="#2A1860" opacity=".8"/>
+            <path d="M190,55 L204,72 L215,60 L190,55 Z M310,45 L323,61 L333,48 L310,45 Z" fill="rgba(235,228,248,.8)"/>
+            <path d="M0,220 L0,148 L50,125 L110,140 L170,115 L230,132 L290,108 L340,125 L340,220 Z" fill="#1A1040"/>
+            <!-- Prayer flags -->
+            <path d="M60,100 L85,90 L110,98 L135,86 L160,95 L185,85 L210,93" stroke="rgba(232,154,60,.6)" stroke-width="2" fill="none" stroke-dasharray="10,5"/>
+            <!-- Monastery -->
+            <rect x="135" y="155" width="60" height="40" fill="#1A1030" opacity=".8" rx="2"/>
+            <path d="M130,155 L200,155 L192,138 L138,138 Z" fill="#1A1030" opacity=".8"/>
+            <g fill="#0A0818"><path d="M0,220 L0,178 Q18,160 36,178 Q54,158 72,178 Q90,160 108,178 Q126,158 144,178 Q162,160 180,178 Q198,158 216,178 Q234,160 252,178 Q270,158 288,178 L340,172 L340,220 Z"/></g>
+          </svg>
+        </div>
+        <div class="dc-content" style="padding:20px 20px;">
+          <div class="dc-sticker" style="background:var(--ink);color:var(--cream);">THE FORBIDDEN · 05</div>
+          <div class="dc-name" style="font-size:2rem;">Bhutan &amp; Nepal</div>
+          <div class="dc-tagline">Cross-border mystique — zero visa drama, maximum grandeur</div>
+          <div class="dc-highlights">
+            <div class="dc-highlight">International road expedition</div>
+            <div class="dc-highlight">Himalayan monastery stays</div>
+            <div class="dc-highlight">Private border-crossing luxury</div>
+          </div>
+          <a href="#" class="dc-cta" style="background:var(--ink);">Explore The Forbidden →</a>
+        </div>
+      </div>
+
+      <!-- CARD 6: Kerala -->
+      <div class="dest-card span2" style="transform:rotate(.5deg);">
+        <div class="dc-inner">
+          <div class="dc-scene s-kl">
+            <svg viewBox="0 0 560 340" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;">
+              <path d="M0,340 L0,200 L70,170 L140,188 L220,145 L300,168 L380,130 L460,155 L530,140 L560,150 L560,340 Z" fill="#0E3A22" opacity=".8"/>
+              <ellipse cx="280" cy="305" rx="230" ry="22" fill="rgba(0,160,138,.3)"/>
+              <path d="M100,298 Q280,285 460,298" stroke="rgba(150,230,200,.4)" stroke-width="2" fill="none"/>
+              <g fill="#061A0E" opacity=".85" transform="translate(195,280)">
+                <rect x="0" y="0" width="110" height="24"/>
+                <path d="M0,0 L110,0 L100,-16 L10,-16 Z"/>
+                <rect x="12" y="-12" width="15" height="12" fill="rgba(232,154,60,.6)"/>
+                <rect x="36" y="-12" width="15" height="12" fill="rgba(232,154,60,.6)"/>
+                <rect x="60" y="-12" width="15" height="12" fill="rgba(232,154,60,.6)"/>
+                <rect x="84" y="-12" width="15" height="12" fill="rgba(232,154,60,.6)"/>
+              </g>
+              <g fill="#061808" opacity=".9">
+                <path d="M75,200 Q73,158 71,128 Q63,122 57,114 Q71,120 75,126 Q79,120 85,114 Q79,122 75,128 Q73,158 75,200 Z"/>
+                <path d="M485,192 Q483,152 481,122 Q473,116 467,108 Q481,114 485,120 Q489,114 495,108 Q489,116 485,122 Q483,152 485,192 Z"/>
+                <path d="M155,188 Q153,150 151,120 Q145,114 140,108 Q152,113 155,120 Q158,113 163,108 Q158,114 155,120 Q153,150 155,188 Z"/>
+              </g>
+              <g fill="#041008" opacity=".9"><path d="M0,340 L0,290 Q22,262 44,290 Q66,258 88,290 Q110,262 132,290 Q154,258 176,290 Q198,262 220,290 Q242,258 264,290 Q286,262 308,290 Q330,258 352,290 Q374,262 396,290 Q418,258 440,290 Q462,262 484,290 Q506,258 528,290 Q544,264 560,285 L560,340 Z"/></g>
+            </svg>
+          </div>
+          <div class="dc-content">
+            <div class="dc-sticker" style="background:var(--teal);color:var(--ink);">THE EMERALD VEIL · 06</div>
+            <div class="dc-name">Kerala</div>
+            <div class="dc-tagline">Backwater houseboats, spice estates &amp; Ayurvedic retreats in God's Own Country</div>
+            <div class="dc-highlights">
+              <div class="dc-highlight">Private houseboat on backwaters</div>
+              <div class="dc-highlight">Hidden spice plantation estates</div>
+              <div class="dc-highlight">Ayurvedic luxury wellness stays</div>
+              <div class="dc-highlight">Munnar hill station escapes</div>
+            </div>
+            <a href="#" class="dc-cta" style="background:var(--teal);">Explore The Emerald Veil →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 7: Tamil Nadu -->
+      <div class="dest-card tilt-r">
+        <div class="dc-scene s-tn">
+          <svg viewBox="0 0 290 260" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;">
+            <path d="M0,260 L0,155 L60,128 L120,145 L185,108 L245,128 L290,112 L290,260 Z" fill="#1A0E08" opacity=".85"/>
+            <g fill="#0A0604" opacity=".92">
+              <rect x="110" y="155" width="70" height="70" rx="2"/>
+              <path d="M105,155 L185,155 L178,132 L112,132 Z"/>
+              <path d="M115,132 L175,132 L168,114 L122,114 Z"/>
+              <path d="M125,114 L165,114 L158,100 L132,100 Z"/>
+              <rect x="138" y="90" width="14" height="10"/>
+              <rect x="118" y="163" width="10" height="15" rx="1" opacity=".8"/>
+              <rect x="132" y="163" width="10" height="15" rx="1" opacity=".8"/>
+              <rect x="148" y="163" width="10" height="15" rx="1" opacity=".8"/>
+              <rect x="162" y="163" width="10" height="15" rx="1" opacity=".8"/>
+            </g>
+            <path d="M0,260 L0,215 Q18,195 36,215 Q54,192 72,215 Q90,195 108,215 Q126,192 144,215 Q162,195 180,215 Q198,192 216,215 Q234,195 252,215 Q270,192 290,210 L290,260 Z" fill="#0A0604" opacity=".85"/>
+          </svg>
+        </div>
+        <div class="dc-content">
+          <div class="dc-sticker" style="background:var(--orange);color:var(--ink);">THE ANCIENT SOUTH · 07</div>
+          <div class="dc-name">Tamil Nadu</div>
+          <div class="dc-tagline">Heritage temples, Nilgiri highlands &amp; coastal grandeur</div>
+          <div class="dc-highlights">
+            <div class="dc-highlight">Private Nilgiri hill estate stays</div>
+            <div class="dc-highlight">Ancient Dravidian temple circuits</div>
+            <div class="dc-highlight">Luxury coastal retreats</div>
+          </div>
+          <a href="#" class="dc-cta" style="background:var(--orange);">Explore Ancient South →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Fine print mandatory per brief -->
+    <div style="margin-top:40px;padding:18px 28px;background:rgba(31,41,55,.06);border:2px dashed rgba(31,41,55,.15);text-align:center;">
+      <span style="font-family:'BS';font-size:.62rem;letter-spacing:.18em;color:rgba(31,41,55,.45);">Nosh Tours designs premium, high-value custom surprise getaways. We do not offer budget packages, backpacker itineraries, or low-cost group tours.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── WASHI ── -->
+<div class="washi"></div>
+
+<!-- ── HOW IT WORKS TEASER ── -->
+<section class="how-section">
+  <div style="max-width:1280px;margin:0 auto;padding-top:40px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:52px;flex-wrap:wrap;gap:20px;">
+      <div>
+        <span class="secret-badge">🔒 ZERO SPOILERS AHEAD</span>
+        <h2 style="font-family:'Erica';font-size:3.5rem;color:var(--cream);line-height:.95;">Once you pick — <span style="color:var(--orange);">this is what happens.</span></h2>
+      </div>
+      <a href="/how-it-works" class="btn-orange">Full Process →</a>
+    </div>
+    <div class="how-steps">
+      <div class="how-step" data-n="01">
+        <div class="step-num">STEP 01</div>
+        <h3>Choose Your <em>Canvas</em></h3>
+        <p>Pick one of five majestic regions above. That's all we reveal — the destination. Daily path, secret stays, surprise moments: all enclosed.</p>
+        <span class="step-hand">done. that's it.</span>
+      </div>
+      <div class="how-step" data-n="02" style="border-color:rgba(232,154,60,.5);background:rgba(232,154,60,.08);">
+        <div class="step-num">STEP 02</div>
+        <h3>Configure Your <em>Building Blocks</em></h3>
+        <p>Tell us your preferred luxury tier — fleet class, sanctuary type, and gourmet preference. That's the blueprint our travel designers work with.</p>
+        <span class="step-hand">no itinerary needed.</span>
+      </div>
+      <div class="how-step" data-n="03">
+        <div class="step-num">STEP 03</div>
+        <h3>Arrive &amp; <em>Let It Unfold</em></h3>
+        <p>Your private captain awaits. Your sanctuary is pre-allocated. 48 hrs before departure, ground details unlock via WhatsApp. The rest? Pure surprise.</p>
+        <span class="step-hand">the journey is the gift.</span>
+      </div>
+    </div>
+  </div>
+  <div class="fine-print" style="margin-top:60px;">Nosh Tours designs premium, high-value custom surprise getaways. We do not offer budget packages, backpacker itineraries, or low-cost group tours.</div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="cta-hand">ready to stop planning and start experiencing?</span>
+    <h2 class="cta-title">one message.<br><span class="cream">that's all it takes.</span></h2>
+    <p class="cta-sub">Share your canvas choice and building block preferences — our travel designers handle everything from there. No itinerary document. No readymade templates. Just extraordinary, unscripted luxury.</p>
+    <a href="https://wa.me/919567632255" class="wa-big">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.47c-.28-.14-1.65-.81-1.9-.9-.26-.1-.44-.14-.63.14s-.72.9-.88 1.09-.33.2-.6.07a7.6 7.6 0 0 1-2.24-1.38 8.4 8.4 0 0 1-1.55-1.93c-.16-.28 0-.42.12-.57.13-.13.28-.33.42-.5.13-.16.18-.28.27-.46.1-.18.05-.34-.02-.48-.07-.14-.63-1.52-.86-2.08-.23-.54-.46-.47-.63-.48h-.54c-.18 0-.48.07-.73.34s-.96.94-.96 2.29 1 2.65 1.13 2.83c.14.19 1.96 2.99 4.74 4.2.66.28 1.18.45 1.58.58.66.21 1.26.18 1.74.11.53-.08 1.64-.67 1.87-1.32s.23-1.2.16-1.32c-.07-.12-.26-.19-.54-.33z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.33A9.93 9.93 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.2c-1.64 0-3.16-.44-4.47-1.2l-.32-.19-3.01.79.8-2.94-.21-.34A8.18 8.18 0 0 1 3.8 12 8.2 8.2 0 0 1 12 3.8 8.2 8.2 0 0 1 20.2 12a8.2 8.2 0 0 1-8.2 8.2z"/></svg>
+      Tap to Begin on WhatsApp
+    </a>
+    <div class="cta-note">+91 95676 32255 · noshtours.com · nosh.tours@gmail.com</div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Nosh Tours"/>
+      <div class="ft-tag">"We reveal the destination. The journey remains yours to discover."</div>
+      <div class="ft-camp">Dekho Apna Desh 2.0 · Nosh Tours 🇮🇳</div>
+    </div>
+    <div class="footer-col">
+      <div class="fc-title">Mystery Canvases</div>
+      <ul>
+        <li><a href="#">Jammu &amp; Kashmir</a></li>
+        <li><a href="#">Himachal Pradesh</a></li>
+        <li><a href="#">Sikkim &amp; Darjeeling</a></li>
+        <li><a href="#">Assam &amp; Meghalaya</a></li>
+        <li><a href="#">Bhutan &amp; Nepal</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="fc-title">Experience</div>
+      <ul>
+        <li><a href="#">Build Your Experience</a></li>
+        <li><a href="#">How It Works</a></li>
+        <li><a href="#">Private Fleet</a></li>
+        <li><a href="#">Our Sanctuaries</a></li>
+        <li><a href="#">Start on WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Nosh Tours · All Rights Reserved</span>
+    <span>Nosh Tours designs premium, high-value custom surprise getaways. We do not offer budget packages, backpacker itineraries, or low-cost group tours.</span>
+  </div>
+</footer>
+
+</body></html>

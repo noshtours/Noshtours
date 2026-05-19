@@ -1,0 +1,442 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Build Your Experience · Nosh Tours</title>
+<style>
+
+
+
+
+
+
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--orange:#E89A3C;--od:#D4842B;--ink:#1F2937;--cream:#FFF4E0;--pink:#FF3D8A;--teal:#00C2B5;--lime:#C8FF3B;--shadow:6px 6px 0 #1F2937;}
+html,body{background:var(--cream);font-family:'Out',sans-serif;color:var(--ink);overflow-x:hidden;}
+nav{height:72px;background:var(--ink);display:flex;align-items:center;padding:0 48px;justify-content:space-between;position:sticky;top:0;z-index:100;border-bottom:3px solid var(--orange);}
+.nav-brand{display:flex;align-items:center;gap:12px;}
+.nav-brand img{height:40px;width:auto;}
+.nav-brand span{font-family:'Erica';font-size:1.3rem;color:var(--cream);}
+.nav-brand span em{color:var(--orange);font-style:normal;}
+.nav-links{display:flex;gap:32px;}
+.nav-links a{font-family:'BS';font-size:.7rem;letter-spacing:.2em;color:rgba(255,244,224,.6);text-decoration:none;}
+.nav-links a:hover,.nav-links a.active{color:var(--orange);}
+.nav-wa{display:flex;align-items:center;gap:8px;background:#25D366;color:var(--ink);padding:10px 20px;border:3px solid var(--ink);box-shadow:4px 4px 0 var(--orange);font-family:'BS';font-size:.68rem;letter-spacing:.15em;text-decoration:none;transform:rotate(1deg);}
+
+/* HERO */
+.hero{background:var(--ink);min-height:55vh;display:flex;align-items:center;padding:80px 64px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(232,154,60,.12),transparent 65%);}
+.hero::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(255,244,224,.018) 0,rgba(255,244,224,.018) 1px,transparent 1px,transparent 5px);}
+.hero-inner{position:relative;z-index:2;max-width:900px;}
+.hero-pre{font-family:'Hand';font-size:2.5rem;color:var(--orange);transform:rotate(-1.5deg);display:inline-block;margin-bottom:16px;}
+.hero-title{font-family:'Erica';font-size:6.5rem;line-height:.9;color:var(--cream);margin-bottom:20px;}
+.hero-title .orange{color:var(--orange);text-shadow:5px 5px 0 rgba(0,0,0,.4);}
+.hero-sub{font-family:'Young';font-style:italic;font-size:1.2rem;color:rgba(255,244,224,.7);max-width:600px;line-height:1.5;}
+.step-tracker{position:absolute;right:64px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;}
+.step-dot{display:flex;align-items:center;gap:10px;font-family:'BS';font-size:.62rem;letter-spacing:.18em;color:rgba(255,244,224,.4);}
+.step-dot .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,244,224,.15);border:2px solid rgba(232,154,60,.3);flex-shrink:0;}
+.step-dot.done .dot{background:var(--orange);border-color:var(--orange);}
+.step-dot.active{color:var(--orange);}
+.step-dot.active .dot{background:var(--orange);border-color:var(--orange);box-shadow:0 0 0 3px rgba(232,154,60,.2);}
+
+/* WASHI */
+.washi{height:12px;background:repeating-linear-gradient(90deg,rgba(232,154,60,.6) 0,rgba(232,154,60,.6) 18px,rgba(255,61,138,.45) 18px,rgba(255,61,138,.45) 36px,rgba(0,194,181,.4) 36px,rgba(0,194,181,.4) 54px,rgba(200,255,59,.35) 54px,rgba(200,255,59,.35) 72px,rgba(232,154,60,.6) 72px);}
+
+/* CONFIG SECTIONS */
+.config-section{padding:80px 64px;border-bottom:3px solid rgba(31,41,55,.08);}
+.config-section:nth-child(even){background:rgba(255,255,255,.5);}
+.config-inner{max-width:1200px;margin:0 auto;}
+.section-badge{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--cream);padding:8px 18px;border:2px solid var(--ink);font-family:'BS';font-size:.65rem;letter-spacing:.2em;margin-bottom:20px;}
+.section-badge .num{background:var(--orange);color:var(--ink);padding:2px 8px;font-family:'Erica';font-size:1rem;line-height:1;margin-left:-10px;}
+.section-title{font-family:'Erica';font-size:3rem;line-height:.95;color:var(--ink);margin-bottom:10px;}
+.section-title .orange{color:var(--orange);}
+.section-hand{font-family:'Hand';font-size:1.6rem;color:var(--od);transform:rotate(-1deg);display:inline-block;margin-bottom:36px;}
+
+/* CANVAS SELECTOR */
+.canvas-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.canvas-grid .canvas-opt:nth-child(5){grid-column:1;}
+.canvas-grid .canvas-opt:nth-child(6){grid-column:2;}
+.canvas-grid .canvas-opt:nth-child(7){grid-column:3;}
+.canvas-opt{border:3px solid var(--ink);padding:0;background:#fff;cursor:pointer;transition:all .15s;position:relative;overflow:hidden;}
+.canvas-opt:hover{transform:translateY(-3px);box-shadow:var(--shadow);}
+.canvas-opt.selected{border-color:var(--orange);box-shadow:8px 8px 0 var(--orange);}
+.canvas-opt .co-scene{height:140px;position:relative;}
+.canvas-opt .co-body{padding:16px 14px;}
+.canvas-opt .co-code{font-family:'BS';font-size:.58rem;letter-spacing:.22em;color:var(--od);margin-bottom:6px;}
+.canvas-opt .co-name{font-family:'Erica';font-size:1.3rem;color:var(--ink);line-height:.95;margin-bottom:4px;}
+.canvas-opt .co-tag{font-family:'Young';font-style:italic;font-size:.78rem;color:rgba(31,41,55,.6);line-height:1.35;}
+.canvas-opt .co-check{position:absolute;top:10px;right:10px;width:24px;height:24px;background:var(--orange);border:2px solid var(--ink);border-radius:50%;display:none;align-items:center;justify-content:center;font-size:.75rem;z-index:3;}
+.canvas-opt.selected .co-check{display:flex;}
+/* Scene backgrounds for canvas opts */
+.s-jk{background:linear-gradient(180deg,#C8E0EA 0%,#3A5870 50%,#0D1A14 100%);}
+.s-hp{background:linear-gradient(180deg,#BDD0DC 0%,#4A6A5A 55%,#1A2035 100%);}
+.s-sk{background:linear-gradient(180deg,#C0D8CC 0%,#3D7058 55%,#0A1408 100%);}
+.s-ne{background:linear-gradient(180deg,#A8C8B0 0%,#2A5840 55%,#081410 100%);}
+.s-bh{background:linear-gradient(180deg,#C0B8D8 0%,#2E2858 55%,#0A0820 100%);}
+.s-kl{background:linear-gradient(180deg,#A8D8B0 0%,#2A8050 45%,#0E3A22 70%,#040E08 100%);}
+.s-tn{background:linear-gradient(180deg,#D0885A 0%,#8A4A30 45%,#2A1810 70%,#0A0604 100%);}
+
+/* OPTION CARDS (fleet/sanctuary/gourmet) */
+.options-grid{display:grid;gap:20px;}
+.options-grid.cols3{grid-template-columns:repeat(3,1fr);}
+.options-grid.cols2{grid-template-columns:repeat(2,1fr);}
+.opt-card{border:3px solid var(--ink);background:#fff;padding:32px 28px;cursor:pointer;transition:all .15s;position:relative;}
+.opt-card:hover{transform:translateY(-2px) rotate(.3deg);box-shadow:var(--shadow);}
+.opt-card.selected{background:var(--orange);border-color:var(--ink);box-shadow:var(--shadow);}
+.opt-card .oc-letter{display:inline-block;background:var(--ink);color:var(--cream);padding:4px 12px;font-family:'Erica';font-size:1.1rem;line-height:1;margin-bottom:18px;}
+.opt-card.selected .oc-letter{background:var(--cream);color:var(--ink);}
+.opt-card .oc-title{font-family:'Erica';font-size:1.6rem;color:var(--ink);line-height:1;margin-bottom:8px;}
+.opt-card .oc-sub{font-family:'Young';font-style:italic;font-size:.9rem;color:rgba(31,41,55,.65);line-height:1.4;margin-bottom:16px;}
+.opt-card.selected .oc-sub{color:rgba(31,41,55,.7);}
+.opt-card .oc-detail{font-family:'Out';font-size:.8rem;color:rgba(31,41,55,.55);line-height:1.5;}
+.opt-card.selected .oc-detail{color:rgba(31,41,55,.6);}
+.opt-card .oc-check{position:absolute;top:14px;right:14px;width:28px;height:28px;background:var(--cream);border:3px solid var(--ink);border-radius:50%;display:none;align-items:center;justify-content:center;font-size:.75rem;}
+.opt-card.selected .oc-check{display:flex;}
+.opt-card .oc-icon{font-size:2.5rem;line-height:1;margin-bottom:14px;}
+
+/* SUMMARY SECTION */
+.summary-section{padding:80px 64px;background:var(--ink);}
+.summary-inner{max-width:1200px;margin:0 auto;}
+.summary-hand{font-family:'Hand';font-size:2.2rem;color:var(--orange);transform:rotate(-1deg);display:inline-block;margin-bottom:20px;}
+.summary-title{font-family:'Erica';font-size:4rem;color:var(--cream);line-height:.95;margin-bottom:48px;}
+.summary-title .orange{color:var(--orange);}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:48px;}
+.summary-item{border:2px solid rgba(232,154,60,.25);padding:24px;}
+.si-label{font-family:'BS';font-size:.65rem;letter-spacing:.22em;color:var(--orange);margin-bottom:10px;}
+.si-value{font-family:'Erica';font-size:1.8rem;color:var(--cream);line-height:1.0;}
+.si-value .placeholder{color:rgba(255,244,224,.2);font-size:1.4rem;}
+/* WhatsApp compose */
+.wa-compose{background:var(--orange);padding:40px;border:3px solid var(--cream);}
+.wac-pre{font-family:'Hand';font-size:2rem;color:var(--ink);transform:rotate(-1deg);display:inline-block;margin-bottom:16px;}
+.wac-title{font-family:'Erica';font-size:2.5rem;color:var(--ink);margin-bottom:12px;}
+.wac-body{font-family:'Out';font-size:.9rem;color:var(--ink);line-height:1.6;margin-bottom:28px;max-width:560px;}
+.wa-btn{display:inline-flex;align-items:center;gap:12px;background:#25D366;color:var(--ink);padding:18px 40px;border:3px solid var(--ink);box-shadow:var(--shadow);font-family:'BS';font-size:.8rem;letter-spacing:.18em;text-decoration:none;}
+.wa-btn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink);}
+.wa-btn svg{width:24px;height:24px;}
+
+/* VIP INCLUDES BAR */
+.vip-bar{margin-top:40px;background:rgba(255,244,224,.06);border:2px solid rgba(232,154,60,.2);padding:24px 28px;display:flex;align-items:center;gap:20px;}
+.vip-star{font-family:'Erica';font-size:2rem;color:var(--orange);}
+.vip-text .vt-title{font-family:'BS';font-size:.68rem;letter-spacing:.22em;color:var(--orange);margin-bottom:6px;}
+.vip-text .vt-body{font-family:'Out';font-size:.85rem;color:rgba(255,244,224,.6);line-height:1.5;}
+
+/* FINE PRINT */
+.fine-bar{background:rgba(31,41,55,.06);border-top:2px dashed rgba(31,41,55,.15);border-bottom:2px dashed rgba(31,41,55,.15);padding:12px 64px;text-align:center;font-family:'BS';font-size:.58rem;letter-spacing:.16em;color:rgba(31,41,55,.4);}
+
+/* FOOTER */
+footer{background:var(--ink);padding:48px 64px;border-top:3px solid var(--orange);}
+.footer-row{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;}
+.footer-brand img{height:40px;}
+.footer-info{font-family:'BS';font-size:.65rem;letter-spacing:.2em;color:var(--orange);}
+.footer-links{display:flex;gap:28px;}
+.footer-links a{font-family:'Out';font-size:.85rem;color:rgba(255,244,224,.5);text-decoration:none;}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Erica+One&family=Young+Serif&family=Nothing+You+Could+Do&family=Outfit:wght@400;700&family=Big+Shoulders+Text:wght@700&display=swap" rel="stylesheet"></head><body>
+
+<nav>
+  <div class="nav-brand">
+    <img src="logo.png" alt="Nosh Tours"/>
+    <span>NOSH<em>·</em>TOURS</span>
+  </div>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="/destinations">Destinations</a>
+    <a href="/experience" class="active">Build Experience</a>
+    <a href="/how-it-works">How It Works</a>
+    <a href="#">About</a>
+  </div>
+  <a href="https://wa.me/919567632255" class="nav-wa">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.47c-.28-.14-1.65-.81-1.9-.9-.26-.1-.44-.14-.63.14s-.72.9-.88 1.09-.33.2-.6.07a7.6 7.6 0 0 1-2.24-1.38 8.4 8.4 0 0 1-1.55-1.93c-.16-.28 0-.42.12-.57.13-.13.28-.33.42-.5.13-.16.18-.28.27-.46.1-.18.05-.34-.02-.48-.07-.14-.63-1.52-.86-2.08-.23-.54-.46-.47-.63-.48h-.54c-.18 0-.48.07-.73.34s-.96.94-.96 2.29 1 2.65 1.13 2.83c.14.19 1.96 2.99 4.74 4.2.66.28 1.18.45 1.58.58.66.21 1.26.18 1.74.11.53-.08 1.64-.67 1.87-1.32s.23-1.2.16-1.32c-.07-.12-.26-.19-.54-.33z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.33A9.93 9.93 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.2c-1.64 0-3.16-.44-4.47-1.2l-.32-.19-3.01.79.8-2.94-.21-.34A8.18 8.18 0 0 1 3.8 12 8.2 8.2 0 0 1 12 3.8 8.2 8.2 0 0 1 20.2 12a8.2 8.2 0 0 1-8.2 8.2z"/></svg>
+    +91 95676 32255
+  </a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-pre">configure your mystery — step by step.</div>
+    <h1 class="hero-title">BUILD YOUR<br><span class="orange">ESCAPE.</span></h1>
+    <p class="hero-sub">Tell us your canvas and preferred luxury building blocks. Our travel designers handle everything from there — destination revealed, journey kept a strict secret until you arrive.</p>
+  </div>
+  <div class="step-tracker">
+    <div class="step-dot active"><div class="dot"></div>01 CANVAS</div>
+    <div class="step-dot"><div class="dot"></div>02 FLEET</div>
+    <div class="step-dot"><div class="dot"></div>03 SANCTUARY</div>
+    <div class="step-dot"><div class="dot"></div>04 GOURMET</div>
+    <div class="step-dot"><div class="dot"></div>05 SUBMIT</div>
+  </div>
+</section>
+
+<div class="washi"></div>
+
+<!-- STEP 01: CANVAS -->
+<section class="config-section">
+  <div class="config-inner">
+    <div class="section-badge"><span class="num">01</span> CHOOSE YOUR MYSTERY CANVAS</div>
+    <h2 class="section-title">Pick your <span class="orange">destination region.</span></h2>
+    <div class="section-hand">this is the only thing we reveal. everything else — absolute secret.</div>
+    <div class="canvas-grid">
+      <div class="canvas-opt selected">
+        <div class="co-scene s-jk">
+          <svg viewBox="0 0 200 140" style="position:absolute;inset:0;width:100%;height:100%;" preserveAspectRatio="none">
+            <path d="M0,140 L0,80 L30,58 L60,70 L100,40 L140,56 L170,32 L200,45 L200,140 Z" fill="#1A3040"/>
+            <path d="M100,40 L110,52 L118,43 L100,40 Z M170,32 L179,44 L186,35 L170,32 Z" fill="rgba(230,238,245,.8)"/>
+            <g fill="#0A1820"><path d="M0,140 L0,108 Q12,90 24,108 Q36,88 48,108 Q60,90 72,108 Q84,88 96,108 Q108,90 120,108 Q132,88 144,108 Q156,90 168,108 Q180,88 192,108 L200,105 L200,140 Z"/></g>
+            <ellipse cx="100" cy="128" rx="60" ry="8" fill="rgba(80,140,180,.3)"/>
+          </svg>
+        </div>
+        <div class="co-body">
+          <div class="co-check">✦</div>
+          <div class="co-code">THE CROWN · 01</div>
+          <div class="co-name">Jammu &amp; Kashmir</div>
+          <div class="co-tag">Alpine valleys &amp; mirror lake sanctuaries</div>
+        </div>
+      </div>
+      <div class="canvas-opt">
+        <div class="co-scene s-hp">
+          <svg viewBox="0 0 200 140" style="position:absolute;inset:0;width:100%;height:100%;" preserveAspectRatio="none">
+            <path d="M0,140 L0,82 L30,60 L70,75 L110,42 L150,58 L180,30 L200,42 L200,140 Z" fill="#2A3A55"/>
+            <path d="M110,42 L120,56 L128,46 L110,42 Z M180,30 L189,44 L195,33 L180,30 Z" fill="rgba(230,238,245,.8)"/>
+            <g fill="#0A1018"><path d="M0,140 L0,108 Q14,90 28,108 Q42,88 56,108 Q70,90 84,108 Q98,88 112,108 Q126,90 140,108 Q154,88 168,108 Q182,90 200,108 L200,140 Z"/></g>
+          </svg>
+        </div>
+        <div class="co-body">
+          <div class="co-check">✦</div>
+          <div class="co-code">THE RIDGE · 02</div>
+          <div class="co-name">Himachal Pradesh</div>
+          <div class="co-tag">Cedar highlands &amp; snow isolation</div>
+        </div>
+      </div>
+      <div class="canvas-opt">
+        <div class="co-scene s-sk">
+          <svg viewBox="0 0 200 140" style="position:absolute;inset:0;width:100%;height:100%;" preserveAspectRatio="none">
+            <path d="M0,140 L0,82 L40,60 L80,75 L120,45 L160,62 L190,38 L200,48 L200,140 Z" fill="#1E4030"/>
+            <g fill="#0A1810"><path d="M0,140 L0,105 Q14,86 28,105 Q42,84 56,105 Q70,86 84,105 Q98,84 112,105 Q126,86 140,105 Q154,84 168,105 Q182,86 200,105 L200,140 Z"/></g>
+          </svg>
+        </div>
+        <div class="co-body">
+          <div class="co-check">✦</div>
+          <div class="co-code">MYSTIC EAST · 03</div>
+          <div class="co-name">Sikkim &amp; Darjeeling</div>
+          <div class="co-tag">Tea estates &amp; monastic ridges</div>
+        </div>
+      </div>
+      <div class="canvas-opt">
+        <div class="co-scene s-ne">
+          <svg viewBox="0 0 200 140" style="position:absolute;inset:0;width:100%;height:100%;" preserveAspectRatio="none">
+            <path d="M0,140 L0,78 L40,58 L80,72 L120,48 L165,65 L195,42 L200,52 L200,140 Z" fill="#1A4030"/>
+            <path d="M60,115 Q100,106 150,112 Q130,128 80,126 Z" fill="rgba(60,130,110,.5)"/>
+            <g fill="#091408"><path d="M0,140 L0,108 Q14,88 28,108 Q42,86 56,108 Q70,88 84,108 Q98,86 112,108 Q126,88 140,108 Q154,86 168,108 L200,105 L200,140 Z"/></g>
+          </svg>
+        </div>
+        <div class="co-body">
+          <div class="co-check">✦</div>
+          <div class="co-code">LIVING GREEN · 04</div>
+          <div class="co-name">Assam &amp; Meghalaya</div>
+          <div class="co-tag">Crystal rivers &amp; eco-luxury glamping</div>
+        </div>
+      </div>
+      <div class="canvas-opt">
+        <div class="co-scene s-bh">
+          <svg viewBox="0 0 200 140" style="position:absolute;inset:0;width:100%;height:100%;" preserveAspectRatio="none">
+            <path d="M0,140 L0,75 L40,50 L80,68 L120,35 L160,55 L195,30 L200,42 L200,140 Z" fill="#201848"/>
+            <path d="M120,35 L132,50 L142,38 L120,35 Z M195,30 L200,42 L200,30 Z" fill="rgba(228,222,245,.8)"/>
+            <path d="M60,88 L80,80 L100,86 L120,78 L140,84" stroke="rgba(232,154,60,.5)" stroke-width="1.5" fill="none" stroke-dasharray="8,4"/>
+            <g fill="#080814"><path d="M0,140 L0,108 Q14,90 28,108 Q42,88 56,108 Q70,90 84,108 Q98,88 112,108 Q126,90 140,108 Q154,88 168,108 L200,105 L200,140 Z"/></g>
+          </svg>
+        </div>
+        <div class="co-body">
+          <div class="co-check">✦</div>
+          <div class="co-code">THE FORBIDDEN · 05</div>
+          <div class="co-name">Bhutan &amp; Nepal</div>
+          <div class="co-tag">Cross-border mystery kingdoms</div>
+        </div>
+      </div>
+      <div class="canvas-opt">
+        <div class="co-scene s-kl">
+          <svg viewBox="0 0 200 140" style="position:absolute;inset:0;width:100%;height:100%;" preserveAspectRatio="none">
+            <path d="M0,140 L0,80 L45,58 L90,72 L140,45 L180,62 L200,52 L200,140 Z" fill="#0E3A22" opacity=".8"/>
+            <ellipse cx="100" cy="126" rx="75" ry="10" fill="rgba(0,160,138,.3)"/>
+            <g fill="#061808" opacity=".9">
+              <path d="M38,80 Q36,60 35,45 Q30,42 27,38 Q35,41 38,45 Q41,41 46,38 Q43,42 38,45 Q36,60 38,80 Z"/>
+              <path d="M165,78 Q163,58 162,43 Q157,40 154,36 Q162,39 165,43 Q168,39 173,36 Q170,40 165,43 Q163,58 165,78 Z"/>
+            </g>
+            <g fill="#041008"><path d="M0,140 L0,108 Q14,88 28,108 Q42,86 56,108 Q70,88 84,108 Q98,86 112,108 Q126,88 140,108 Q154,86 168,108 L200,104 L200,140 Z"/></g>
+          </svg>
+        </div>
+        <div class="co-body">
+          <div class="co-check">✦</div>
+          <div class="co-code">THE EMERALD VEIL · 06</div>
+          <div class="co-name">Kerala</div>
+          <div class="co-tag">Backwaters, spice estates &amp; wellness</div>
+        </div>
+      </div>
+      <div class="canvas-opt">
+        <div class="co-scene s-tn">
+          <svg viewBox="0 0 200 140" style="position:absolute;inset:0;width:100%;height:100%;" preserveAspectRatio="none">
+            <path d="M0,140 L0,80 L40,58 L85,72 L135,45 L178,62 L200,50 L200,140 Z" fill="#1A0E08" opacity=".85"/>
+            <g fill="#0A0604" opacity=".9">
+              <rect x="80" y="80" width="40" height="40" rx="1"/>
+              <path d="M76,80 L124,80 L118,64 L82,64 Z"/>
+              <path d="M84,64 L116,64 L110,52 L90,52 Z"/>
+              <rect x="94" y="45" width="12" height="7"/>
+            </g>
+            <g fill="#0A0604"><path d="M0,140 L0,112 Q14,94 28,112 Q42,92 56,112 Q70,94 84,112 Q98,92 112,112 Q126,94 140,112 Q154,92 168,112 L200,108 L200,140 Z"/></g>
+          </svg>
+        </div>
+        <div class="co-body">
+          <div class="co-check">✦</div>
+          <div class="co-code">THE ANCIENT SOUTH · 07</div>
+          <div class="co-name">Tamil Nadu</div>
+          <div class="co-tag">Heritage temples &amp; Nilgiri hills</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 02: FLEET -->
+<section class="config-section">
+  <div class="config-inner">
+    <div class="section-badge"><span class="num">02</span> PRIVATE FLEET CLASS</div>
+    <h2 class="section-title">Your <span class="orange">private fleet.</span></h2>
+    <div class="section-hand">premium captain, exclusive vehicle — navigating the terrain in luxury.</div>
+    <div class="options-grid cols3">
+      <div class="opt-card selected">
+        <div class="oc-check">✦</div>
+        <div class="oc-icon">🚙</div>
+        <div class="oc-letter">A</div>
+        <div class="oc-title">Premium Luxury SUV</div>
+        <div class="oc-sub">Toyota Fortuner / Isuzu MUX</div>
+        <div class="oc-detail">Extreme mountain road presence. The most capable vehicle for high-altitude, off-road terrain access to hidden sanctuaries.</div>
+      </div>
+      <div class="opt-card">
+        <div class="oc-check">✦</div>
+        <div class="oc-icon">🚐</div>
+        <div class="oc-letter">B</div>
+        <div class="oc-title">Elite Family Crossover</div>
+        <div class="oc-sub">Hyundai Alcazar / Tata Safari</div>
+        <div class="oc-detail">Expanded cabin space for inner circles and families. Plush seating, full luggage capacity, smooth mountain road comfort.</div>
+      </div>
+      <div class="opt-card">
+        <div class="oc-check">✦</div>
+        <div class="oc-icon">🚌</div>
+        <div class="oc-letter">C</div>
+        <div class="oc-title">Luxury Touring Coach</div>
+        <div class="oc-sub">Custom Urbania / Lounge Traveler</div>
+        <div class="oc-detail">For close-knit private groups. Lounge seating, full amenities, your private mobile sanctuary between mystery destinations.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 03: SANCTUARY -->
+<section class="config-section">
+  <div class="config-inner">
+    <div class="section-badge"><span class="num">03</span> SECRET SANCTUARY ROOMS</div>
+    <h2 class="section-title">Your <span class="orange">boutique escape.</span></h2>
+    <div class="section-hand">disclosed only when you arrive. boutique, private, unforgettable.</div>
+    <div class="options-grid cols2">
+      <div class="opt-card">
+        <div class="oc-check">✦</div>
+        <div class="oc-icon">🏔</div>
+        <div class="oc-letter">A</div>
+        <div class="oc-title">Presidential Suite</div>
+        <div class="oc-sub">Maximum luxury square footage</div>
+        <div class="oc-detail">Private jacuzzis, panoramic mountain or lake vistas, bespoke in-room turndown service, exclusive wing access.</div>
+      </div>
+      <div class="opt-card">
+        <div class="oc-check">✦</div>
+        <div class="oc-icon">🌲</div>
+        <div class="oc-letter">B</div>
+        <div class="oc-title">Glass or Timber Cottage</div>
+        <div class="oc-sub">Total nature immersion</div>
+        <div class="oc-detail">Architectural glass or heritage wood cottages surrounded by nature. Private bonfire decks, forest views, complete seclusion.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 04: GOURMET -->
+<section class="config-section">
+  <div class="config-inner">
+    <div class="section-badge"><span class="num">04</span> GOURMET CULINARY TIER</div>
+    <h2 class="section-title">Your <span class="orange">table preference.</span></h2>
+    <div class="section-hand">regional flavours, private chefs, zero generic hotel buffets.</div>
+    <div class="options-grid cols2">
+      <div class="opt-card selected">
+        <div class="oc-check">✦</div>
+        <div class="oc-icon">🍽</div>
+        <div class="oc-letter">A</div>
+        <div class="oc-title">Royal Full Board</div>
+        <div class="oc-sub">Breakfast + Lunch + Dinner</div>
+        <div class="oc-detail">Curated regional menus handled by private executive property chefs. Strict vegetarian and South Indian preferences fully accommodated.</div>
+      </div>
+      <div class="opt-card">
+        <div class="oc-check">✦</div>
+        <div class="oc-icon">🌅</div>
+        <div class="oc-letter">B</div>
+        <div class="oc-title">Half Board</div>
+        <div class="oc-sub">Breakfast + Dinner</div>
+        <div class="oc-detail">Complete freedom to discover hidden local culinary gems throughout the day. Let the destination surprise you beyond the sanctuary too.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="washi"></div>
+
+<!-- SUMMARY + CTA -->
+<section class="summary-section">
+  <div class="summary-inner">
+    <div class="summary-hand">your experience profile is ready.</div>
+    <h2 class="summary-title">send this to your <span class="orange">travel designer.</span></h2>
+    <div class="summary-grid">
+      <div class="summary-item">
+        <div class="si-label">MYSTERY CANVAS</div>
+        <div class="si-value">Jammu &amp; Kashmir<br><span style="font-size:.9rem;color:rgba(255,244,224,.4);font-family:'BS';letter-spacing:.14em;font-size:.65rem;">THE CROWN · 01</span></div>
+      </div>
+      <div class="summary-item">
+        <div class="si-label">PRIVATE FLEET</div>
+        <div class="si-value">Premium Luxury SUV<br><span style="font-family:'Out';font-weight:400;font-size:1rem;color:rgba(255,244,224,.5);">Toyota Fortuner / Isuzu MUX</span></div>
+      </div>
+      <div class="summary-item">
+        <div class="si-label">SANCTUARY TIER</div>
+        <div class="si-value si-value"><span class="placeholder">Not selected yet ↑</span></div>
+      </div>
+      <div class="summary-item">
+        <div class="si-label">GOURMET PLAN</div>
+        <div class="si-value">Royal Full Board<br><span style="font-family:'Out';font-weight:400;font-size:1rem;color:rgba(255,244,224,.5);">Breakfast + Lunch + Dinner</span></div>
+      </div>
+    </div>
+
+    <div class="wa-compose">
+      <div class="wac-pre">ready? one tap sends your preferences directly to our designers.</div>
+      <div class="wac-title">Tap to Start Your Journey on WhatsApp →</div>
+      <div class="wac-body">Your selections above will be pre-loaded into a WhatsApp message for our travel design team. They'll acknowledge your request within 60 seconds and begin calibrating your custom mystery escape.</div>
+      <a href="https://wa.me/919567632255?text=Hello%20Nosh%20Tours!%20I'd%20like%20to%20build%20my%20custom%20unscripted%20escape.%0A%0ACanvas%3A%20Jammu%20%26%20Kashmir%20(The%20Crown)%0AFleet%3A%20Premium%20Luxury%20SUV%0AGourmet%3A%20Royal%20Full%20Board%0A%0APlease%20share%20more%20details!" class="wa-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M17.47 14.47c-.28-.14-1.65-.81-1.9-.9-.26-.1-.44-.14-.63.14s-.72.9-.88 1.09-.33.2-.6.07a7.6 7.6 0 0 1-2.24-1.38 8.4 8.4 0 0 1-1.55-1.93c-.16-.28 0-.42.12-.57.13-.13.28-.33.42-.5.13-.16.18-.28.27-.46.1-.18.05-.34-.02-.48-.07-.14-.63-1.52-.86-2.08-.23-.54-.46-.47-.63-.48h-.54c-.18 0-.48.07-.73.34s-.96.94-.96 2.29 1 2.65 1.13 2.83c.14.19 1.96 2.99 4.74 4.2.66.28 1.18.45 1.58.58.66.21 1.26.18 1.74.11.53-.08 1.64-.67 1.87-1.32s.23-1.2.16-1.32c-.07-.12-.26-.19-.54-.33z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.33A9.93 9.93 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.2c-1.64 0-3.16-.44-4.47-1.2l-.32-.19-3.01.79.8-2.94-.21-.34A8.18 8.18 0 0 1 3.8 12 8.2 8.2 0 0 1 12 3.8 8.2 8.2 0 0 1 20.2 12a8.2 8.2 0 0 1-8.2 8.2z"/></svg>
+        Send My Building Blocks to WhatsApp
+      </a>
+    </div>
+    <div class="vip-bar">
+      <div class="vip-star">✦</div>
+      <div class="vip-text">
+        <div class="vt-title">ALL EXPERIENCES AUTOMATICALLY INCLUDE</div>
+        <div class="vt-body">VIP fast-track monument entrances · Private riverboat charters · Premium cable car reservations · Activity permits pre-booked · Your group never waits in a line.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="fine-bar">Nosh Tours designs premium, high-value custom surprise getaways. We do not offer budget packages, backpacker itineraries, or low-cost group tours. · noshtours.com · +91 95676 32255 · Dekho Apna Desh 2.0 🇮🇳</div>
+
+<footer>
+  <div class="footer-row">
+    <img src="logo.png" style="height:40px;" alt="Nosh Tours"/>
+    <div class="footer-info">Dekho Apna Desh 2.0 · Nosh Tours 🇮🇳</div>
+    <div class="footer-links">
+      <a href="#">Destinations</a>
+      <a href="#">How It Works</a>
+      <a href="#">About</a>
+    </div>
+  </div>
+</footer>
+</body></html>
