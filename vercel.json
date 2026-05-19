@@ -5,8 +5,8 @@
     { "source": "/", "destination": "/index.html" },
     { "source": "/destinations", "destination": "/destinations.html" },
     { "source": "/experience", "destination": "/experience.html" },
-    { "source": "/blog", "destination": "/blog/index.html" },
-    { "source": "/blog/:slug", "destination": "/blog/:slug.html" }
+    {"source": "/blog", "destination": "/index.html",
+    { "source": "/blog/:slug", "destination": "/:slug.html"
   ],
   "headers": [
     {
