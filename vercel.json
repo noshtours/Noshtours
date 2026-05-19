@@ -1,0 +1,21 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {"source":"/","destination":"/index.html"},
+    {"source":"/destinations","destination":"/destinations.html"},
+    {"source":"/experience","destination":"/experience.html"},
+    {"source":"/blog","destination":"/blog-listing.html"},
+    {"source":"/blog/kerala-ayurveda-retreat-uk-travellers-2026","destination":"/kerala-ayurveda-retreat-uk-travellers-2026.html"}
+  ],
+  "headers": [
+    {
+      "source":"/(.*)",
+      "headers":[
+        {"key":"X-Content-Type-Options","value":"nosniff"},
+        {"key":"X-Frame-Options","value":"SAMEORIGIN"},
+        {"key":"Cache-Control","value":"public, max-age=3600"}
+      ]
+    }
+  ]
+}
