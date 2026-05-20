@@ -1,0 +1,77 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {"source": "/", "destination": "/index.html"},
+    {"source": "/destinations", "destination": "/destinations.html"},
+    {"source": "/experience", "destination": "/experience.html"},
+    {"source": "/about", "destination": "/about.html"},
+    {"source": "/blog", "destination": "/blog-listing.html"},
+    {"source": "/india", "destination": "/india.html"},
+    {"source": "/wellness", "destination": "/wellness.html"},
+    {"source": "/blog/kerala-ayurveda-retreat-uk-travellers-2026", "destination": "/kerala-ayurveda-retreat-uk-travellers-2026.html"},
+    {"source": "/blog/what-is-unscripted-travel-india", "destination": "/what-is-unscripted-travel-india.html"},
+    {"source": "/blog/gift-luxury-trip-india-2026", "destination": "/gift-luxury-trip-india-2026.html"}
+  ],
+  "redirects": [
+    {"source": "/kerala-ayurveda-retreat-uk-travellers-2026", "destination": "/blog/kerala-ayurveda-retreat-uk-travellers-2026", "permanent": true},
+    {"source": "/what-is-unscripted-travel-india", "destination": "/blog/what-is-unscripted-travel-india", "permanent": true},
+    {"source": "/gift-luxury-trip-india-2026", "destination": "/blog/gift-luxury-trip-india-2026", "permanent": true},
+    {"source": "/blog-listing", "destination": "/blog", "permanent": true},
+    {"source": "/blog-listing.html", "destination": "/blog", "permanent": true}
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {"key": "X-Content-Type-Options", "value": "nosniff"},
+        {"key": "X-Frame-Options", "value": "SAMEORIGIN"},
+        {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
+        {"key": "Permissions-Policy", "value": "geolocation=(), camera=(), microphone=()"},
+        {"key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload"}
+      ]
+    },
+    {
+      "source": "/(.*)\\.html",
+      "headers": [
+        {"key": "Cache-Control", "value": "public, max-age=3600, must-revalidate"}
+      ]
+    },
+    {
+      "source": "/logo.png",
+      "headers": [
+        {"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "headers": [
+        {"key": "Content-Type", "value": "text/plain; charset=utf-8"},
+        {"key": "Cache-Control", "value": "public, max-age=86400"},
+        {"key": "X-Robots-Tag", "value": "all"}
+      ]
+    },
+    {
+      "source": "/llms-full.txt",
+      "headers": [
+        {"key": "Content-Type", "value": "text/plain; charset=utf-8"},
+        {"key": "Cache-Control", "value": "public, max-age=86400"},
+        {"key": "X-Robots-Tag", "value": "all"}
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {"key": "Content-Type", "value": "application/xml; charset=utf-8"},
+        {"key": "Cache-Control", "value": "public, max-age=3600"}
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {"key": "Content-Type", "value": "text/plain; charset=utf-8"},
+        {"key": "Cache-Control", "value": "public, max-age=3600"}
+      ]
+    }
+  ]
+}
