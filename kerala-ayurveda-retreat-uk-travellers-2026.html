@@ -154,6 +154,7 @@ body{background:var(--cream);font-family:'Outfit',sans-serif;color:var(--ink);ov
   font-family:'Big Shoulders Text',sans-serif;font-size:.58rem;letter-spacing:.12em;
   color:rgba(255,244,224,.3);}
 </style>
+<link rel="stylesheet" href="/mobile.css">
 </head>
 <body>
 
@@ -166,7 +167,7 @@ body{background:var(--cream);font-family:'Outfit',sans-serif;color:var(--ink);ov
 <!-- NAV -->
 <nav class="nav-bar">
   <a href="/" class="nav-brand">
-    <img src="/logo.png" alt="Nosh Tours">
+    <img src="/logo.png" alt="Nosh Tours" loading="lazy">
     <span>NOSH·TOURS</span>
   </a>
   <div class="nav-links">
@@ -178,6 +179,9 @@ body{background:var(--cream);font-family:'Outfit',sans-serif;color:var(--ink);ov
     <a href="/about">About</a>
     <a href="/blog">Journal</a>
   </div>
+  <button class="nav-hamburger" id="navHam" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
   <a href="https://wa.me/919567632255" class="nav-wa" target="_blank" rel="noopener">💬 Begin Journey</a>
 </nav>
 

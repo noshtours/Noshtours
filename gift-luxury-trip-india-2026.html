@@ -99,6 +99,7 @@ footer { background: var(--navy-deep); color: rgba(245,241,232,0.6); padding: 64
 .float-whatsapp { position: fixed; bottom: 28px; right: 28px; width: 60px; height: 60px; background: var(--whatsapp); border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 50; box-shadow: 0 8px 24px rgba(37,211,102,0.4); }
 .float-whatsapp svg { width: 32px; height: 32px; fill: white; }
 </style>
+<link rel="stylesheet" href="/mobile.css">
 </head>
 <body>
 
@@ -115,6 +116,9 @@ footer { background: var(--navy-deep); color: rgba(245,241,232,0.6); padding: 64
       <a href="https://wa.me/919567632255?text=Hi%20Nosh%20Tours%2C%20I%27d%20like%20to%20plan%20a%20trip." class="nav-cta">Start on WhatsApp</a>
     </div>
   </div>
+  <button class="nav-hamburger" id="navHam" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <header class="article-header">
@@ -238,5 +242,10 @@ footer { background: var(--navy-deep); color: rgba(245,241,232,0.6); padding: 64
   <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
 </a>
 
+<!-- Sticky WhatsApp — mobile only -->
+<a href="https://wa.me/919567632255?text=Hi%20Nosh%20Tours%2C%20I%27d%20like%20to%20plan%20a%20trip" 
+   class="sticky-wa" target="_blank" rel="noopener">
+  💬 &nbsp;Book via WhatsApp
+</a>
 </body>
 </html>

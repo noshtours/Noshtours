@@ -128,6 +128,7 @@ footer { background: var(--navy-deep); color: rgba(245,241,232,0.6); padding: 64
 .float-whatsapp:hover { transform: scale(1.1); }
 .float-whatsapp svg { width: 32px; height: 32px; fill: white; }
 </style>
+<link rel="stylesheet" href="/mobile.css">
 </head>
 <body>
 
@@ -144,6 +145,9 @@ footer { background: var(--navy-deep); color: rgba(245,241,232,0.6); padding: 64
       <a href="https://wa.me/919567632255?text=Hi%20Nosh%20Tours%2C%20I%27d%20like%20to%20plan%20a%20trip." class="nav-cta">Start on WhatsApp</a>
     </div>
   </div>
+  <button class="nav-hamburger" id="navHam" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <header class="page-hero">
@@ -298,5 +302,10 @@ document.getElementById('sendQuote').addEventListener('click', () => {
 });
 </script>
 
+<!-- Sticky WhatsApp — mobile only -->
+<a href="https://wa.me/919567632255?text=Hi%20Nosh%20Tours%2C%20I%27d%20like%20to%20plan%20a%20trip" 
+   class="sticky-wa" target="_blank" rel="noopener">
+  💬 &nbsp;Book via WhatsApp
+</a>
 </body>
 </html>
