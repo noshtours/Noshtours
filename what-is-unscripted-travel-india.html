@@ -12,7 +12,7 @@
 <meta property="og:title" content="What is Unscripted Travel? The Nosh Tours Philosophy">
 <meta property="og:description" content="Why we don't sell packages, build canvases instead.">
 <meta property="og:url" content="https://noshtours.com/blog/what-is-unscripted-travel-india">
-<meta property="og:image" content="https://noshtours.com/logo.png">
+<meta property="og:image" content="https://noshtours.com/images/blog-unscripted-travel-hero.jpg">
 
 <script type="application/ld+json">
 {
@@ -56,7 +56,7 @@ a { color: inherit; text-decoration: none; }
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,27,42,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,168,76,0.15); }
 .nav-inner { max-width: 1400px; margin: 0 auto; padding: 18px 32px; display: flex; justify-content: space-between; align-items: center; }
 .logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: var(--cream); letter-spacing: 0.04em; display: flex; align-items: center; gap: 12px; }
-.logo-mark { width: 40px; height: 40px; border: 1.5px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: var(--gold); }
+.logo-mark { width: 40px; height: 40px; object-fit: contain; display: block; }
 .nav-links { display: flex; gap: 36px; align-items: center; font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
 .nav-links a { color: rgba(245,241,232,0.75); }
 .nav-cta { background: var(--gold); color: var(--navy) !important; padding: 10px 18px; border-radius: 2px; font-weight: 700; }
@@ -105,7 +105,7 @@ footer { background: var(--navy-deep); color: rgba(245,241,232,0.6); padding: 64
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="/" class="logo"><span class="logo-mark">NT</span><span>Nosh Tours</span></a>
+    <a href="/" class="logo"><img src="/logo.png" alt="Nosh Tours" class="logo-mark" onerror="this.style.display='none'"><span>Nosh Tours</span></a>
     <div class="nav-links">
       <a href="/destinations">Destinations</a>
       <a href="/experience">Build Your Trip</a>
@@ -121,8 +121,12 @@ footer { background: var(--navy-deep); color: rgba(245,241,232,0.6); padding: 64
   </button>
 </nav>
 
+<style>
+.blog-hero-img{width:100%;max-width:1200px;margin:0 auto 32px;display:block;aspect-ratio:16/9;object-fit:cover;border-radius:8px;}
+</style>
 <header class="article-header">
   <div class="article-header-inner">
+    <img src="/images/blog-unscripted-travel-hero.jpg" alt="Mountain road journey — Nosh Tours" class="blog-hero-img" loading="eager" width="1600" height="900">
     <div class="crumbs"><a href="/">Home</a> / <a href="/blog">Journal</a> / Unscripted Travel</div>
     <div class="article-meta"><span>Methodology</span><span>6 min read</span><span>15 April 2026</span></div>
     <h1 class="article-h1">What is unscripted travel — and <em>why we</em> believe in it.</h1>
