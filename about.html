@@ -318,8 +318,23 @@ body {
 }
 .founder-card {
   background: var(--paper);
-  padding: 48px 40px;
+  padding: 0 0 40px 0;
   border-top: 3px solid var(--gold);
+  overflow: hidden;
+}
+.founder-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  margin-bottom: 32px;
+}
+.founder-name,
+.founder-role,
+.founder-bio {
+  padding-left: 40px;
+  padding-right: 40px;
 }
 .founder-name {
   font-family: 'Cormorant Garamond', serif;
@@ -371,6 +386,80 @@ body {
 .brain-tile:hover { background: var(--gold); color: var(--navy); transform: translateY(-4px); }
 
 /* Press */
+/* International Recognition */
+.recognition-section {
+  padding: 100px 5vw;
+  background: linear-gradient(180deg, var(--cream) 0%, #FBF5E9 100%);
+  text-align: center;
+}
+.recognition-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.recognition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 56px;
+}
+.recognition-card {
+  background: #fff;
+  border: 1px solid rgba(28, 43, 58, 0.08);
+  border-radius: 14px;
+  padding: 32px 28px;
+  text-align: left;
+  transition: transform .2s ease, box-shadow .2s ease;
+  display: flex;
+  flex-direction: column;
+}
+.recognition-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(28, 43, 58, 0.08);
+}
+.recognition-flag {
+  font-size: 32px;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+.recognition-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.recognition-year {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.recognition-desc {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--charcoal);
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+.recognition-link {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--orange);
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  transition: gap .2s ease;
+}
+.recognition-link:hover { gap: 14px; }
+
 .press-section {
   padding: 80px 5vw;
   text-align: center;
@@ -487,7 +576,7 @@ body {
 .wa-float:hover { transform: scale(1.1); }
 .wa-float svg { width: 28px; height: 28px; fill: white; }
 </style>
-<link rel="stylesheet" href="https://raw.githubusercontent.com/noshtours/Noshtours/main/mobile.css">
+<link rel="stylesheet" href="/mobile.css">
 </head>
 <body>
 
@@ -552,14 +641,51 @@ body {
   </div>
   <div class="founders-grid">
     <div class="founder-card">
+      <img src="/images/founder-aditya-tg.jpg" alt="Aditya TG — Co-founder of Nosh Tours, photographed at Adani Lounge by ITC" class="founder-photo" loading="lazy" width="1200" height="1200">
       <div class="founder-name">Aditya TG</div>
       <div class="founder-role">Co-founder</div>
       <p class="founder-bio">Aditya leads brand, design, and product. He hand-codes every Nosh Tours proposal, runs the social media content engine, and personally responds to community messages from the 7,000-member travel entrepreneur network. His obsession is the gap between what a travel brand says and what it delivers — closing it, line by line.</p>
     </div>
     <div class="founder-card">
+      <img src="/images/founder-akshay-manoj.jpg" alt="Akshay Manoj — Co-founder of Nosh Tours, photographed at Kelingking Beach, Nusa Penida, Bali" class="founder-photo" loading="lazy" width="1200" height="1200">
       <div class="founder-name">Akshay Manoj</div>
       <div class="founder-role">Co-founder</div>
       <p class="founder-bio">Akshay leads operations, partner relationships, and the Nosh Brains team. He owns the on-ground execution layer — the relationships with hotels, transfer companies, guides, and experience curators across every destination canvas. The "no hidden charges" promise rests on his negotiations.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="recognition-section">
+  <div class="recognition-inner">
+    <div class="section-label">— International Recognition</div>
+    <h2 class="section-headline">Honoured by Asia's <em>tourism authorities</em>.</h2>
+    <p class="story-text" style="margin-top: 24px; max-width: 700px; margin-left: auto; margin-right: auto;">Three official acknowledgements from Thailand and Indonesia's tourism boards. Not press features. Not paid placements. Real certificates, handed by real officials, to both founders.</p>
+
+    <div class="recognition-grid">
+      <div class="recognition-card">
+        <div class="recognition-flag">🇹🇭</div>
+        <div class="recognition-title">Thailand Tourism Police Department</div>
+        <div class="recognition-year">2025 · KAAR B2B Meet</div>
+        <p class="recognition-desc">Aditya TG awarded the Tourism Authentication certificate by Thailand's Tourism Police at the KAAR Consortium B2B Meet — formal recognition of Nosh Tours' contribution to India–Thailand luxury travel.</p>
+        <a href="https://www.instagram.com/p/DGQns3JTmpi/" class="recognition-link" target="_blank" rel="noopener">View on Instagram →</a>
+      </div>
+
+      <div class="recognition-card">
+        <div class="recognition-flag">🇹🇭</div>
+        <div class="recognition-title">Thailand Tourism Police Department</div>
+        <div class="recognition-year">2025 · KAAR B2B Meet</div>
+        <p class="recognition-desc">Akshay Manoj separately honoured by Thailand's Tourism Police at the same KAAR Consortium edition — twin recognition for both Nosh Tours co-founders in a single ceremony.</p>
+        <a href="https://www.instagram.com/p/DGQmhVEhjPI/" class="recognition-link" target="_blank" rel="noopener">View on Instagram →</a>
+      </div>
+
+      <div class="recognition-card">
+        <div class="recognition-flag">🇮🇩</div>
+        <div class="recognition-title">Indonesia Tourism · Bal DMC Consortium</div>
+        <div class="recognition-year">2026 · Bali FAM Trip</div>
+        <p class="recognition-desc">Certificate of Presentation from Bal DMC consortium for the Bali FAM Trip 2026, alongside Cambodia &amp; Vietnam partners — recognising Nosh Tours' role in Southeast Asia luxury travel networks.</p>
+        <a href="https://www.instagram.com/p/DVBaeehAaYs/" class="recognition-link" target="_blank" rel="noopener">View on Instagram →</a>
+      </div>
     </div>
   </div>
 </section>
