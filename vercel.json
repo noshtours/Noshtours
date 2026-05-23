@@ -9,12 +9,14 @@
       "destination": "https://raw.githubusercontent.com/noshtours/Noshtours/main/images/:path*"
     },
 
-    { "source": "/blog/kerala-ayurveda-retreat-uk-travellers-2026",  "destination": "/kerala-ayurveda-retreat-uk-travellers-2026.html" },
-    { "source": "/blog/gift-luxury-trip-india-2026",                  "destination": "/gift-luxury-trip-india-2026.html" },
-    { "source": "/blog/what-is-unscripted-travel-india",              "destination": "/what-is-unscripted-travel-india.html" },
-    { "source": "/blog/kashmir-luxury-mystery-holiday-india-2026",    "destination": "/kashmir-luxury-mystery-holiday-india-2026.html" },
-    { "source": "/blog/uzbekistan-luxury-tour-india-silk-road-2026",  "destination": "/uzbekistan-luxury-tour-india-silk-road-2026.html" },
-    { "source": "/blog/luxury-trip-gifting-templates-india-2026",     "destination": "/luxury-trip-gifting-templates-india-2026.html" }
+    { "source": "/blog", "destination": "/blog-listing.html" },
+
+    { "source": "/blog/kerala-ayurveda-retreat-uk-travellers-2026", "destination": "/kerala-ayurveda-retreat-uk-travellers-2026.html" },
+    { "source": "/blog/gift-luxury-trip-india-2026",                 "destination": "/gift-luxury-trip-india-2026.html" },
+    { "source": "/blog/what-is-unscripted-travel-india",             "destination": "/what-is-unscripted-travel-india.html" },
+    { "source": "/blog/kashmir-luxury-mystery-holiday-india-2026",   "destination": "/kashmir-luxury-mystery-holiday-india-2026.html" },
+    { "source": "/blog/uzbekistan-luxury-tour-india-silk-road-2026", "destination": "/uzbekistan-luxury-tour-india-silk-road-2026.html" },
+    { "source": "/blog/luxury-trip-gifting-templates-india-2026",    "destination": "/luxury-trip-gifting-templates-india-2026.html" }
   ],
 
   "redirects": [
