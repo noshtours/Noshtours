@@ -9,14 +9,14 @@
       "destination": "https://raw.githubusercontent.com/noshtours/Noshtours/main/images/:path*"
     },
 
-    { "source": "/blog", "destination": "/blog-listing.html" },
+    { "source": "/blog", "destination": "/blog-listing" },
 
-    { "source": "/blog/kerala-ayurveda-retreat-uk-travellers-2026", "destination": "/kerala-ayurveda-retreat-uk-travellers-2026.html" },
-    { "source": "/blog/gift-luxury-trip-india-2026",                 "destination": "/gift-luxury-trip-india-2026.html" },
-    { "source": "/blog/what-is-unscripted-travel-india",             "destination": "/what-is-unscripted-travel-india.html" },
-    { "source": "/blog/kashmir-luxury-mystery-holiday-india-2026",   "destination": "/kashmir-luxury-mystery-holiday-india-2026.html" },
-    { "source": "/blog/uzbekistan-luxury-tour-india-silk-road-2026", "destination": "/uzbekistan-luxury-tour-india-silk-road-2026.html" },
-    { "source": "/blog/luxury-trip-gifting-templates-india-2026",    "destination": "/luxury-trip-gifting-templates-india-2026.html" }
+    { "source": "/blog/kerala-ayurveda-retreat-uk-travellers-2026", "destination": "/kerala-ayurveda-retreat-uk-travellers-2026" },
+    { "source": "/blog/gift-luxury-trip-india-2026",                 "destination": "/gift-luxury-trip-india-2026" },
+    { "source": "/blog/what-is-unscripted-travel-india",             "destination": "/what-is-unscripted-travel-india" },
+    { "source": "/blog/kashmir-luxury-mystery-holiday-india-2026",   "destination": "/kashmir-luxury-mystery-holiday-india-2026" },
+    { "source": "/blog/uzbekistan-luxury-tour-india-silk-road-2026", "destination": "/uzbekistan-luxury-tour-india-silk-road-2026" },
+    { "source": "/blog/luxury-trip-gifting-templates-india-2026",    "destination": "/luxury-trip-gifting-templates-india-2026" }
   ],
 
   "redirects": [
@@ -31,8 +31,10 @@
     { "source": "/index.html",               "destination": "/",                   "permanent": true },
     { "source": "/about.html",               "destination": "/about",              "permanent": true },
     { "source": "/destinations.html",        "destination": "/destinations",       "permanent": true },
-    { "source": "/experience.html",          "destination": "/experience",         "permanent": true },
+    { "source": "/experience",               "destination": "/nosh-block-builder", "permanent": true },
+    { "source": "/experience.html",          "destination": "/nosh-block-builder", "permanent": true },
     { "source": "/international.html",       "destination": "/international",      "permanent": true },
+    { "source": "/blog-listing",             "destination": "/blog",               "permanent": true },
     { "source": "/blog-listing.html",        "destination": "/blog",               "permanent": true },
     { "source": "/india.html",               "destination": "/india",              "permanent": true },
     { "source": "/wellness.html",            "destination": "/wellness",           "permanent": true },
