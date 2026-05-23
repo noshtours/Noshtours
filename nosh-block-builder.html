@@ -37,12 +37,6 @@ img{max-width:100%;display:block}
 .logo-tag{font-family:var(--fh);font-weight:700;font-size:.85rem;color:var(--o);
   background:rgba(255,92,26,.1);padding:3px 10px;border-radius:100px;
   border:1px solid rgba(255,92,26,.25)}
-.hdr-lang{margin-left:auto;display:flex;gap:0;background:#F0EFF8;
-  border:1.5px solid var(--border);border-radius:100px;overflow:hidden;flex-shrink:0}
-.lb{font-family:var(--fc);font-weight:700;font-size:.58rem;letter-spacing:.06em;
-  text-transform:uppercase;padding:6px 8px;color:#8888AA;transition:all .2s}
-.lb.active,.lb:hover{background:var(--o);color:#fff}
-
 /* ── PROGRESS ── */
 .prog-wrap{position:fixed;top:58px;left:0;right:0;z-index:99;
   background:#fff;padding:10px 20px 11px;border-bottom:1.5px solid var(--border)}
@@ -338,30 +332,207 @@ img{max-width:100%;display:block}
 /* Responsive */
 @media(max-width:1023px){.main{grid-template-columns:1fr;padding-bottom:80px}.sum-panel{display:none}.mob-bar{display:block}}
 @media(max-width:480px){.dest-grid{grid-template-columns:1fr 1fr}.cols3{grid-template-columns:1fr 1fr}.pay-cards-grid{grid-template-columns:1fr}.builder{padding:18px 14px 100px}}
-@media(max-width:360px){.dest-grid{grid-template-columns:1fr 1fr}.lb{padding:4px 5px;font-size:.49rem}.pmb-split{grid-template-columns:1fr}}
+@media(max-width:360px){.dest-grid{grid-template-columns:1fr 1fr}.pmb-split{grid-template-columns:1fr}}
 
 /* Colorful tile separator */
 .nosh-sep{display:flex;height:12px;width:100%;overflow:hidden;flex-shrink:0}
 .nosh-sep span{flex:1;height:100%}
 
-</style></head><body>
+
+
+/* ── EXIT INTENT MODAL ── */
+.ei-overlay{display:none;position:fixed;inset:0;background:rgba(10,10,20,.78);z-index:2000;
+  align-items:flex-end;justify-content:center;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+.ei-overlay.open{display:flex}
+.ei-box{background:#fff;width:100%;max-width:500px;border-radius:22px 22px 0 0;
+  padding:24px 20px 40px;position:relative;max-height:92vh;overflow-y:auto}
+.ei-pill{display:inline-block;background:linear-gradient(135deg,#FF5C1A,#D4872A);
+  color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;
+  font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:4px 13px;border-radius:100px;margin-bottom:12px}
+.ei-title{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:1.25rem;
+  color:#0F0F1A;line-height:1.25;margin-bottom:6px}
+.ei-sub{font-size:.8rem;color:#5A5A72;line-height:1.6;margin-bottom:16px}
+.ei-summary{background:#F4F3FF;border-radius:12px;padding:12px 14px;
+  margin-bottom:16px;font-size:.74rem;color:#3A3A5C;line-height:1.6}
+.ei-summary-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;
+  font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;
+  color:#AAAACC;margin-bottom:6px}
+.ei-field{width:100%;font-family:'Outfit',sans-serif;font-size:.88rem;
+  padding:11px 14px;border:2px solid #E8E7F4;border-radius:10px;
+  background:#FAFAFA;color:#0F0F1A;outline:none;
+  transition:border-color .2s;margin-bottom:10px;box-sizing:border-box}
+.ei-field:focus{border-color:var(--o);background:#fff}
+.ei-field::placeholder{color:#AAAACC}
+.ei-submit{display:block;width:100%;font-family:'Barlow Condensed',sans-serif;
+  font-weight:800;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;
+  padding:14px;border-radius:12px;background:linear-gradient(135deg,#FF5C1A,#D4872A);
+  color:#fff;border:none;cursor:pointer;transition:all .2s;margin-top:4px}
+.ei-submit:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(255,92,26,.35)}
+.ei-skip{display:block;text-align:center;font-size:.74rem;color:#AAAACC;
+  margin-top:12px;cursor:pointer;text-decoration:underline}
+.ei-close{position:absolute;top:14px;right:16px;background:none;border:none;
+  font-size:1.1rem;color:#888;cursor:pointer;padding:4px 8px}
+
+/* ── STEPS 6-7 WHATSAPP SEND CTA ── */
+.mid-wa-box{background:linear-gradient(135deg,#F0FFF4,#F7FFFA);
+  border:2px solid #86EFAC;border-radius:14px;padding:15px 16px;margin-top:18px}
+.mid-wa-title{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:.92rem;
+  color:#0F0F1A;margin-bottom:3px}
+.mid-wa-sub{font-size:.74rem;color:#374151;line-height:1.5;margin-bottom:11px}
+.mid-wa-btn{display:flex;align-items:center;justify-content:center;gap:7px;
+  background:#25D366;color:#111;font-family:'Barlow Condensed',sans-serif;
+  font-weight:800;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:12px;border-radius:10px;text-decoration:none;transition:all .2s}
+.mid-wa-btn:hover{background:#22C35E;transform:translateY(-1px)}
+
+
+/* ── SOCIAL PROOF TOAST ── */
+.sp-toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);
+  background:#0F0F1A;color:#fff;border-radius:14px;padding:10px 18px;
+  font-family:'Outfit',sans-serif;font-size:.8rem;line-height:1.45;
+  box-shadow:0 4px 24px rgba(0,0,0,.28);z-index:300;max-width:320px;
+  width:calc(100% - 48px);text-align:center;opacity:0;pointer-events:none;
+  transition:opacity .3s ease,transform .3s ease}
+.sp-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.sp-toast-emoji{font-size:1.1rem;margin-right:5px}
+.sp-toast strong{color:#FFB347}
+
+</style><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://noshtours.com/#organization",
+      "name": "Nosh Tours LLP",
+      "url": "https://noshtours.com",
+      "logo": "https://noshtours.com/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-95676-32255",
+        "contactType": "customer service",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      "founder": [
+        {"@type": "Person", "name": "Aditya TG"},
+        {"@type": "Person", "name": "Akshay Manoj"}
+      ],
+      "description": "Nosh Tours LLP is a fixed-pricing luxury travel brand offering all-inclusive Asian and European group tours built from guest-chosen building blocks. No hidden charges. Backed by a 7,000+ travel entrepreneur community and 50+ in-house Nosh Brains.",
+      "numberOfEmployees": {"@type": "QuantitativeValue", "value": 50},
+      "sameAs": ["https://www.instagram.com/noshtours"]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://noshtours.com/nosh-block-builder#service",
+      "name": "Nosh Block Plan™",
+      "description": "The Nosh Block Plan is a proprietary travel planning methodology where guests select 6 core building blocks — destination, duration, accommodation, activities, meals, and transport — plus optional premium add-ons. Every combination is priced as one fixed sum with zero hidden charges.",
+      "provider": {"@id": "https://noshtours.com/#organization"},
+      "serviceType": "Luxury Travel Planning",
+      "areaServed": {"@type": "Place", "name": "India and International"},
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "INR",
+        "description": "All-inclusive fixed pricing. 30% deposit to confirm. Balance before departure. Nosh Flex Policy on all blocks.",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://noshtours.com/nosh-block-builder#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Nosh Block Plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Nosh Block Plan is Nosh Tours LLP's proprietary travel planning methodology. Instead of pre-built packages, guests select from 6 core building blocks — destination, duration, accommodation tier, activities, meal plan, and transport — plus optional premium add-ons (visa documentation, occasion planning, business travel). Every combination is priced as one fixed sum with zero hidden charges."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I change my blocks after paying the deposit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The Nosh Flex Policy™ allows changes to any block both before and after the 30% confirmation deposit, subject to availability. There are no change penalties charged by Nosh Tours. If a block change results in a price difference, a revised quote is issued and the difference is adjusted in your remaining balance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What payment methods does Nosh Tours accept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nosh Tours accepts: UPI (Google Pay, PhonePe, Paytm, BHIM) and bank transfer fee-free, credit and debit cards (Visa, Mastercard, RuPay, Amex) via Razorpay, and cryptocurrency (USDT via ERC-20 and TRC-20 networks, Ethereum, Solana). International guests can pay via Skydo (US) and Cashfree (UK) — coming soon. All pricing is in Indian Rupees. GST receipts issued within 24 hours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Nosh Tours assist with visa documentation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Visa and travel documentation assistance is available as a premium add-on block at ₹4,000. This covers tourist visas, business visas, travel insurance coordination, and country-specific documentation requirements for all Nosh destinations including Thailand, Vietnam, Uzbekistan, Kazakhstan, Japan, Europe, and Africa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the minimum deposit to confirm a Nosh Block Plan booking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The minimum deposit is 30% of the land package price under the Nosh Spark plan. This confirms your booking slot. The remaining 70% balance is due before departure. Under the Nosh Flex Policy, blocks can still be changed after the deposit with no Nosh penalty fees."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are Nosh Brains?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nosh Brains is the name for Nosh Tours LLP's 50+ in-house travel specialists who execute every trip. Each Nosh Brain manages a specific function — from accommodation sourcing and activity coordination to documentation, airport transfers, and on-ground logistics. Every Nosh Block Plan is handled end-to-end by Nosh Brains."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I plan an anniversary or birthday trip through Nosh Tours?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Occasion planning is available as a premium add-on block. Nosh Brains coordinate on-destination setups including birthday celebrations, anniversary decoration and private dining, engagement coordination, and floral and cake sourcing at the destination. This is priced as an add-on at ₹8,000 and is separate from your core itinerary blocks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Nosh Tours offer business travel planning?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Business Travel Services is a premium add-on block at ₹5,000. It covers business visa application and documentation, GST-compliant travel invoicing, corporate travel letters and itinerary documentation, business-class upgrade coordination, and conference and meeting room arrangements at the destination."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head><body>
 <header class="hdr">
   <div class="logo">NOSH<em>·</em>TOURS &nbsp;<span class="logo-tag">build your plan</span></div>
-  <div class="hdr-lang" id="langBar" role="tablist">
-    <button class="lb active" data-lang="en">EN</button>
-    <button class="lb" data-lang="hi">हिं</button>
-    <button class="lb" data-lang="kn">ಕ</button>
-    <button class="lb" data-lang="ta">த</button>
-    <button class="lb" data-lang="ml">മ</button>
-    <button class="lb" data-lang="te">తె</button>
-    <button class="lb" data-lang="mr">म</button>
-  </div>
 </header>
 <div class="prog-wrap">
   <div class="prog-steps"><div class="ps" id="ps1"></div><div class="ps" id="ps2"></div><div class="ps" id="ps3"></div><div class="ps" id="ps4"></div><div class="ps" id="ps5"></div><div class="ps" id="ps6"></div><div class="ps" id="ps7"></div><div class="ps" id="ps8"></div></div>
   <div class="prog-lbl" id="progLbl">✦ Step 1 of 8 — Pick your destination(s)</div>
 </div>
 <div class="main">
+<div class="sum-panel">
+  <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:#AAAACC;margin-bottom:12px">Your Block Plan</div>
+  <div id="sumBlocks"><div class="sp-empty">Your blocks will build here ✦</div></div>
+  <div style="margin-top:auto;padding-top:14px;border-top:1.5px solid var(--border)">
+    <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:#AAAACC;margin-bottom:4px">Est. Land Price</div>
+    <div id="sumPrice" style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:1.4rem;color:var(--o);margin-bottom:10px">₹—</div>
+    <a id="sumWA" href="#" target="_blank" rel="noopener" class="off"
+       style="display:flex;align-items:center;justify-content:center;gap:7px;background:#25D366;color:#111;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:12px;border-radius:10px;text-decoration:none;transition:opacity .2s"
+       onclick="return this.classList.contains('off')?false:true">
+      💬 Send to WhatsApp
+    </a>
+    <div style="font-size:.64rem;color:#CCCCDD;margin-top:7px;text-align:center;line-height:1.5">Complete Steps 1–3 minimum<br>to unlock WhatsApp summary</div>
+  </div>
+</div>
   <div class="builder" id="builderArea">
 <div class="step active" id="s1">
   <h1 class="sq" data-key="q1">Where are you <span class="acc">headed?</span></h1>
@@ -878,7 +1049,7 @@ img{max-width:100%;display:block}
     <button class="oc" data-block="meal" data-val="All-Inclusive" data-add="7000" onclick="pick(this)"><div class="oc-icon">🌟</div><div class="oc-name">All-Inclusive</div><div class="oc-sub">Food, drinks, snacks — everything</div><div class="oc-price">+₹7,000</div></button>
     <button class="oc" data-block="meal" data-val="Curated Dining" data-add="5500" onclick="pick(this)"><div class="oc-icon">👨‍🍳</div><div class="oc-name">Curated Dining</div><div class="oc-sub">Nosh Brains-picked restaurants</div><div class="oc-price">+₹5,500</div></button>
   </div>
-  <div class="snav"><button class="bb" onclick="goStep(4)">← Back</button><button class="bn" id="s5next" disabled onclick="goStep(6)">Select Meal Plan →</button></div>
+  <div class="snav"><button class="bb" onclick="goStep(4)">← Back</button><button class="bsk" onclick="goStep(6)">Skip →</button><button class="bn" id="s5next" disabled onclick="goStep(6)">Select Meals →</button></div>
 </div>
 <div class="step" id="s6">
   <h2 class="sq" data-key="q6">Flights &amp; <span class="acc">ground transport.</span></h2>
@@ -902,7 +1073,17 @@ img{max-width:100%;display:block}
     <button class="oc" data-block="transport" data-val="Nosh Handle Everything" data-add="15000" onclick="pick(this)"><div class="oc-icon">🛎️</div><div class="oc-name">Nosh Handles Everything</div><div class="oc-sub">Ground + flight coordination by our team</div><div class="oc-price">+₹15,000 ground</div><div class="oc-badge">Hands-Free</div></button>
     <button class="oc" data-block="transport" data-val="Land Package Only" data-add="0" onclick="pick(this)"><div class="oc-icon">🗺️</div><div class="oc-name">Land Only</div><div class="oc-sub">I'll arrange my own flights &amp; arrival</div><div class="oc-price" style="color:#4ADE80">No add-on</div></button>
   </div>
-  <div class="snav"><button class="bb" onclick="goStep(5)">← Back</button><button class="bn" id="s6next" disabled onclick="goStep(7)">Select Transport →</button></div>
+
+  <div class="mid-wa-box">
+    <div class="mid-wa-title">💬 Your plan is looking great!</div>
+    <div class="mid-wa-sub">Want our team to take a look right now? Send your current block plan to Nosh — our sales team will call you back with a personalised quote, even if you haven't finished building.</div>
+    <a id="midWA6" href="#" target="_blank" rel="noopener" class="mid-wa-btn"
+       onclick="updateMidWA('midWA6');return true">
+      📲 Send My Plan to Nosh Team on WhatsApp →
+    </a>
+  </div>
+
+  <div class="snav"><button class="bb" onclick="goStep(5)">← Back</button><button class="bsk" onclick="goStep(7)">Skip →</button><button class="bn" id="s6next" disabled onclick="goStep(7)">Select Transport →</button></div>
 </div>
 <div class="step" id="s7">
   <h2 class="sq" data-key="q7">Any <span class="acc">extras?</span></h2>
@@ -917,14 +1098,68 @@ img{max-width:100%;display:block}
     <div style="font-size:1.2rem;flex-shrink:0">🐢</div>
     <div><div style="font-family:var(--fc);font-weight:700;font-size:.72rem;letter-spacing:.07em;color:var(--c);margin-bottom:2px">Travel Insurance & Credit Cards via Turtlemint</div><div style="font-size:.72rem;color:var(--dim);line-height:1.5">Aditya Gireendran Thekkethara · 8237736711 · IRDAI Lic. 487</div></div>
   </div>
+
+  <!-- NOSH FLEX POLICY -->
+  <div style="margin:18px 0 4px;background:linear-gradient(135deg,#F0FDF4,#F7FFF9);border:2px solid #86EFAC;border-radius:14px;padding:16px 16px 14px">
+    <div style="display:flex;align-items:flex-start;gap:9px;margin-bottom:11px">
+      <span style="font-size:1.3rem;flex-shrink:0;margin-top:2px">🔒</span>
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#16A34A;margin-bottom:3px">Nosh Flex Policy™</div>
+        <div style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:1rem;color:#0F0F1A;line-height:1.25">Change your blocks.<br>Before <em>or</em> after the deposit.</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;align-items:flex-start;gap:9px">
+        <div style="width:7px;height:7px;border-radius:50%;background:#16A34A;flex-shrink:0;margin-top:5px"></div>
+        <div style="font-size:.78rem;color:#374151;line-height:1.55"><strong style="color:#0F0F1A">Before payment</strong> — Change any block freely. We re-quote instantly at no charge to you.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:9px">
+        <div style="width:7px;height:7px;border-radius:50%;background:#16A34A;flex-shrink:0;margin-top:5px"></div>
+        <div style="font-size:.78rem;color:#374151;line-height:1.55"><strong style="color:#0F0F1A">After the 30% deposit</strong> — Still fully flexible. Any block can be swapped, upgraded, or removed. Price difference adjusted in your remaining balance. Zero Nosh penalty fees.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:9px">
+        <div style="width:7px;height:7px;border-radius:50%;background:#16A34A;flex-shrink:0;margin-top:5px"></div>
+        <div style="font-size:.78rem;color:#374151;line-height:1.55"><strong style="color:#0F0F1A">30% confirms your slot</strong> — Balance due before departure. Third-party policies (airlines, hotels) disclosed upfront before ticketing.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:9px">
+        <div style="width:7px;height:7px;border-radius:50%;background:#16A34A;flex-shrink:0;margin-top:5px"></div>
+        <div style="font-size:.78rem;color:#374151;line-height:1.55"><strong style="color:#0F0F1A">Visa, Occasion &amp; Insurance add-ons</strong> can also be stacked or removed post-deposit — flexibility extends to every block.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mid-wa-box">
+    <div class="mid-wa-title">💬 Your plan is looking great!</div>
+    <div class="mid-wa-sub">Want our team to take a look right now? Send your current block plan to Nosh — our sales team will call you back with a personalised quote, even if you haven't finished building.</div>
+    <a id="midWA7" href="#" target="_blank" rel="noopener" class="mid-wa-btn"
+       onclick="updateMidWA('midWA7');return true">
+      📲 Send My Plan to Nosh Team on WhatsApp →
+    </a>
+  </div>
+
   <div class="snav"><button class="bb" onclick="goStep(6)">← Back</button><button class="bsk" onclick="goStep(8)">Skip →</button><button class="bn" onclick="goStep(8)">Continue to Payment →</button></div>
 </div>
 <div class="step" id="s8">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+    <button class="bb" onclick="goStep(7)">← Back</button>
+    <button style="background:none;border:none;cursor:pointer;font-family:var(--fz);font-size:.82rem;font-weight:700;color:var(--dim);text-decoration:underline" onclick="_exitShown=true;_origGoStep(1)">✏️ Edit from Step 1</button>
+  </div>
   <h2 class="sq">Choose your <span class="acc">payment plan.</span></h2>
   <p class="sh">Pick your payment plan, then pay fee-free — directly via UPI, QR or bank transfer. No convenience charges.</p>
-  <button style="background:none;border:none;cursor:pointer;font-family:var(--fz);font-size:.88rem;font-weight:700;color:var(--dim);text-decoration:underline;margin-bottom:16px;display:block" onclick="goStep(1)">← Edit your blocks</button>
 
   <!-- PLAN CARDS -->
+  <!-- CALL BACK CTA -->
+  <div style="text-align:center;margin-bottom:14px">
+    <a href="tel:+919567632255"
+       style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#16A34A,#15803D);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:11px 22px;border-radius:100px;text-decoration:none;box-shadow:0 3px 14px rgba(22,163,74,.3);transition:all .2s"
+       onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 5px 20px rgba(22,163,74,.4)'"
+       onmouseout="this.style.transform='';this.style.boxShadow='0 3px 14px rgba(22,163,74,.3)'"
+    >
+      📞 Call me back in 15 mins
+    </a>
+    <div style="font-size:.64rem;color:#AAAACC;margin-top:5px">Speak to a Nosh Brain before you pay — zero pressure</div>
+  </div>
+
   <div class="gst-note">All land package prices include GST &nbsp;·&nbsp; Flights priced separately on confirmation</div>
   <div class="pay-cards-grid">
     <div class="pc">
@@ -966,6 +1201,7 @@ img{max-width:100%;display:block}
         <div class="pc-name">Nosh Unfiltered</div>
         <div class="pc-amt" id="unfiltAmt" style="color:var(--o)">₹—</div>
         <div class="pc-amt-l">Full payment · nothing more</div>
+        <div style="background:rgba(255,92,26,.12);border:1px solid rgba(255,92,26,.3);border-radius:8px;padding:6px 10px;margin-top:6px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--o);text-align:center">🎁 ₹2,000 Cashback on Land Package + Gift Vouchers upto ₹5,000 for 200+ Online Brands</div>
       </div>
       <div class="pc-body">
         <div class="pp"><svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="7" fill="rgba(255,92,26,.12)" stroke="rgba(255,92,26,.4)" stroke-width="1"/><path d="M4 7.5L6 9.5L10 5.5" stroke="#FF5C1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Fully paid · nothing left to settle</div>
@@ -980,7 +1216,7 @@ img{max-width:100%;display:block}
   <!-- REFERRAL BOX -->
   <div class="ref-box" style="margin-bottom:18px">
     <div class="ref-title">🎁 Referral Rewards — Nosh Unfiltered only</div>
-    <div class="ref-text">For every <strong style="color:var(--gold)">₹1 Lakh</strong> spent by a friend, couple, or corporate client you refer on their Nosh Land Plan — you get <strong style="color:var(--gold)">₹5,000 gift vouchers</strong> straight to your email. Reshareable. Valid 12 months.</div>
+    <div class="ref-text">For every <strong style="color:var(--gold)">₹1 Lakh</strong> spent by a friend, couple, or corporate client you refer on their Nosh Land Plan — you get <strong style="color:var(--gold)">₹5,000 gift vouchers</strong> for every Nosh Purchase of ₹1L or above. Credited to your Nosh Wallet. Valid 12 months.</div>
   </div>
 
   <!-- PAYMENT SECTION — shown after plan is chosen -->
@@ -1050,23 +1286,6 @@ img{max-width:100%;display:block}
       </div>
     </div>
 
-    <!-- CRYPTO (secondary) -->
-    <div class="pay-method-box pm-dim">
-      <div class="pmb-header">
-        <span class="pmb-tag pmb-tag-dim">5% GST applicable</span>
-        <div class="pmb-title">Crypto — USDT · ETH · SOL</div>
-        <div class="pmb-sub">B2B authenticated. GOI reported. GST receipt within 24 hrs. Wallet addresses shared by our team on WhatsApp request.</div>
-      </div>
-      <div class="pmb-body" style="padding-top:10px">
-        <a id="cryptoWABtn" href="#" target="_blank" rel="noopener" class="pmb-rzp-btn" style="background:#F8F7FF;color:var(--dim);justify-content:center">
-          💬 Request Crypto Wallet on WhatsApp
-        </a>
-        <div style="font-family:var(--fc);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#CCCCDD;margin-top:8px;text-align:center">
-          🌐 Skydo International &nbsp;·&nbsp; Cashfree International &nbsp;·&nbsp; Coming Soon
-        </div>
-      </div>
-    </div>
-
     <!-- FINE PRINT -->
     <div class="fine" style="margin-top:14px">
       Land package payment confirms your booking slot. Flights are priced separately and 100% payable after Nosh presents confirmed flight rates for your travel dates. Nosh charges zero cancellation/rescheduling penalties. Airline policies disclosed before ticketing. GST receipts issued within 24 hours of payment confirmation. Standard T&C apply.
@@ -1075,7 +1294,7 @@ img{max-width:100%;display:block}
 
   <!-- Call CTA for Unfiltered -->
   <div id="callCta" style="display:none;text-align:center;margin-top:12px">
-    <a href="tel:+919567632255" style="display:inline-flex;align-items:center;gap:7px;font-family:var(--fc);font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(74,222,128,.7);padding:9px 18px;border:1px solid rgba(74,222,128,.2);border-radius:8px;text-decoration:none">
+    <a id="strideWA" id="sparkWA" href="tel:+919567632255" style="display:inline-flex;align-items:center;gap:7px;font-family:var(--fc);font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(74,222,128,.7);padding:9px 18px;border:1px solid rgba(74,222,128,.2);border-radius:8px;text-decoration:none">
       📞 Call Now — Clear your doubts instantly
     </a>
   </div>
@@ -1100,6 +1319,13 @@ function goStep(n){
   document.querySelectorAll('.step').forEach(function(s){s.classList.remove('active')});
   var t = document.getElementById('s'+n);
   if(t){t.classList.add('active');state.step=n;}
+  // Reset payment section when leaving Step 8
+  if(n!==8){
+    var ps=document.getElementById('paySection');
+    if(ps) ps.style.display='none';
+    currentPlan=null;
+    document.querySelectorAll('.pc-btn').forEach(function(b){b.classList.remove('selected-plan')});
+  }
   updateProg();
   updateSummary();
   if(n===8) updatePayAmounts();
@@ -1138,7 +1364,7 @@ function toggleDest(btn){
 function updateRouteStrip(){
   var strip = document.getElementById('routeStrip');
   strip.innerHTML = state.dests.map(function(d){
-    return '<span class="rt">'+d.val+' <span class="rt-x" onclick="removeDest(''+d.val+'')">✕</span></span>';
+    return '<span class="rt">'+d.val+' <span class="rt-x" onclick="removeDest(\''+d.val+'\')"  style="cursor:pointer">✕</span></span>';
   }).join('');
 }
 
@@ -1250,8 +1476,10 @@ function updateSummary(){
   var waUrl=buildWA('general');
   var waBtn=document.getElementById('sumWA');
   var mbWA=document.getElementById('mbWA');
-  if(showWA){waBtn.classList.remove('off');waBtn.href=waUrl;mbWA.href=waUrl;}
-  else{waBtn.classList.add('off');mbWA.href='#';}
+  if(waBtn&&mbWA){
+    if(showWA){waBtn.classList.remove('off');waBtn.href=waUrl;mbWA.href=waUrl;}
+    else{waBtn.classList.add('off');mbWA.href='#';}
+  }
 }
 
 function buildWA(plan){
@@ -1277,8 +1505,8 @@ function updatePayAmounts(){
   document.getElementById('sparkAmt').textContent=p?fmtP(Math.round(p*.30/100)*100):'₹—';
   document.getElementById('strideAmt').textContent=p?fmtP(Math.round(p*.50/100)*100):'₹—';
   document.getElementById('unfiltAmt').textContent=p?fmtP(p):'₹—';
-  document.getElementById('sparkWA').href=buildWA('spark');
-  document.getElementById('strideWA').href=buildWA('stride');
+  var swa=document.getElementById('sparkWA'); if(swa) swa.href=buildWA('spark');
+  var sdwa=document.getElementById('strideWA'); if(sdwa) sdwa.href=buildWA('stride');
   document.getElementById('sumWA').href=buildWA('general');
   document.getElementById('mbWA').href=buildWA('general');
 }
@@ -1367,7 +1595,7 @@ function selectPlan(plan, btn){
   document.getElementById('uploadProofWA').href = 'https://wa.me/919567632255?text='+encodeURIComponent(msg);
   // Crypto WA
   var cryptoMsg = 'Hi Nosh Tours! I'd like to pay via Crypto for my Nosh Block Plan.\n\nPlan: '+planName+'\nAmount: '+amtStr+'\n\nCould you please share the wallet address? Thank you!';
-  document.getElementById('cryptoWABtn').href = 'https://wa.me/919567632255?text='+encodeURIComponent(cryptoMsg);
+  var cwb=document.getElementById('cryptoWABtn'); if(cwb) cwb.href='https://wa.me/919567632255?text='+encodeURIComponent(cryptoMsg);
   // Scroll to payment section
   setTimeout(function(){document.getElementById('paySection').scrollIntoView({behavior:'smooth',block:'nearest'})},100);
 }
@@ -1390,4 +1618,195 @@ function selectPlan(plan, btn){
 
 updateProg();
 updateSummary();
-</script></body></html>
+
+// ── SOCIAL PROOF TOASTS ──────────────────────────────────
+var _toastTimer = null;
+
+var STAY_TOASTS = [
+  {e:'✨', m:'<strong>23 guests</strong> chose this stay tier for their trip last week'},
+  {e:'🔥', m:'High demand · <strong>12 bookings</strong> on this tier this month'},
+  {e:'👥', m:'<strong>8 travellers</strong> built the same stay block today'},
+  {e:'⭐', m:'Nosh Brains rated this the <strong>top pick</strong> for this destination'},
+  {e:'🌟', m:'<strong>Most popular</strong> choice among couples this season'}
+];
+
+var ACT_TOASTS = [
+  {e:'🔥', m:'<strong>5 people</strong> built this activity plan in the last 24 hours'},
+  {e:'📈', m:'This combo is <strong>trending</strong> this season'},
+  {e:'👥', m:'<strong>High demand</strong> · Guests love this activity mix'},
+  {e:'🌍', m:'One of our <strong>top-rated</strong> experiences at this destination'},
+  {e:'✨', m:'<strong>Most-picked</strong> activity by Nosh travellers this month'}
+];
+
+function showSpToast(toasts){
+  var t = toasts[Math.floor(Math.random() * toasts.length)];
+  var el = document.getElementById('spToast');
+  var emoji = document.getElementById('spToastEmoji');
+  var msg = document.getElementById('spToastMsg');
+  if(!el || !emoji || !msg) return;
+  emoji.textContent = t.e;
+  msg.innerHTML = t.m;
+  el.classList.add('show');
+  if(_toastTimer) clearTimeout(_toastTimer);
+  _toastTimer = setTimeout(function(){ el.classList.remove('show'); }, 4200);
+}
+
+// Hook into pick() and pickAct() to fire toasts on Steps 3 & 4
+var _origPick = pick;
+pick = function(btn){
+  _origPick(btn);
+  var block = btn.getAttribute('data-block');
+  if(block === 'stay') showSpToast(STAY_TOASTS);
+};
+
+var _origPickAct = pickAct;
+pickAct = function(btn){
+  _origPickAct(btn);
+  var block = btn.getAttribute('data-block');
+  if(block !== 'addon') showSpToast(ACT_TOASTS);
+};
+
+
+// ── EXIT INTENT — NOSH STORY PARTNER ─────────────────────
+var _exitShown = false;
+
+function buildSummaryText(){
+  var lines = [];
+  if(state.dests.length) lines.push('📍 '+state.dests.map(function(d){return d.val}).join(' + '));
+  if(state.dur) lines.push('📅 '+state.dur);
+  if(state.stay) lines.push('🏨 '+state.stay);
+  if(state.acts.length) lines.push('🎯 '+state.acts.join(', '));
+  if(state.meal) lines.push('🍽️ '+state.meal);
+  if(state.transport) lines.push('✈️ '+state.transport);
+  if(state.addons.length) lines.push('➕ '+state.addons.join(', '));
+  var p = calcPrice();
+  if(p) lines.push('💰 Est. '+fmtP(p)+'/person');
+  return lines.join('<br>');
+}
+
+function openExitModal(){
+  var summaryText = buildSummaryText();
+  var sb = document.getElementById('eiSummaryBox');
+  var sc = document.getElementById('eiSummaryContent');
+  if(summaryText && sb && sc){ sc.innerHTML = summaryText; sb.style.display='block'; }
+  document.getElementById('exitModal').classList.add('open');
+  document.body.style.overflow='hidden';
+  _exitShown = true;
+}
+
+function closeExitModal(){
+  document.getElementById('exitModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function submitExitForm(){
+  var name   = (document.getElementById('eiName').value||'').trim();
+  var email  = (document.getElementById('eiEmail').value||'').trim();
+  var phone  = (document.getElementById('eiPhone').value||'').trim();
+  var talent = (document.getElementById('eiTalent').value||'').trim();
+  if(!email && !phone){ alert('Please enter at least your email or WhatsApp number.'); return; }
+  var msg = 'NOSH STORY PARTNER LEAD\n\n';
+  if(name)   msg += 'Name: '+name+'\n';
+  if(email)  msg += 'Email: '+email+'\n';
+  if(phone)  msg += 'WhatsApp: '+phone+'\n';
+  if(talent) msg += 'Talent: '+talent+'\n';
+  msg += '\nBLOCK PLAN:\n';
+  if(state.dests.length) msg += 'Destinations: '+state.dests.map(function(d){return d.val}).join(' + ')+'\n';
+  if(state.dur)          msg += 'Duration: '+state.dur+'\n';
+  if(state.stay)         msg += 'Stay: '+state.stay+'\n';
+  if(state.acts.length)  msg += 'Activities: '+state.acts.join(', ')+'\n';
+  if(state.meal)         msg += 'Meals: '+state.meal+'\n';
+  if(state.transport)    msg += 'Transport: '+state.transport+'\n';
+  if(state.addons.length)msg += 'Add-ons: '+state.addons.join(', ')+'\n';
+  var p = calcPrice();
+  if(p) msg += 'Est. Land Price: '+fmtP(p)+'/person\n';
+  msg += '\n[Nosh Block Builder — Exit Lead]';
+  window.open('https://wa.me/919567632255?text='+encodeURIComponent(msg),'_blank');
+  closeExitModal();
+  var box=document.querySelector('.ei-box');
+  if(box) box.innerHTML='<div style="text-align:center;padding:40px 20px"><div style="font-size:3rem;margin-bottom:14px">🙌</div><div style="font-family:var(--fz);font-weight:800;font-size:1.2rem;color:#0F0F1A;margin-bottom:8px">You are on our radar!</div><div style="font-size:.82rem;color:#5A5A72;line-height:1.6;max-width:320px;margin:0 auto 20px">We will reach out on WhatsApp with Nosh Story Partner opportunities that match your talent. Watch this space. ✦</div><button onclick="closeExitModal()" style="background:var(--o);color:#fff;border:none;padding:12px 28px;border-radius:10px;font-family:var(--fc);font-weight:800;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer">Close</button></div>';
+}
+
+// Wrap goStep to fire modal when leaving Step 8
+var _origGoStep = goStep;
+goStep = function(n){
+  if(state.step===8 && n!==8 && !_exitShown){ _origGoStep(n); openExitModal(); }
+  else { _origGoStep(n); }
+};
+
+// Fire on tab-switch / browser back while on Step 8
+window.addEventListener('beforeunload', function(e){
+  if(state.step===8 && !_exitShown){ e.preventDefault(); e.returnValue=''; }
+});
+window.addEventListener('visibilitychange', function(){
+  if(document.visibilityState==='visible' && state.step===8 && !_exitShown){
+    setTimeout(openExitModal, 700);
+  }
+});
+
+// Update mid-journey WA button href on click
+function updateMidWA(btnId){
+  var btn=document.getElementById(btnId); if(!btn) return; btn.href=buildWA('general');
+}
+
+</script>
+
+
+
+<a id="translateHint"
+   href="https://translate.google.com/translate?hl=en&sl=en&tl=hi&u=https%3A%2F%2Fnoshtours.com%2Fnosh-block-builder"
+   target="_blank" rel="noopener"
+   style="position:fixed;bottom:80px;right:16px;z-index:150;background:#fff;
+          border:1.5px solid #E8E7F4;border-radius:100px;padding:7px 13px;
+          font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.65rem;
+          letter-spacing:.1em;text-transform:uppercase;color:#5A5A72;
+          box-shadow:0 2px 12px rgba(0,0,0,.1);text-decoration:none;
+          display:flex;align-items:center;gap:5px;transition:all .2s"
+   title="Translate this page">
+  🌐 Translate
+</a>
+<div class="mob-bar" id="mobBar">
+  <div style="display:flex;flex-direction:column">
+    <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45)">Est. Land Price</div>
+    <div id="mbPrice" style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:1.05rem;color:#fff">₹—</div>
+  </div>
+  <a id="mbWA" href="#" target="_blank" rel="noopener"
+     style="display:flex;align-items:center;gap:6px;background:#25D366;color:#111;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:10px 16px;border-radius:9px;text-decoration:none;flex-shrink:0"
+     onclick="return this.href==='#'?false:true">
+    💬 WhatsApp
+  </a>
+</div>
+
+<!-- ══ EXIT INTENT — NOSH STORY PARTNER OFFER ══ -->
+<div class="ei-overlay" id="exitModal">
+  <div class="ei-box">
+    <button class="ei-close" onclick="closeExitModal()">✕</button>
+    <div class="ei-pill">✦ Exclusive Nosh Offer</div>
+    <div class="ei-title">Before you go —<br>become a Nosh Story Partner.</div>
+    <div class="ei-sub">We sponsor <strong>stays + meals globally</strong> in exchange for your talent — photography, content creation, volunteering, or any unique skill. Leave your details and we'll reach out with opportunities that match your profile.</div>
+
+    <div class="ei-summary" id="eiSummaryBox" style="display:none">
+      <div class="ei-summary-title">📋 Your Block Plan (Saved)</div>
+      <div id="eiSummaryContent"></div>
+    </div>
+
+    <input class="ei-field" id="eiName" type="text" placeholder="Your name" autocomplete="name">
+    <input class="ei-field" id="eiEmail" type="email" placeholder="Gmail / Email address" autocomplete="email">
+    <input class="ei-field" id="eiPhone" type="tel" placeholder="WhatsApp number (with country code)" autocomplete="tel">
+    <textarea class="ei-field" id="eiTalent" rows="2" placeholder="Your talent / what you offer (photographer, chef, yoga teacher…)" style="resize:none"></textarea>
+
+    <button class="ei-submit" onclick="submitExitForm()">
+      🌍 Yes — Send Me Nosh Story Partner Opportunities →
+    </button>
+    <span class="ei-skip" onclick="closeExitModal()">No thanks, I'll pass for now</span>
+  </div>
+</div>
+
+
+<!-- ── SOCIAL PROOF TOAST ── -->
+<div class="sp-toast" id="spToast">
+  <span class="sp-toast-emoji" id="spToastEmoji">🔥</span>
+  <span id="spToastMsg">Trending this season</span>
+</div>
+
+</body></html>
