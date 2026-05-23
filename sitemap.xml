@@ -4,7 +4,7 @@
 
   <url>
     <loc>https://noshtours.com/</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en-IN" href="https://noshtours.com/"/>
@@ -15,7 +15,7 @@
 
   <url>
     <loc>https://noshtours.com/india</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="en-IN" href="https://noshtours.com/india"/>
@@ -23,7 +23,7 @@
 
   <url>
     <loc>https://noshtours.com/wellness</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="en-GB" href="https://noshtours.com/wellness"/>
@@ -31,36 +31,43 @@
   </url>
 
   <url>
+    <loc>https://noshtours.com/international</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
     <loc>https://noshtours.com/destinations</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://noshtours.com/experience</loc>
-    <lastmod>2026-05-20</lastmod>
+    <loc>https://noshtours.com/nosh-block-builder</loc>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://noshtours.com/about</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://noshtours.com/blog</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://noshtours.com/blog/kerala-ayurveda-retreat-uk-travellers-2026</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -80,15 +87,36 @@
   </url>
 
   <url>
-    <loc>https://noshtours.com/llms.txt</loc>
+    <loc>https://noshtours.com/blog/kashmir-luxury-mystery-holiday-india-2026</loc>
     <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://noshtours.com/blog/uzbekistan-luxury-tour-india-silk-road-2026</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://noshtours.com/blog/luxury-trip-gifting-templates-india-2026</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://noshtours.com/llms.txt</loc>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://noshtours.com/llms-full.txt</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

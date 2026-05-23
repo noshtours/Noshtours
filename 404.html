@@ -19,7 +19,7 @@ p{font-family:'Young Serif',serif;font-style:italic;font-size:1.1rem;color:rgba(
 .btn-home{background:var(--orange);color:var(--ink);padding:14px 32px;border:3px solid var(--cream);font-family:'Big Shoulders Text',sans-serif;font-size:.75rem;letter-spacing:.18em;text-decoration:none;}
 .btn-wa{background:var(--green);color:var(--ink);padding:14px 32px;border:3px solid var(--cream);font-family:'Big Shoulders Text',sans-serif;font-size:.75rem;letter-spacing:.18em;text-decoration:none;}
 </style>
-<script defer src="/_vercel/speed-insights/script.js"></script>
+<link rel="stylesheet" href="/mobile.css">
 </head>
 <body>
 <div class="num">404</div>
@@ -32,5 +32,32 @@ p{font-family:'Young Serif',serif;font-style:italic;font-size:1.1rem;color:rgba(
     <a href="https://wa.me/919567632255" class="btn-wa">💬 Start on WhatsApp</a>
   </div>
 </div>
+<script>
+(function(){
+  var ham=document.getElementById('navHam');
+  var nav=document.querySelector('.nav-links');
+  if(!ham||!nav)return;
+  ham.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    ham.classList.toggle('open',open);
+    ham.setAttribute('aria-expanded',open);
+    document.body.style.overflow=open?'hidden':'';
+  });
+  // Close on link click
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('open');
+      ham.classList.remove('open');
+      ham.setAttribute('aria-expanded','false');
+      document.body.style.overflow='';
+    });
+  });
+})();
+</script>
+<!-- Sticky WhatsApp — mobile only -->
+<a href="https://wa.me/919567632255?text=Hi%20Nosh%20Tours%2C%20I%27d%20like%20to%20plan%20a%20trip" 
+   class="sticky-wa" target="_blank" rel="noopener">
+  💬 &nbsp;Book via WhatsApp
+</a>
 </body>
 </html>
