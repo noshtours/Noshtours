@@ -1,76 +1,130 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+
   "rewrites": [
-    {"source": "/", "destination": "/index.html"},
-    {"source": "/destinations", "destination": "/destinations.html"},
-    {"source": "/experience", "destination": "/experience.html"},
-    {"source": "/about", "destination": "/about.html"},
-    {"source": "/blog", "destination": "/blog-listing.html"},
-    {"source": "/india", "destination": "/india.html"},
-    {"source": "/wellness", "destination": "/wellness.html"},
-    {"source": "/blog/kerala-ayurveda-retreat-uk-travellers-2026", "destination": "/kerala-ayurveda-retreat-uk-travellers-2026.html"},
-    {"source": "/blog/what-is-unscripted-travel-india", "destination": "/what-is-unscripted-travel-india.html"},
-    {"source": "/blog/gift-luxury-trip-india-2026", "destination": "/gift-luxury-trip-india-2026.html"}
+    {
+      "source": "/images/:path*",
+      "destination": "https://raw.githubusercontent.com/noshtours/Noshtours/main/images/:path*"
+    },
+
+    { "source": "/blog", "destination": "/blog-listing" },
+
+    { "source": "/blog/kerala-ayurveda-retreat-uk-travellers-2026", "destination": "/kerala-ayurveda-retreat-uk-travellers-2026" },
+    { "source": "/blog/gift-luxury-trip-india-2026",                 "destination": "/gift-luxury-trip-india-2026" },
+    { "source": "/blog/what-is-unscripted-travel-india",             "destination": "/what-is-unscripted-travel-india" },
+    { "source": "/blog/kashmir-luxury-mystery-holiday-india-2026",   "destination": "/kashmir-luxury-mystery-holiday-india-2026" },
+    { "source": "/blog/uzbekistan-luxury-tour-india-silk-road-2026", "destination": "/uzbekistan-luxury-tour-india-silk-road-2026" },
+    { "source": "/blog/luxury-trip-gifting-templates-india-2026",    "destination": "/luxury-trip-gifting-templates-india-2026" }
   ],
+
   "redirects": [
-    {"source": "/kerala-ayurveda-retreat-uk-travellers-2026", "destination": "/blog/kerala-ayurveda-retreat-uk-travellers-2026", "permanent": true},
-    {"source": "/what-is-unscripted-travel-india", "destination": "/blog/what-is-unscripted-travel-india", "permanent": true},
-    {"source": "/gift-luxury-trip-india-2026", "destination": "/blog/gift-luxury-trip-india-2026", "permanent": true},
-    {"source": "/blog-listing", "destination": "/blog", "permanent": true},
-    {"source": "/blog-listing.html", "destination": "/blog", "permanent": true}
+    { "source": "/kerala-ayurveda-retreat-uk-travellers-2026.html",  "destination": "/blog/kerala-ayurveda-retreat-uk-travellers-2026",  "permanent": true },
+    { "source": "/gift-luxury-trip-india-2026.html",                  "destination": "/blog/gift-luxury-trip-india-2026",                  "permanent": true },
+    { "source": "/what-is-unscripted-travel-india.html",              "destination": "/blog/what-is-unscripted-travel-india",              "permanent": true },
+    { "source": "/kashmir-luxury-mystery-holiday-india-2026.html",    "destination": "/blog/kashmir-luxury-mystery-holiday-india-2026",    "permanent": true },
+    { "source": "/uzbekistan-luxury-tour-india-silk-road-2026.html",  "destination": "/blog/uzbekistan-luxury-tour-india-silk-road-2026",  "permanent": true },
+    { "source": "/luxury-trip-gifting-templates-india-2026.html",     "destination": "/blog/luxury-trip-gifting-templates-india-2026",     "permanent": true },
+
+    { "source": "/home",                                       "destination": "/",                                       "permanent": true },
+    { "source": "/index.html",                                 "destination": "/",                                       "permanent": true },
+    { "source": "/about.html",                                 "destination": "/about",                                  "permanent": true },
+    { "source": "/destinations.html",                          "destination": "/destinations",                           "permanent": true },
+    { "source": "/experience",                                 "destination": "/nosh-block-builder",                     "permanent": true },
+    { "source": "/experience.html",                            "destination": "/nosh-block-builder",                     "permanent": true },
+    { "source": "/international.html",                         "destination": "/international",                          "permanent": true },
+    { "source": "/blog-listing",                               "destination": "/blog",                                   "permanent": true },
+    { "source": "/blog-listing.html",                          "destination": "/blog",                                   "permanent": true },
+    { "source": "/india.html",                                 "destination": "/india",                                  "permanent": true },
+    { "source": "/wellness.html",                              "destination": "/wellness",                               "permanent": true },
+    { "source": "/nosh-block-builder.html",                    "destination": "/nosh-block-builder",                     "permanent": true },
+
+    { "source": "/journal.html",                               "destination": "/journal",                                "permanent": true },
+    { "source": "/nosh-block-builder-international.html",      "destination": "/nosh-block-builder-international",       "permanent": true },
+    { "source": "/intl-form",                                  "destination": "/nosh-block-builder-international",       "permanent": true },
+    { "source": "/india-form",                                 "destination": "/nosh-block-builder",                     "permanent": true }
   ],
+
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        {"key": "X-Content-Type-Options", "value": "nosniff"},
-        {"key": "X-Frame-Options", "value": "SAMEORIGIN"},
-        {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
-        {"key": "Permissions-Policy", "value": "geolocation=(), camera=(), microphone=()"},
-        {"key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload"}
+        { "key": "X-Content-Type-Options",    "value": "nosniff" },
+        { "key": "X-Frame-Options",           "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy",           "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy",        "value": "geolocation=(), camera=(), microphone=()" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
+        { "key": "X-Robots-Tag",              "value": "index, follow, max-image-preview:large, max-snippet:-1" },
+        { "key": "X-XSS-Protection",          "value": "1; mode=block" }
       ]
     },
     {
       "source": "/(.*)\\.html",
       "headers": [
-        {"key": "Cache-Control", "value": "public, max-age=3600, must-revalidate"}
+        { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/nosh-block-builder",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=1800, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/nosh-block-builder-international",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=1800, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/journal",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=1800, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" },
+        { "key": "X-Robots-Tag",  "value": "all" }
       ]
     },
     {
       "source": "/logo.png",
       "headers": [
-        {"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}
-      ]
-    },
-    {
-      "source": "/llms.txt",
-      "headers": [
-        {"key": "Content-Type", "value": "text/plain; charset=utf-8"},
-        {"key": "Cache-Control", "value": "public, max-age=86400"},
-        {"key": "X-Robots-Tag", "value": "all"}
-      ]
-    },
-    {
-      "source": "/llms-full.txt",
-      "headers": [
-        {"key": "Content-Type", "value": "text/plain; charset=utf-8"},
-        {"key": "Cache-Control", "value": "public, max-age=86400"},
-        {"key": "X-Robots-Tag", "value": "all"}
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     },
     {
       "source": "/sitemap.xml",
       "headers": [
-        {"key": "Content-Type", "value": "application/xml; charset=utf-8"},
-        {"key": "Cache-Control", "value": "public, max-age=3600"}
+        { "key": "Content-Type",  "value": "application/xml; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" },
+        { "key": "X-Robots-Tag",  "value": "all" }
       ]
     },
     {
       "source": "/robots.txt",
       "headers": [
-        {"key": "Content-Type", "value": "text/plain; charset=utf-8"},
-        {"key": "Cache-Control", "value": "public, max-age=3600"}
+        { "key": "Content-Type",  "value": "text/plain; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "headers": [
+        { "key": "Content-Type",  "value": "text/plain; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=86400" },
+        { "key": "X-Robots-Tag",  "value": "all" }
+      ]
+    },
+    {
+      "source": "/llms-full.txt",
+      "headers": [
+        { "key": "Content-Type",  "value": "text/plain; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=86400" },
+        { "key": "X-Robots-Tag",  "value": "all" }
       ]
     }
   ]
