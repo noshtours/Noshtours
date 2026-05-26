@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Configure Your Canvas · Nosh Tours</title>
-<meta name="description" content="Pick your building blocks. We assemble the unscripted journey. No itinerary spoilers.">
+<title>Begin Your International Journey · Nosh Tours</title>
+<meta name="description" content="Five continents. All-inclusive. 13 Carefully Curated International Canvases. Your rules, your pace, your favourite building blocks. No itinerary spoilers please.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -84,6 +84,10 @@ input,select,textarea{font-family:inherit;font-size:16px}
   color:var(--ink);margin-bottom:12px;font-variation-settings:"opsz" 144;
 }
 .intro-title em{font-style:italic;color:var(--orange);font-weight:300}
+.intro-subhead{
+  font-family:var(--ff-body);font-weight:600;font-size:0.989rem;letter-spacing:.02em;
+  color:var(--orange-deep);margin-bottom:10px;
+}
 .intro-sub{
   font-size:.98rem;color:var(--ink-soft);line-height:1.55;max-width:540px;margin-bottom:6px;
 }
@@ -101,7 +105,7 @@ input,select,textarea{font-family:inherit;font-size:16px}
 .sel-canvas-img{
   position:absolute;inset:0;z-index:-1;
   background:linear-gradient(180deg,rgba(28,43,58,.1) 0%,rgba(28,43,58,.78) 100%),
-    url('/images/india-kashmir-card.jpg') center/cover no-repeat;
+    url('/images/hero-international.jpg') center/cover no-repeat;
 }
 .sel-canvas-body{
   margin-top:auto;padding:20px 18px;
@@ -390,10 +394,6 @@ input,select,textarea{font-family:inherit;font-size:16px}
 }
 
 
-.banner{background:var(--ink,#1C2B3A);color:var(--cream,#F4F1E8);text-align:center;padding:8px 14px;font-family:var(--ff-body,'Manrope',sans-serif);font-size:.72rem;letter-spacing:.18em;font-weight:600;border-bottom:1px solid rgba(244,241,232,.15);text-transform:uppercase}
-.banner strong{color:var(--orange,#E8951A);font-weight:800;letter-spacing:.20em;margin-right:4px}
-
-
 /* ════════ BRAND TITLE (unified) ════════ */
 .nav-brand{
   font-family:var(--ff-body, 'Manrope', sans-serif);
@@ -504,36 +504,20 @@ input,select,textarea{font-family:inherit;font-size:16px}
   text-shadow:-1px 1px 3px rgba(0,0,0,.4);
 }
 
-
-/* ════════ STANDALONE FORM — FINAL CTA SPACING ════════ */
-.form-final-cta-wrap{
-  margin-top:42px;
-  margin-bottom:48px;
-  padding-top:36px;
-  border-top:1px solid rgba(28,43,58,.10);
-}
-@media (min-width:768px){
-  .form-final-cta-wrap{
-    margin-top:56px;
-    margin-bottom:64px;
-    padding-top:44px;
-  }
-}
-
 </style>
 </head>
 <body>
 
 <div class="preview-bar">
-  <strong>PREVIEW · CANVAS LOCK FORM</strong> · sample uses The Crown (Kashmir)
+  <strong>PREVIEW · INTERNATIONAL CANVAS LOCK FORM</strong> · sample uses Bali (Indonesia)
 </div>
 
 <!-- NAV -->
 <div class="nav-wrap">
   <nav class="nav">
     <a href="noshtours_minimal_preview.html" class="nav-brand">nosh<span class="brand-dot">.</span>tours</a>
-    <a href="noshtours_destinations_preview.html" class="nav-back">
-      <span class="nav-back-arrow">←</span> Canvases
+    <a href="noshtours_international_preview.html" class="nav-back">
+      <span class="nav-back-arrow">←</span> Destinations
     </a>
     <div class="nav-spacer"></div>
     <a href="https://wa.me/919567632255" class="nav-cta" target="_blank" rel="noopener">
@@ -545,10 +529,12 @@ input,select,textarea{font-family:inherit;font-size:16px}
 
 <!-- INTRO -->
 <div class="intro-wrap">
-  <div class="banner"><strong>LAST STEP</strong> • CONFIGURE YOUR BLOCKS</div>
-  <h1 class="intro-title">Lock the <em>Canvas.</em></h1>
+  <div class="intro-eyebrow">Last Step • International Canvases</div>
+  <h1 class="intro-title">Five Continents.<br><em>All-inclusive.</em></h1>
+  <p class="intro-subhead">13 Carefully Curated International Canvases.</p>
   <p class="intro-sub">
-    Tell us how you'd like to travel. We assemble the unscripted journey around it.
+    Your Rules. Your Pace. Your Favourite Building Blocks to choose. <strong>Starts at ₹50k + flight cost per adult.</strong><br>
+    <em>No itinerary spoilers please…</em>
   </p>
 </div>
 
@@ -559,12 +545,12 @@ input,select,textarea{font-family:inherit;font-size:16px}
     <div class="sel-canvas-left">
       <span class="sel-canvas-num">
         <span class="sel-canvas-num-b">01</span>
-        <span class="sel-canvas-num-name" id="selCanvasNickname">Crown 👑 Canvas</span>
+        <span class="sel-canvas-num-name">Emerald Isle</span>
       </span>
-      <div class="sel-canvas-name" id="selCanvasName">Kashmir</div>
-      <div class="sel-canvas-region" id="selCanvasRegion">Himalayas &amp; Beyond</div>
+      <div class="sel-canvas-name">Bali, Indonesia</div>
+      <div class="sel-canvas-region">Southeast Asia · Bali</div>
     </div>
-    <a href="noshtours_destinations_preview.html" class="sel-canvas-change">change the canvas →</a>
+    <a href="noshtours_international_preview.html" class="sel-canvas-change">Change ↗</a>
   </div>
 </div>
 
@@ -737,7 +723,7 @@ input,select,textarea{font-family:inherit;font-size:16px}
         <span class="preview-label-sub">Updates as you select · This is exactly what sales receives</span>
       </div>
     </div>
-    <div class="preview-msg" id="previewMsg">Pick a few options above — the message will write itself.</div>
+    <div class="preview-msg" id="previewMsg">Pick a few options above — your brief will write itself.</div>
   </div>
 </div>
 
@@ -745,14 +731,11 @@ input,select,textarea{font-family:inherit;font-size:16px}
 
 <!-- SUBMIT -->
 <div class="submit-wrap">
-  
-  <p class="submit-fine"><em>A Travel Architect responds within an hour.</em> Trained by 10 years of travel excellence — our Nosh Brain reads every brief before a human ever does.</p>
-      <div class="form-final-cta-wrap">
-        <button type="button" class="submit-btn" onclick="lockTrip(event)">
+  <button type="button" class="submit-btn" onclick="lockTrip(event)">
     <svg viewBox="0 0 32 32"><path d="M16.003 0C7.166 0 .005 7.157.005 15.99c0 2.825.738 5.587 2.141 8.018L0 32l8.183-2.146a15.93 15.93 0 0 0 7.82 1.992h.007c8.836 0 15.997-7.156 15.997-15.989C32.007 7.157 24.846 0 16.003 0zm7.27 20.18c-.4-.2-2.366-1.168-2.732-1.301-.367-.134-.633-.2-.9.2-.266.4-1.034 1.302-1.267 1.568-.234.267-.467.3-.867.1-.4-.2-1.685-.62-3.21-1.98-1.186-1.058-1.987-2.365-2.22-2.765-.234-.4-.025-.617.175-.817.18-.18.4-.467.6-.7.2-.234.267-.4.4-.667.134-.267.067-.5-.033-.7-.1-.2-.9-2.169-1.233-2.969-.325-.78-.654-.674-.9-.687a16.06 16.06 0 0 0-.767-.014c-.267 0-.7.1-1.067.5-.367.4-1.4 1.367-1.4 3.336s1.434 3.871 1.633 4.138c.2.267 2.824 4.311 6.84 6.045.955.412 1.7.659 2.282.844.96.306 1.832.262 2.521.16.77-.115 2.366-.967 2.7-1.901.333-.934.333-1.734.234-1.901-.1-.167-.367-.267-.767-.467z"/></svg>
     Request My tour plan on WhatsApp
   </button>
-      </div>
+  <p class="submit-fine"><em>A Travel Architect responds within an hour.</em> Trained by 10 years of travel excellence — our Nosh Brain reads every brief before a human ever does.</p>
 </div>
 
 </div>
@@ -760,14 +743,20 @@ input,select,textarea{font-family:inherit;font-size:16px}
 <script>
 // CANVAS resolver
 var CANVASES = {
-  // Indian canvases only — International destinations live in noshtours_canvas_lock_form_international.html
-  'the-crown':       {num:'01', name:'The Crown',       region:'Jammu & Kashmir',       sub:'Alpine North · The Crown',           img:'/images/india-kashmir-card.jpg'},
-  'the-ridge':       {num:'02', name:'The Ridge',       region:'Himachal Pradesh',      sub:'Cedar Alpine · The Ridge',            img:'/images/india-himachal-card.jpg'},
-  'mystic-east':     {num:'03', name:'Mystic East',     region:'Sikkim & Darjeeling',   sub:'Tea Ridge · Mystic East',             img:'/images/india-sikkim-card.jpg'},
-  'living-green':    {num:'04', name:'The Living Green',region:'Assam & Meghalaya',     sub:'River Frontier · Living Green',       img:'/images/india-northeast-card.jpg'},
-  'the-forbidden':   {num:'05', name:'The Forbidden',   region:'Bhutan & Nepal',        sub:'Cross-Border · The Forbidden',        img:'/images/india-bhutan-card.jpg'},
-  'emerald-veil':    {num:'06', name:'The Emerald Veil',region:'Kerala',                sub:'Backwater South · Emerald Veil',      img:'/images/india-kerala-card.jpg'},
-  'ancient-south':   {num:'07', name:'Ancient South',   region:'Tamil Nadu',            sub:'Dravidian Coast · Ancient South',     img:'/images/india-tamilnadu-card.jpg'}
+  // International destinations only — Indian canvases live in noshtours_canvas_lock_form.html
+  'bali':            {num:'01', name:'Emerald Isle',    region:'Bali, Indonesia',       sub:'Southeast Asia · Bali',               img:'/images/intl-bali-card.jpg'},
+  'thailand':        {num:'02', name:'Golden Kingdom',  region:'Thailand',              sub:'Southeast Asia · Thailand',           img:'/images/intl-thailand-card.jpg'},
+  'vietnam':         {num:'03', name:'Jade Coast',      region:'Vietnam',               sub:'Southeast Asia · Vietnam',            img:'/images/intl-vietnam-card.jpg'},
+  'singapore':       {num:'04', name:'Garden City',     region:'Singapore',             sub:'Southeast Asia · Singapore',          img:'/images/intl-singapore-card.jpg'},
+  'malaysia':        {num:'13', name:'Truly Asia',      region:'Malaysia',              sub:'Southeast Asia · Malaysia',           img:'/images/intl-malaysia-card.jpg'},
+  'maldives':        {num:'05', name:'Overwater',       region:'Maldives',              sub:'Indian Ocean · Maldives',             img:'/images/intl-maldives-card.jpg'},
+  'sri-lanka':       {num:'06', name:'Pearl',           region:'Sri Lanka',             sub:'Indian Ocean · Sri Lanka',            img:'/images/intl-srilanka-card.jpg'},
+  'uzbekistan':      {num:'07', name:'Silk Road',       region:'Uzbekistan',            sub:'Central Asia · Uzbekistan',           img:'/images/intl-uzbekistan-card.jpg'},
+  'kazakhstan':      {num:'08', name:'Steppe & Sky',    region:'Kazakhstan',            sub:'Central Asia · Kazakhstan',           img:'/images/intl-kazakhstan-card.jpg'},
+  'japan':           {num:'09', name:'Rising Sun',      region:'Japan',                 sub:'East Asia · Japan',                   img:'/images/intl-japan-card.jpg'},
+  'switzerland':     {num:'10', name:'Alpine',          region:'Switzerland',           sub:'Europe · Switzerland',                img:'/images/intl-switzerland-card.jpg'},
+  'italy':           {num:'11', name:'La Dolce Vita',   region:'Italy',                 sub:'Europe · Italy',                      img:'/images/intl-italy-card.jpg'},
+  'france':          {num:'12', name:"L'Art de Vivre",  region:'France',                sub:'Europe · France',                     img:'/images/intl-france-card.jpg'}
 };
 
 (function applyCanvasFromURL(){
@@ -781,7 +770,7 @@ var CANVASES = {
   document.querySelector('.sel-canvas-num-name').textContent = c.name;
   document.querySelector('.sel-canvas-name').textContent = c.region;
   document.querySelector('.sel-canvas-region').textContent = c.sub;
-  document.title = c.name + ' · Configure Your Canvas · Nosh Tours';
+  document.title = c.name + ' · ' + c.region + ' · Nosh Tours';
 })();
 
 function getCanvasName(){
@@ -856,7 +845,7 @@ function buildMessage(){
   var exp      = gatherChecks('exp');
 
   var lines = [];
-  lines.push("Hi Nosh Tours! I'd like to lock my canvas.");
+  lines.push("Hi Nosh Tours! I'd like to begin my international journey.");
   lines.push("");
   lines.push("🗺  CANVAS: " + getCanvasName());
   lines.push("");
@@ -915,7 +904,7 @@ function renderPreview(){
     gatherChecks('stay').length ||
     gatherChecks('exp').length;
   if(!anySelection){
-    el.textContent = 'Pick a few options above — the message will write itself.';
+    el.textContent = 'Pick a few options above — your brief will write itself.';
     return;
   }
   el.textContent = msg;

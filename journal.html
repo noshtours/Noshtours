@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<title>Journal · The Nosh Tours Magazine | Travel Philosophy, Behind-the-Canvases, Community</title>
+<meta name="description" content="Long-form stories from inside Nosh Tours. Destination guides, the philosophy of no itinerary spoilers, behind-the-canvas dispatches, community letters.">
+<link rel="canonical" href="https://noshtours.com/blog">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#F4F1E8;--cream-deep:#E8E2D0;--paper:#FAF7EE;--white:#FFFFFF;
+  --sage:#9CAC8C;--sage-deep:#7E8E70;--sage-soft:#C5CFB8;
+  --orange:#E8951A;--orange-deep:#C97A0E;--orange-tint:#FEE8C6;
+  --forest:#2D3D2A;--ink:#1C2B3A;--ink-soft:#4A5562;--ink-mute:#8B96A3;
+  --wa:#25D366;--gold-deep:#3D2A05;
+  --r-card:16px;--r-pill:999px;--r-btn:14px;
+  --shadow-card:0 1px 0 rgba(28,43,58,.04), 0 12px 32px -8px rgba(28,43,58,.10);
+  --shadow-elev:0 4px 12px rgba(28,43,58,.08), 0 20px 56px -12px rgba(28,43,58,.18);
+  --ff-display:'Fraunces',Georgia,serif;
+  --ff-body:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+html,body{background:var(--cream);color:var(--ink);font-family:var(--ff-body);font-weight:400;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+a{text-decoration:none;color:inherit;-webkit-tap-highlight-color:transparent}
+button{font-family:inherit;border:none;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+img{display:block;max-width:100%}
+
+.banner{background:var(--ink);color:var(--cream);text-align:center;padding:6px 14px;font-size:.7rem;letter-spacing:.08em;font-weight:600;border-bottom:1px solid rgba(244,241,232,.15)}
+.banner strong{color:var(--orange);font-weight:800;letter-spacing:.12em}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;padding:12px 14px;background:transparent}
+.nav-inner{background:rgba(244,241,232,.78);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border:1px solid rgba(28,43,58,.06);border-radius:var(--r-pill);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:var(--shadow-card)}
+.nav-brand{font-family:var(--ff-display);font-weight:400;font-size:1.1rem;font-style:italic;color:var(--ink);font-variation-settings:"opsz" 144}
+.nav-brand b{font-weight:600;font-style:normal;color:var(--orange)}
+.nav-wa{background:var(--ink);color:var(--cream);padding:9px 16px;border-radius:var(--r-pill);font-weight:700;font-size:.74rem;letter-spacing:.04em;display:inline-flex;align-items:center;gap:6px;min-height:38px}
+.nav-wa::before{content:'';width:6px;height:6px;background:var(--wa);border-radius:50%;box-shadow:0 0 8px var(--wa);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+
+/* MASTHEAD */
+.masthead{padding:36px 14px 28px;position:relative;border-bottom:1px solid var(--cream-deep)}
+.masthead-row{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:18px}
+.mh-left{display:flex;flex-direction:column;gap:6px}
+.mh-eye{font-family:var(--ff-body);font-weight:600;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-deep);display:flex;align-items:center;gap:10px}
+.mh-eye::before{content:'';width:24px;height:1px;background:var(--orange)}
+.mh-title{font-family:var(--ff-display);font-weight:400;font-size:clamp(3rem,12vw,5.5rem);line-height:.88;letter-spacing:-.028em;color:var(--ink);font-variation-settings:"opsz" 144}
+.mh-title em{font-style:italic;color:var(--orange);font-weight:300}
+.mh-meta{font-family:var(--ff-body);font-weight:500;font-size:.78rem;color:var(--ink-mute);text-align:right;line-height:1.4}
+.mh-meta b{color:var(--ink);font-weight:700;display:block;font-size:.86rem}
+.mh-tagline{font-family:var(--ff-display);font-style:italic;font-weight:400;font-size:clamp(1rem,3.5vw,1.3rem);line-height:1.4;color:var(--ink-soft);max-width:680px;margin-top:8px;font-variation-settings:"opsz" 144}
+
+/* CATEGORY PILLS */
+.cats{padding:18px 14px 0;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cats::-webkit-scrollbar{display:none}
+.cat-pill{
+  flex-shrink:0;
+  background:var(--white);
+  border:1.5px solid var(--cream-deep);
+  border-radius:var(--r-pill);
+  padding:9px 16px;
+  font-family:var(--ff-body);
+  font-weight:600;
+  font-size:.82rem;
+  color:var(--ink);
+  min-height:38px;
+  display:inline-flex;
+  align-items:center;
+  white-space:nowrap;
+  cursor:pointer;
+  transition:background .2s,border-color .2s,color .2s;
+}
+.cat-pill.active{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+.cat-pill:hover:not(.active){border-color:var(--orange);color:var(--orange-deep)}
+.cat-pill b{margin-left:6px;font-weight:600;opacity:.6;font-size:.74rem}
+
+/* FEATURED COVER */
+.featured{padding:30px 14px 50px;position:relative}
+.feat-card{
+  position:relative;
+  border-radius:var(--r-card);
+  overflow:hidden;
+  background:var(--ink);
+  min-height:560px;
+  isolation:isolate;
+  display:flex;
+  flex-direction:column;
+  will-change:transform;
+}
+.feat-img{
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background-size:cover;
+  background-position:center;
+  will-change:transform;
+  background-image:url('/images/india-rajasthan-card.jpg');
+}
+.feat-img::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(28,43,58,.10) 30%,rgba(28,43,58,.92) 100%);
+}
+.feat-tag{
+  position:absolute;
+  top:20px;left:20px;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:var(--orange);
+  color:var(--ink);
+  padding:6px 12px;
+  border-radius:var(--r-pill);
+  font-family:var(--ff-body);
+  font-weight:800;
+  font-size:.66rem;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  z-index:3;
+  box-shadow:0 4px 12px rgba(232,149,26,.4);
+}
+.feat-tag::before{content:'★';font-size:.9rem}
+.feat-body{margin-top:auto;padding:30px 22px;position:relative;z-index:2}
+.feat-cat{font-family:var(--ff-body);font-weight:700;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+.feat-h{font-family:var(--ff-display);font-weight:400;font-size:clamp(1.7rem,6.5vw,2.6rem);line-height:1.05;letter-spacing:-.022em;color:var(--cream);margin-bottom:14px;font-variation-settings:"opsz" 144;will-change:transform,opacity}
+.feat-h em{font-style:italic;color:var(--orange);font-weight:300}
+.feat-dek{font-family:var(--ff-display);font-style:italic;font-weight:400;font-size:clamp(.96rem,3vw,1.1rem);line-height:1.5;color:rgba(244,241,232,.88);max-width:560px;margin-bottom:20px;font-variation-settings:"opsz" 144}
+.feat-meta{display:flex;align-items:center;gap:12px;font-family:var(--ff-body);font-weight:600;font-size:.78rem;color:rgba(244,241,232,.78)}
+.feat-meta-dot{width:4px;height:4px;background:var(--orange);border-radius:50%}
+.feat-cta{margin-top:18px;display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-body);font-weight:700;font-size:.88rem;color:var(--cream);border-bottom:2px solid var(--orange);padding-bottom:3px;align-self:flex-start}
+
+/* ARTICLES GRID */
+.articles{padding:30px 14px 50px}
+.art-grid{display:grid;grid-template-columns:1fr;gap:24px}
+.art-card{
+  display:block;
+  cursor:pointer;
+  position:relative;
+  will-change:transform,opacity;
+  transition:transform .3s cubic-bezier(.4,0,.2,1);
+}
+.art-card:active{transform:scale(.985)}
+.art-img-wrap{
+  position:relative;
+  border-radius:var(--r-card);
+  overflow:hidden;
+  aspect-ratio:4/3;
+  margin-bottom:14px;
+  background:var(--cream-deep);
+}
+.art-img{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  transition:transform .55s cubic-bezier(.2,0,.2,1);
+  will-change:transform;
+}
+.art-card:hover .art-img{transform:scale(1.06)}
+.art-cat-pill{
+  position:absolute;
+  top:14px;left:14px;
+  background:rgba(244,241,232,.94);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  color:var(--ink);
+  padding:5px 11px;
+  border-radius:var(--r-pill);
+  font-family:var(--ff-body);
+  font-weight:700;
+  font-size:0.759rem;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  z-index:2;
+}
+.art-h{font-family:var(--ff-display);font-weight:400;font-size:clamp(1.3rem,5vw,1.65rem);line-height:1.12;letter-spacing:-.018em;color:var(--ink);margin-bottom:8px;font-variation-settings:"opsz" 144}
+.art-h em{font-style:italic;color:var(--orange);font-weight:300}
+.art-dek{font-family:var(--ff-body);font-size:.92rem;color:var(--ink-soft);line-height:1.55;margin-bottom:10px}
+.art-meta{display:flex;align-items:center;gap:8px;font-family:var(--ff-body);font-weight:600;font-size:.72rem;color:var(--ink-mute);letter-spacing:.02em}
+.art-meta-dot{width:3px;height:3px;background:var(--ink-mute);border-radius:50%}
+.art-card.hidden{display:none}
+
+/* QUOTE BREAK */
+.quote-break{padding:60px 14px;background:var(--forest);color:var(--cream);position:relative;text-align:center;overflow:hidden}
+.quote-break::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(232,149,26,.15),transparent 60%);pointer-events:none}
+.qb-mark{font-family:var(--ff-display);font-style:italic;font-size:5rem;color:var(--orange);line-height:1;font-weight:300;opacity:.7;font-variation-settings:"opsz" 144}
+.qb-text{
+  font-family:var(--ff-display);
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(1.4rem,5vw,2.2rem);
+  line-height:1.4;
+  color:var(--cream);
+  letter-spacing:-.014em;
+  max-width:780px;
+  margin:0 auto;
+  position:relative;
+  z-index:2;
+  font-variation-settings:"opsz" 144;
+}
+.qb-text em{color:var(--orange);font-style:italic}
+.qb-byline{margin-top:20px;font-family:var(--ff-body);font-weight:700;font-size:.82rem;color:var(--cream);letter-spacing:.04em;position:relative;z-index:2}
+.qb-meta{font-family:var(--ff-body);font-size:.72rem;color:rgba(244,241,232,.6);letter-spacing:.06em;margin-top:4px;position:relative;z-index:2}
+
+/* NEWSLETTER */
+.newsletter{padding:60px 14px 40px;background:linear-gradient(135deg,var(--orange-tint) 0%,var(--cream-deep) 100%);text-align:center;position:relative;overflow:hidden}
+.newsletter::before{content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(232,149,26,.25),transparent 70%);pointer-events:none}
+.nl-eye{font-family:var(--ff-body);font-weight:600;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:14px;display:flex;align-items:center;gap:10px;justify-content:center}
+.nl-eye::before,.nl-eye::after{content:'';width:24px;height:1px;background:var(--orange)}
+.nl-h{font-family:var(--ff-display);font-weight:400;font-size:clamp(1.9rem,7vw,2.6rem);line-height:1.04;color:var(--ink);margin-bottom:10px;letter-spacing:-.022em;font-variation-settings:"opsz" 144}
+.nl-h em{font-style:italic;color:var(--orange-deep);font-weight:300}
+.nl-s{font-family:var(--ff-body);font-size:.96rem;color:var(--ink-soft);max-width:480px;margin:0 auto 26px;line-height:1.55}
+.nl-form{display:flex;flex-direction:column;gap:10px;max-width:440px;margin:0 auto}
+.nl-input{
+  width:100%;
+  background:var(--white);
+  border:1.5px solid var(--cream-deep);
+  border-radius:var(--r-btn);
+  padding:14px 18px;
+  font-family:var(--ff-body);
+  font-weight:500;
+  font-size:16px;
+  color:var(--ink);
+  min-height:50px;
+  transition:border-color .25s,transform .25s,box-shadow .25s;
+}
+.nl-input:focus{outline:none;border-color:var(--orange);transform:translateY(-1px);box-shadow:0 6px 18px rgba(232,149,26,.18)}
+.nl-btn{
+  background:var(--ink);
+  color:var(--cream);
+  border-radius:var(--r-btn);
+  padding:14px 24px;
+  font-family:var(--ff-body);
+  font-weight:700;
+  font-size:.92rem;
+  min-height:50px;
+  cursor:pointer;
+}
+.nl-fine{margin-top:10px;font-family:var(--ff-body);font-size:.76rem;color:var(--ink-mute)}
+
+/* DOORWAYS */
+.doorway-wrap{padding:40px 14px 20px}
+.doorway-eye{font-family:var(--ff-body);font-weight:600;font-size:0.805rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.doorway-eye::before{content:'';width:24px;height:1px;background:var(--orange)}
+.doorway{display:block;position:relative;border-radius:var(--r-card);overflow:hidden;background:var(--ink);min-height:240px;box-shadow:var(--shadow-card);margin-bottom:14px;isolation:isolate}
+.doorway-img{position:absolute;inset:0;z-index:-1;background-size:cover;background-position:center}
+.doorway-img::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(28,43,58,.30) 0%,rgba(28,43,58,.90) 100%)}
+.doorway-body{padding:22px;display:flex;flex-direction:column;justify-content:flex-end;min-height:240px;position:relative;z-index:2}
+.doorway-tag{font-family:var(--ff-body);font-weight:600;font-size:0.759rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
+.doorway-t{font-family:var(--ff-display);font-weight:400;font-size:clamp(1.6rem,6vw,2.2rem);line-height:1;color:var(--cream);margin-bottom:8px}
+.doorway-t em{font-style:italic;color:var(--orange);font-weight:300}
+.doorway-s{font-family:var(--ff-body);font-size:1.012rem;color:rgba(244,241,232,.78);max-width:480px;margin-bottom:14px;line-height:1.5}
+.doorway-cta{display:inline-flex;background:var(--orange);color:var(--ink);padding:11px 20px;border-radius:var(--r-pill);font-weight:700;font-size:.82rem;align-self:flex-start;box-shadow:0 6px 18px rgba(232,149,26,.32);min-height:42px;align-items:center;gap:5px}
+.doorway-dual{display:grid;grid-template-columns:1fr;gap:14px}
+
+/* FAB */
+.fab{position:fixed;right:14px;bottom:max(14px,calc(env(safe-area-inset-bottom)+10px));z-index:60;background:var(--wa);width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(37,211,102,.45)}
+.fab svg{width:24px;height:24px;fill:var(--ink)}
+
+@media(min-width:768px){
+  .masthead,.featured,.articles,.cats,.doorway-wrap,.newsletter{max-width:1200px;margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px}
+  .feat-card{min-height:620px}
+  .feat-body{padding:50px 40px}
+  .art-grid{grid-template-columns:1fr 1fr 1fr;gap:30px}
+  .nl-form{flex-direction:row;gap:8px}
+  .nl-input{flex:1}
+  .doorway-dual{grid-template-columns:1fr 1fr;gap:18px}
+}
+
+/* ════════ UNIFIED SITE FOOTER ════════ */
+.site-footer{padding:40px 14px 32px;text-align:center;background:var(--cream);padding-bottom:max(40px,calc(env(safe-area-inset-bottom)+40px))}
+.site-footer-cta{display:flex;align-items:center;justify-content:center;gap:12px;background:#9CAC8C;color:#3D2A05;font-family:var(--ff-body);font-weight:800;font-size:1rem;height:60px;border-radius:14px;margin:0 auto 26px;max-width:520px;box-shadow:0 8px 24px rgba(125,142,113,.32);text-decoration:none;padding:0 22px}
+.site-footer-cta svg{width:22px;height:22px;fill:#3D2A05}
+.site-footer-prose{font-family:var(--ff-body);font-size:.92rem;line-height:1.6;color:var(--ink-soft);max-width:540px;margin:0 auto 14px}
+.site-footer-prose strong{font-weight:700;color:var(--ink)}
+.site-footer-italic{font-family:var(--ff-display);font-style:italic;font-weight:500;font-size:.95rem;line-height:1.55;color:var(--ink);max-width:500px;margin:0 auto 32px;font-variation-settings:"opsz" 144}
+.site-footer-made{font-family:var(--ff-body);font-weight:700;font-size:.92rem;color:var(--ink);margin-bottom:6px;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap}
+.site-footer-made-peace{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#A875E2;border-radius:50%;color:#fff;font-size:.9rem}
+.site-footer-copy{font-family:var(--ff-body);font-size:.82rem;color:var(--ink-mute)}
+@media(min-width:768px){.site-footer{padding:56px 24px 44px}.site-footer-cta{font-size:1.05rem;max-width:560px}}
+</style>
+</head>
+<body>
+
+<div class="banner"><strong>PREVIEW · JOURNAL v1</strong> · GSAP magazine flow · featured cover parallax · category filter</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="noshtours_minimal_preview.html" class="nav-brand">nosh<b>.</b>tours</a>
+    <a href="https://wa.me/919567632255?text=Hi%20Nosh%2C%20I%20read%20your%20journal" class="nav-wa">WhatsApp</a>
+  </div>
+</nav>
+
+<!-- MASTHEAD -->
+<section class="masthead">
+  <div class="masthead-row">
+    <div class="mh-left">
+      <div class="mh-eye">The Nosh Tours Magazine</div>
+      <h1 class="mh-title">Jour<em>nal.</em></h1>
+    </div>
+    <div class="mh-meta">
+      <b>Issue 04</b>
+      May 2026<br>
+      24 stories live
+    </div>
+  </div>
+  <p class="mh-tagline">Long-form writing on travel that doesn't read like brochures. Destination dispatches, the philosophy behind no itinerary spoilers, behind-the-canvas operations, and letters from our 7,000-strong community.</p>
+</section>
+
+<!-- CATEGORY PILLS -->
+<div class="cats" id="catTrack">
+  <button class="cat-pill active" data-cat="all">All <b>24</b></button>
+  <button class="cat-pill" data-cat="destinations">Destinations <b>9</b></button>
+  <button class="cat-pill" data-cat="philosophy">Philosophy <b>6</b></button>
+  <button class="cat-pill" data-cat="behind">Behind the canvases <b>5</b></button>
+  <button class="cat-pill" data-cat="community">Community <b>4</b></button>
+</div>
+
+<!-- FEATURED COVER STORY -->
+<section class="featured">
+  <article class="feat-card">
+    <div class="feat-img" id="featImg"></div>
+    <span class="feat-tag">Cover Story</span>
+    <div class="feat-body">
+      <div class="feat-cat">Philosophy</div>
+      <h2 class="feat-h" id="featH">Why we'll never <em>send you an itinerary</em> again.</h2>
+      <p class="feat-dek">The day we deleted the day-by-day was the day our bookings tripled. A 2,800-word essay on why the building-blocks model is the only honest way to sell travel.</p>
+      <div class="feat-meta">
+        <span>Aditya TG</span>
+        <span class="feat-meta-dot"></span>
+        <span>11 min read</span>
+        <span class="feat-meta-dot"></span>
+        <span>May 18, 2026</span>
+      </div>
+      <span class="feat-cta">Read the cover story →</span>
+    </div>
+  </article>
+</section>
+
+<!-- ARTICLES GRID -->
+<section class="articles">
+  <div class="art-grid" id="artGrid">
+
+    <a class="art-card" data-art-cat="destinations">
+      <div class="art-img-wrap"><div class="art-img" style="background-image:url('/images/hero-india.jpg')"></div><span class="art-cat-pill">Destinations</span></div>
+      <h3 class="art-h">Why Kashmir is best in <em>September</em>, not May.</h3>
+      <p class="art-dek">The under-the-radar weeks when the day-trippers thin and the saffron fields are still gold.</p>
+      <div class="art-meta"><span>Akshay Manoj</span><span class="art-meta-dot"></span><span>6 min</span><span class="art-meta-dot"></span><span>May 12</span></div>
+    </a>
+
+    <a class="art-card" data-art-cat="philosophy">
+      <div class="art-img-wrap"><div class="art-img" style="background-image:url('/images/blog-philosophy.jpg')"></div><span class="art-cat-pill">Philosophy</span></div>
+      <h3 class="art-h">Fixed pricing isn't a feature. It's a <em>worldview.</em></h3>
+      <p class="art-dek">What happens to a travel business when you remove every reason to negotiate.</p>
+      <div class="art-meta"><span>Aditya TG</span><span class="art-meta-dot"></span><span>8 min</span><span class="art-meta-dot"></span><span>May 06</span></div>
+    </a>
+
+    <a class="art-card" data-art-cat="behind">
+      <div class="art-img-wrap"><div class="art-img" style="background-image:url('/images/blog-behind-scenes.jpg')"></div><span class="art-cat-pill">Behind</span></div>
+      <h3 class="art-h">The 3am text. The flight reroute. <em>One Nosh Brain's</em> Tuesday.</h3>
+      <p class="art-dek">An anonymous day-in-the-life from the support desk that owns your trip.</p>
+      <div class="art-meta"><span>Nosh Brain</span><span class="art-meta-dot"></span><span>5 min</span><span class="art-meta-dot"></span><span>Apr 29</span></div>
+    </a>
+
+    <a class="art-card" data-art-cat="community">
+      <div class="art-img-wrap"><div class="art-img" style="background-image:url('/images/blog-community.jpg')"></div><span class="art-cat-pill">Community</span></div>
+      <h3 class="art-h">What 7,000 travel entrepreneurs <em>actually do</em> at our meetups.</h3>
+      <p class="art-dek">Closed-door sessions, agreements not to pitch, and the most generous Slack channel in Indian travel.</p>
+      <div class="art-meta"><span>Community Desk</span><span class="art-meta-dot"></span><span>4 min</span><span class="art-meta-dot"></span><span>Apr 24</span></div>
+    </a>
+
+    <a class="art-card" data-art-cat="destinations">
+      <div class="art-img-wrap"><div class="art-img" style="background-image:url('/images/hero-international.jpg')"></div><span class="art-cat-pill">Destinations</span></div>
+      <h3 class="art-h">Bali, but not the parts <em>you've already seen.</em></h3>
+      <p class="art-dek">Sidemen, Munduk, Amed — the canvases we send guests to once they've done Ubud.</p>
+      <div class="art-meta"><span>Trip Architects</span><span class="art-meta-dot"></span><span>7 min</span><span class="art-meta-dot"></span><span>Apr 19</span></div>
+    </a>
+
+    <a class="art-card" data-art-cat="philosophy">
+      <div class="art-img-wrap"><div class="art-img" style="background-image:url('/images/blog-philosophy-2.jpg')"></div><span class="art-cat-pill">Philosophy</span></div>
+      <h3 class="art-h">The case <em>against</em> the curated itinerary PDF.</h3>
+      <p class="art-dek">Why 24-page proposals are a failure of nerve — not a sign of effort.</p>
+      <div class="art-meta"><span>Aditya TG</span><span class="art-meta-dot"></span><span>9 min</span><span class="art-meta-dot"></span><span>Apr 11</span></div>
+    </a>
+
+    <a class="art-card" data-art-cat="behind">
+      <div class="art-img-wrap"><div class="art-img" style="background-image:url('/images/india-kerala-card.jpg')"></div><span class="art-cat-pill">Behind</span></div>
+      <h3 class="art-h">How a Kerala houseboat <em>actually</em> gets blocked.</h3>
+      <p class="art-dek">Six months out. A WhatsApp to a vaidya in Alleppey. The full process, unredacted.</p>
+      <div class="art-meta"><span>Stay Scouts</span><span class="art-meta-dot"></span><span>4 min</span><span class="art-meta-dot"></span><span>Apr 04</span></div>
+    </a>
+
+    <a class="art-card" data-art-cat="community">
+      <div class="art-img-wrap"><div class="art-img" style="background-image:url('/images/blog-community-2.jpg')"></div><span class="art-cat-pill">Community</span></div>
+      <h3 class="art-h">A letter from a member who <em>copied us.</em></h3>
+      <p class="art-dek">She rebuilt her travel agency on fixed pricing. Six months in, her revenue doubled. She wrote to thank us.</p>
+      <div class="art-meta"><span>Community Desk</span><span class="art-meta-dot"></span><span>3 min</span><span class="art-meta-dot"></span><span>Mar 27</span></div>
+    </a>
+
+    <a class="art-card" data-art-cat="destinations">
+      <div class="art-img-wrap"><div class="art-img" style="background-image:url('/images/india-rajasthan-card.jpg')"></div><span class="art-cat-pill">Destinations</span></div>
+      <h3 class="art-h">Maldives without the <em>overwater villa</em>.</h3>
+      <p class="art-dek">Local-island stays, dolphin dhonis, and the budget you didn't know existed.</p>
+      <div class="art-meta"><span>Trip Architects</span><span class="art-meta-dot"></span><span>6 min</span><span class="art-meta-dot"></span><span>Mar 20</span></div>
+    </a>
+
+  </div>
+</section>
+
+<!-- QUOTE BREAK -->
+<section class="quote-break">
+  <div class="qb-mark">"</div>
+  <p class="qb-text" id="qbText">A canvas is a place with a soul, not a list of stops. Once we accepted that, our writing changed. Our pricing changed. Our customers changed.</p>
+  <div class="qb-byline">— From "Why We Named Them"</div>
+  <div class="qb-meta">Issue 02 · Editor's Letter</div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="nl-eye">The Nosh Dispatch · Twice monthly</div>
+  <h2 class="nl-h">One letter. <em>No newsletter clichés.</em></h2>
+  <p class="nl-s">A single piece of long-form writing, every other Sunday. Either an essay, a destination dispatch, or a behind-the-canvas. Never a list.</p>
+  <form class="nl-form" onsubmit="event.preventDefault(); alert('Thanks — we will be in touch.')">
+    <input type="email" class="nl-input" placeholder="your.email@example.com" required>
+    <button type="submit" class="nl-btn">Subscribe →</button>
+  </form>
+  <p class="nl-fine">Free. Unsubscribe whenever. We don't sell lists.</p>
+</section>
+
+<!-- DOORWAYS -->
+<section class="doorway-wrap">
+  <div class="doorway-eye">Done reading? Start picking.</div>
+  <div class="doorway-dual">
+    <a class="doorway" href="noshtours_india_preview.html">
+      <div class="doorway-img" style="background-image:url('/images/hero-india.jpg')"></div>
+      <div class="doorway-body">
+        <div class="doorway-tag">Doorway to</div>
+        <h2 class="doorway-t">India <em>Canvases.</em></h2>
+        <p class="doorway-s">7 Indian canvases. Kashmir to Kerala.</p>
+        <span class="doorway-cta">Enter India →</span>
+      </div>
+    </a>
+    <a class="doorway" href="noshtours_international_preview.html">
+      <div class="doorway-img" style="background-image:url('/images/hero-international.jpg')"></div>
+      <div class="doorway-body">
+        <div class="doorway-tag">Doorway to</div>
+        <h2 class="doorway-t">International <em>Tours.</em></h2>
+        <p class="doorway-s">13 international canvases. Five continents.</p>
+        <span class="doorway-cta">Enter International →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<a href="https://wa.me/919567632255" class="fab" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16.003 0C7.166 0 .005 7.157.005 15.99c0 2.825.738 5.587 2.141 8.018L0 32l8.183-2.146a15.93 15.93 0 0 0 7.82 1.992h.007c8.836 0 15.997-7.156 15.997-15.989C32.007 7.157 24.846 0 16.003 0z"/></svg>
+</a>
+
+<!-- UNIFIED SITE FOOTER -->
+<footer class="site-footer">
+  <a href="https://wa.me/919567632255?text=Hi%20Nosh%20Tours%21%20I%27d%20like%20to%20request%20my%20tour%20plan." class="site-footer-cta" target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.003 0C7.166 0 .005 7.157.005 15.99c0 2.825.738 5.587 2.141 8.018L0 32l8.183-2.146a15.93 15.93 0 0 0 7.82 1.992h.007c8.836 0 15.997-7.156 15.997-15.989C32.007 7.157 24.846 0 16.003 0zm7.27 20.18c-.4-.2-2.366-1.168-2.732-1.301-.367-.134-.633-.2-.9.2-.266.4-1.034 1.302-1.267 1.568-.234.267-.467.3-.867.1-.4-.2-1.685-.62-3.21-1.98-1.186-1.058-1.987-2.365-2.22-2.765-.234-.4-.025-.617.175-.817.18-.18.4-.467.6-.7.2-.234.267-.4.4-.667.134-.267.067-.5-.033-.7-.1-.2-.9-2.169-1.233-2.969-.325-.78-.654-.674-.9-.687a16.06 16.06 0 0 0-.767-.014c-.267 0-.7.1-1.067.5-.367.4-1.4 1.367-1.4 3.336s1.434 3.871 1.633 4.138c.2.267 2.824 4.311 6.84 6.045.955.412 1.7.659 2.282.844.96.306 1.832.262 2.521.16.77-.115 2.366-.967 2.7-1.901.333-.934.333-1.734.234-1.901-.1-.167-.367-.267-.767-.467z"/></svg>
+    Request My tour plan on WhatsApp
+  </a>
+  <p class="site-footer-prose"><strong>Awarded Travel Architects.</strong> Enquire everything you need to know with our <strong>Nosh Brain (beyond AI)</strong> — trained on 10 years of travel excellence around the globe.</p>
+  <p class="site-footer-italic">A Travel Architect responds on WhatsApp within an hour after you&rsquo;ve spoken to our Nosh Brain.</p>
+  <div class="site-footer-made">Made with <span class="site-footer-made-peace">☮</span> at Mumbai, Maharashtra 🇮🇳</div>
+  <div class="site-footer-copy">© 2026 Nosh Tours LLP · All canvases reserved</div>
+</footer>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+// ─── FEATURED COVER: parallax image + headline reveal ───
+gsap.to('#featImg', {
+  y: 60, scale: 1.08,
+  ease: 'none',
+  scrollTrigger: {
+    trigger: '.feat-card',
+    start: 'top bottom',
+    end: 'bottom top',
+    scrub: true
+  }
+});
+
+gsap.from('#featH', {
+  y: 30, opacity: 0, duration: .9, ease: 'power3.out', delay: .2
+});
+
+// ─── ARTICLE CARDS: stagger fade-in on scroll ───
+gsap.utils.toArray('.art-card').forEach(function(card, i){
+  gsap.from(card, {
+    y: 40, opacity: 0, duration: .7, ease: 'power3.out',
+    scrollTrigger: { trigger: card, start: 'top 88%' }
+  });
+});
+
+// ─── CATEGORY FILTER with FLIP-like animation ───
+var pills = document.querySelectorAll('.cat-pill');
+var cards = document.querySelectorAll('.art-card');
+
+pills.forEach(function(pill){
+  pill.addEventListener('click', function(){
+    pills.forEach(function(p){ p.classList.remove('active'); });
+    pill.classList.add('active');
+    var cat = pill.dataset.cat;
+
+    // Animate out
+    gsap.to(cards, {
+      opacity: 0, y: 10, duration: .25, ease: 'power2.in', stagger: .02,
+      onComplete: function(){
+        // Hide/show based on category
+        cards.forEach(function(card){
+          if(cat === 'all' || card.dataset.artCat === cat){
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+        // Animate in visible cards
+        var visible = Array.from(cards).filter(function(c){ return !c.classList.contains('hidden'); });
+        gsap.to(visible, {
+          opacity: 1, y: 0, duration: .5, ease: 'power3.out', stagger: .05
+        });
+      }
+    });
+  });
+});
+
+// ─── QUOTE BREAK: word-by-word reveal as you scroll through ───
+(function(){
+  var el = document.getElementById('qbText');
+  if(!el) return;
+  var html = el.innerHTML;
+  // Split into words
+  var temp = document.createElement('div');
+  temp.innerHTML = html;
+  var result = '';
+  temp.childNodes.forEach(function(node){
+    if(node.nodeType === 3){
+      result += node.textContent.split(/\s+/).filter(Boolean).map(function(w){
+        return '<span class="qb-word" style="display:inline-block;opacity:.2;margin-right:.22em">'+w+'</span>';
+      }).join(' ');
+    } else if(node.nodeType === 1){
+      var inner = node.textContent.split(/\s+/).filter(Boolean).map(function(w){
+        return '<span class="qb-word" style="display:inline-block;opacity:.2;margin-right:.22em"><em>'+w+'</em></span>';
+      }).join(' ');
+      result += inner;
+    }
+  });
+  el.innerHTML = result;
+
+  ScrollTrigger.create({
+    trigger: el,
+    start: 'top 80%',
+    end: 'bottom 50%',
+    scrub: 1,
+    onUpdate: function(self){
+      var words = el.querySelectorAll('.qb-word');
+      var idx = Math.floor(self.progress * words.length);
+      words.forEach(function(w, i){
+        gsap.to(w, { opacity: i <= idx ? 1 : .2, duration: .3 });
+      });
+    }
+  });
+})();
+
+// ─── NEWSLETTER input: subtle pulse on focus ───
+document.querySelector('.nl-input').addEventListener('focus', function(){
+  gsap.fromTo(this, {scale:1}, {scale:1.01, duration:.3, yoyo:true, repeat:1, ease:'sine.inOut'});
+});
+
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  gsap.globalTimeline.timeScale(10);
+}
+</script>
+</body>
+</html>
