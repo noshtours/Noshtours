@@ -1,0 +1,17 @@
+name: CI Validation
+on:
+  push:
+    branches: [Staged]
+  pull_request:
+    branches: [Staged]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check merge conflicts
+        run: if grep -r "<<<<<<< HEAD" . --include="*.html" 2>/dev/null; then echo "Merge conflicts!" && exit 1; fi
+      - name: Validate HTML
+        run: for file in *.html; do if ! grep -q "<html" "$file"; then echo "Invalid HTML" && exit 1; fi; done
+      - name: Check viewport
+        run: for file in *.html; do grep -q "viewport" "$file" && echo "OK: $file"; done
