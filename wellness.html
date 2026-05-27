@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-<title>Wellness Retreats · Ayurveda · Spa · Mountain Sanctuary | Nosh Tours</title>
+<title>Wellness Retreats Â· Ayurveda Â· Spa Â· Mountain Sanctuary | Nosh Tours</title>
 <meta name="description" content="Wellness without the wellness-speak. Kerala Ayurveda anchor, Bali healing, Thailand temple retreats, Maldives reefs, Swiss alpine quiet. Fixed pricing. All-inclusive. Designed to make the mind go blank.">
 <link rel="canonical" href="https://noshtours.com/wellness">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -164,11 +164,41 @@ img{display:block;max-width:100%;user-select:none}
   *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
   .hero-bg{transform:none !important}
 }
+/* MOBILE RESPONSIVENESS FIXES */
+@media (max-width: 480px) {
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 0; overflow-x: hidden; }
+  nav, .nav, .nav-inner { padding: 8px 12px !important; position: sticky; top: 0; z-index: 1000; }
+  .nav-item, nav a { font-size: 14px; padding: 8px; min-height: 44px; display: flex; align-items: center; }
+  .if-form, form { padding: 16px; width: 100%; }
+  .if-input, input[type="text"], input[type="email"], input[type="tel"], textarea { width: 100%; padding: 12px; margin: 8px 0; font-size: 16px; border: 1px solid #ccc; border-radius: 4px; min-height: 44px; }
+  textarea { min-height: 100px; resize: vertical; }
+  button, .btn, input[type="submit"] { width: 100%; padding: 12px; font-size: 16px; min-height: 44px; margin: 8px 0; }
+  .container { padding: 16px; margin: 0; }
+  .row { display: flex; flex-direction: column; gap: 12px; }
+  .col, [class*="col-"] { width: 100% !important; }
+  img { max-width: 100%; height: auto; }
+  h1, h2, h3, h4, h5, h6 { font-size: clamp(16px, 4vw, 24px); margin: 12px 0; }
+  p { font-size: 14px; line-height: 1.6; }
+  .fab, .floating-button { bottom: max(16px, env(safe-area-inset-bottom)); right: max(16px, env(safe-area-inset-right)); position: fixed; z-index: 999; }
+  .site-footer, footer { padding-bottom: calc(16px + env(safe-area-inset-bottom)); width: 100%; }
+  .modal, .modal-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1001; }
+  .modal-content { width: 90%; max-width: 100%; margin: 20px auto; padding: 16px; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+  }
+}
+@media (max-width: 768px) and (min-width: 481px) {
+  .if-input, input, textarea { font-size: 16px; }
+  .container { padding: 20px; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .col { flex: 1 1 calc(50% - 6px); }
+}
 </style>
 </head>
 <body>
 
-<div class="banner"><strong>PREVIEW · WELLNESS v1</strong> · parallax hero · breathing icons · scroll reveals · GSAP motion</div>
+<div class="banner"><strong>PREVIEW Â· WELLNESS v1</strong> Â· parallax hero Â· breathing icons Â· scroll reveals Â· GSAP motion</div>
 
 <nav class="nav">
   <div class="nav-inner">
@@ -182,9 +212,9 @@ img{display:block;max-width:100%;user-select:none}
   <div class="hero-bg" id="heroBg"></div>
   <div class="hero-glow"></div>
   <div class="hero-inner">
-    <div class="hero-eye" id="heroEye">Nosh Wellness · A canvas for stillness</div>
+    <div class="hero-eye" id="heroEye">Nosh Wellness Â· A canvas for stillness</div>
     <h1 class="hero-h" id="heroH">Wellness. <em>Without the wellness-speak.</em></h1>
-    <p class="hero-sub" id="heroSub">Designed to make the mind go blank — not the bill.</p>
+    <p class="hero-sub" id="heroSub">Designed to make the mind go blank â not the bill.</p>
   </div>
   <div class="hero-scroll" id="heroScroll">
     <span>Scroll</span>
@@ -202,8 +232,8 @@ img{display:block;max-width:100%;user-select:none}
     <div id="anchorCopy">
       <div class="anchor-eye">The anchor</div>
       <h2 class="anchor-h">7-day Ayurveda, <em>not 7 stops.</em></h2>
-      <p class="anchor-prose">Kerala isn't a "day-trip" on a wellness retreat. It's <b>the</b> wellness retreat — five thousand years old, governed by the seasons of the body, not the calendar of a tour bus. Our Kerala canvas pairs you with a <b>practising Ayurvedic physician</b>, not a spa concierge with a script.</p>
-      <p class="anchor-prose">Stay 7, 14, or 21 nights at one boutique property. Same doctor. Same diet planned to your prakriti. Same room. Same forest outside your window. The treatments are real — abhyanga, shirodhara, panchakarma — performed by certified therapists with 20+ years of practice. Nothing diluted for tourists.</p>
+      <p class="anchor-prose">Kerala isn't a "day-trip" on a wellness retreat. It's <b>the</b> wellness retreat â five thousand years old, governed by the seasons of the body, not the calendar of a tour bus. Our Kerala canvas pairs you with a <b>practising Ayurvedic physician</b>, not a spa concierge with a script.</p>
+      <p class="anchor-prose">Stay 7, 14, or 21 nights at one boutique property. Same doctor. Same diet planned to your prakriti. Same room. Same forest outside your window. The treatments are real â abhyanga, shirodhara, panchakarma â performed by certified therapists with 20+ years of practice. Nothing diluted for tourists.</p>
       <div class="anchor-quote">"Most resorts sell you a treatment list. We design a protocol."</div>
     </div>
   </div>
@@ -221,45 +251,45 @@ img{display:block;max-width:100%;user-select:none}
 
       <div class="r-card" data-r>
         <div class="r-card-img" style="background-image:url('/images/hero-international.jpg')"></div>
-        <span class="r-card-num"><b>01</b> · Bali</span>
+        <span class="r-card-num"><b>01</b> Â· Bali</span>
         <div class="r-card-body">
-          <div class="r-card-loc">Ubud · Bali, Indonesia</div>
+          <div class="r-card-loc">Ubud Â· Bali, Indonesia</div>
           <h3 class="r-card-h">Healers <em>of Ubud.</em></h3>
           <p class="r-card-d">Sound healing with a 5th-generation balian. Rice-paddy yoga. River cleanse rituals. No clipboard. No timetable.</p>
-          <div class="r-card-meta"><span class="r-card-pill">5–7N</span><span class="r-card-pill">from <b>₹1.1L</b></span></div>
+          <div class="r-card-meta"><span class="r-card-pill">5â7N</span><span class="r-card-pill">from <b>â¹1.1L</b></span></div>
         </div>
       </div>
 
       <div class="r-card" data-r>
         <div class="r-card-img" style="background-image:url('/images/wellness-bali.jpg')"></div>
-        <span class="r-card-num"><b>02</b> · Thailand</span>
+        <span class="r-card-num"><b>02</b> Â· Thailand</span>
         <div class="r-card-body">
-          <div class="r-card-loc">Chiang Mai · Northern Thailand</div>
+          <div class="r-card-loc">Chiang Mai Â· Northern Thailand</div>
           <h3 class="r-card-h">Forest <em>temple stays.</em></h3>
           <p class="r-card-d">Theravada monasteries opening doors to lay practitioners. Vipassana. Forest bathing. Pre-dawn alms walks. The original quiet.</p>
-          <div class="r-card-meta"><span class="r-card-pill">7N</span><span class="r-card-pill">from <b>₹1.4L</b></span></div>
+          <div class="r-card-meta"><span class="r-card-pill">7N</span><span class="r-card-pill">from <b>â¹1.4L</b></span></div>
         </div>
       </div>
 
       <div class="r-card" data-r>
         <div class="r-card-img" style="background-image:url('/images/wellness-thailand.jpg')"></div>
-        <span class="r-card-num"><b>03</b> · Maldives</span>
+        <span class="r-card-num"><b>03</b> Â· Maldives</span>
         <div class="r-card-body">
-          <div class="r-card-loc">Baa Atoll · Maldives</div>
+          <div class="r-card-loc">Baa Atoll Â· Maldives</div>
           <h3 class="r-card-h">Reef <em>stillness.</em></h3>
           <p class="r-card-d">Overwater villas with house-reef snorkel meditation. Marine biologist sessions. Coral restoration as therapy. The ocean does the work.</p>
-          <div class="r-card-meta"><span class="r-card-pill">5N</span><span class="r-card-pill">from <b>₹2.6L</b></span></div>
+          <div class="r-card-meta"><span class="r-card-pill">5N</span><span class="r-card-pill">from <b>â¹2.6L</b></span></div>
         </div>
       </div>
 
       <div class="r-card" data-r>
         <div class="r-card-img" style="background-image:url('/images/wellness-rishikesh.jpg')"></div>
-        <span class="r-card-num"><b>04</b> · Switzerland</span>
+        <span class="r-card-num"><b>04</b> Â· Switzerland</span>
         <div class="r-card-body">
-          <div class="r-card-loc">Engadin Valley · Swiss Alps</div>
+          <div class="r-card-loc">Engadin Valley Â· Swiss Alps</div>
           <h3 class="r-card-h">Alpine <em>quiet.</em></h3>
           <p class="r-card-d">Glacier-water cold plunges. Forest walks above 2000m. Sauna rituals from the Engadin tradition. The Alps' answer to overstimulation.</p>
-          <div class="r-card-meta"><span class="r-card-pill">7N</span><span class="r-card-pill">from <b>₹3.4L</b></span></div>
+          <div class="r-card-meta"><span class="r-card-pill">7N</span><span class="r-card-pill">from <b>â¹3.4L</b></span></div>
         </div>
       </div>
 
@@ -273,15 +303,15 @@ img{display:block;max-width:100%;user-select:none}
     <div class="bl-header">
       <div class="bl-eye">The building blocks</div>
       <h2 class="bl-h">Six <em>practices</em> we build retreats around.</h2>
-      <p class="bl-sub">Pick what resonates. We assemble the rest — accommodation, meals, transport, the right practitioner.</p>
+      <p class="bl-sub">Pick what resonates. We assemble the rest â accommodation, meals, transport, the right practitioner.</p>
     </div>
     <div class="bl-grid">
-      <div class="bl-tile"><span class="bl-icon" data-breathe>🧘</span><div class="bl-t">Ayurveda</div><div class="bl-d">Doctor-led, protocol-based. Not spa-tier.</div></div>
-      <div class="bl-tile"><span class="bl-icon" data-breathe>🌿</span><div class="bl-t">Yoga & Pranayama</div><div class="bl-d">Sunrise sessions. Real teachers, real lineages.</div></div>
-      <div class="bl-tile"><span class="bl-icon" data-breathe>🌊</span><div class="bl-t">Cold Plunge</div><div class="bl-d">Glacial, ocean, or river. Held by a guide.</div></div>
-      <div class="bl-tile"><span class="bl-icon" data-breathe>🍃</span><div class="bl-t">Forest Bathing</div><div class="bl-d">Shinrin-yoku in Meghalaya, Bhutan, Chiang Mai.</div></div>
-      <div class="bl-tile"><span class="bl-icon" data-breathe>🔔</span><div class="bl-t">Sound Healing</div><div class="bl-d">Singing bowls. Gong baths. Brain-wave shifts.</div></div>
-      <div class="bl-tile"><span class="bl-icon" data-breathe>🥗</span><div class="bl-t">Diet Protocols</div><div class="bl-d">Sattvic, anti-inflammatory, fasting — built per body.</div></div>
+      <div class="bl-tile"><span class="bl-icon" data-breathe>ð§</span><div class="bl-t">Ayurveda</div><div class="bl-d">Doctor-led, protocol-based. Not spa-tier.</div></div>
+      <div class="bl-tile"><span class="bl-icon" data-breathe>ð¿</span><div class="bl-t">Yoga & Pranayama</div><div class="bl-d">Sunrise sessions. Real teachers, real lineages.</div></div>
+      <div class="bl-tile"><span class="bl-icon" data-breathe>ð</span><div class="bl-t">Cold Plunge</div><div class="bl-d">Glacial, ocean, or river. Held by a guide.</div></div>
+      <div class="bl-tile"><span class="bl-icon" data-breathe>ð</span><div class="bl-t">Forest Bathing</div><div class="bl-d">Shinrin-yoku in Meghalaya, Bhutan, Chiang Mai.</div></div>
+      <div class="bl-tile"><span class="bl-icon" data-breathe>ð</span><div class="bl-t">Sound Healing</div><div class="bl-d">Singing bowls. Gong baths. Brain-wave shifts.</div></div>
+      <div class="bl-tile"><span class="bl-icon" data-breathe>ð¥</span><div class="bl-t">Diet Protocols</div><div class="bl-d">Sattvic, anti-inflammatory, fasting â built per body.</div></div>
     </div>
   </div>
 </section>
@@ -295,7 +325,7 @@ img{display:block;max-width:100%;user-select:none}
       <span class="line">not even rested in the usual sense.</span>
       <span class="line"><em>I came back quieter.</em></span>
     </div>
-    <div class="q-by">— Sneha R · Bangalore · Ubud canvas, Oct 2025</div>
+    <div class="q-by">â Sneha R Â· Bangalore Â· Ubud canvas, Oct 2025</div>
   </div>
 </section>
 
@@ -309,7 +339,7 @@ img{display:block;max-width:100%;user-select:none}
         <div class="doorway-tag">Doorway to</div>
         <h2 class="doorway-t">India <em>Canvases.</em></h2>
         <p class="doorway-s">7 Indian canvases. Kerala leads on Ayurveda. Bhutan, Sikkim on monastery quiet.</p>
-        <span class="doorway-cta">Enter India →</span>
+        <span class="doorway-cta">Enter India â</span>
       </div>
     </a>
     <a class="doorway" href="noshtours_international_preview.html">
@@ -318,7 +348,7 @@ img{display:block;max-width:100%;user-select:none}
         <div class="doorway-tag">Doorway to</div>
         <h2 class="doorway-t">International <em>Tours.</em></h2>
         <p class="doorway-s">13 international canvases. Bali, Thailand, Maldives, Swiss Alps anchor wellness.</p>
-        <span class="doorway-cta">Enter International →</span>
+        <span class="doorway-cta">Enter International â</span>
       </div>
     </a>
   </div>
@@ -334,10 +364,10 @@ img{display:block;max-width:100%;user-select:none}
     <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.003 0C7.166 0 .005 7.157.005 15.99c0 2.825.738 5.587 2.141 8.018L0 32l8.183-2.146a15.93 15.93 0 0 0 7.82 1.992h.007c8.836 0 15.997-7.156 15.997-15.989C32.007 7.157 24.846 0 16.003 0zm7.27 20.18c-.4-.2-2.366-1.168-2.732-1.301-.367-.134-.633-.2-.9.2-.266.4-1.034 1.302-1.267 1.568-.234.267-.467.3-.867.1-.4-.2-1.685-.62-3.21-1.98-1.186-1.058-1.987-2.365-2.22-2.765-.234-.4-.025-.617.175-.817.18-.18.4-.467.6-.7.2-.234.267-.4.4-.667.134-.267.067-.5-.033-.7-.1-.2-.9-2.169-1.233-2.969-.325-.78-.654-.674-.9-.687a16.06 16.06 0 0 0-.767-.014c-.267 0-.7.1-1.067.5-.367.4-1.4 1.367-1.4 3.336s1.434 3.871 1.633 4.138c.2.267 2.824 4.311 6.84 6.045.955.412 1.7.659 2.282.844.96.306 1.832.262 2.521.16.77-.115 2.366-.967 2.7-1.901.333-.934.333-1.734.234-1.901-.1-.167-.367-.267-.767-.467z"/></svg>
     Request My tour plan on WhatsApp
   </a>
-  <p class="site-footer-prose"><strong>Awarded Travel Architects.</strong> Enquire everything you need to know with our <strong>Nosh Brain (beyond AI)</strong> — trained on 10 years of travel excellence around the globe.</p>
+  <p class="site-footer-prose"><strong>Awarded Travel Architects.</strong> Enquire everything you need to know with our <strong>Nosh Brain (beyond AI)</strong> â trained on 10 years of travel excellence around the globe.</p>
   <p class="site-footer-italic">A Travel Architect responds on WhatsApp within an hour after you&rsquo;ve spoken to our Nosh Brain.</p>
-  <div class="site-footer-made">Made with <span class="site-footer-made-peace">☮</span> at Mumbai, Maharashtra 🇮🇳</div>
-  <div class="site-footer-copy">© 2026 Nosh Tours LLP · All canvases reserved</div>
+  <div class="site-footer-made">Made with <span class="site-footer-made-peace">â®</span> at Mumbai, Maharashtra ð®ð³</div>
+  <div class="site-footer-copy">Â© 2026 Nosh Tours LLP Â· All canvases reserved</div>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -402,7 +432,7 @@ img{display:block;max-width:100%;user-select:none}
     });
   }
 
-  // BREATHING icons — infinite slow scale pulse (meditation breath)
+  // BREATHING icons â infinite slow scale pulse (meditation breath)
   if(!reduced){
     document.querySelectorAll('[data-breathe]').forEach(function(el, i){
       gsap.to(el,{
