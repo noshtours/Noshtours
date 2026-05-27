@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-<title>About Nosh Tours · ₹50k to ₹5Cr in 3 years · Aditya TG & Akshay Manoj</title>
-<meta name="description" content="Two founders. Mumbai-based. From ₹50k startup capital to ₹5Cr annual turnover in 3 years. 50+ Nosh Brains. 7,000+ travel entrepreneur community. This is the story.">
+<title>About Nosh Tours Â· â¹50k to â¹5Cr in 3 years Â· Aditya TG & Akshay Manoj</title>
+<meta name="description" content="Two founders. Mumbai-based. From â¹50k startup capital to â¹5Cr annual turnover in 3 years. 50+ Nosh Brains. 7,000+ travel entrepreneur community. This is the story.">
 <link rel="canonical" href="https://noshtours.com/about">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -174,11 +174,41 @@ img{display:block;max-width:100%;user-select:none}
 @media (prefers-reduced-motion: reduce){
   *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
 }
+/* MOBILE RESPONSIVENESS FIXES */
+@media (max-width: 480px) {
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 0; overflow-x: hidden; }
+  nav, .nav, .nav-inner { padding: 8px 12px !important; position: sticky; top: 0; z-index: 1000; }
+  .nav-item, nav a { font-size: 14px; padding: 8px; min-height: 44px; display: flex; align-items: center; }
+  .if-form, form { padding: 16px; width: 100%; }
+  .if-input, input[type="text"], input[type="email"], input[type="tel"], textarea { width: 100%; padding: 12px; margin: 8px 0; font-size: 16px; border: 1px solid #ccc; border-radius: 4px; min-height: 44px; }
+  textarea { min-height: 100px; resize: vertical; }
+  button, .btn, input[type="submit"] { width: 100%; padding: 12px; font-size: 16px; min-height: 44px; margin: 8px 0; }
+  .container { padding: 16px; margin: 0; }
+  .row { display: flex; flex-direction: column; gap: 12px; }
+  .col, [class*="col-"] { width: 100% !important; }
+  img { max-width: 100%; height: auto; }
+  h1, h2, h3, h4, h5, h6 { font-size: clamp(16px, 4vw, 24px); margin: 12px 0; }
+  p { font-size: 14px; line-height: 1.6; }
+  .fab, .floating-button { bottom: max(16px, env(safe-area-inset-bottom)); right: max(16px, env(safe-area-inset-right)); position: fixed; z-index: 999; }
+  .site-footer, footer { padding-bottom: calc(16px + env(safe-area-inset-bottom)); width: 100%; }
+  .modal, .modal-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1001; }
+  .modal-content { width: 90%; max-width: 100%; margin: 20px auto; padding: 16px; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+  }
+}
+@media (max-width: 768px) and (min-width: 481px) {
+  .if-input, input, textarea { font-size: 16px; }
+  .container { padding: 20px; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .col { flex: 1 1 calc(50% - 6px); }
+}
 </style>
 </head>
 <body>
 
-<div class="banner"><strong>PREVIEW · ABOUT v1</strong> · GSAP stat counters · timeline reveal · founder cards</div>
+<div class="banner"><strong>PREVIEW Â· ABOUT v1</strong> Â· GSAP stat counters Â· timeline reveal Â· founder cards</div>
 
 <nav class="nav">
   <div class="nav-inner">
@@ -193,10 +223,10 @@ img{display:block;max-width:100%;user-select:none}
     <div class="hero-eye" id="heroEye">Our story</div>
     <h1 class="hero-h" id="heroH">
       <span class="word">Two</span> <span class="word">founders.</span> <span class="word">Mumbai.</span><br>
-      <span class="word"><em>₹50k</em></span> <span class="word">to</span> <span class="word"><em>₹5 Cr</em></span> <span class="word">in</span> <span class="word">three</span> <span class="word">years.</span>
+      <span class="word"><em>â¹50k</em></span> <span class="word">to</span> <span class="word"><em>â¹5 Cr</em></span> <span class="word">in</span> <span class="word">three</span> <span class="word">years.</span>
     </h1>
     <p class="hero-sub" id="heroSub">Here's the part travel agencies don't tell you.</p>
-    <p class="hero-prose" id="heroProse">We started Nosh Tours with <b>₹50,000 of personal savings</b> and a stubborn belief: travel sold in India was broken. Itineraries were copy-pasted. Pricing was opaque. Surprises were always on the bill, never in the room. We rebuilt the model — fixed pricing, building blocks, 50+ in-house specialists, no call centre — and shipped it. Three years later we're at <b>₹5 Crore annual turnover</b>, a 7,000+ travel-entrepreneur community, and 20 canvases across two continents. This page is what we learned along the way.</p>
+    <p class="hero-prose" id="heroProse">We started Nosh Tours with <b>â¹50,000 of personal savings</b> and a stubborn belief: travel sold in India was broken. Itineraries were copy-pasted. Pricing was opaque. Surprises were always on the bill, never in the room. We rebuilt the model â fixed pricing, building blocks, 50+ in-house specialists, no call centre â and shipped it. Three years later we're at <b>â¹5 Crore annual turnover</b>, a 7,000+ travel-entrepreneur community, and 20 canvases across two continents. This page is what we learned along the way.</p>
   </div>
 </section>
 
@@ -207,7 +237,7 @@ img{display:block;max-width:100%;user-select:none}
     <h2 class="stats-h">Three years. <em>One stubborn belief.</em></h2>
     <div class="stats-grid">
       <div class="stat">
-        <span class="stat-num" data-count="5" data-prefix="₹" data-suffix=" Cr">₹0 Cr</span>
+        <span class="stat-num" data-count="5" data-prefix="â¹" data-suffix=" Cr">â¹0 Cr</span>
         <div class="stat-lbl">Year-3 turnover</div>
       </div>
       <div class="stat">
@@ -230,45 +260,45 @@ img{display:block;max-width:100%;user-select:none}
 <section class="timeline">
   <div class="tl-inner">
     <div class="tl-eye">The journey</div>
-    <h2 class="tl-h">From ₹50k to ₹5Cr, <em>milestone by milestone.</em></h2>
+    <h2 class="tl-h">From â¹50k to â¹5Cr, <em>milestone by milestone.</em></h2>
     <div class="tl-track">
 
       <div class="tl-item" data-tl>
         <div class="tl-dot"></div>
-        <div class="tl-yr">2023 · Year 1</div>
+        <div class="tl-yr">2023 Â· Year 1</div>
         <div class="tl-card">
-          <h3 class="tl-cap">The <em>₹50k</em> bet.</h3>
-          <p class="tl-body"><b>Aditya and Akshay</b> pool ₹50,000 of personal savings, register Nosh Tours LLP, and design the first 10 trips by hand on a single laptop. Zero ads. Word-of-mouth only. First customer: a friend's family who'd been quoted ₹4.2L by a "luxury" agency for Kashmir. We did it for ₹2.8L with better stays and zero surcharges. They wrote the first 5-star review.</p>
+          <h3 class="tl-cap">The <em>â¹50k</em> bet.</h3>
+          <p class="tl-body"><b>Aditya and Akshay</b> pool â¹50,000 of personal savings, register Nosh Tours LLP, and design the first 10 trips by hand on a single laptop. Zero ads. Word-of-mouth only. First customer: a friend's family who'd been quoted â¹4.2L by a "luxury" agency for Kashmir. We did it for â¹2.8L with better stays and zero surcharges. They wrote the first 5-star review.</p>
           <div class="tl-meta"><span class="tl-pill">10 trips</span><span class="tl-pill">100% referrals</span><span class="tl-pill">Zero ad spend</span></div>
         </div>
       </div>
 
       <div class="tl-item" data-tl>
         <div class="tl-dot"></div>
-        <div class="tl-yr">2024 · Year 2</div>
+        <div class="tl-yr">2024 Â· Year 2</div>
         <div class="tl-card">
           <h3 class="tl-cap">The <em>50 Nosh Brains</em> bet.</h3>
-          <p class="tl-body">We hit 100+ trips and immediately realised the freelance ground-handler model was the broken part. We replaced it with 50+ in-house specialists — one Nosh Brain owns your trip end-to-end. Cost went up. Quality went vertical. Trip NPS broke 90. Started the closed-door travel-entrepreneur meetups that would become the 7,000+ community.</p>
+          <p class="tl-body">We hit 100+ trips and immediately realised the freelance ground-handler model was the broken part. We replaced it with 50+ in-house specialists â one Nosh Brain owns your trip end-to-end. Cost went up. Quality went vertical. Trip NPS broke 90. Started the closed-door travel-entrepreneur meetups that would become the 7,000+ community.</p>
           <div class="tl-meta"><span class="tl-pill">100+ trips</span><span class="tl-pill">50 in-house team</span><span class="tl-pill">NPS 90+</span></div>
         </div>
       </div>
 
       <div class="tl-item" data-tl>
         <div class="tl-dot"></div>
-        <div class="tl-yr">2025 · Year 3</div>
+        <div class="tl-yr">2025 Â· Year 3</div>
         <div class="tl-card">
-          <h3 class="tl-cap">The <em>₹5 Crore</em> year.</h3>
-          <p class="tl-body">Closed Year 3 at <b>₹5 Cr annual revenue</b>. Expanded from 7 India canvases to 20 (added 13 international). Built the building-blocks model that makes "fixed pricing" actually possible. 7,000+ travel entrepreneurs now in the closed-door community. Customers send us their friends — that's still our entire growth engine.</p>
-          <div class="tl-meta"><span class="tl-pill">₹5 Cr ARR</span><span class="tl-pill">20 canvases</span><span class="tl-pill">7,000+ community</span></div>
+          <h3 class="tl-cap">The <em>â¹5 Crore</em> year.</h3>
+          <p class="tl-body">Closed Year 3 at <b>â¹5 Cr annual revenue</b>. Expanded from 7 India canvases to 20 (added 13 international). Built the building-blocks model that makes "fixed pricing" actually possible. 7,000+ travel entrepreneurs now in the closed-door community. Customers send us their friends â that's still our entire growth engine.</p>
+          <div class="tl-meta"><span class="tl-pill">â¹5 Cr ARR</span><span class="tl-pill">20 canvases</span><span class="tl-pill">7,000+ community</span></div>
         </div>
       </div>
 
       <div class="tl-item" data-tl>
         <div class="tl-dot"></div>
-        <div class="tl-yr">2026 · Now</div>
+        <div class="tl-yr">2026 Â· Now</div>
         <div class="tl-card">
           <h3 class="tl-cap">The <em>next</em> chapter.</h3>
-          <p class="tl-body">Nosh Stays (hospitality), Nosh Wellness (UK + US retreats), and a measurement-grade rebuild of the whole platform. Still ₹0 spent on outbound ads. Still 100% referral-led. Still answering every WhatsApp ourselves before it hits the team.</p>
+          <p class="tl-body">Nosh Stays (hospitality), Nosh Wellness (UK + US retreats), and a measurement-grade rebuild of the whole platform. Still â¹0 spent on outbound ads. Still 100% referral-led. Still answering every WhatsApp ourselves before it hits the team.</p>
           <div class="tl-meta"><span class="tl-pill">Nosh Stays launch</span><span class="tl-pill">Wellness UK/US</span><span class="tl-pill">Founder-led WhatsApp</span></div>
         </div>
       </div>
@@ -286,16 +316,16 @@ img{display:block;max-width:100%;user-select:none}
       <div class="f-card">
         <div class="f-photo">A</div>
         <h3 class="f-name">Aditya TG</h3>
-        <div class="f-role">Co-founder · Product, Brand, Tech</div>
+        <div class="f-role">Co-founder Â· Product, Brand, Tech</div>
         <p class="f-quote">"The boring part of luxury travel is the part where you pretend the price wasn't fixed all along. We just stopped pretending."</p>
         <p class="f-bio">Drives product, brand identity, and the technical backbone. Owns the building-blocks model that makes fixed pricing structurally possible. Personally answers founder-tier WhatsApp brieves. Believes the best travel agency reads less like a brochure and more like a friend who happens to know everyone.</p>
       </div>
       <div class="f-card">
         <div class="f-photo">A</div>
         <h3 class="f-name">Akshay Manoj</h3>
-        <div class="f-role">Co-founder · Ops, Community, Hospitality</div>
+        <div class="f-role">Co-founder Â· Ops, Community, Hospitality</div>
         <p class="f-quote">"50 Nosh Brains is not a team size. It's a promise that you'll never get bounced to a stranger."</p>
-        <p class="f-bio">Runs the 50+ Nosh Brains operation, the 7,000+ entrepreneur community, and the Nosh Stays hospitality vertical. Closed every supplier contract personally. Plans the closed-door meetups. Believes the operational underbelly is where luxury travel either delivers or breaks — and that the answer is people, not software.</p>
+        <p class="f-bio">Runs the 50+ Nosh Brains operation, the 7,000+ entrepreneur community, and the Nosh Stays hospitality vertical. Closed every supplier contract personally. Plans the closed-door meetups. Believes the operational underbelly is where luxury travel either delivers or breaks â and that the answer is people, not software.</p>
       </div>
     </div>
   </div>
@@ -312,7 +342,7 @@ img{display:block;max-width:100%;user-select:none}
     <div class="band band-comm">
       <div class="band-eye">The community</div>
       <h2 class="band-h">7,000+ <em>entrepreneurs.</em></h2>
-      <p class="band-prose">Closed-door meetups in Mumbai, Delhi, Bangalore. <b>Travel-entrepreneur founders</b> who share customer pipelines, vendor recommendations, market intelligence. No moderators, no fees, no PR. Just operators talking to operators — about the part of the business that doesn't fit in a LinkedIn post.</p>
+      <p class="band-prose">Closed-door meetups in Mumbai, Delhi, Bangalore. <b>Travel-entrepreneur founders</b> who share customer pipelines, vendor recommendations, market intelligence. No moderators, no fees, no PR. Just operators talking to operators â about the part of the business that doesn't fit in a LinkedIn post.</p>
     </div>
   </div>
 </section>
@@ -333,7 +363,7 @@ img{display:block;max-width:100%;user-select:none}
       </div>
       <div class="v-row">
         <div class="v-row-n">03</div>
-        <div><h3 class="v-row-t">Building blocks, not itineraries.</h3><p class="v-row-p">You pick the building blocks — stays, transport, experiences, dining. We assemble. We don't ship 7-day PDFs. We ship a configurable canvas.</p></div>
+        <div><h3 class="v-row-t">Building blocks, not itineraries.</h3><p class="v-row-p">You pick the building blocks â stays, transport, experiences, dining. We assemble. We don't ship 7-day PDFs. We ship a configurable canvas.</p></div>
       </div>
       <div class="v-row">
         <div class="v-row-n">04</div>
@@ -353,7 +383,7 @@ img{display:block;max-width:100%;user-select:none}
         <div class="doorway-tag">Doorway to</div>
         <h2 class="doorway-t">India <em>Canvases.</em></h2>
         <p class="doorway-s">7 Indian canvases. Kashmir to Kerala. Fixed pricing.</p>
-        <span class="doorway-cta">Enter India →</span>
+        <span class="doorway-cta">Enter India â</span>
       </div>
     </a>
     <a class="doorway" href="noshtours_international_preview.html">
@@ -362,7 +392,7 @@ img{display:block;max-width:100%;user-select:none}
         <div class="doorway-tag">Doorway to</div>
         <h2 class="doorway-t">International <em>Tours.</em></h2>
         <p class="doorway-s">13 international canvases. Five continents. All-inclusive.</p>
-        <span class="doorway-cta">Enter International →</span>
+        <span class="doorway-cta">Enter International â</span>
       </div>
     </a>
   </div>
@@ -378,10 +408,10 @@ img{display:block;max-width:100%;user-select:none}
     <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.003 0C7.166 0 .005 7.157.005 15.99c0 2.825.738 5.587 2.141 8.018L0 32l8.183-2.146a15.93 15.93 0 0 0 7.82 1.992h.007c8.836 0 15.997-7.156 15.997-15.989C32.007 7.157 24.846 0 16.003 0zm7.27 20.18c-.4-.2-2.366-1.168-2.732-1.301-.367-.134-.633-.2-.9.2-.266.4-1.034 1.302-1.267 1.568-.234.267-.467.3-.867.1-.4-.2-1.685-.62-3.21-1.98-1.186-1.058-1.987-2.365-2.22-2.765-.234-.4-.025-.617.175-.817.18-.18.4-.467.6-.7.2-.234.267-.4.4-.667.134-.267.067-.5-.033-.7-.1-.2-.9-2.169-1.233-2.969-.325-.78-.654-.674-.9-.687a16.06 16.06 0 0 0-.767-.014c-.267 0-.7.1-1.067.5-.367.4-1.4 1.367-1.4 3.336s1.434 3.871 1.633 4.138c.2.267 2.824 4.311 6.84 6.045.955.412 1.7.659 2.282.844.96.306 1.832.262 2.521.16.77-.115 2.366-.967 2.7-1.901.333-.934.333-1.734.234-1.901-.1-.167-.367-.267-.767-.467z"/></svg>
     Request My tour plan on WhatsApp
   </a>
-  <p class="site-footer-prose"><strong>Awarded Travel Architects.</strong> Enquire everything you need to know with our <strong>Nosh Brain (beyond AI)</strong> — trained on 10 years of travel excellence around the globe.</p>
+  <p class="site-footer-prose"><strong>Awarded Travel Architects.</strong> Enquire everything you need to know with our <strong>Nosh Brain (beyond AI)</strong> â trained on 10 years of travel excellence around the globe.</p>
   <p class="site-footer-italic">A Travel Architect responds on WhatsApp within an hour after you&rsquo;ve spoken to our Nosh Brain.</p>
-  <div class="site-footer-made">Made with <span class="site-footer-made-peace">☮</span> at Mumbai, Maharashtra 🇮🇳</div>
-  <div class="site-footer-copy">© 2026 Nosh Tours LLP · All canvases reserved</div>
+  <div class="site-footer-made">Made with <span class="site-footer-made-peace">â®</span> at Mumbai, Maharashtra ð®ð³</div>
+  <div class="site-footer-copy">Â© 2026 Nosh Tours LLP Â· All canvases reserved</div>
 </footer>
 
 <!-- GSAP -->
@@ -393,7 +423,7 @@ img{display:block;max-width:100%;user-select:none}
   gsap.registerPlugin(ScrollTrigger);
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // ─── HERO INTRO ───
+  // âââ HERO INTRO âââ
   if(!reduced){
     gsap.to('#heroEye', {opacity:1, duration:.6, delay:.1, ease:'power2.out'});
     gsap.to('#heroH .word', {opacity:1, y:0, duration:.6, stagger:.05, delay:.2, ease:'power3.out'});
@@ -404,7 +434,7 @@ img{display:block;max-width:100%;user-select:none}
     gsap.set('#heroH .word', {opacity:1, y:0});
   }
 
-  // ─── STAT COUNTERS (count up on scroll) ───
+  // âââ STAT COUNTERS (count up on scroll) âââ
   document.querySelectorAll('.stat-num').forEach(function(el){
     var target = parseInt(el.dataset.count, 10);
     var prefix = el.dataset.prefix || '';
@@ -433,7 +463,7 @@ img{display:block;max-width:100%;user-select:none}
     });
   });
 
-  // ─── TIMELINE REVEAL ───
+  // âââ TIMELINE REVEAL âââ
   document.querySelectorAll('[data-tl]').forEach(function(item, i){
     if(reduced){gsap.set(item, {opacity:1, x:0}); return}
     gsap.to(item, {
@@ -449,7 +479,7 @@ img{display:block;max-width:100%;user-select:none}
     });
   });
 
-  // ─── DOT PULSE on hover (subtle) ───
+  // âââ DOT PULSE on hover (subtle) âââ
   document.querySelectorAll('.tl-dot').forEach(function(dot){
     gsap.to(dot, {
       scale: 1.08,
