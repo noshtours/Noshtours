@@ -1,0 +1,267 @@
+/* Sticky Navigation Bar Styles */
+/* Primary Navigation Container */
+.sticky-nav {
+  position: fixed;
+    top: 0;
+      left: 0;
+        right: 0;
+          z-index: 1000;
+            background-color: #fff;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+                }
+
+                .sticky-nav.scrolled {
+                  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+                    padding: 0.5rem 0;
+                    }
+
+                    .sticky-nav-container {
+                      max-width: 1400px;
+                        margin: 0 auto;
+                          padding: 1rem 2rem;
+                            display: flex;
+                              justify-content: space-between;
+                                align-items: center;
+                                }
+
+                                /* Logo Styling */
+                                .nav-logo {
+                                  font-weight: 700;
+                                    font-size: 1.5rem;
+                                      color: #333;
+                                        text-decoration: none;
+                                          display: flex;
+                                            align-items: center;
+                                              gap: 0.5rem;
+                                                transition: color 0.3s ease;
+                                                }
+
+                                                .nav-logo:hover {
+                                                  color: #2d5016;
+                                                  }
+
+                                                  /* Main Menu */
+                                                  .nav-menu {
+                                                    display: flex;
+                                                      list-style: none;
+                                                        gap: 3rem;
+                                                          margin: 0;
+                                                            padding: 0;
+                                                              align-items: center;
+                                                              }
+
+                                                              .nav-menu-item {
+                                                                position: relative;
+                                                                }
+
+                                                                .nav-link {
+                                                                  color: #333;
+                                                                    text-decoration: none;
+                                                                      font-weight: 500;
+                                                                        transition: color 0.3s ease;
+                                                                          padding: 0.5rem 0;
+                                                                            display: flex;
+                                                                              align-items: center;
+                                                                                gap: 0.5rem;
+                                                                                }
+
+                                                                                .nav-link:hover {
+                                                                                  color: #2d5016;
+                                                                                  }
+
+                                                                                  .nav-link.active {
+                                                                                    color: #2d5016;
+                                                                                      border-bottom: 2px solid #2d5016;
+                                                                                      }
+
+                                                                                      /* Dropdown Menu */
+                                                                                      .dropdown-menu {
+                                                                                        position: absolute;
+                                                                                          top: 100%;
+                                                                                            left: 0;
+                                                                                              background-color: #fff;
+                                                                                                border: 1px solid #e0e0e0;
+                                                                                                  border-radius: 0.5rem;
+                                                                                                    padding: 0.5rem 0;
+                                                                                                      min-width: 200px;
+                                                                                                        opacity: 0;
+                                                                                                          visibility: hidden;
+                                                                                                            transform: translateY(-10px);
+                                                                                                              transition: all 0.3s ease;
+                                                                                                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                                                                                                                  margin-top: 0.5rem;
+                                                                                                                  }
+
+                                                                                                                  .nav-menu-item:hover .dropdown-menu {
+                                                                                                                    opacity: 1;
+                                                                                                                      visibility: visible;
+                                                                                                                        transform: translateY(0);
+                                                                                                                        }
+
+                                                                                                                        .dropdown-menu li {
+                                                                                                                          list-style: none;
+                                                                                                                          }
+
+                                                                                                                          .dropdown-menu a {
+                                                                                                                            display: block;
+                                                                                                                              padding: 0.75rem 1.5rem;
+                                                                                                                                color: #333;
+                                                                                                                                  text-decoration: none;
+                                                                                                                                    transition: all 0.3s ease;
+                                                                                                                                    }
+
+                                                                                                                                    .dropdown-menu a:hover {
+                                                                                                                                      background-color: #f5f5f5;
+                                                                                                                                        color: #2d5016;
+                                                                                                                                          padding-left: 2rem;
+                                                                                                                                          }
+
+                                                                                                                                          /* WhatsApp CTA Button */
+                                                                                                                                          .nav-whatsapp {
+                                                                                                                                            display: inline-flex;
+                                                                                                                                              align-items: center;
+                                                                                                                                                gap: 0.5rem;
+                                                                                                                                                  background-color: #25d366;
+                                                                                                                                                    color: #fff;
+                                                                                                                                                      text-decoration: none;
+                                                                                                                                                        padding: 0.75rem 1.5rem;
+                                                                                                                                                          border-radius: 0.5rem;
+                                                                                                                                                            font-weight: 500;
+                                                                                                                                                              transition: all 0.3s ease;
+                                                                                                                                                              }
+
+                                                                                                                                                              .nav-whatsapp:hover {
+                                                                                                                                                                background-color: #1eaa51;
+                                                                                                                                                                  transform: translateY(-2px);
+                                                                                                                                                                    box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3);
+                                                                                                                                                                    }
+
+                                                                                                                                                                    /* Mobile Hamburger Button */
+                                                                                                                                                                    .hamburger {
+                                                                                                                                                                      display: none;
+                                                                                                                                                                        flex-direction: column;
+                                                                                                                                                                          cursor: pointer;
+                                                                                                                                                                            gap: 0.5rem;
+                                                                                                                                                                              background: none;
+                                                                                                                                                                                border: none;
+                                                                                                                                                                                  padding: 0.5rem;
+                                                                                                                                                                                  }
+
+                                                                                                                                                                                  .hamburger-line {
+                                                                                                                                                                                    width: 25px;
+                                                                                                                                                                                      height: 3px;
+                                                                                                                                                                                        background-color: #333;
+                                                                                                                                                                                          transition: all 0.3s ease;
+                                                                                                                                                                                            border-radius: 2px;
+                                                                                                                                                                                            }
+
+                                                                                                                                                                                            .hamburger.active .hamburger-line:nth-child(1) {
+                                                                                                                                                                                              transform: rotate(45deg) translate(10px, 10px);
+                                                                                                                                                                                              }
+
+                                                                                                                                                                                              .hamburger.active .hamburger-line:nth-child(2) {
+                                                                                                                                                                                                opacity: 0;
+                                                                                                                                                                                                }
+
+                                                                                                                                                                                                .hamburger.active .hamburger-line:nth-child(3) {
+                                                                                                                                                                                                  transform: rotate(-45deg) translate(7px, -7px);
+                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                  /* Mobile Menu */
+                                                                                                                                                                                                  .nav-menu-mobile {
+                                                                                                                                                                                                    display: none;
+                                                                                                                                                                                                      position: absolute;
+                                                                                                                                                                                                        top: 100%;
+                                                                                                                                                                                                          left: 0;
+                                                                                                                                                                                                            right: 0;
+                                                                                                                                                                                                              background-color: #fff;
+                                                                                                                                                                                                                flex-direction: column;
+                                                                                                                                                                                                                  gap: 0;
+                                                                                                                                                                                                                    border-top: 1px solid #e0e0e0;
+                                                                                                                                                                                                                      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                                                                                                                                                                                                                        z-index: 999;
+                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                        .nav-menu-mobile.active {
+                                                                                                                                                                                                                          display: flex;
+                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                          .nav-menu-mobile li {
+                                                                                                                                                                                                                            list-style: none;
+                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                            .nav-menu-mobile a {
+                                                                                                                                                                                                                              display: block;
+                                                                                                                                                                                                                                padding: 1rem 2rem;
+                                                                                                                                                                                                                                  color: #333;
+                                                                                                                                                                                                                                    text-decoration: none;
+                                                                                                                                                                                                                                      border-bottom: 1px solid #f0f0f0;
+                                                                                                                                                                                                                                        transition: all 0.3s ease;
+                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                        .nav-menu-mobile a:hover {
+                                                                                                                                                                                                                                          background-color: #f5f5f5;
+                                                                                                                                                                                                                                            color: #2d5016;
+                                                                                                                                                                                                                                              padding-left: 2.5rem;
+                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                              /* Responsive Design */
+                                                                                                                                                                                                                                              @media (max-width: 768px) {
+                                                                                                                                                                                                                                                .sticky-nav-container {
+                                                                                                                                                                                                                                                    padding: 1rem;
+                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                        .nav-menu {
+                                                                                                                                                                                                                                                            display: none;
+                                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                                                .hamburger {
+                                                                                                                                                                                                                                                                    display: flex;
+                                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                                        .nav-whatsapp {
+                                                                                                                                                                                                                                                                            padding: 0.5rem 1rem;
+                                                                                                                                                                                                                                                                                font-size: 0.875rem;
+                                                                                                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                                                                                                    .sticky-nav-container {
+                                                                                                                                                                                                                                                                                        flex-wrap: wrap;
+                                                                                                                                                                                                                                                                                          }
+                                                                                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                                                                                          @media (max-width: 480px) {
+                                                                                                                                                                                                                                                                                            .sticky-nav-container {
+                                                                                                                                                                                                                                                                                                padding: 0.75rem;
+                                                                                                                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                                                                                                                    .nav-logo {
+                                                                                                                                                                                                                                                                                                        font-size: 1.25rem;
+                                                                                                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                                                                                                            .nav-whatsapp {
+                                                                                                                                                                                                                                                                                                                padding: 0.5rem 0.75rem;
+                                                                                                                                                                                                                                                                                                                    font-size: 0.75rem;
+                                                                                                                                                                                                                                                                                                                        gap: 0.25rem;
+                                                                                                                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                                                                                                                            .nav-menu-mobile a {
+                                                                                                                                                                                                                                                                                                                                padding: 0.75rem 1.5rem;
+                                                                                                                                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                                                                                                                                                  /* Accessibility */
+                                                                                                                                                                                                                                                                                                                                  .hamburger:focus {
+                                                                                                                                                                                                                                                                                                                                    outline: 2px solid #2d5016;
+                                                                                                                                                                                                                                                                                                                                      outline-offset: 2px;
+                                                                                                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                                                                                                      .nav-link:focus {
+                                                                                                                                                                                                                                                                                                                                        outline: 2px solid #2d5016;
+                                                                                                                                                                                                                                                                                                                                          outline-offset: 2px;
+                                                                                                                                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                                                                                                                                          .nav-whatsapp:focus {
+                                                                                                                                                                                                                                                                                                                                            outline: 2px solid #333;
+                                                                                                                                                                                                                                                                                                                                              outline-offset: 2px;
+                                                                                                                                                                                                                                                                                                                                              }

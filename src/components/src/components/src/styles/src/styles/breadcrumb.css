@@ -1,0 +1,90 @@
+/* Breadcrumb Navigation Styles */
+.breadcrumb-nav {
+  background-color: #f9f9f9;
+    padding: 1rem 2rem;
+      border-bottom: 1px solid #e0e0e0;
+        margin-top: 60px;
+        }
+
+        .breadcrumb-list {
+          list-style: none;
+            margin: 0;
+              padding: 0;
+                display: flex;
+                  flex-wrap: wrap;
+                    gap: 0.5rem;
+                      max-width: 1400px;
+                        margin: 0 auto;
+                          font-size: 0.875rem;
+                          }
+
+                          .breadcrumb-list li {
+                            display: flex;
+                              align-items: center;
+                                gap: 0.5rem;
+                                }
+
+                                .breadcrumb-list li:not(:last-child)::after {
+                                  content: '/';
+                                    color: #999;
+                                      margin-left: 0.5rem;
+                                      }
+
+                                      .breadcrumb-list a {
+                                        color: #2d5016;
+                                          text-decoration: none;
+                                            transition: all 0.3s ease;
+                                              font-weight: 500;
+                                              }
+
+                                              .breadcrumb-list a:hover {
+                                                color: #1a3009;
+                                                  text-decoration: underline;
+                                                  }
+
+                                                  .breadcrumb-list li:last-child a {
+                                                    color: #666;
+                                                      font-weight: 600;
+                                                      }
+
+                                                      .breadcrumb-list li:last-child a:hover {
+                                                        color: #333;
+                                                          text-decoration: none;
+                                                          }
+
+                                                          /* Schema.org Structured Data */
+                                                          .breadcrumb-list[itemscope][itemtype="https://schema.org/BreadcrumbList"] {
+                                                            /* Styles for schema-enhanced breadcrumbs */
+                                                            }
+
+                                                            /* Responsive */
+                                                            @media (max-width: 768px) {
+                                                              .breadcrumb-nav {
+                                                                  padding: 0.75rem 1rem;
+                                                                    }
+
+                                                                      .breadcrumb-list {
+                                                                          gap: 0.25rem;
+                                                                              font-size: 0.8rem;
+                                                                                }
+
+                                                                                  .breadcrumb-list li:not(:last-child)::after {
+                                                                                      margin-left: 0.25rem;
+                                                                                        }
+                                                                                        }
+
+                                                                                        @media (max-width: 480px) {
+                                                                                          .breadcrumb-nav {
+                                                                                              padding: 0.5rem;
+                                                                                                  margin-top: 50px;
+                                                                                                    }
+
+                                                                                                      .breadcrumb-list {
+                                                                                                          gap: 0.25rem;
+                                                                                                              font-size: 0.75rem;
+                                                                                                                }
+
+                                                                                                                  .breadcrumb-list li a {
+                                                                                                                      white-space: nowrap;
+                                                                                                                        }
+                                                                                                                        }
