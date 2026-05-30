@@ -1,0 +1,20 @@
+{
+  "name": "Nosh Tours",
+  "short_name": "Nosh Tours",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FCFAF8",
+  "theme_color": "#E56A54",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

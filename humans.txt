@@ -1,0 +1,9 @@
+/* TEAM */
+Founders: Aditya TG & Akshay Manoj
+Company: Nosh Tours LLP
+Location: Pune, Maharashtra & Thrissur, Kerala, India
+
+/* SITE */
+Last update: 2026
+Language: English
+Doctypes: HTML5
