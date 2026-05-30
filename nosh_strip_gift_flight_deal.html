@@ -1,0 +1,88 @@
+<!-- ============================================================
+  NOSH — Gift-page-only Sticky Strip (Flight Deals)
+  Scope: shows ONLY on the Nosh Gift main page.
+  Wix Custom Embeds API: position BODY_START, pageFilter.pageIds = [Gift page ID].
+  Taller than the anniversary strip — two-line composition, generous gap.
+  ============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  .nosh-deal-strip{
+    --navy:#1C2B3A;--cream:#FDF6EC;--ocean:#1B6CA8;--ocean-bright:#2a8fd4;
+    position:relative;width:100%;box-sizing:border-box;
+    background:#070c12;color:var(--cream);overflow:hidden;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:40px;padding:22px 44px;font-family:'Space Grotesk',sans-serif;
+    min-height:78px;
+  }
+  .nosh-deal-strip *{box-sizing:border-box}
+
+  /* Gemini-style aurora behind text */
+  .nosh-deal-strip .aurora{position:absolute;inset:-140% -10%;z-index:0;pointer-events:none;opacity:.4;filter:blur(36px) saturate(1.25);overflow:hidden;transition:opacity .6s ease,filter .6s ease}
+  .nosh-deal-strip .blob{position:absolute;border-radius:50%;mix-blend-mode:screen;will-change:transform}
+  .nosh-deal-strip .b1{width:24%;height:360%;left:6%;top:-130%;background:radial-gradient(circle at 50% 50%,#1c4fd4 0%,rgba(28,79,212,0) 66%);animation:dealDrift1 22s ease-in-out infinite}
+  .nosh-deal-strip .b2{width:22%;height:340%;left:34%;top:-120%;background:radial-gradient(circle at 50% 50%,#1fbf8f 0%,rgba(31,191,143,0) 66%);animation:dealDrift2 27s ease-in-out infinite}
+  .nosh-deal-strip .b3{width:26%;height:380%;right:26%;top:-140%;background:radial-gradient(circle at 50% 50%,#e85aa8 0%,rgba(232,90,168,0) 64%);animation:dealDrift1 24s ease-in-out infinite reverse}
+  .nosh-deal-strip .b4{width:20%;height:320%;right:6%;top:-110%;background:radial-gradient(circle at 50% 50%,#2a8fd4 0%,rgba(42,143,212,0) 68%);animation:dealDrift2 30s ease-in-out infinite reverse}
+  @keyframes dealDrift1{0%,100%{transform:translateX(0) scale(1)}50%{transform:translateX(24%) scale(1.14)}}
+  @keyframes dealDrift2{0%,100%{transform:translateX(0) scale(1.06)}50%{transform:translateX(-22%) scale(.9)}}
+  .nosh-deal-strip.lit .aurora{opacity:.6;filter:blur(30px) saturate(1.35) brightness(1.15)}
+
+  /* text block — two-line composition with breathing room */
+  .nosh-deal-strip .copy{position:relative;z-index:1;display:flex;flex-direction:column;gap:5px;flex:1;min-width:0}
+  .nosh-deal-strip .line1{font-weight:600;font-size:17px;letter-spacing:-.005em;line-height:1.25;color:var(--cream)}
+  .nosh-deal-strip .line1 .accent{color:var(--ocean-bright);font-weight:700}
+  .nosh-deal-strip .line2{font-weight:400;font-size:13.5px;letter-spacing:.01em;line-height:1.4;color:rgba(253,246,236,.7)}
+  .nosh-deal-strip .line2 b{color:rgba(253,246,236,.95);font-weight:600}
+
+  /* CTA */
+  .nosh-deal-strip .cta{
+    position:relative;z-index:1;flex-shrink:0;
+    font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;background:var(--ocean);padding:13px 26px;border-radius:50px;
+    text-decoration:none;white-space:nowrap;
+    transition:transform .25s,box-shadow .25s,background .25s;
+    box-shadow:0 10px 22px -10px rgba(27,108,168,.6);
+  }
+  .nosh-deal-strip .cta:hover{transform:translateY(-1px);background:var(--ocean-bright);box-shadow:0 14px 28px -10px rgba(42,143,212,.7)}
+  .nosh-deal-strip .cta .arrow{display:inline-block;margin-left:6px;transition:transform .25s}
+  .nosh-deal-strip .cta:hover .arrow{transform:translateX(3px)}
+
+  @media(max-width:860px){
+    .nosh-deal-strip{flex-direction:column;align-items:flex-start;gap:18px;padding:20px 22px 22px;min-height:0}
+    .nosh-deal-strip .copy{gap:6px}
+    .nosh-deal-strip .line1{font-size:16px}
+    .nosh-deal-strip .line2{font-size:13px}
+    .nosh-deal-strip .cta{align-self:stretch;text-align:center;padding:14px 20px}
+  }
+</style>
+
+<div class="nosh-deal-strip">
+  <div class="aurora">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+    <span class="blob b4"></span>
+  </div>
+  <div class="copy">
+    <div class="line1">One <span class="accent">price</span> that actually fits in your scope.</div>
+    <div class="line2">All-inclusive · <b>FB / HB meals</b> · <b>Ungooooogleable</b> tours & flight deals.</div>
+  </div>
+  <a href="https://wa.me/919567632255?text=Please%20tailor%20my%20Nosh%20plan%20in%2024%20hours%20%5BUTR%3A%20NOSH-GIFT-FLIGHT-TAILOR24%5D" class="cta">Tailor my plan in 24 hrs<span class="arrow">→</span></a>
+</div>
+
+<script>
+(function(){
+  var strip=document.querySelector('.nosh-deal-strip');
+  if(strip){
+    var off;
+    function light(){strip.classList.add('lit');clearTimeout(off);off=setTimeout(function(){strip.classList.remove('lit');},900);}
+    strip.addEventListener('pointermove',light);
+    strip.addEventListener('pointerdown',light);
+    strip.addEventListener('touchstart',light,{passive:true});
+    strip.addEventListener('mouseenter',function(){strip.classList.add('lit');});
+    strip.addEventListener('mouseleave',function(){strip.classList.remove('lit');});
+  }
+})();
+</script>

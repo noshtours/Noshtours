@@ -1,0 +1,63 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+
+  "rewrites": [
+    { "source": "/blog/:slug*", "destination": "/journal.html?slug=:slug*" },
+    { "source": "/journal/:slug*", "destination": "/journal.html?slug=:slug*" }
+  ],
+
+  "redirects": [
+    { "source": "/home",               "destination": "/",               "permanent": true },
+    { "source": "/index.html",         "destination": "/",               "permanent": true },
+    { "source": "/india-tours",        "destination": "/india",          "permanent": true },
+    { "source": "/india-tours/:p*",    "destination": "/india",          "permanent": true },
+    { "source": "/kerala-wellness",    "destination": "/wellness",       "permanent": true },
+    { "source": "/wellness-retreats",  "destination": "/wellness",       "permanent": true },
+    { "source": "/gift",               "destination": "/gift-a-journey", "permanent": true },
+    { "source": "/nosh-coins",         "destination": "/gift-a-journey", "permanent": true },
+    { "source": "/about-us",           "destination": "/about",          "permanent": true },
+    { "source": "/our-story",          "destination": "/about",          "permanent": true },
+    { "source": "/team",               "destination": "/about",          "permanent": true },
+    { "source": "/international-tours","destination": "/international",  "permanent": true },
+    { "source": "/destinations/:p*",   "destination": "/destinations",   "permanent": true },
+    { "source": "/blog",               "destination": "/journal",        "permanent": true }
+  ],
+
+  "headers": [
+    {
+      "source": "/(.*)\\.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/css/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(?:jpg|jpeg|png|gif|webp|svg|ico)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(?:woff|woff2|ttf|otf)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(?:js|css)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,712 @@
+/*
+  nosh-mobile.css — Shared mobile stylesheet for all Nosh Tours pages
+  Version: Stage 2 (2026-05-30)
+
+  PURPOSE:
+  Supplements the inline <style> blocks in each page file.
+  Handles: global patterns, new strip + earn-coins components,
+  small-screen edge cases (360px and below), touch targets,
+  reduced-motion, and cross-page consistency.
+
+  LOAD ORDER: Add to <head> AFTER the page's Google Fonts links
+  but BEFORE the closing </head> tag.
+
+  <link rel="stylesheet" href="/css/nosh-mobile.css">
+*/
+
+/* ══════════════════════════════════════════════════
+   1. GLOBAL RESETS — applies at all breakpoints
+   ══════════════════════════════════════════════════ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%; /* prevent font size bump on iOS rotation */
+  scroll-behavior: smooth;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Minimum tap target for all interactive elements */
+a, button, [role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Prevent horizontal overflow on all pages */
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+
+/* ══════════════════════════════════════════════════
+   2. REDUCED MOTION — accessibility
+   ══════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Strip rotator: skip wormhole, instant crossfade */
+  .nosh-rotator .slide {
+    transition: opacity 0.3s ease !important;
+    transform: none !important;
+    letter-spacing: normal !important;
+  }
+
+  /* Earn coins cards: disable 3D flip */
+  .earn-coins .ec-inner-card {
+    transition: none !important;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════
+   3. STRIP ROTATOR — site-wide (all pages except Gift)
+   ══════════════════════════════════════════════════ */
+
+/* Baseline: already styled inline. This adds sub-480px tuning */
+@media (max-width: 480px) {
+  .nosh-rotator {
+    min-height: auto;
+  }
+
+  .nosh-rotator .slide {
+    padding: 16px 18px 18px;
+    gap: 12px;
+  }
+
+  .nosh-rotator .line1 {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .nosh-rotator .line2 {
+    font-size: 11.5px;
+  }
+
+  .nosh-rotator .cta {
+    font-size: 11px;
+    padding: 10px 14px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Hide aurora blobs on very small screens — performance */
+  .nosh-rotator .aurora {
+    display: none;
+  }
+}
+
+/* Landscape phone — keep strip single line if possible */
+@media (max-width: 860px) and (orientation: landscape) {
+  .nosh-rotator .slide {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 24px;
+  }
+
+  .nosh-rotator .cta {
+    align-self: center;
+    padding: 10px 18px;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════
+   4. GIFT PAGE FLIGHT STRIP
+   ══════════════════════════════════════════════════ */
+
+@media (max-width: 480px) {
+  .nosh-deal-strip {
+    padding: 18px 18px 20px;
+    gap: 14px;
+  }
+
+  .nosh-deal-strip .line1 {
+    font-size: 14.5px;
+    line-height: 1.4;
+  }
+
+  .nosh-deal-strip .line2 {
+    font-size: 12px;
+  }
+
+  .nosh-deal-strip .cta {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 13px 16px;
+    font-size: 12px;
+  }
+
+  .nosh-deal-strip .aurora {
+    display: none;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════
+   5. NAV — shared across all pages
+   ══════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 14px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+  }
+
+  /* Mobile menu — hidden by default, toggled via existing page JS */
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--offwhite, #FDF6EC);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    z-index: 999;
+    padding: 40px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 22px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: var(--navy, #1C2B3A);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links .nav-cta {
+    background: var(--orange, #E8951A);
+    color: #fff !important;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .nav-menu-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1000;
+  }
+
+  .nav-menu-btn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--navy, #1C2B3A);
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    padding: 12px 16px;
+  }
+
+  .nav-logo {
+    font-size: 17px !important;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════
+   6. HERO SECTIONS — all pages
+   ══════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 24px 60px;
+    min-height: auto;
+  }
+
+  .hero-title {
+    font-size: clamp(36px, 9vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-top: 16px;
+  }
+
+  .hero-badge {
+    font-size: 11px;
+    padding: 6px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 70px 18px 48px;
+  }
+
+  .hero-title {
+    font-size: clamp(30px, 8vw, 44px);
+  }
+}
+
+
+/* ══════════════════════════════════════════════════
+   7. SECTION SPACING — global padding reduction
+   ══════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .section,
+  .coins-section,
+  .gift-split,
+  .redeem-section,
+  .occasions,
+  .cta-strip,
+  .wellness-hub,
+  .destinations-section,
+  .about-section,
+  .journal-section {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .section-inner,
+  .coins-inner,
+  .about-inner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .section,
+  .coins-section,
+  .gift-split,
+  .redeem-section,
+  .occasions,
+  .cta-strip {
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════
+   8. SECTION EYEBROW + HEADINGS — typographic floor
+   ══════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .section-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    margin-bottom: 14px;
+  }
+
+  h2 {
+    font-size: clamp(30px, 7vw, 48px);
+    line-height: 1.1;
+  }
+
+  h3 {
+    font-size: clamp(20px, 5vw, 28px);
+  }
+}
+
+
+/* ══════════════════════════════════════════════════
+   9. EARN 500 NOSH COINS SECTION — gift page
+   ══════════════════════════════════════════════════ */
+
+/* The component already has 860px breakpoint. These add 480px edge cases */
+@media (max-width: 480px) {
+  .earn-coins {
+    padding: 48px 18px 60px;
+  }
+
+  .earn-coins .ec-flourish {
+    font-size: 18vw;
+    top: -4vw;
+    right: -2vw;
+    opacity: 0.03;
+  }
+
+  .earn-coins h2 {
+    font-size: clamp(28px, 8vw, 40px);
+    line-height: 1.1;
+  }
+
+  .earn-coins .ec-stamp {
+    font-size: 12px;
+    padding: 8px 16px;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .earn-coins .ec-steps {
+    gap: 14px;
+  }
+
+  /* Card min-height reduction on small phones */
+  .earn-coins .ec-card,
+  .earn-coins .ec-inner-card,
+  .earn-coins .ec-step {
+    min-height: 260px;
+  }
+
+  .earn-coins .ec-cta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .earn-coins .ec-cta {
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Back-card pills — wrap on small phones */
+  .earn-coins .ec-pills {
+    gap: 8px;
+  }
+
+  .earn-coins .ec-pill {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════
+   10. NOSH COIN VALUE PANEL — gift page (cvp-left)
+   ══════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .coin-value-panel {
+    margin-top: 36px;
+    border-radius: 16px;
+  }
+
+  .cvp-left {
+    padding: 40px 28px !important;
+    text-align: center;
+    align-items: center;
+  }
+
+  .cvp-equation {
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .cvp-coin {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cvp-left {
+    padding: 32px 20px !important;
+  }
+
+  .cvp-coin-icon {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 22px !important;
+  }
+
+  .cvp-offer-num {
+    font-size: 48px !important;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════
+   11. CANVAS / DESTINATION CARDS — destinations + india + international
+   ══════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .canvas-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  .canvas-card {
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .canvas-card {
+    border-radius: 12px;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════
+   12. FOOTER — shared across all pages
+   ══════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+    padding: 0 24px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 20px 24px 0;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    padding: 0 18px;
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    padding: 16px 18px 0;
+    font-size: 12px;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════
+   13. CTA STRIP — all pages
+   ══════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .cta-strip {
+    text-align: center;
+  }
+
+  .cta-strip h2 {
+    font-size: clamp(28px, 7vw, 44px);
+  }
+
+  .cta-btn,
+  .cta-wa {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 18px 24px;
+    font-size: 15px;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════
+   14. JOURNAL / ARTICLE GRID
+   ══════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .article-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .article-featured {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+
+  .journal-card {
+    border-radius: 14px;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════
+   15. REVEAL ANIMATIONS — scroll entrance
+   ══════════════════════════════════════════════════ */
+
+/* Reduce initial translate on mobile — avoids layout shift */
+@media (max-width: 768px) {
+  .reveal {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.55s ease, opacity 0.55s ease;
+  }
+
+  .reveal.visible {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* Existing pages use IntersectionObserver for .reveal — this CSS
+   only controls the initial + revealed state, doesn't break JS */
+
+
+/* ══════════════════════════════════════════════════
+   16. WELLNESS PAGE — ayurveda / retreat specific
+   ══════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .wellness-hero-eyebrow {
+    font-size: 11px;
+  }
+
+  .wellness-cards {
+    grid-template-columns: 1fr !important;
+    gap: 18px;
+  }
+
+  .wellness-card {
+    border-radius: 14px;
+    padding: 28px 24px;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════
+   17. FORMS — canvas form and contact
+   ══════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .canvas-form {
+    padding: 32px 24px;
+    border-radius: 16px;
+  }
+
+  .canvas-form input,
+  .canvas-form select,
+  .canvas-form textarea {
+    font-size: 16px; /* prevents iOS auto-zoom on focus */
+    padding: 14px 16px;
+    border-radius: 10px;
+  }
+
+  .canvas-form button[type="submit"] {
+    width: 100%;
+    padding: 18px;
+    font-size: 15px;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════
+   18. ABOUT PAGE — founders / story section
+   ══════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .founders-grid,
+  .story-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+  }
+
+  .founder-photo {
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  .diff-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════
+   19. UTILITY CLASSES — cross-page helpers
+   ══════════════════════════════════════════════════ */
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+  .hide-mobile { display: none !important; }
+}
+
+/* Show only on mobile */
+.show-mobile { display: none; }
+@media (max-width: 768px) {
+  .show-mobile { display: block; }
+}
+
+/* Full-width button helper */
+@media (max-width: 768px) {
+  .btn-full-mobile {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ══════════════════════════════════════════════════
+   20. SUB-360PX — extra-small phones (Galaxy Fold, etc.)
+   ══════════════════════════════════════════════════ */
+
+@media (max-width: 360px) {
+  html { font-size: 14px; }
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .nosh-rotator .line1,
+  .nosh-deal-strip .line1 {
+    font-size: 13px;
+  }
+
+  .nav-logo {
+    font-size: 15px !important;
+  }
+
+  .earn-coins h2 {
+    font-size: 26px;
+  }
+}
