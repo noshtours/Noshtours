@@ -5,42 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nosh Tours — India's First Canvas-Oriented Travel Architects</title>
 <meta name="description" content="Fixed pricing. No itinerary spoilers. 20 luxury canvases across Asia and Europe. Built by Nosh Brains in Pune and Thrissur. Recognised in Thailand 2025 and Indonesia 2026.">
-<!-- ══ SEO HEAD BLOCK ═════════════════════════════════
-     Canonical, OG, Twitter Card, Geo tags
-     JSON-LD Schema injected below
-════════════════════════════════════════════════════════ -->
 <link rel="canonical" href="https://www.noshtours.com/">
 
-<!-- Open Graph -->
 <meta property="og:type"        content="website">
 <meta property="og:url"         content="https://www.noshtours.com/">
 <meta property="og:title"       content="Nosh Tours — India's First Canvas-Oriented Travel Architects">
 <meta property="og:description" content="Fixed pricing. No itinerary spoilers. 20 luxury canvases across Asia and Europe. Built by Nosh Brains in Pune and Thrissur. Recognised in Thailand 2025 and Indonesia 2026.">
-<meta property="og:image"       content="https://static.wixstatic.com/media/04c7d9_47e0f85948bd4485866b9cdc76d2b4f1~mv2.jpg">
+<meta property="og:image"       content="https://raw.githubusercontent.com/noshtours/Noshtours/main/logo.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height"content="630">
 <meta property="og:site_name"   content="Nosh Tours">
 <meta property="og:locale"      content="en_IN">
 
-<!-- Twitter Card -->
 <meta name="twitter:card"        content="summary_large_image">
 <meta name="twitter:site"        content="@noshtours">
 <meta name="twitter:title"       content="Nosh Tours — India's First Canvas-Oriented Travel Architects">
 <meta name="twitter:description" content="Fixed pricing. No itinerary spoilers. 20 luxury canvases across Asia and Europe. Built by Nosh Brains in Pune and Thrissur. Recognised in Thailand 2025 and Indonesia 2026.">
-<meta name="twitter:image"       content="https://static.wixstatic.com/media/04c7d9_47e0f85948bd4485866b9cdc76d2b4f1~mv2.jpg">
+<meta name="twitter:image"       content="https://raw.githubusercontent.com/noshtours/Noshtours/main/logo.png">
 
-<!-- Geo Tags -->
 <meta name="geo.region"    content="IN-MH">
 <meta name="geo.placename" content="Pune, Maharashtra, India">
 <meta name="ICBM"          content="18.5204, 73.8567">
 
-<!-- Additional SEO -->
 <meta name="robots"        content="index, follow, max-snippet:-1, max-image-preview:large">
 <meta name="author"        content="Nosh Tours LLP">
 <meta name="keywords"      content="luxury travel India, canvas travel, fixed pricing travel, Kerala Ayurveda retreat, Kashmir tour, Maldives package, Nosh Tours">
 <meta name="theme-color"   content="#1C2B3A">
+<link rel="icon" href="/logo.png">
+<link rel="apple-touch-icon" href="/logo.png">
 
-<!-- JSON-LD Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -51,7 +44,7 @@
       "name": "Nosh Tours LLP",
       "description": "Fixed pricing. No itinerary spoilers. 20 luxury canvases across Asia and Europe. Built by Nosh Brains in Pune and Thrissur. Recognised in Thailand 2025 and Indonesia 2026.",
       "url": "https://www.noshtours.com/",
-      "image": "https://static.wixstatic.com/media/04c7d9_47e0f85948bd4485866b9cdc76d2b4f1~mv2.jpg",
+      "image": "https://raw.githubusercontent.com/noshtours/Noshtours/main/logo.png",
       "priceRange": "₹₹₹",
       "currenciesAccepted": "INR",
       "openingHours": "Mo-Su 09:00-21:00",
@@ -858,7 +851,11 @@ footer{
   .gift-right{min-height:340px}
 }
 @media(max-width:768px){
-  .nav-links,.nav-cta{display:none}
+  /* NAV FIX ADDED HERE */
+  .nav-links{display:none; flex-direction:column; position:absolute; top:80px; left:0; right:0; background:rgba(255,255,255,0.98); padding:24px; border-radius:16px; box-shadow:0 10px 40px rgba(0,0,0,0.15); text-align:center; gap:20px;}
+  .nav-links.active{display:flex;}
+  
+  .nav-cta{display:none}
   .nav-menu-btn{display:flex}
   .hero-content{padding:0 24px 48px}
   .hero-badge{right:24px;bottom:56px}
@@ -1481,10 +1478,6 @@ footer {
   position: relative;
 }
 
-/* Smooth section entry — every section fades in as you scroll */
-
-
-
 /* Seamless section blending — gradient fades between sections */
 .diff::before {
   content: '';
@@ -1504,9 +1497,6 @@ footer {
   pointer-events: none;
   z-index: 1;
 }
-
-/* Remove hard ticker / section borders */
-
 
 /* Consistent spacing rhythm */
 .section { padding: 88px 0; }
@@ -1803,7 +1793,6 @@ img {
   }
 }
 
-
 /* ── 6-field form layout ────────────────────────────── */
 .canvas-field-row {
   display: grid;
@@ -1825,14 +1814,13 @@ img {
 </head>
 <body>
 
-<!-- NAV -->
 <div class="nav-wrap">
   <nav class="nav" style="background:rgba(248,243,236,0.96);">
     <div class="nav-logo" style="color:var(--navy)">Nosh<span style="color:var(--orange)">.</span></div>
     <ul class="nav-links">
-      <li><a href="#canvases">Canvases</a></li>
-      <li><a href="#destinations">Destinations</a></li>
-      <li><a href="#gift">Gift a Journey</a></li>
+      <li><a href="/destinations">Canvases</a></li>
+      <li><a href="/destinations">Destinations</a></li>
+      <li><a href="/gift">Gift a Journey</a></li>
       <li><a href="#contact" class="nav-cta">Build Your Canvas</a></li>
     </ul>
     <button class="nav-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -1840,20 +1828,18 @@ img {
 </div>
 
 
-<!-- ══ HERO: CRYSTAL PRISM ══════════════════════════════ -->
 <section class="hero" id="hero">
   <div class="hero-bg"></div>
   <div class="hero-dot-grid"></div>
 
-  <!-- Crystal 3D embed — self-contained, no external deps beyond Three.js -->
   <iframe
     class="hero-crystal-frame"
-    srcdoc="&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;UTF-8&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-&lt;style&gt;
+    srcdoc="<!DOCTYPE html>
+<html>
+<head>
+<meta charset=&quot;UTF-8&quot;>
+<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+<style>
 * { margin:0; padding:0; box-sizing:border-box; }
 html, body {
   width:100%; height:100%;
@@ -1895,44 +1881,43 @@ canvas {
 @keyframes f0 { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-7px)} }
 @keyframes f1 { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-5px)} }
 @keyframes f2 { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-9px)} }
-&lt;/style&gt;
-&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&amp;family=Barlow+Condensed:wght@600;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
-&lt;script src=&quot;https://unpkg.com/three@0.150.1/build/three.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://unpkg.com/three@0.150.1/examples/js/environments/RoomEnvironment.js&quot;&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
+</style>
+<link href=&quot;https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&amp;family=Barlow+Condensed:wght@600;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;>
+<script src=&quot;https://unpkg.com/three@0.150.1/build/three.min.js&quot;></script>
+<script src=&quot;https://unpkg.com/three@0.150.1/examples/js/environments/RoomEnvironment.js&quot;></script>
+</head>
+<body>
 
-&lt;canvas id=&quot;c&quot;&gt;&lt;/canvas&gt;
+<canvas id=&quot;c&quot;></canvas>
 
-&lt;!-- Floating destination labels --&gt;
-&lt;div class=&quot;clbl&quot; id=&quot;l0&quot; style=&quot;top:14%;left:4%;&quot;&gt;
-  &lt;div class=&quot;clbl-inner&quot;&gt;
-    &lt;div class=&quot;clbl-dest&quot;&gt;Kashmir · The Crown&lt;/div&gt;
-    &lt;div class=&quot;clbl-price&quot;&gt;From ₹85,000 · All Inclusive&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;clbl&quot; id=&quot;l1&quot; style=&quot;top:52%;left:2%;&quot;&gt;
-  &lt;div class=&quot;clbl-inner&quot;&gt;
-    &lt;div class=&quot;clbl-dest&quot;&gt;Maldives · The Deep Blue&lt;/div&gt;
-    &lt;div class=&quot;clbl-price&quot;&gt;From ₹1,45,000 · All Inclusive&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;clbl&quot; id=&quot;l2&quot; style=&quot;top:78%;left:8%;&quot;&gt;
-  &lt;div class=&quot;clbl-inner&quot;&gt;
-    &lt;div class=&quot;clbl-dest&quot;&gt;Switzerland · The White Ridge&lt;/div&gt;
-    &lt;div class=&quot;clbl-price&quot;&gt;From ₹3,10,000 · All Inclusive&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;clbl&quot; id=&quot;l3&quot; style=&quot;top:30%;right:4%;&quot;&gt;
-  &lt;div class=&quot;clbl-inner&quot;&gt;
-    &lt;div class=&quot;clbl-dest&quot;&gt;Japan · The Silent Country&lt;/div&gt;
-    &lt;div class=&quot;clbl-price&quot;&gt;From ₹2,25,000 · All Inclusive&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+<div class=&quot;clbl&quot; id=&quot;l0&quot; style=&quot;top:14%;left:4%;&quot;>
+  <div class=&quot;clbl-inner&quot;>
+    <div class=&quot;clbl-dest&quot;>Kashmir · The Crown</div>
+    <div class=&quot;clbl-price&quot;>From ₹85,000 · All Inclusive</div>
+  </div>
+</div>
+<div class=&quot;clbl&quot; id=&quot;l1&quot; style=&quot;top:52%;left:2%;&quot;>
+  <div class=&quot;clbl-inner&quot;>
+    <div class=&quot;clbl-dest&quot;>Maldives · The Deep Blue</div>
+    <div class=&quot;clbl-price&quot;>From ₹1,45,000 · All Inclusive</div>
+  </div>
+</div>
+<div class=&quot;clbl&quot; id=&quot;l2&quot; style=&quot;top:78%;left:8%;&quot;>
+  <div class=&quot;clbl-inner&quot;>
+    <div class=&quot;clbl-dest&quot;>Switzerland · The White Ridge</div>
+    <div class=&quot;clbl-price&quot;>From ₹3,10,000 · All Inclusive</div>
+  </div>
+</div>
+<div class=&quot;clbl&quot; id=&quot;l3&quot; style=&quot;top:30%;right:4%;&quot;>
+  <div class=&quot;clbl-inner&quot;>
+    <div class=&quot;clbl-dest&quot;>Japan · The Silent Country</div>
+    <div class=&quot;clbl-price&quot;>From ₹2,25,000 · All Inclusive</div>
+  </div>
+</div>
 
-&lt;script&gt;
-const canvas = document.getElementById(&#x27;c&#x27;);
-const renderer = new THREE.WebGLRenderer({ canvas, alpha:true, antialias:true, powerPreference:&#x27;high-performance&#x27; });
+<script>
+const canvas = document.getElementById('c');
+const renderer = new THREE.WebGLRenderer({ canvas, alpha:true, antialias:true, powerPreference:'high-performance' });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setClearColor(0x000000, 0);
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -1950,7 +1935,7 @@ function resize() {
   camera.updateProjectionMatrix();
 }
 resize();
-window.addEventListener(&#x27;resize&#x27;, resize);
+window.addEventListener('resize', resize);
 
 // Environment (required for transmission/glass)
 const pmrem = new THREE.PMREMGenerator(renderer);
@@ -2001,7 +1986,7 @@ G.add(core);
   { s:[0.18,0.48,0.18], p:[0.7,-1.5,0.2], r:[0.1,0.3,-0.3]  },
   { s:[0.14,0.38,0.14], p:[-0.4,1.7,-0.2],r:[0.6,0.1,0.2]  },
   { s:[0.12,0.32,0.12], p:[1.1,-0.9,-0.3],r:[0.4,0.8,-0.1]  },
-].forEach(d =&gt; {
+].forEach(d => {
   const m = new THREE.MeshPhysicalMaterial({
     color:0xfcf0e0, metalness:0, roughness:0.08,
     transmission:0.9, thickness:0.9, ior:1.65,
@@ -2020,7 +2005,7 @@ const wm = new THREE.MeshBasicMaterial({ color:0xC4962A, wireframe:true, transpa
 G.add(new THREE.Mesh(makeOct(0.70, 1.67, 0.70), wm));
 
 // Light refraction beams
-for (let i=0; i&lt;8; i++) {
+for (let i=0; i<8; i++) {
   const a = (i/8)*Math.PI*2;
   const g = new THREE.BufferGeometry().setFromPoints([
     new THREE.Vector3(0,0,0),
@@ -2036,12 +2021,12 @@ for (let i=0; i&lt;8; i++) {
 const pGeo = new THREE.BufferGeometry();
 const pCount = 220;
 const pPos = new Float32Array(pCount*3);
-for (let i=0;i&lt;pCount;i++) {
+for (let i=0;i<pCount;i++) {
   pPos[i*3]   = (Math.random()-0.5)*9;
   pPos[i*3+1] = (Math.random()-0.5)*7;
   pPos[i*3+2] = (Math.random()-0.5)*4 - 1;
 }
-pGeo.setAttribute(&#x27;position&#x27;, new THREE.BufferAttribute(pPos,3));
+pGeo.setAttribute('position', new THREE.BufferAttribute(pPos,3));
 const pMat = new THREE.PointsMaterial({ color:0xC4962A, size:0.025, transparent:true, opacity:0.35, sizeAttenuation:true });
 scene.add(new THREE.Points(pGeo, pMat));
 
@@ -2054,13 +2039,13 @@ const rim    = new THREE.PointLight(0xfdf6ec, 0.6, 5); rim.position.set(0,4,-3);
 
 // Mouse
 let mx=0.5, my=0.5, tx=0, ty=0;
-document.addEventListener(&#x27;mousemove&#x27;, e =&gt; {
+document.addEventListener('mousemove', e => {
   mx = e.clientX/window.innerWidth;
   my = e.clientY/window.innerHeight;
 });
 // Also listen to parent window mouse (Wix iframe)
 try {
-  window.parent.document.addEventListener(&#x27;mousemove&#x27;, e =&gt; {
+  window.parent.document.addEventListener('mousemove', e => {
     mx = e.clientX/window.parent.innerWidth;
     my = e.clientY/window.parent.innerHeight;
   });
@@ -2084,19 +2069,19 @@ let ft=0;
 })();
 
 // Show labels with stagger
-setTimeout(() =&gt; {
-  [&#x27;l0&#x27;,&#x27;l1&#x27;,&#x27;l2&#x27;,&#x27;l3&#x27;].forEach((id,i) =&gt; {
-    setTimeout(() =&gt; {
+setTimeout(() => {
+  ['l0','l1','l2','l3'].forEach((id,i) => {
+    setTimeout(() => {
       const el = document.getElementById(id);
       if(!el) return;
-      el.style.opacity = &#x27;1&#x27;;
+      el.style.opacity = '1';
       el.style.animation = `f${i%3} ${3+i*0.4}s ease-in-out infinite`;
     }, 800 + i*350);
   });
 }, 600);
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;"
+</script>
+</body>
+</html>"
     title="Nosh Crystal"
     scrolling="no"
     allowtransparency="true"
@@ -2104,23 +2089,14 @@ setTimeout(() =&gt; {
   ></iframe>
 
   <div class="hero-content">
-    <!-- ══ MEDIA SLOT ══════════════════════════════════
-         This space is yours. Drop in:
-         · A brand reel:  <video autoplay muted loop playsinline src="URL"></video>
-         · A hero image:  <img loading="lazy" src="YOUR_WIX_MEDIA_URL" alt="Nosh Tours">
-         · In Wix Studio: replace with a Video or Image widget.
-         When empty this slot is invisible — no borders, no layout shift.
-    ═══════════════════════════════════════════════════ -->
-    <div class="hero-media-slot" id="hero-media-slot">
-      <!-- your media here -->
-    </div>
+    <div class="hero-media-slot" id="hero-media-slot"></div>
 
     <div class="hero-eyebrow" id="ey">
       <div class="hero-ey-dot"></div>
       <span class="hero-ey-text">Renowned Travel Architects · 20 Canvases</span>
     </div>
     <h1 class="hero-title" id="ht">
-      We give travel 
+      We give travel <br>
       back its <em>soul.</em>
     </h1>
     <div class="hero-rule" id="hr"></div>
@@ -2136,7 +2112,6 @@ setTimeout(() =&gt; {
       </button>
     </div>
 
-    <!-- 4-field WhatsApp form — hidden by default -->
     <div class="canvas-form-overlay" id="canvas-form-overlay">
       <div class="canvas-form" id="canvas-form">
         <div class="canvas-form-header">
@@ -2145,7 +2120,6 @@ setTimeout(() =&gt; {
           <button class="canvas-form-close" onclick="closeCanvasForm()">✕</button>
         </div>
         <div class="canvas-form-fields">
-          <!-- Row 1+2: side by side on desktop -->
           <div class="canvas-field-row">
             <div class="canvas-field-group">
               <label class="canvas-label">Where do you want to go?</label>
@@ -2181,13 +2155,11 @@ setTimeout(() =&gt; {
               </select>
             </div>
           </div>
-          <!-- Row 3: travel dates full width -->
           <div class="canvas-field-group">
             <label class="canvas-label">When are you travelling?</label>
             <input class="canvas-input" id="cf-travel-date" type="text"
                    placeholder="e.g. June 15–22, 2026" autocomplete="off">
           </div>
-          <!-- Row 4+5: name/WA + email side by side -->
           <div class="canvas-field-row">
             <div class="canvas-field-group">
               <label class="canvas-label">Your name &amp; WhatsApp</label>
@@ -2200,7 +2172,6 @@ setTimeout(() =&gt; {
                      placeholder="priya@email.com" autocomplete="email">
             </div>
           </div>
-          <!-- Row 6: Date of birth -->
           <div class="canvas-field-group">
             <label class="canvas-label">Date of birth <span style="font-size:10px;font-weight:400;color:rgba(28,43,58,0.35);letter-spacing:0;text-transform:none">(helps us personalise your canvas)</span></label>
             <input class="canvas-input" id="cf-dob" type="text"
@@ -2231,10 +2202,6 @@ setTimeout(() =&gt; {
 </section>
 
 
-<!-- ══ PRESS & RECOGNITION STRIP ═════════════════════
-     Typographic logos — no image uploads needed.
-     Marquee auto-scrolls. Pauses on hover.
-═════════════════════════════════════════════════════ -->
 <div class="press-strip" id="press-strip">
   <div class="press-label-row">
     <span class="press-label">
@@ -2259,26 +2226,23 @@ setTimeout(() =&gt; {
   </div>
 </div>
 
-</div>
-
-<!-- ── DIFFERENCE ─────────────────────────────────────── -->
 <section class="section diff" id="about">
   <div class="wrap">
     <div class="diff-grid">
       <div class="diff-left reveal">
-                <h2 class="section-title">
-                India's first canvas-oriented travel <em>architects.</em>
-              </h2>
+        <h2 class="section-title">
+          India's first canvas-oriented travel <em>architects.</em>
+        </h2>
         <p class="diff-body">
-                Nosh was founded in Pune and Thrissur with a single conviction:
-                every journey must be designed as a canvas — built from blocks
-                chosen by the guest, priced with full transparency, and executed
-                without a single hidden charge.  
-                Recognised by Thailand's travel trade in 2025 and by Indonesia's
-                hospitality circuit in 2026, Nosh has quietly become the name
-                that discerning travellers across India trust when they want
-                Asia and Europe done properly.
-              </p>
+          Nosh was founded in Pune and Thrissur with a single conviction:
+          every journey must be designed as a canvas — built from blocks
+          chosen by the guest, priced with full transparency, and executed
+          without a single hidden charge.  
+          Recognised by Thailand's travel trade in 2025 and by Indonesia's
+          hospitality circuit in 2026, Nosh has quietly become the name
+          that discerning travellers across India trust when they want
+          Asia and Europe done properly.
+        </p>
         <a href="/destinations" class="diff-link">
           Explore all 20 canvases
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
@@ -2286,26 +2250,66 @@ setTimeout(() =&gt; {
           </svg>
         </a>
       </div>
-                <div class="stat-label">Turnover · Year 3</div>
+    </div>
+  </div>
+</section>
+
+<section class="section destinations" id="destinations" style="padding-top:0;">
+  <div class="wrap">
+    <div class="dest-header reveal">
+      <div>
+        <p class="eyebrow">Our Canvases</p>
+        <h2 class="section-title">Where do you want to disappear?</h2>
+      </div>
+      <a href="/destinations" class="diff-link">View all destinations →</a>
+    </div>
+    
+    <div class="dest-grid">
+      <div class="dest-card reveal" onclick="window.location.href='/india'">
+        <div class="dest-img-wrap">
+          <div class="dest-badge"><span class="dest-badge-fire">✨</span> The Crown</div>
+          <img loading="lazy" class="dest-img" src="/images/india-kashmir-card.jpg" alt="Kashmir Canvas">
         </div>
-        <div class="stat-card">
-          <div class="stat-num">7K+</div>
-          <div class="stat-label">Travel Entrepreneurs in our community</div>
+        <div class="dest-info">
+          <div class="dest-name-row">
+            <h3 class="dest-name">Kashmir &amp; The North</h3>
+            <div class="dest-rating"><span class="dest-rating-star">★</span> 5.0</div>
+          </div>
+          <p class="dest-desc">Skiing in Gulmarg, private shikaras, and unscripted mountain passes.</p>
         </div>
-        <div class="stat-card">
-          <div class="stat-num">50+</div>
-          <div class="stat-label">Nosh Brains in-house team</div>
+      </div>
+      
+      <div class="dest-card reveal reveal-delay-1" onclick="window.location.href='/international'">
+        <div class="dest-img-wrap">
+          <div class="dest-badge"><span class="dest-badge-fire">🌊</span> The Deep Blue</div>
+          <img loading="lazy" class="dest-img" src="/images/intl-maldives-card.jpg" alt="Maldives Canvas">
         </div>
-        <div class="stat-card">
-          <div class="stat-num">20</div>
-          <div class="stat-label">Live canvases across Asia &amp; Europe</div>
+        <div class="dest-info">
+          <div class="dest-name-row">
+            <h3 class="dest-name">The Maldives</h3>
+            <div class="dest-rating"><span class="dest-rating-star">★</span> 5.0</div>
+          </div>
+          <p class="dest-desc">Private water villas, bespoke dining, and uninterrupted ocean isolation.</p>
+        </div>
+      </div>
+      
+      <div class="dest-card reveal reveal-delay-2" onclick="window.location.href='/wellness'">
+        <div class="dest-img-wrap">
+          <div class="dest-badge"><span class="dest-badge-fire">🌿</span> Ayurveda</div>
+          <img loading="lazy" class="dest-img" src="/images/wellness-ayurveda.jpg" alt="Kerala Ayurveda Canvas">
+        </div>
+        <div class="dest-info">
+          <div class="dest-name-row">
+            <h3 class="dest-name">Kerala Wellness</h3>
+            <div class="dest-rating"><span class="dest-rating-star">★</span> 5.0</div>
+          </div>
+          <p class="dest-desc">Physician-led retreats in the heart of God's Own Country.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── WHY NOSH ───────────────────────────────────────── -->
 <section class="section why">
   <div class="wrap">
     <div class="why-inner">
@@ -2339,10 +2343,10 @@ setTimeout(() =&gt; {
       </div>
       <div class="why-image-col reveal reveal-delay-2">
         <img loading="lazy" class="why-img-main"
-          src="https://static.wixstatic.com/media/04c7d9_98d5931810d24e2aa340d4a47857bf46~mv2.jpg"
+          src="/images/blog-luxury.jpg"
           alt="Nosh Tours Experience" loading="lazy">
         <div class="why-img-float">
-          <img loading="lazy" src="https://static.wixstatic.com/media/04c7d9_98d5931810d24e2aa340d4a47857bf46~mv2.jpg" alt="Kerala Canvas">
+          <img loading="lazy" src="/images/wellness-nature.jpg" alt="Kerala Canvas">
           <div class="why-float-caption">
             <strong>Kerala · The Emerald Veil</strong>
             <span>Physician-led Ayurveda · ₹75,000</span>
@@ -2353,26 +2357,22 @@ setTimeout(() =&gt; {
   </div>
 </section>
 
-
-
-<!-- ── GIFT CTA ───────────────────────────────────────── -->
 <section class="gift" id="gift">
   <div class="gift-left">
     <p class="eyebrow">Gift A Canvas</p>
     <h2 class="gift-title">The only gift that lasts longer than the wrapping paper.</h2>
     <p class="gift-body">Gift a Nosh canvas to someone who has everything. Mystery destination. Fixed price. Reveal on arrival. Corporate gifting available.</p>
     <div class="gift-price">🎁 &nbsp;Starting ₹50,000 per person · All Inclusive</div>
-    <a href="#" class="btn-primary">
+    <a href="/gift" class="btn-primary" style="width:fit-content">
       Gift a Journey →
     </a>
   </div>
   <div class="gift-right">
-    <img loading="lazy" src="https://static.wixstatic.com/media/04c7d9_5a322794cef347f68baa81233f6fd430~mv2.jpg" alt="Gift a Journey">
+    <img loading="lazy" src="/images/blog-gift.jpg" alt="Gift a Journey">
     <div class="gift-right-overlay"></div>
   </div>
 </section>
 
-<!-- ── CONTACT STRIP ──────────────────────────────────── -->
 <section class="contact-strip" id="contact">
   <div class="wrap">
     <div class="contact-inner">
@@ -2401,7 +2401,6 @@ setTimeout(() =&gt; {
   </div>
 </section>
 
-<!-- ── FOOTER ─────────────────────────────────────────── -->
 <footer>
   <div class="wrap">
     <div class="footer-grid">
@@ -2419,21 +2418,21 @@ setTimeout(() =&gt; {
       <div>
         <div class="footer-col-title">Canvases</div>
         <ul class="footer-links">
-          <li><a href="#">India Canvases</a></li>
-          <li><a href="#">International Canvases</a></li>
-          <li><a href="#">Wellness Retreats</a></li>
-          <li><a href="#">Gift a Journey</a></li>
-          <li><a href="#">Mystery Escapes</a></li>
+          <li><a href="/india">India Canvases</a></li>
+          <li><a href="/international">International Canvases</a></li>
+          <li><a href="/wellness">Wellness Retreats</a></li>
+          <li><a href="/gift">Gift a Journey</a></li>
+          <li><a href="/destinations">Mystery Escapes</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-col-title">Company</div>
         <ul class="footer-links">
-          <li><a href="#">Our Story</a></li>
-          <li><a href="#">The Nosh Journal</a></li>
-          <li><a href="#">Nosh Community</a></li>
-          <li><a href="#">Nosh Stays</a></li>
-          <li><a href="#">Nosh Brains</a></li>
+          <li><a href="/about">Our Story</a></li>
+          <li><a href="/journal">The Nosh Journal</a></li>
+          <li><a href="/about">Nosh Community</a></li>
+          <li><a href="/about">Nosh Stays</a></li>
+          <li><a href="/about">Nosh Brains</a></li>
         </ul>
       </div>
       <div>
@@ -2441,8 +2440,8 @@ setTimeout(() =&gt; {
         <ul class="footer-links">
           <li><a href="https://wa.me/918751997519?text=Hi%20Aditya%2C%20I%27m%20claiming%20my%20500%20Nosh%20Coins%20with%20UTR%3A%20NOSH-GIFT-EARN500">WhatsApp Us</a></li>
           <li><a href="mailto:nosh.tours@gmail.com">nosh.tours@gmail.com</a></li>
-          <li><a href="#">+91 95676 32255</a></li>
-          <li><a href="#">noshtours.com</a></li>
+          <li><a href="https://wa.me/919567632255">+91 95676 32255</a></li>
+          <li><a href="/">noshtours.com</a></li>
         </ul>
       </div>
     </div>
@@ -2456,8 +2455,6 @@ setTimeout(() =&gt; {
     </div>
   </div>
 </footer>
-
-
 
 <script>
 
@@ -2473,7 +2470,6 @@ tl.to('#ey',   { opacity:1, y:0, duration:0.85, ease:'power3.out' })
   .to('#hrat', { opacity:1, y:0, duration:0.6,  ease:'power2.out' }, '-=0.3');
 
 // ── SECTION SCROLL REVEALS ─────────────────────────────
-// ── Scroll reveals — IO (no GSAP dependency) ────────
 const _revealObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -2484,70 +2480,26 @@ const _revealObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.10, rootMargin: '0px 0px -30px 0px' });
 document.querySelectorAll('.reveal').forEach(el => _revealObs.observe(el));
 
-// ── CANVAS CARDS STAGGER ───────────────────────────────
-// ── DESTINATION CARDS ──────────────────────────────────
-// ── HOW CONNECTOR DRAW ─────────────────────────────────
-// ── STAT COUNTER ───────────────────────────────────────
-document.querySelectorAll('.stat-num').forEach(el => {
-  ScrollTrigger.create({
-    trigger: el, start:'top 85%',
-    onEnter: () => {
-      const raw = el.textContent.trim();
-      gsap.fromTo({ n:0 },
-        { n:0 },
-        { n: parseFloat(raw),
-          duration: 2.2, ease:'power2.out',
-          onUpdate() {
-            const v = this.targets()[0].n;
-            if (raw.includes('Cr'))      el.textContent = '₹' + v.toFixed(1) + 'Cr+';
-            else if (raw.includes('K'))  el.textContent = Math.round(v) + 'K+';
-            else                         el.textContent = Math.round(v) + (raw.includes('+') ? '+' : '');
-          }
-        }
-      );
-    }
-  });
-});
-
 // ── NAV SCROLL SHADOW ─────────────────────────────────
 window.addEventListener('scroll', () => {
-  document.querySelector('.nav').style.boxShadow =
-    window.scrollY > 60
-      ? '0 8px 40px rgba(0,0,0,0.1)'
-      : '0 4px 28px rgba(0,0,0,0.07)';
+  const nav = document.querySelector('.nav');
+  if (nav) {
+    nav.style.boxShadow = window.scrollY > 60
+      ? '0 8px 40px rgba(0,0,0,0.12)'
+      : '0 4px 32px rgba(0,0,0,0.08)';
+  }
 }, { passive:true });
 
-
-// Filter pills
-document.querySelectorAll('.filter-pill').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-  });
-});
-
-// Scroll reveal
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if(e.isIntersecting) {
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// Nav scroll effect
-window.addEventListener('scroll', () => {
-  const nav = document.querySelector('.nav');
-  if(window.scrollY > 80) {
-    nav.style.boxShadow = '0 8px 40px rgba(0,0,0,0.12)';
-  } else {
-    nav.style.boxShadow = '0 4px 32px rgba(0,0,0,0.08)';
+// ── MOBILE MENU TOGGLE ────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn = document.querySelector('.nav-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
   }
-}, {passive:true});
-
-
+});
 
 // ══ HERO SINGLE CTA — JUNE & JULY ════════════════════
 function openCanvasForm() {
@@ -2600,8 +2552,10 @@ function sendToWhatsApp() {
   const contact     = document.getElementById('cf-contact').value;
 
   // Validate
-  const email = document.getElementById('cf-email').value.trim();
-  const dob   = document.getElementById('cf-dob').value.trim();
+  const emailVal = document.getElementById('cf-email').value;
+  const email = emailVal ? emailVal.trim() : '';
+  const dobVal = document.getElementById('cf-dob').value;
+  const dob = dobVal ? dobVal.trim() : '';
 
   if (!destination || !travelDate || !group || !contact) {
     // Shake the empty fields
@@ -2620,8 +2574,6 @@ function sendToWhatsApp() {
   }
 
   // Build WhatsApp message
-  const email = document.getElementById('cf-email')?.value?.trim() || '';
-  const dob   = document.getElementById('cf-dob')?.value?.trim() || '';
   const msg = [
     '🎨 *New Canvas Enquiry — noshtours.com*',
     '',
@@ -2659,12 +2611,6 @@ function sendToWhatsApp() {
   }, 600);
 }
 
-
-
-// Scroll reveals handled by GSAP ScrollTrigger below
-
-
-
 // ── DOB auto-format DD/MM/YYYY ──────────────────────
 const dobInput = document.getElementById('cf-dob');
 if (dobInput) {
@@ -2674,7 +2620,7 @@ if (dobInput) {
     if (v.length > 9)  v = v.slice(0,9) + v.slice(9,11);
     if (v.replace(/[^0-9]/g,'').length > 8)
       v = v.slice(0, v.lastIndexOf(' / ', 9) + 3) + v.slice(v.lastIndexOf(' / ') + 3, v.lastIndexOf(' / ') + 7);
-    // Simpler: just limit numeric chars to 8
+    
     const nums = this.value.replace(/[^0-9]/g,'').slice(0,8);
     let fmt = nums;
     if (nums.length > 2)  fmt = nums.slice(0,2) + ' / ' + nums.slice(2);
@@ -2683,21 +2629,18 @@ if (dobInput) {
   });
 }
 
-
-
 // ── GSAP fallback — if GSAP fails show everything ───
 window.addEventListener('load', () => {
   setTimeout(() => {
-    // If GSAP didn't run, make all hidden elements visible
     document.querySelectorAll(
-      '#ey, #ht, #hr, #hs, #ha, #hrat, .word'
+      '#ey, #ht, #hr, #hs, #ha, #hrat, .word, .reveal'
     ).forEach(el => {
       if (getComputedStyle(el).opacity === '0') {
         el.style.opacity = '1';
         el.style.transform = 'none';
       }
     });
-  }, 2000); // Give GSAP 2s to run first
+  }, 2000); 
 });
 
 </script>
