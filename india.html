@@ -2159,6 +2159,29 @@ a.btn-ring, a.btn-outline {
   .nav-links.active { display:flex; }
 }
 
+
+/* ANTIGRAVITY UI/UX OVERRIDES */
+/* 1. Kill Broken GSAP/ScrollReveal - Force 100% Visibility */
+.reveal, .hidden, [style*="opacity: 0"], .hidden-section, .dest-card {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+}
+/* 2. About Page Portrait Fixes */
+.founder-img, .team-image {
+    object-position: top center !important;
+    object-fit: cover !important;
+}
+/* 3. Wellness Padding Fix */
+.wellness-hero-overlay { padding-bottom: 20px !important; }
+.empty-space-fix { display: none !important; }
+/* 4. Global Mobile Flow Alignments */
+@media(max-width:768px) {
+    .section, .hero { padding-left: 15px !important; padding-right: 15px !important; }
+    img { border-radius: 12px !important; }
+    .footer-grid { text-align: left !important; }
+}
+
 </style>
 </head>
 <body>
@@ -2176,7 +2199,7 @@ a.btn-ring, a.btn-outline {
       <li><a href="/international">International</a></li>
       <li><a href="/wellness">Wellness</a></li>
       <li><a href="/about">Our Story</a></li>
-      <li><a href="/configure/india" class="nav-cta">Build Your Canvas</a></li>
+      <li><a href="https://wa.me/919567632255?text=%F0%9F%8E%A8%20*New%20Canvas%20Enquiry*%0A%F0%9F%93%8D%20*Destination%3A*%20%5BEnter%5D%0A%F0%9F%93%85%20*Travel%20dates%3A*%20%5BEnter%5D%0A%F0%9F%91%A5%20*Group%20size%3A*%20%5BEnter%5D%0A%F0%9F%93%B1%20*Contact%3A*%20%5BEnter%5D%0A%F0%9F%93%A7%20*Email%3A*%20%5BEnter%5D%0A%F0%9F%8E%82%20*Date%20of%20birth%3A*%20%5BEnter%5D" class="nav-cta">Ready to Fly?</a></li>
     </ul>
     <button class="nav-menu-btn" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -2218,7 +2241,7 @@ a.btn-ring, a.btn-outline {
           </svg>
         </a>
         <a href="https://wa.me/918751997519?text=Hi%20Aditya%2C%20I%27m%20claiming%20my%20500%20Nosh%20Coins%20with%20UTR%3A%20NOSH-GIFT-EARN500" class="btn-ghost-white">
-          WhatsApp a Nosh Brain
+          WhatsApp to explore - All Inclusive Plan
         </a>
       </div>
       <div class="hero-rating" id="hero-rating">
@@ -2246,7 +2269,7 @@ a.btn-ring, a.btn-outline {
   </div>
   <div class="count-item">
     <div class="count-num">2</div>
-    <div class="count-lbl">By Invitation Only</div>
+    <div class="count-lbl">Exclusive Access Only</div>
   </div>
   <div class="count-item">
     <div class="count-num">₹58K+</div>
@@ -2489,7 +2512,7 @@ a.btn-ring, a.btn-outline {
           <img loading="lazy" loading="lazy" class="dest-img" src="https://static.wixstatic.com/media/04c7d9_880a20480e8e4f8db7c99413c64ebbae~mv2.jpg"
                alt="Bhutan · The Forbidden Kingdom" loading="lazy">
           <div class="dest-overlay"></div>
-          <div class="dest-tag tag-invite">🔐 By Invitation</div>
+          <div class="dest-tag tag-invite">🔐 Exclusive Access</div>
           <div class="dest-nights">6 Nights</div>
           <div class="invite-seal">🔐 Limited · Apply to Join</div>
         </div>
@@ -2519,7 +2542,7 @@ a.btn-ring, a.btn-outline {
           <img loading="lazy" loading="lazy" class="dest-img" src="https://static.wixstatic.com/media/04c7d9_84952e7e7e4f4c1db0cf3a6bc782b477~mv2.jpg"
                alt="Ladakh · The Roof of the World" loading="lazy">
           <div class="dest-overlay"></div>
-          <div class="dest-tag tag-invite">🔐 By Invitation</div>
+          <div class="dest-tag tag-invite">🔐 Exclusive Access</div>
           <div class="dest-nights">7 Nights</div>
           <div class="invite-seal">🔐 Limited · Apply to Join</div>
         </div>
@@ -2557,7 +2580,7 @@ a.btn-ring, a.btn-outline {
 <section class="invite-section">
   <div class="invite-inner">
     <div class="invite-text reveal">
-      <div class="section-eyebrow">By Invitation Only</div>
+      <div class="section-eyebrow">Exclusive Access Only</div>
       <h2 class="invite-title">
         Two canvases that exist 
         outside the <em>catalogue.</em>
@@ -2616,7 +2639,7 @@ a.btn-ring, a.btn-outline {
       </a>
       <a href="https://wa.me/918751997519?text=Hi%20Aditya%2C%20I%27m%20claiming%20my%20500%20Nosh%20Coins%20with%20UTR%3A%20NOSH-GIFT-EARN500" class="btn-ghost-white"
          style="background:transparent;color:var(--navy);border-color:rgba(28,43,58,.2)">
-        WhatsApp Us
+        WhatsApp Nosh Tours Now.
       </a>
     </div>
   </div>
@@ -2641,7 +2664,7 @@ a.btn-ring, a.btn-outline {
         <li><a href="/destinations">Kerala · The Emerald Veil</a></li>
         <li><a href="/destinations">Rajasthan · The Royal Durbar</a></li>
         <li><a href="/destinations">Northeast · The Frontier</a></li>
-        <li><a href="/apply">By Invitation</a></li>
+        <li><a href="/apply">Exclusive Access</a></li>
       </ul>
     </div>
     <div>
@@ -2656,7 +2679,7 @@ a.btn-ring, a.btn-outline {
     <div>
       <div class="footer-col-title">Contact</div>
       <ul class="footer-links">
-        <li><a href="https://wa.me/918751997519?text=Hi%20Aditya%2C%20I%27m%20claiming%20my%20500%20Nosh%20Coins%20with%20UTR%3A%20NOSH-GIFT-EARN500">WhatsApp Us</a></li>
+        <li><a href="https://wa.me/918751997519?text=Hi%20Aditya%2C%20I%27m%20claiming%20my%20500%20Nosh%20Coins%20with%20UTR%3A%20NOSH-GIFT-EARN500">WhatsApp Nosh Tours Now.</a></li>
         <li><a href="mailto:nosh.tours@gmail.com">Email Us</a></li>
         <li><a href="tel:+919567632255">+91 95676 32255</a></li>
       </ul>

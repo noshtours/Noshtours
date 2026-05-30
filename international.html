@@ -1816,6 +1816,29 @@ a.btn-ring, a.btn-outline {
   .nav-links.active { display:flex; }
 }
 
+
+/* ANTIGRAVITY UI/UX OVERRIDES */
+/* 1. Kill Broken GSAP/ScrollReveal - Force 100% Visibility */
+.reveal, .hidden, [style*="opacity: 0"], .hidden-section, .dest-card {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+}
+/* 2. About Page Portrait Fixes */
+.founder-img, .team-image {
+    object-position: top center !important;
+    object-fit: cover !important;
+}
+/* 3. Wellness Padding Fix */
+.wellness-hero-overlay { padding-bottom: 20px !important; }
+.empty-space-fix { display: none !important; }
+/* 4. Global Mobile Flow Alignments */
+@media(max-width:768px) {
+    .section, .hero { padding-left: 15px !important; padding-right: 15px !important; }
+    img { border-radius: 12px !important; }
+    .footer-grid { text-align: left !important; }
+}
+
 </style>
 </head>
 <body>
@@ -1840,7 +1863,7 @@ a.btn-ring, a.btn-outline {
       <li><a href="/international" class="nav-active">International</a></li>
       <li><a href="/wellness">Wellness</a></li>
       <li><a href="/about">Our Story</a></li>
-      <li><a href="/configure/international" class="nav-cta">Build Your Canvas</a></li>
+      <li><a href="https://wa.me/919567632255?text=%F0%9F%8E%A8%20*New%20Canvas%20Enquiry*%0A%F0%9F%93%8D%20*Destination%3A*%20%5BEnter%5D%0A%F0%9F%93%85%20*Travel%20dates%3A*%20%5BEnter%5D%0A%F0%9F%91%A5%20*Group%20size%3A*%20%5BEnter%5D%0A%F0%9F%93%B1%20*Contact%3A*%20%5BEnter%5D%0A%F0%9F%93%A7%20*Email%3A*%20%5BEnter%5D%0A%F0%9F%8E%82%20*Date%20of%20birth%3A*%20%5BEnter%5D" class="nav-cta">Ready to Fly?</a></li>
     </ul>
     <button class="nav-menu-btn" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -2320,10 +2343,10 @@ a.btn-ring, a.btn-outline {
       </p>
     </div>
     <div class="cta-strip-actions">
-      <a href="/configure/international" class="btn-orange">Build Your Canvas →</a>
+      <a href="/configure/international" class="btn-orange">Secure Your Canvas →</a>
       <a href="https://wa.me/918751997519?text=Hi%20Aditya%2C%20I%27m%20claiming%20my%20500%20Nosh%20Coins%20with%20UTR%3A%20NOSH-GIFT-EARN500" class="btn-ghost-white"
          style="color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.2)">
-        WhatsApp Us
+        WhatsApp Nosh Tours Now.
       </a>
     </div>
   </div>
@@ -2364,7 +2387,7 @@ a.btn-ring, a.btn-outline {
     <div>
       <div class="footer-col-title">Contact</div>
       <ul class="footer-links">
-        <li><a href="https://wa.me/918751997519?text=Hi%20Aditya%2C%20I%27m%20claiming%20my%20500%20Nosh%20Coins%20with%20UTR%3A%20NOSH-GIFT-EARN500">WhatsApp Us</a></li>
+        <li><a href="https://wa.me/919567632255?text=%F0%9F%8E%A8%20*New%20Canvas%20Enquiry*%0A%F0%9F%93%8D%20*Destination%3A*%20%5BEnter%5D%0A%F0%9F%93%85%20*Travel%20dates%3A*%20%5BEnter%5D%0A%F0%9F%91%A5%20*Group%20size%3A*%20%5BEnter%5D%0A%F0%9F%93%B1%20*Contact%3A*%20%5BEnter%5D%0A%F0%9F%93%A7%20*Email%3A*%20%5BEnter%5D%0A%F0%9F%8E%82%20*Date%20of%20birth%3A*%20%5BEnter%5D" class="btn-primary">To fly, click here to make reservations</a></li>
         <li><a href="mailto:nosh.tours@gmail.com">Email Us</a></li>
         <li><a href="tel:+919567632255">+91 95676 32255</a></li>
         <li><a href="/about">Our Story</a></li>
