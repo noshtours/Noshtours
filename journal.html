@@ -231,6 +231,17 @@ footer{background:var(--green);padding:72px 0 32px;}
   .footer-grid{grid-template-columns:1fr;padding:0 24px;}
   .footer-bottom{padding:20px 24px 0;flex-direction:column;align-items:flex-start;}
 }
+
+/* --- NOSH AGENT TYPE OVERHAUL --- */
+@media(max-width:768px) {
+  body { font-size: 120% !important; }
+  h1, .hero-title { font-size: 54px !important; line-height: 1.1 !important; font-weight: 700 !important; }
+  h2, .section-title { font-size: 42px !important; line-height: 1.15 !important; }
+  p, .hero-sub, .section-sub, .dest-desc { font-size: 19px !important; line-height: 1.6 !important; display: block !important; opacity: 1 !important; }
+  .nav-links { display:none; flex-direction:column; position:absolute; top:80px; left:0; right:0; background:rgba(255,255,255,0.98); padding:24px; border-radius:16px; box-shadow:0 10px 40px rgba(0,0,0,0.15); text-align:center; gap:20px;}
+  .nav-links.active { display:flex; }
+}
+
 </style>
 </head>
 <body>
@@ -721,5 +732,23 @@ document.getElementById('load-more').addEventListener('click', function() {
   this.style.cursor = 'default';
 });
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { 
+      if(entry.isIntersecting) {
+        entry.target.classList.add('visible'); 
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'none';
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -10px 0px' });
+  document.querySelectorAll('.reveal, section, .dest-card, .diff-left').forEach(element => {
+    scrollObserver.observe(element);
+  });
+});
+</script>
+
 </body>
 </html>
