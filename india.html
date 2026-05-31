@@ -2461,7 +2461,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
             <path d="M3 8h10M9 4l4 4-4 4"/>
           </svg>
         </a>
-        <a href="https://wa.me/918751997519?text=Hi%20Aditya%2C%20I%27m%20claiming%20my%20500%20Nosh%20Coins%20with%20UTR%3A%20NOSH-GIFT-EARN500" class="btn-ghost-white">
+        <a href="https://wa.me/919567632255?text=Hi%20Aditya%2C%20I%27m%20claiming%20my%20500%20Nosh%20Coins%20with%20UTR%3A%20NOSH-GIFT-EARN500" class="btn-ghost-white">
           WhatsApp to explore - All Inclusive Plan
         </a>
       </div>
@@ -2817,7 +2817,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
     <div class="invite-cards reveal reveal-delay-2">
       <div class="invite-mini">
         <img loading="lazy" loading="lazy" class="invite-mini-img"
-          src="https://static.wixstatic.com/media/04c7d9_880a20480e8e4f8db7c99413c64ebbae~mv2.jpg"
+          src="https://static.wixstatic.com/media/04c7d9_880a20480e8e4f8db7c99413c64ebbae~mv2.jpg" loading="lazy"
           alt="Bhutan">
         <div>
           <div class="invite-mini-name">Bhutan · The Forbidden Kingdom</div>
@@ -2827,7 +2827,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
       </div>
       <div class="invite-mini">
         <img loading="lazy" loading="lazy" class="invite-mini-img"
-          src="https://static.wixstatic.com/media/04c7d9_84952e7e7e4f4c1db0cf3a6bc782b477~mv2.jpg"
+          src="https://static.wixstatic.com/media/04c7d9_84952e7e7e4f4c1db0cf3a6bc782b477~mv2.jpg" loading="lazy"
           alt="Ladakh">
         <div>
           <div class="invite-mini-name">Ladakh · The Roof of the World</div>
@@ -2858,7 +2858,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
       <a href="/configure/india" class="btn-orange">
         Build Your India Canvas →
       </a>
-      <a href="https://wa.me/918751997519?text=Hi%20Aditya%2C%20I%27m%20claiming%20my%20500%20Nosh%20Coins%20with%20UTR%3A%20NOSH-GIFT-EARN500" class="btn-ghost-white"
+      <a href="https://wa.me/919567632255?text=Hi%20Aditya%2C%20I%27m%20claiming%20my%20500%20Nosh%20Coins%20with%20UTR%3A%20NOSH-GIFT-EARN500" class="btn-ghost-white"
          style="background:transparent;color:var(--navy);border-color:rgba(28,43,58,.2)">
         WhatsApp Nosh Tours Now.
       </a>
@@ -2901,7 +2901,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
     <div>
       <div class="footer-col-title">Contact</div>
       <ul class="footer-links">
-        <li><a href="https://wa.me/918751997519?text=Hi%20Aditya%2C%20I%27m%20claiming%20my%20500%20Nosh%20Coins%20with%20UTR%3A%20NOSH-GIFT-EARN500">WhatsApp Nosh Tours Now.</a></li>
+        <li><a href="https://wa.me/919567632255?text=Hi%20Aditya%2C%20I%27m%20claiming%20my%20500%20Nosh%20Coins%20with%20UTR%3A%20NOSH-GIFT-EARN500">WhatsApp Nosh Tours Now.</a></li>
         <li><a href="mailto:nosh.tours@gmail.com">Email Us</a></li>
         <li><a href="https://wa.me/919567632255">+91 95676 32255</a></li>
       </ul>
@@ -3013,6 +3013,38 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             mobileMenu.style.display = "none";
             document.body.style.overflow = "auto"; // Restore scroll when closed
+        }
+    });
+});
+</script>
+
+
+<style>
+/* 1. Obliterate the Right-Hand Hero Gap */
+html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+.hero-video-slider, .hero-section, header, footer, [class*="hero"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+/* Overriding inline fixed-width traps flagged in telemetry */
+* { max-width: 100% !important; }
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // 2. CTA Sniper: Eradicate "Build your Canvas" to prevent decision fatigue
+    const allElements = document.querySelectorAll('a, button, .btn');
+    allElements.forEach(el => {
+        if (el.textContent && el.textContent.trim().toLowerCase().includes('build your canvas')) {
+            el.style.display = 'none';
+            el.style.pointerEvents = 'none';
+            el.style.opacity = '0';
         }
     });
 });

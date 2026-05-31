@@ -915,7 +915,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
     <div>
       <div class="footer-col-title">Contact</div>
       <ul class="footer-links">
-        <li><a href="https://wa.me/918751997519?text=Hi%20Aditya%2C%20I%27m%20claiming%20my%20500%20Nosh%20Coins%20with%20UTR%3A%20NOSH-GIFT-EARN500">WhatsApp Nosh Tours Now.</a></li>
+        <li><a href="https://wa.me/919567632255?text=Hi%20Aditya%2C%20I%27m%20claiming%20my%20500%20Nosh%20Coins%20with%20UTR%3A%20NOSH-GIFT-EARN500">WhatsApp Nosh Tours Now.</a></li>
         <li><a href="mailto:nosh.tours@gmail.com">Email</a></li>
         <li><a href="/about">Our Story</a></li>
       </ul>
@@ -1070,6 +1070,38 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             mobileMenu.style.display = "none";
             document.body.style.overflow = "auto"; // Restore scroll when closed
+        }
+    });
+});
+</script>
+
+
+<style>
+/* 1. Obliterate the Right-Hand Hero Gap */
+html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+.hero-video-slider, .hero-section, header, footer, [class*="hero"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+/* Overriding inline fixed-width traps flagged in telemetry */
+* { max-width: 100% !important; }
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // 2. CTA Sniper: Eradicate "Build your Canvas" to prevent decision fatigue
+    const allElements = document.querySelectorAll('a, button, .btn');
+    allElements.forEach(el => {
+        if (el.textContent && el.textContent.trim().toLowerCase().includes('build your canvas')) {
+            el.style.display = 'none';
+            el.style.pointerEvents = 'none';
+            el.style.opacity = '0';
         }
     });
 });

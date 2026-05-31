@@ -2128,7 +2128,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
           <path d="M3 8h10M9 4l4 4-4 4"/>
         </svg>
       </a>
-      <a href="https://wa.me/918751997519?text=Hi%20Aditya%2C%20I%27m%20claiming%20my%20500%20Nosh%20Coins%20with%20UTR%3A%20NOSH-GIFT-EARN500" class="btn-ghost-white">
+      <a href="https://wa.me/919567632255?text=Hi%20Aditya%2C%20I%27m%20claiming%20my%20500%20Nosh%20Coins%20with%20UTR%3A%20NOSH-GIFT-EARN500" class="btn-ghost-white">
         WhatsApp a Nosh Brain
       </a>
     </div>
@@ -2565,7 +2565,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
     </div>
     <div class="cta-strip-actions">
       <a href="/configure/international" class="btn-orange">Secure Your Canvas →</a>
-      <a href="https://wa.me/918751997519?text=Hi%20Aditya%2C%20I%27m%20claiming%20my%20500%20Nosh%20Coins%20with%20UTR%3A%20NOSH-GIFT-EARN500" class="btn-ghost-white"
+      <a href="https://wa.me/919567632255?text=Hi%20Aditya%2C%20I%27m%20claiming%20my%20500%20Nosh%20Coins%20with%20UTR%3A%20NOSH-GIFT-EARN500" class="btn-ghost-white"
          style="color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.2)">
         WhatsApp Nosh Tours Now.
       </a>
@@ -2722,6 +2722,38 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             mobileMenu.style.display = "none";
             document.body.style.overflow = "auto"; // Restore scroll when closed
+        }
+    });
+});
+</script>
+
+
+<style>
+/* 1. Obliterate the Right-Hand Hero Gap */
+html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+.hero-video-slider, .hero-section, header, footer, [class*="hero"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+/* Overriding inline fixed-width traps flagged in telemetry */
+* { max-width: 100% !important; }
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // 2. CTA Sniper: Eradicate "Build your Canvas" to prevent decision fatigue
+    const allElements = document.querySelectorAll('a, button, .btn');
+    allElements.forEach(el => {
+        if (el.textContent && el.textContent.trim().toLowerCase().includes('build your canvas')) {
+            el.style.display = 'none';
+            el.style.pointerEvents = 'none';
+            el.style.opacity = '0';
         }
     });
 });
