@@ -1238,6 +1238,15 @@ img { -webkit-user-drag: none; user-select: none; }
     img { border-radius: 12px !important; }
 }
 
+
+/* --- ANTIGRAVITY CONTRAST & ACCESSIBILITY HARDENING --- */
+.eyebrow, p.eyebrow, [class*="eyebrow"] { color: #D97706 !important; font-weight: 700 !important; opacity: 1 !important; }
+.diff-link, a.diff-link, .diff\.link { color: #1C2B3A !important; font-weight: 700 !important; text-decoration: underline !important; opacity: 1 !important; }
+.section-sub, p.section-sub, .section\.sub { color: #2D3748 !important; opacity: 1 !important; }
+.footer-col-title, .footer\.col\.title { color: #FFFFFF !important; font-weight: 700 !important; opacity: 1 !important; }
+.footer-copy, .footer\.copy, span.footer\.copy { color: #E2E8F0 !important; opacity: 1 !important; }
+.trust-pill, .trust\.pill, span.trust\.pill { color: #FFFFFF !important; background-color: #2D3748 !important; font-weight: 600 !important; opacity: 1 !important; }
+
 </style>
 
 <style>
@@ -1247,6 +1256,15 @@ html, body {
     -ms-touch-action: manipulation;
     overscroll-behavior-y: none;
 }
+
+/* --- ANTIGRAVITY CONTRAST & ACCESSIBILITY HARDENING --- */
+.eyebrow, p.eyebrow, [class*="eyebrow"] { color: #D97706 !important; font-weight: 700 !important; opacity: 1 !important; }
+.diff-link, a.diff-link, .diff\.link { color: #1C2B3A !important; font-weight: 700 !important; text-decoration: underline !important; opacity: 1 !important; }
+.section-sub, p.section-sub, .section\.sub { color: #2D3748 !important; opacity: 1 !important; }
+.footer-col-title, .footer\.col\.title { color: #FFFFFF !important; font-weight: 700 !important; opacity: 1 !important; }
+.footer-copy, .footer\.copy, span.footer\.copy { color: #E2E8F0 !important; opacity: 1 !important; }
+.trust-pill, .trust\.pill, span.trust\.pill { color: #FFFFFF !important; background-color: #2D3748 !important; font-weight: 600 !important; opacity: 1 !important; }
+
 </style>
 
 </head>
@@ -1293,10 +1311,10 @@ html, body {
     </div>
   </div>
   <div class="hero-video-side" id="video-container">
-    <video preload="metadata" class="slider-video active" autoplay muted loop playsinline><source src="/videos/15118051_1080_1920_30fps.mp4" type="video/mp4"></video>
-    <video preload="metadata" class="slider-video" autoplay muted loop playsinline><source src="/videos/6666635-uhd_2160_4096_25fps.mp4" type="video/mp4"></video>
-    <video preload="metadata" class="slider-video" autoplay muted loop playsinline><source src="/videos/7509450-hd_1066_1920_25fps.mp4" type="video/mp4"></video>
-    <video preload="metadata" class="slider-video" autoplay muted loop playsinline><source src="/videos/8503162-uhd_2160_3840_24fps.mp4" type="video/mp4"></video>
+    <video aria-hidden="true" role="presentation" preload="metadata" class="slider-video active" autoplay muted loop playsinline><source src="/videos/15118051_1080_1920_30fps.mp4" type="video/mp4"></video>
+    <video aria-hidden="true" role="presentation" preload="metadata" class="slider-video" autoplay muted loop playsinline><source src="/videos/6666635-uhd_2160_4096_25fps.mp4" type="video/mp4"></video>
+    <video aria-hidden="true" role="presentation" preload="metadata" class="slider-video" autoplay muted loop playsinline><source src="/videos/7509450-hd_1066_1920_25fps.mp4" type="video/mp4"></video>
+    <video aria-hidden="true" role="presentation" preload="metadata" class="slider-video" autoplay muted loop playsinline><source src="/videos/8503162-uhd_2160_3840_24fps.mp4" type="video/mp4"></video>
   </div>
 </div>
 <script>
@@ -1570,180 +1588,7 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 </footer>
 
-<script>
 
-gsap.registerPlugin(ScrollTrigger);
-
-// ── HERO ENTRANCE ──────────────────────────────────────
-const tl = gsap.timeline({ delay:0.5 });
-tl.to('#ey',   { opacity:1, y:0, duration:0.85, ease:'power3.out' })
-  .to('#ht',   { opacity:1, y:0, duration:1.05, ease:'power3.out' }, '-=0.35')
-  .to('#hr',   { opacity:1, width:60, duration:0.6, ease:'power2.out' }, '-=0.5')
-  .to('#hs',   { opacity:1, y:0, duration:0.85, ease:'power2.out' }, '-=0.45')
-  .to('#ha',   { opacity:1, y:0, duration:0.7,  ease:'power2.out' }, '-=0.4')
-  .to('#hrat', { opacity:1, y:0, duration:0.6,  ease:'power2.out' }, '-=0.3');
-
-// ── SECTION SCROLL REVEALS ─────────────────────────────
-const _revealObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      _revealObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.10, rootMargin: '0px 0px -30px 0px' });
-document.querySelectorAll('.reveal').forEach(el => _revealObs.observe(el));
-
-// ── NAV SCROLL SHADOW ─────────────────────────────────
-window.addEventListener('scroll', () => {
-  const nav = document.querySelector('.nav');
-  if (nav) {
-    nav.style.boxShadow = window.scrollY > 60
-      ? '0 8px 40px rgba(0,0,0,0.12)'
-      : '0 4px 32px rgba(0,0,0,0.08)';
-  }
-}, { passive:true });
-
-// ── MOBILE MENU TOGGLE ────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-  const menuBtn = document.querySelector('.nav-menu-btn');
-  const navLinks = document.querySelector('.nav-links');
-  if (menuBtn && navLinks) {
-    menuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  }
-});
-
-// ══ HERO SINGLE CTA — JUNE & JULY ════════════════════
-function openCanvasForm() {
-  const btn = document.getElementById('hero-cta');
-  const overlay = document.getElementById('canvas-form-overlay');
-
-  btn.classList.add('clicked');
-  btn.querySelector('.hero-cta-text').textContent = 'Building your canvas…';
-
-  setTimeout(() => {
-    overlay.classList.add('open');
-    setTimeout(() => {
-      const first = document.getElementById('cf-destination');
-      if (first) first.focus();
-    }, 550);
-  }, 300);
-}
-
-function closeCanvasForm() {
-  const btn = document.getElementById('hero-cta');
-  const overlay = document.getElementById('canvas-form-overlay');
-
-  overlay.classList.remove('open');
-  setTimeout(() => {
-    btn.classList.remove('clicked');
-    btn.querySelector('.hero-cta-text').textContent = 'June & July are filling. See what we build.';
-  }, 500);
-}
-
-document.getElementById('canvas-form-overlay').addEventListener('click', function(e) {
-  if (e.target === this) closeCanvasForm();
-});
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeCanvasForm();
-});
-
-function sendToWhatsApp() {
-  const destination = document.getElementById('cf-destination').value;
-  const travelDate  = document.getElementById('cf-travel-date').value;
-  const group       = document.getElementById('cf-group').value;
-  const contact     = document.getElementById('cf-contact').value;
-
-  const emailVal = document.getElementById('cf-email').value;
-  const email = emailVal ? emailVal.trim() : '';
-  const dobVal = document.getElementById('cf-dob').value;
-  const dob = dobVal ? dobVal.trim() : '';
-
-  if (!destination || !travelDate || !group || !contact) {
-    ['cf-destination','cf-travel-date','cf-group','cf-contact'].forEach(id => {
-      const el = document.getElementById(id);
-      if (!el.value) {
-        el.style.borderColor = '#E8951A';
-        el.style.boxShadow   = '0 0 0 3px rgba(232,149,26,0.15)';
-        setTimeout(() => {
-          el.style.borderColor = '';
-          el.style.boxShadow   = '';
-        }, 2000);
-      }
-    });
-    return;
-  }
-
-  const msg = [
-    '🎨 *New Canvas Enquiry — noshtours.com*',
-    '',
-    `📍 *Destination:* ${destination}`,
-    `📅 *Travel dates:* ${travelDate}`,
-    `👥 *Group size:* ${group}`,
-    `📱 *Contact:* ${contact}`,
-    email ? `📧 *Email:* ${email}` : null,
-    dob   ? `🎂 *Date of birth:* ${dob}` : null,
-    '',
-    '_Sent from the Nosh canvas builder._'
-  ].filter(Boolean).join('\n');
-
-  const submitBtn = document.getElementById('cf-submit');
-  submitBtn.classList.add('sending');
-  submitBtn.querySelector('.cf-submit-text').textContent = 'Opening WhatsApp…';
-
-  const encoded = encodeURIComponent(msg);
-  const waURL   = `https://wa.me/919567632255?text=${encoded}`;
-
-  setTimeout(() => {
-    window.open(waURL, '_blank');
-    closeCanvasForm();
-    setTimeout(() => {
-      ['cf-destination','cf-travel-date','cf-group','cf-contact'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.value = '';
-      });
-      submitBtn.classList.remove('sending');
-      submitBtn.querySelector('.cf-submit-text').textContent = 'Send to a Nosh Brain →';
-    }, 600);
-  }, 600);
-}
-
-// ── DOB auto-format DD/MM/YYYY ──────────────────────
-const dobInput = document.getElementById('cf-dob');
-if (dobInput) {
-  dobInput.addEventListener('input', function() {
-    let v = this.value.replace(/[^0-9]/g, '');
-    if (v.length > 2)  v = v.slice(0,2) + ' / ' + v.slice(2);
-    if (v.length > 9)  v = v.slice(0,9) + v.slice(9,11);
-    if (v.replace(/[^0-9]/g,'').length > 8)
-      v = v.slice(0, v.lastIndexOf(' / ', 9) + 3) + v.slice(v.lastIndexOf(' / ') + 3, v.lastIndexOf(' / ') + 7);
-    
-    const nums = this.value.replace(/[^0-9]/g,'').slice(0,8);
-    let fmt = nums;
-    if (nums.length > 2)  fmt = nums.slice(0,2) + ' / ' + nums.slice(2);
-    if (nums.length > 4)  fmt = nums.slice(0,2) + ' / ' + nums.slice(2,4) + ' / ' + nums.slice(4);
-    this.value = fmt;
-  });
-}
-
-// ── GSAP fallback ───
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.querySelectorAll(
-      '#ey, #ht, #hr, #hs, #ha, #hrat, .word, .reveal'
-    ).forEach(el => {
-      if (getComputedStyle(el).opacity === '0') {
-        el.style.opacity = '1';
-        el.style.transform = 'none';
-      }
-    });
-  }, 2000); 
-});
-
-</script>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {

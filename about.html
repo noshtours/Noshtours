@@ -1966,6 +1966,15 @@ a.btn-ring, a.btn-outline {
     img { border-radius: 12px !important; }
 }
 
+
+/* --- ANTIGRAVITY CONTRAST & ACCESSIBILITY HARDENING --- */
+.eyebrow, p.eyebrow, [class*="eyebrow"] { color: #D97706 !important; font-weight: 700 !important; opacity: 1 !important; }
+.diff-link, a.diff-link, .diff\.link { color: #1C2B3A !important; font-weight: 700 !important; text-decoration: underline !important; opacity: 1 !important; }
+.section-sub, p.section-sub, .section\.sub { color: #2D3748 !important; opacity: 1 !important; }
+.footer-col-title, .footer\.col\.title { color: #FFFFFF !important; font-weight: 700 !important; opacity: 1 !important; }
+.footer-copy, .footer\.copy, span.footer\.copy { color: #E2E8F0 !important; opacity: 1 !important; }
+.trust-pill, .trust\.pill, span.trust\.pill { color: #FFFFFF !important; background-color: #2D3748 !important; font-weight: 600 !important; opacity: 1 !important; }
+
 </style>
 
 <style>
@@ -1975,6 +1984,15 @@ html, body {
     -ms-touch-action: manipulation;
     overscroll-behavior-y: none;
 }
+
+/* --- ANTIGRAVITY CONTRAST & ACCESSIBILITY HARDENING --- */
+.eyebrow, p.eyebrow, [class*="eyebrow"] { color: #D97706 !important; font-weight: 700 !important; opacity: 1 !important; }
+.diff-link, a.diff-link, .diff\.link { color: #1C2B3A !important; font-weight: 700 !important; text-decoration: underline !important; opacity: 1 !important; }
+.section-sub, p.section-sub, .section\.sub { color: #2D3748 !important; opacity: 1 !important; }
+.footer-col-title, .footer\.col\.title { color: #FFFFFF !important; font-weight: 700 !important; opacity: 1 !important; }
+.footer-copy, .footer\.copy, span.footer\.copy { color: #E2E8F0 !important; opacity: 1 !important; }
+.trust-pill, .trust\.pill, span.trust\.pill { color: #FFFFFF !important; background-color: #2D3748 !important; font-weight: 600 !important; opacity: 1 !important; }
+
 </style>
 
 </head>
@@ -2363,181 +2381,7 @@ html, body {
   </div>
 </footer>
 
-<script>
-gsap.registerPlugin(ScrollTrigger);
 
-// ══ HERO ENTRANCE ═════════════════════════════════════
-const tl = gsap.timeline({delay:0.3});
-tl.to('#hero-centre', {opacity:1, duration:1.0, ease:'power2.out'})
-  .to('#card-left',   {opacity:1, y:0, duration:0.8, ease:'power3.out'}, '-=0.4')
-  .to('#card-right',  {opacity:1, y:0, duration:0.8, ease:'power3.out'}, '-=0.6');
-
-// ══ HERO MOUSE PARALLAX — minimal, smooth ═════════════
-(function(){
-  if(window.innerWidth <= 768) return;
-  const imgL = document.getElementById('founder-img-left');
-  const imgR = document.getElementById('founder-img-right');
-  const hero = document.getElementById('hero');
-  if(!imgL || !imgR || !hero) return;
-
-  let tx=0, ty=0, cx=0, cy=0;
-
-  document.addEventListener('mousemove', e => {
-    const hw = window.innerWidth, hh = window.innerHeight;
-    tx = (e.clientX / hw - 0.5);  // -0.5 to 0.5
-    ty = (e.clientY / hh - 0.5);
-  }, { passive: true });
-
-  (function raf() {
-    requestAnimationFrame(raf);
-    // Smooth lerp
-    cx += (tx - cx) * 0.05;
-    cy += (ty - cy) * 0.05;
-    // Left image — slower, deeper
-    imgL.style.transform = `translate(${cx * -16}px, ${cy * -10}px) scale(1.08)`;
-    // Right image — slightly faster
-    imgR.style.transform = `translate(${cx * -11}px, ${cy * -7}px) scale(1.08)`;
-  })();
-})();
-
-// ══ SCROLL ORANGE TOUCH ═══════════════════════════════
-(function(){
-  const top=document.getElementById('scroll-top');
-  const bot=document.getElementById('scroll-bottom');
-  let lastY=window.scrollY, timer=null;
-  window.addEventListener('scroll',()=>{
-    const cur=window.scrollY, d=cur-lastY;
-    if(Math.abs(d)>2){
-      top.classList.toggle('visible',d<0);
-      bot.classList.toggle('visible',d>0);
-      clearTimeout(timer);
-      timer=setTimeout(()=>{top.classList.remove('visible');bot.classList.remove('visible');},800);
-    }
-    lastY=cur;
-  },{passive:true});
-})();
-
-// ══ TIMELINE STAGGER ══════════════════════════════════
-ScrollTrigger.create({
-  trigger:'#timeline', start:'top 80%',
-  onEnter:()=>{
-    document.querySelectorAll('.tl-item').forEach((el,i)=>{
-      gsap.to(el,{opacity:1,y:0,duration:0.7,ease:'power3.out',delay:i*0.15});
-    });
-  }
-});
-
-// ══ TIMELINE STAT COUNTERS ════════════════════════════
-document.querySelectorAll('.tl-stat[data-target]').forEach(el=>{
-  ScrollTrigger.create({
-    trigger:el, start:'top 85%',
-    onEnter:()=>{
-      const end=parseInt(el.dataset.target);
-      gsap.fromTo({n:0},{n:0},{
-        n:end, duration:2.2, ease:'power2.out',
-        onUpdate(){
-          const v=Math.round(this.targets()[0].n);
-          el.textContent = end>=1000 ? v.toLocaleString('en-IN')+'+' : v;
-        }
-      });
-    }
-  });
-});
-
-// ══ NUMBER SECTION COUNTERS ═══════════════════════════
-document.querySelectorAll('.number-num[data-target]').forEach(el=>{
-  ScrollTrigger.create({
-    trigger:el, start:'top 85%',
-    onEnter:()=>{
-      const end=parseInt(el.dataset.target);
-      const suffix=el.dataset.suffix||'';
-      gsap.fromTo({n:0},{n:0},{
-        n:end, duration:2.5, ease:'power2.out',
-        onUpdate(){
-          const v=Math.round(this.targets()[0].n);
-          el.textContent = (end>=1000 ? v.toLocaleString('en-IN') : v) + suffix;
-        }
-      });
-    }
-  });
-});
-
-// ══ COMMUNITY RING COUNTER ════════════════════════════
-ScrollTrigger.create({
-  trigger:'#community', start:'top 75%',
-  onEnter:()=>{
-    const ring=document.getElementById('ring-progress');
-    const num=document.getElementById('ring-num');
-    if(ring) ring.classList.add('animated');
-    if(num){
-      gsap.fromTo({n:0},{n:0},{
-        n:7000, duration:2.8, ease:'power2.out',
-        onUpdate(){
-          const v=Math.round(this.targets()[0].n);
-          num.innerHTML=v.toLocaleString('en-IN')+'<span class="ring-unit">+</span>';
-        }
-      });
-    }
-  }
-});
-
-// ══ MINIMAL SCROLL REVEALS — CSS transition + IO ══════
-const revealObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('in-view');
-      revealObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-// ══ FOUNDER CARDS — minimal hover lift, no tilt ════════
-// Tilt on About page feels wrong for a story page.
-// Clean lift + shadow depth is more editorial.
-document.querySelectorAll('.founder-card').forEach(card => {
-  card.addEventListener('mouseenter', () => {
-    card.style.transition = 'transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.4s ease';
-  });
-});
-
-// ══ NAV SCROLL ═══════════════════════════════════════
-window.addEventListener('scroll',()=>{
-  document.getElementById('main-nav').style.boxShadow=
-    window.scrollY>60?'0 8px 40px rgba(0,0,0,0.1)':'0 4px 28px rgba(0,0,0,0.07)';
-},{passive:true});
-
-
-// Filter pills
-document.querySelectorAll('.filter-pill').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-  });
-});
-
-// Scroll reveal
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if(e.isIntersecting) {
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// Nav scroll effect
-window.addEventListener('scroll', () => {
-  const nav = document.querySelector('.nav');
-  if(window.scrollY > 80) {
-    nav.style.boxShadow = '0 8px 40px rgba(0,0,0,0.12)';
-  } else {
-    nav.style.boxShadow = '0 4px 32px rgba(0,0,0,0.08)';
-  }
-}, {passive:true});
-
-</script>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {

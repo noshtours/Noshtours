@@ -1875,6 +1875,15 @@ a.btn-ring, a.btn-outline {
     img { border-radius: 12px !important; }
 }
 
+
+/* --- ANTIGRAVITY CONTRAST & ACCESSIBILITY HARDENING --- */
+.eyebrow, p.eyebrow, [class*="eyebrow"] { color: #D97706 !important; font-weight: 700 !important; opacity: 1 !important; }
+.diff-link, a.diff-link, .diff\.link { color: #1C2B3A !important; font-weight: 700 !important; text-decoration: underline !important; opacity: 1 !important; }
+.section-sub, p.section-sub, .section\.sub { color: #2D3748 !important; opacity: 1 !important; }
+.footer-col-title, .footer\.col\.title { color: #FFFFFF !important; font-weight: 700 !important; opacity: 1 !important; }
+.footer-copy, .footer\.copy, span.footer\.copy { color: #E2E8F0 !important; opacity: 1 !important; }
+.trust-pill, .trust\.pill, span.trust\.pill { color: #FFFFFF !important; background-color: #2D3748 !important; font-weight: 600 !important; opacity: 1 !important; }
+
 </style>
 
 <style>
@@ -1884,6 +1893,15 @@ html, body {
     -ms-touch-action: manipulation;
     overscroll-behavior-y: none;
 }
+
+/* --- ANTIGRAVITY CONTRAST & ACCESSIBILITY HARDENING --- */
+.eyebrow, p.eyebrow, [class*="eyebrow"] { color: #D97706 !important; font-weight: 700 !important; opacity: 1 !important; }
+.diff-link, a.diff-link, .diff\.link { color: #1C2B3A !important; font-weight: 700 !important; text-decoration: underline !important; opacity: 1 !important; }
+.section-sub, p.section-sub, .section\.sub { color: #2D3748 !important; opacity: 1 !important; }
+.footer-col-title, .footer\.col\.title { color: #FFFFFF !important; font-weight: 700 !important; opacity: 1 !important; }
+.footer-copy, .footer\.copy, span.footer\.copy { color: #E2E8F0 !important; opacity: 1 !important; }
+.trust-pill, .trust\.pill, span.trust\.pill { color: #FFFFFF !important; background-color: #2D3748 !important; font-weight: 600 !important; opacity: 1 !important; }
+
 </style>
 
 </head>
@@ -2452,292 +2470,7 @@ html, body {
   </div>
 </footer>
 
-<script>
-gsap.registerPlugin(ScrollTrigger);
 
-// ══ HERO ENTRANCE ═════════════════════════════════════
-const tl = gsap.timeline({delay:0.3});
-tl.to('#hero-pills',   {opacity:1,y:0,duration:0.7,ease:'power3.out'})
-  .to('#hero-ey',      {opacity:1,y:0,duration:0.7,ease:'power3.out'},'-=0.3')
-  .to('.word',         {
-    opacity:1, y:0, duration:0.65, ease:'power3.out', stagger:0.04
-  },'-=0.3')
-  .to('#hero-rule',    {opacity:1,width:60,duration:0.6,ease:'power2.out'},'-=0.4')
-  .to('#hero-sub',     {opacity:1,y:0,duration:0.8,ease:'power2.out'},'-=0.4')
-  .to('#hero-actions', {opacity:1,y:0,duration:0.7,ease:'power2.out'},'-=0.4')
-  .to('#hero-stats',   {opacity:1,duration:0.8,ease:'power2.out'},'-=0.5');
-
-// ══ 3-LAYER HERO PARALLAX ═════════════════════════════
-(function() {
-  if (window.innerWidth <= 768) return;
-  const bg  = document.getElementById('hero-bg');
-  const mid = document.getElementById('hero-mid');
-  const fg  = document.getElementById('hero-fg');
-  let mx=0, my=0, cx=window.innerWidth/2, cy=window.innerHeight/2;
-
-  document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
-
-  (function raf(){
-    requestAnimationFrame(raf);
-    cx += (mx-cx)*0.06; cy += (my-cy)*0.06;
-    const px = (cx/window.innerWidth -0.5);
-    const py = (cy/window.innerHeight-0.5);
-    if(bg)  bg.style.transform  = `translate(${px*-18}px,${py*-12}px) scale(1.08)`;
-    if(mid) mid.style.transform = `translate(${px*-6}px,${py*-4}px)`;
-    if(fg)  fg.style.transform  = `translate(${px*12}px,${py*8}px)`;
-  })();
-})();
-
-// ══ SCROLL ORANGE TOUCH INDICATOR ════════════════════
-(function() {
-  const topEl    = document.getElementById('scroll-top');
-  const bottomEl = document.getElementById('scroll-bottom');
-  if(!topEl || !bottomEl) return;
-
-  let lastY = window.scrollY;
-  let hideTimer = null;
-
-  function showIndicator(dir) {
-    // dir: 'up' shows top bar, 'down' shows bottom bar
-    topEl.classList.toggle('visible',    dir === 'up');
-    bottomEl.classList.toggle('visible', dir === 'down');
-    clearTimeout(hideTimer);
-    hideTimer = setTimeout(() => {
-      topEl.classList.remove('visible');
-      bottomEl.classList.remove('visible');
-    }, 800);
-  }
-
-  window.addEventListener('scroll', () => {
-    const currentY = window.scrollY;
-    const delta    = currentY - lastY;
-    if (Math.abs(delta) > 2) {
-      showIndicator(delta > 0 ? 'down' : 'up');
-    }
-    lastY = currentY;
-  }, {passive:true});
-})();
-
-// ══ CARD STAGGER ══════════════════════════════════════
-const allCards = Array.from(document.querySelectorAll('.dest-card'));
-const cardObs  = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersecting) {
-      allCards.forEach((c,i) => setTimeout(()=>c.classList.add('visible'), i*55));
-      cardObs.disconnect();
-    }
-  });
-}, {threshold:0.05});
-const grid = document.getElementById('dest-grid');
-if(grid) cardObs.observe(grid);
-
-// ══ FILTER LOGIC ══════════════════════════════════════
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const f = btn.dataset.filter;
-    let vis = 0;
-    allCards.forEach(card => {
-      const match = f==='all' ||
-        (f==='wellness' && card.dataset.tag==='wellness') ||
-        card.dataset.continent===f;
-      card.style.display = match ? '' : 'none';
-      if(match){
-        vis++;
-        card.classList.remove('visible');
-        setTimeout(()=>card.classList.add('visible'), 60);
-      }
-    });
-    document.getElementById('dest-count').textContent = vis;
-    document.getElementById('dest-empty').style.display = vis===0?'block':'none';
-  });
-});
-
-// Hero pills sync with filter tabs
-document.querySelectorAll('.hero-pill').forEach(pill => {
-  pill.addEventListener('click', () => {
-    document.querySelectorAll('.hero-pill').forEach(p=>p.classList.remove('active'));
-    pill.classList.add('active');
-    const map = {'All':'all','Asia':'asia','Europe':'europe','Indian Ocean':'ocean','Central Asia':'central'};
-    const fKey = map[pill.textContent.trim()] || 'all';
-    document.querySelector(`.filter-btn[data-filter="${fKey}"]`)?.click();
-    document.querySelector('.filter-bar')?.scrollIntoView({behavior:'smooth',block:'start'});
-  });
-});
-
-// ══ MOUSE PARALLAX + TILT (desktop) ══════════════════
-(function(){
-  if(window.innerWidth<=1024) return;
-  const gridGlow = document.getElementById('grid-glow');
-  let mx=window.innerWidth/2, my=window.innerHeight/2, cx=mx, cy=my;
-
-  document.addEventListener('mousemove', e=>{ mx=e.clientX; my=e.clientY; });
-
-  // Wrap cards
-  allCards.forEach(card => {
-    const inner = document.createElement('div');
-    inner.className='dest-card-inner';
-    inner.style.cssText='width:100%;height:100%;border-radius:18px;overflow:hidden;background:#fff;transition:transform 0.08s cubic-bezier(0.23,1,0.32,1);transform-style:preserve-3d;';
-    while(card.firstChild) inner.appendChild(card.firstChild);
-    card.appendChild(inner);
-    card.style.transformStyle='preserve-3d';
-
-    card.addEventListener('mousemove', e => {
-      const r  = card.getBoundingClientRect();
-      const dx = (e.clientX-r.left-r.width/2)/(r.width/2);
-      const dy = (e.clientY-r.top-r.height/2)/(r.height/2);
-      inner.style.transform=`perspective(900px) rotateX(${dy*10}deg) rotateY(${-dx*10}deg) scale3d(1.02,1.02,1.02)`;
-      const img=card.querySelector('.dest-img');
-      if(img) img.style.transform=`scale(1.1) translate(${dx*-8}px,${dy*-8}px)`;
-      const nm=card.querySelector('.dest-name'), pr=card.querySelector('.dest-price'), ct=card.querySelector('.dest-cta');
-      if(nm) nm.style.transform=`translateY(-${Math.abs(dy)*5}px)`;
-      if(pr) pr.style.transform=`translateY(-${Math.abs(dy)*4}px)`;
-      if(ct) ct.style.transform=`translateY(-${Math.abs(dy)*3}px)`;
-      card.style.boxShadow=`${dx*12}px ${dy*12}px 48px rgba(0,0,0,0.16)`;
-    });
-    card.addEventListener('mouseleave',()=>{
-      inner.style.transform='perspective(900px) rotateX(0) rotateY(0) scale3d(1,1,1)';
-      const img=card.querySelector('.dest-img');
-      if(img) img.style.transform='scale(1) translate(0,0)';
-      ['dest-name','dest-price','dest-cta'].forEach(cls=>{
-        const el=card.querySelector('.'+cls);
-        if(el) el.style.transform='';
-      });
-      card.style.boxShadow='';
-    });
-  });
-
-  // Proximity detection
-  (function raf(){
-    requestAnimationFrame(raf);
-    cx+=(mx-cx)*0.08; cy+=(my-cy)*0.08;
-    if(gridGlow){ gridGlow.style.left=cx+'px'; gridGlow.style.top=(cy+window.scrollY)+'px'; gridGlow.style.opacity='1'; }
-    allCards.forEach(c=>{
-      const r=c.getBoundingClientRect(), d=Math.hypot(cx-(r.left+r.width/2),cy-(r.top+r.height/2));
-      c.classList.toggle('near',d<160&&d>60);
-    });
-  })();
-
-  // Card dim on section hover
-  const sec=document.querySelector('.destinations-section');
-  if(sec){
-    sec.addEventListener('mouseenter',()=>allCards.forEach(c=>{c.style.transition='opacity 0.3s ease,box-shadow 0.35s ease';c.style.opacity='0.75';}));
-    sec.addEventListener('mouseleave',()=>allCards.forEach(c=>{c.style.opacity='1';}));
-    allCards.forEach(card=>{
-      card.addEventListener('mouseenter',()=>allCards.forEach(c=>{c.style.opacity=c===card?'1':'0.55';}));
-    });
-  }
-
-  // Magnetic CTA
-  document.querySelectorAll('.dest-cta').forEach(btn=>{
-    btn.addEventListener('mousemove',e=>{
-      const r=btn.getBoundingClientRect();
-      btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*0.25}px,${(e.clientY-r.top-r.height/2)*0.25}px)`;
-    });
-    btn.addEventListener('mouseleave',()=>{btn.style.transform='';});
-  });
-
-  // CTA strip glow
-  const ctaEl=document.querySelector('.cta-strip'), glowEl=document.getElementById('cta-glow');
-  if(ctaEl&&glowEl){
-    ctaEl.addEventListener('mousemove',e=>{
-      const r=ctaEl.getBoundingClientRect();
-      glowEl.style.left=(e.clientX-r.left)+'px';
-      glowEl.style.top=(e.clientY-r.top)+'px';
-    });
-  }
-})();
-
-// ══ SCROLL REVEAL ════════════════════════════════════
-gsap.utils.toArray('.section-title,.cta-strip-title').forEach(el=>{
-  gsap.fromTo(el,{opacity:0,y:30},{
-    opacity:1,y:0,duration:0.85,ease:'power3.out',
-    scrollTrigger:{trigger:el,start:'top 83%'}
-  });
-});
-
-// ══ MOBILE SWIPE CAROUSEL ════════════════════════════
-(function(){
-  const g=document.getElementById('dest-grid');
-  const d=document.getElementById('swipe-dots');
-  if(!g||!d) return;
-  const cards=Array.from(g.querySelectorAll('.dest-card'));
-  const isMob=()=>window.innerWidth<=767;
-
-  function buildDots(){
-    if(!isMob()) return;
-    d.innerHTML='';
-    cards.filter(c=>c.style.display!=='none').forEach((_,i)=>{
-      const dot=document.createElement('div');
-      dot.className='swipe-dot'+(i===0?' active':'');
-      dot.addEventListener('click',()=>cards[i].scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'}));
-      d.appendChild(dot);
-    });
-  }
-  buildDots();
-
-  const obs=new IntersectionObserver(entries=>{
-    if(!isMob()) return;
-    entries.forEach(e=>{
-      const idx=cards.indexOf(e.target);
-      if(idx<0) return;
-      if(e.isIntersecting&&e.intersectionRatio>=0.6){
-        cards.forEach(c=>c.classList.remove('snap-active'));
-        e.target.classList.add('snap-active');
-        const dots=d.querySelectorAll('.swipe-dot');
-        dots.forEach((dd,i)=>dd.classList.toggle('active',i===idx));
-      }
-    });
-  },{root:g,threshold:0.6});
-  cards.forEach(c=>obs.observe(c));
-  if(isMob()&&cards[0]) cards[0].classList.add('snap-active');
-
-  let drag=false,sx=0,sl=0;
-  g.addEventListener('mousedown',e=>{drag=true;sx=e.pageX-g.offsetLeft;sl=g.scrollLeft;g.style.cursor='grabbing';});
-  g.addEventListener('mouseleave',()=>{drag=false;g.style.cursor='';});
-  g.addEventListener('mouseup',()=>{drag=false;g.style.cursor='';});
-  g.addEventListener('mousemove',e=>{if(!drag)return;e.preventDefault();g.scrollLeft=sl-(e.pageX-g.offsetLeft-sx)*1.5;});
-  window.addEventListener('resize',()=>{setTimeout(()=>{buildDots();cards.forEach(c=>c.classList.remove('snap-active'));if(isMob()&&cards[0])cards[0].classList.add('snap-active');},200);});
-})();
-
-// ══ NAV SCROLL ═══════════════════════════════════════
-window.addEventListener('scroll',()=>{
-  document.getElementById('main-nav').style.boxShadow=
-    window.scrollY>60?'0 8px 40px rgba(0,0,0,0.1)':'0 4px 28px rgba(0,0,0,0.07)';
-},{passive:true});
-
-
-// Filter pills
-document.querySelectorAll('.filter-pill').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-  });
-});
-
-// Scroll reveal
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if(e.isIntersecting) {
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// Nav scroll effect
-window.addEventListener('scroll', () => {
-  const nav = document.querySelector('.nav');
-  if(window.scrollY > 80) {
-    nav.style.boxShadow = '0 8px 40px rgba(0,0,0,0.12)';
-  } else {
-    nav.style.boxShadow = '0 4px 32px rgba(0,0,0,0.08)';
-  }
-}, {passive:true});
-
-</script>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
