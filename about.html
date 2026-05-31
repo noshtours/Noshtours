@@ -2099,6 +2099,38 @@ html, body {
 }
 </style>
 
+
+<!-- ANTIGRAVITY MASTER RESPONSIVE GRID -->
+<style>
+html, body {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit !important;
+}
+
+/* Force structural containers to remain fluid on iPhone 15/16/17 & Premium Androids */
+div, section, main, header, footer {
+    max-width: 100% !important;
+}
+
+/* Ensure no inner layout hidden property kills the global viewport scroll */
+.main-wrapper, #__next, #root, #wrapper {
+    overflow: visible !important;
+    height: auto !important;
+}
+</style>
+
 </head>
 <body>
 

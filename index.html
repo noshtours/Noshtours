@@ -150,7 +150,7 @@ a{text-decoration:none;color:inherit}
   position:relative;
   width:100%;height:100vh;
   min-height:700px;
-  overflow:hidden;
+  overflow:visible;
 }
 .hero-bg{
   position:absolute;inset:0;
@@ -401,7 +401,7 @@ a{text-decoration:none;color:inherit}
 }
 .dest-card{
   border-radius:16px;
-  overflow:hidden;
+  overflow:visible;
   background:var(--white);
   border:1px solid rgba(0,0,0,0.07);
   transition:transform .3s,box-shadow .3s;
@@ -414,7 +414,7 @@ a{text-decoration:none;color:inherit}
 .dest-img-wrap{
   position:relative;
   aspect-ratio:4/3;
-  overflow:hidden;
+  overflow:visible;
 }
 .dest-img{
   width:100%;height:100%;
@@ -457,14 +457,14 @@ a{text-decoration:none;color:inherit}
   display:-webkit-box;
   -webkit-line-clamp:2;
   -webkit-box-orient:vertical;
-  overflow:hidden;
+  overflow:visible;
 }
 
 /* ── WHY NOSH FULL-WIDTH ─────────────────────────────── */
 .why{
   background:var(--navy);
   position:relative;
-  overflow:hidden;
+  overflow:visible;
 }
 .why::before{
   content:'';
@@ -535,7 +535,7 @@ a{text-decoration:none;color:inherit}
   bottom:-28px;left:-36px;
   width:200px;
   border-radius:14px;
-  overflow:hidden;
+  overflow:visible;
   box-shadow:0 20px 50px rgba(0,0,0,0.3);
   border:4px solid var(--navy);
 }
@@ -563,7 +563,7 @@ a{text-decoration:none;color:inherit}
   display:grid;
   grid-template-columns:1fr 1fr;
   min-height:560px;
-  overflow:hidden;
+  overflow:visible;
 }
 .gift-left{
   background:var(--navy);
@@ -571,7 +571,7 @@ a{text-decoration:none;color:inherit}
   display:flex;flex-direction:column;
   justify-content:center;
   position:relative;
-  overflow:hidden;
+  overflow:visible;
 }
 .gift-left::before{
   content:'';
@@ -609,7 +609,7 @@ a{text-decoration:none;color:inherit}
   position:relative;z-index:1;
 }
 .gift-right{
-  position:relative;overflow:hidden;
+  position:relative;overflow:visible;
 }
 .gift-right img{
   width:100%;height:100%;
@@ -844,7 +844,7 @@ footer{
 /* ══ CRYSTAL HERO ═══════════════════════════════════════ */
 .hero {
   position:relative; width:100%; min-height:100vh; height:auto;
-  min-height:700px; overflow:hidden;
+  min-height:700px; overflow:visible;
   background:#f8f3ec;
 }
 .hero-bg {
@@ -996,7 +996,7 @@ footer{
   color: #fff !important;
   box-shadow: var(--btn-glow) !important;
   position: relative !important;
-  overflow: hidden !important;
+  overflow: visible !important;
   transition: transform 0.22s cubic-bezier(0.34,1.2,0.64,1), box-shadow 0.22s ease, filter 0.22s ease !important;
 }
 
@@ -1035,7 +1035,7 @@ footer{
   letter-spacing: 0.3px;
   color: #fff;
   cursor: pointer;
-  overflow: hidden;
+  overflow: visible;
   outline: none;
   background: linear-gradient(120deg, #E8951A 0%, #C4621A 30%, #E8B49A 55%, #E8951A 75%, #C4621A 100%);
   background-size: 250% 100%;
@@ -1108,7 +1108,7 @@ footer{
   width: 100%; padding: 16px; border: none; border-radius: 12px;
   background: linear-gradient(135deg, #E8951A 0%, #C4621A 55%, #E8B49A 100%); background-size: 200% 100%; animation: gradientShift 4s ease infinite;
   color: #fff; font-family: "Barlow", sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer;
-  box-shadow: 0 6px 24px rgba(232,149,26,0.3); transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden;
+  box-shadow: 0 6px 24px rgba(232,149,26,0.3); transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: visible;
 }
 .canvas-form-submit::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 55%); pointer-events: none; }
 .canvas-form-submit:hover { transform: translateY(-1px); box-shadow: 0 10px 32px rgba(232,149,26,0.4); }
@@ -1133,9 +1133,9 @@ img { -webkit-user-drag: none; user-select: none; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(232,149,26,0.6); }
 
 /* ══ HERO MEDIA CONTAINER ════════════════════════════ */
-.hero-media-strip { position: relative; width: 100%; background: var(--navy); overflow: hidden; z-index: 2; }
+.hero-media-strip { position: relative; width: 100%; background: var(--navy); overflow: visible; z-index: 2; }
 .hero-media-container { max-width: 1160px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: center; }
-.hero-media-slot { width: 100%; margin-bottom: 28px; border-radius: 14px; overflow: hidden; position: relative; min-height: 0; }
+.hero-media-slot { width: 100%; margin-bottom: 28px; border-radius: 14px; overflow: visible; position: relative; min-height: 0; }
 .hero-media-slot:has(img), .hero-media-slot:has(video) { aspect-ratio: 16 / 7; background: rgba(28,43,58,0.06); }
 .hero-media-slot img, .hero-media-slot video { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 14px; }
 .hero-media-slot video { pointer-events: none; }
@@ -1146,14 +1146,14 @@ img { -webkit-user-drag: none; user-select: none; }
 }
 
 /* ══ PRESS & RECOGNITION STRIP ═══════════════════════ */
-.press-strip { background: var(--navy); padding: 32px 0 28px; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative; }
+.press-strip { background: var(--navy); padding: 32px 0 28px; overflow: visible; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative; }
 .press-strip::before, .press-strip::after { content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none; }
 .press-strip::before { left: 0; background: linear-gradient(to right, var(--navy), transparent); }
 .press-strip::after { right: 0; background: linear-gradient(to left, var(--navy), transparent); }
 .press-label-row { text-align: center; margin-bottom: 20px; }
 .press-label { font-family: "Barlow Condensed", sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.25); }
 .press-label span { display: inline-block; width: 32px; height: 1px; background: rgba(255,255,255,0.12); vertical-align: middle; margin: 0 10px; }
-.press-marquee-wrap { overflow: hidden; white-space: nowrap; }
+.press-marquee-wrap { overflow: visible; white-space: nowrap; }
 .press-marquee { display: inline-flex; align-items: center; gap: 0; animation: pressMarquee 36s linear infinite; }
 .press-marquee:hover { animation-play-state: paused; }
 @keyframes pressMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -1430,7 +1430,7 @@ html, body {
 .hero-video-slider {
     height: auto !important;
     min-height: 85vh !important;
-    overflow: hidden !important; /* Keeps video contained, but allows the section to grow/scroll */
+    overflow: visible !important; /* Keeps video contained, but allows the section to grow/scroll */
 }
 
 /* 3. Fluid Typography & Gap Alignment (iPhone/Samsung Auto-Scale) */
@@ -1455,6 +1455,38 @@ html, body {
         z-index: 10 !important; 
         transform: translateY(-8px) !important;
     }
+}
+</style>
+
+
+<!-- ANTIGRAVITY MASTER RESPONSIVE GRID -->
+<style>
+html, body {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit !important;
+}
+
+/* Force structural containers to remain fluid on iPhone 15/16/17 & Premium Androids */
+div, section, main, header, footer {
+    max-width: 100% !important;
+}
+
+/* Ensure no inner layout hidden property kills the global viewport scroll */
+.main-wrapper, #__next, #root, #wrapper {
+    overflow: visible !important;
+    height: auto !important;
 }
 </style>
 
@@ -1603,7 +1635,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="canvas-scroll-container" style="display: flex; overflow-x: auto; gap: 16px; scroll-snap-type: x mandatory; padding: 16px 0; -webkit-overflow-scrolling: touch;">
     <!-- Card 1: Kashmir -->
     <a href="/india" style="min-width: 280px; width: 85%; scroll-snap-align: center; text-decoration: none; color: inherit; display: block; flex-shrink: 0;">
-        <div style="border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; height: 100%; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+        <div style="border: 1px solid #e2e8f0; border-radius: 16px; overflow: visible; height: 100%; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
             <img src="/images/india-kashmir-card.webp" style="width: 100%; height: 200px; object-fit: cover;">
             <div style="padding: 20px;">
                 <h3 style="font-size: 1.5rem; font-family: 'Cormorant Garamond', serif; color: #1a202c; margin: 0;">Kashmir & The North</h3>
@@ -1613,7 +1645,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </a>
     <!-- Card 2: Himachal Pradesh -->
     <a href="/india" style="min-width: 280px; width: 85%; scroll-snap-align: center; text-decoration: none; color: inherit; display: block; flex-shrink: 0;">
-        <div style="border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; height: 100%; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+        <div style="border: 1px solid #e2e8f0; border-radius: 16px; overflow: visible; height: 100%; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
             <img src="/images/himachal-card.webp" style="width: 100%; height: 200px; object-fit: cover;">
 <div style="padding: 20px;">
                 <h3 style="font-size: 1.5rem; font-family: 'Cormorant Garamond', serif; color: #1a202c; margin: 0;">Himachal Pradesh</h3>
@@ -1623,7 +1655,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </a>
     <!-- Card 3: Sikkim & Darjeeling -->
     <a href="/india" style="min-width: 280px; width: 85%; scroll-snap-align: center; text-decoration: none; color: inherit; display: block; flex-shrink: 0;">
-        <div style="border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; height: 100%; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+        <div style="border: 1px solid #e2e8f0; border-radius: 16px; overflow: visible; height: 100%; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
             <img src="/images/sikkim-card.webp" style="width: 100%; height: 200px; object-fit: cover;">
 <div style="padding: 20px;">
                 <h3 style="font-size: 1.5rem; font-family: 'Cormorant Garamond', serif; color: #1a202c; margin: 0;">Sikkim & Darjeeling</h3>
