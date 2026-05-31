@@ -1324,6 +1324,20 @@ html, body {
 }
 </style>
 
+
+<style>
+/* --- ANTIGRAVITY GAP REDUCTION & SCROLLER FIX --- */
+@media (max-width: 768px) {
+    .hero-cta-fixed { margin-top: 12px !important; }
+    .hero-video-side, #video-container { margin-top: 8px !important; }
+    .hero-video-slider { gap: 8px !important; padding-bottom: 8px !important; }
+    
+    /* Sleek horizontal scrolling for new destination cards */
+    .canvas-scroll-container::-webkit-scrollbar { display: none; }
+    .canvas-scroll-container { -ms-overflow-style: none; scrollbar-width: none; }
+}
+</style>
+
 </head>
 <body>
 
@@ -1333,8 +1347,8 @@ html, body {
     <ul class="nav-links">
       <li><a href="/destinations">Canvases</a></li>
       <li><a href="/destinations">Destinations</a></li>
-      <li><a href="/gift">Gift a Journey</a></li>
-      <li><a href="https://wa.me/919567632255?text=*New%20Canvas%20Enquiry*%0A*Destination%3A*%20%5BEnter%5D%0A*Travel%20dates%3A*%20%5BEnter%5D%0A*Group%20size%3A*%20%5BEnter%5D%0A*Contact%3A*%20%5BEnter%5D%0A*Email%3A*%20%5BEnter%5D%0A*Date%20of%20birth%3A*%20%5BEnter%5D#nav" class="nav-cta">Ready to Fly?</a></li>
+      <li><a href="https://wa.me/918751997519?text=*Gift%20a%20Journey%20Inquiry*">Gift a Journey</a></li>
+      <li><a href="https://wa.me/919567632255" class="nav-cta">Ready to Fly?</a></li>
     </ul>
     <button class="nav-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
@@ -1358,7 +1372,7 @@ html, body {
     </div>
     
     <div class="hero-cta-fixed" style="margin-top: 32px;">
-        <a href="https://wa.me/919567632255?text=*New%20Canvas%20Enquiry*%0A*Destination%3A*%20%5BEnter%5D%0A*Travel%20dates%3A*%20%5BEnter%5D%0A*Group%20size%3A*%20%5BEnter%5D%0A*Contact%3A*%20%5BEnter%5D%0A*Email%3A*%20%5BEnter%5D%0A*Date%20of%20birth%3A*%20%5BEnter%5D#primary" class="btn-primary" style="width:fit-content">Let's talk to check whether we could help you ! →</a>
+        <a href="https://wa.me/919567632255" class="btn-primary" style="width:fit-content">Let's talk to check whether we could help you ! →</a>
     </div>
   </div>
   
@@ -1450,53 +1464,39 @@ document.addEventListener("DOMContentLoaded", () => {
         <h2 class="section-title">Where do you want to disappear?</h2>
       </div>
       <a href="/destinations" class="diff-link">View all destinations →</a>
-    </div>
-    
-    <div class="dest-grid">
-      <div class="dest-card reveal" onclick="window.location.href='/india'">
-        <div class="dest-img-wrap">
-          <div class="dest-badge"><span class="dest-badge-fire">✨</span> The Crown</div>
-          <img loading="lazy" class="dest-img" src="/images/india-kashmir-card.webp" alt="Kashmir Canvas">
+
+<div class="canvas-scroll-container" style="display: flex; overflow-x: auto; gap: 16px; scroll-snap-type: x mandatory; padding: 16px 0; -webkit-overflow-scrolling: touch;">
+    <!-- Card 1: Kashmir -->
+    <a href="/india" style="min-width: 280px; width: 85%; scroll-snap-align: center; text-decoration: none; color: inherit; display: block; flex-shrink: 0;">
+        <div style="border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; height: 100%; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            <img src="/images/india-kashmir-card.webp" style="width: 100%; height: 200px; object-fit: cover;">
+            <div style="padding: 20px;">
+                <h3 style="font-size: 1.5rem; font-family: 'Cormorant Garamond', serif; color: #1a202c; margin: 0;">Kashmir & The North</h3>
+                <p style="font-size: 0.95rem; color: #4a5568; margin-top: 8px; line-height: 1.4;">Skiing in Gulmarg, private shikaras, and unscripted mountain passes.</p>
+            </div>
         </div>
-        <div class="dest-info">
-          <div class="dest-name-row">
-            <h3 class="dest-name">Kashmir &amp; The North</h3>
-            <div class="dest-rating"><span class="dest-rating-star">★</span> 5.0</div>
-          </div>
-          <p class="dest-desc">Skiing in Gulmarg, private shikaras, and unscripted mountain passes.</p>
+    </a>
+    <!-- Card 2: Himachal Pradesh -->
+    <a href="/india" style="min-width: 280px; width: 85%; scroll-snap-align: center; text-decoration: none; color: inherit; display: block; flex-shrink: 0;">
+        <div style="border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; height: 100%; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            <img src="/images/blog-luxury.webp" style="width: 100%; height: 200px; object-fit: cover;">
+            <div style="padding: 20px;">
+                <h3 style="font-size: 1.5rem; font-family: 'Cormorant Garamond', serif; color: #1a202c; margin: 0;">Himachal Pradesh</h3>
+                <p style="font-size: 0.95rem; color: #4a5568; margin-top: 8px; line-height: 1.4;">Boutique Himalayan retreats, off-grid trails, and alpine luxury.</p>
+            </div>
         </div>
-      </div>
-      
-      <div class="dest-card reveal reveal-delay-1" onclick="window.location.href='/international'">
-        <div class="dest-img-wrap">
-          <div class="dest-badge"><span class="dest-badge-fire">🌊</span> The Deep Blue</div>
-          <img loading="lazy" class="dest-img" src="/images/intl-maldives-card.webp" alt="Maldives Canvas">
+    </a>
+    <!-- Card 3: Sikkim & Darjeeling -->
+    <a href="/india" style="min-width: 280px; width: 85%; scroll-snap-align: center; text-decoration: none; color: inherit; display: block; flex-shrink: 0;">
+        <div style="border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; height: 100%; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            <img src="/images/extra-asset-9.webp" style="width: 100%; height: 200px; object-fit: cover;">
+            <div style="padding: 20px;">
+                <h3 style="font-size: 1.5rem; font-family: 'Cormorant Garamond', serif; color: #1a202c; margin: 0;">Sikkim & Darjeeling</h3>
+                <p style="font-size: 0.95rem; color: #4a5568; margin-top: 8px; line-height: 1.4;">Exclusive tea estates, misty valleys, and remote monastery access.</p>
+            </div>
         </div>
-        <div class="dest-info">
-          <div class="dest-name-row">
-            <h3 class="dest-name">The Maldives</h3>
-            <div class="dest-rating"><span class="dest-rating-star">★</span> 5.0</div>
-          </div>
-          <p class="dest-desc">Private water villas, bespoke dining, and uninterrupted ocean isolation.</p>
-        </div>
-      </div>
-      
-      <div class="dest-card reveal reveal-delay-2" onclick="window.location.href='/wellness'">
-        <div class="dest-img-wrap">
-          <div class="dest-badge"><span class="dest-badge-fire">🌿</span> Ayurveda</div>
-          <img loading="lazy" class="dest-img" src="/images/wellness-ayurveda.webp" alt="Kerala Ayurveda Canvas">
-        </div>
-        <div class="dest-info">
-          <div class="dest-name-row">
-            <h3 class="dest-name">Kerala Wellness</h3>
-            <div class="dest-rating"><span class="dest-rating-star">★</span> 5.0</div>
-          </div>
-          <p class="dest-desc">Physician-led retreats in the heart of God's Own Country.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </a>
+</div>
 
 <section class="section why">
   <div class="wrap">
@@ -1551,7 +1551,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <h2 class="gift-title">The only gift that lasts longer than the wrapping paper.</h2>
     <p class="gift-body">Gift a Nosh canvas to someone who has everything. Mystery destination. Fixed price. Reveal on arrival. Corporate gifting available.</p>
     <div class="gift-price">🎁 &nbsp;Starting ₹50,000 per person · All Inclusive</div>
-    <a href="https://wa.me/919567632255?text=*New%20Canvas%20Enquiry*%0A*Destination%3A*%20%5BEnter%5D%0A*Travel%20dates%3A*%20%5BEnter%5D%0A*Group%20size%3A*%20%5BEnter%5D%0A*Contact%3A*%20%5BEnter%5D%0A*Email%3A*%20%5BEnter%5D%0A*Date%20of%20birth%3A*%20%5BEnter%5D#primary" class="btn-primary" style="width:fit-content">
+    <a href="https://wa.me/918751997519?text=*Gift%20a%20Journey%20Inquiry*" class="btn-primary" style="width:fit-content">
       Gift a Journey →
     </a>
   </div>
@@ -1570,7 +1570,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p class="section-sub">No question too wild, no dream too big. We answer fast and actually give a damn.</p>
       </div>
       <div class="contact-actions reveal reveal-delay-2">
-        <a href="https://wa.me/918751997519?text=*New%20Canvas%20Enquiry*%0A*Destination%3A*%20%5BEnter%5D%0A*Travel%20dates%3A*%20%5BEnter%5D%0A*Group%20size%3A*%20%5BEnter%5D%0A*Contact%3A*%20%5BEnter%5D%0A*Email%3A*%20%5BEnter%5D%0A*Date%20of%20birth%3A*%20%5BEnter%5D" class="contact-action-btn">
+        <a href="https://wa.me/919567632255" class="contact-action-btn">
           <div class="contact-icon wa">💬</div>
           <div>
             <div class="contact-btn-label">WhatsApp Nosh Tours Now.</div>
@@ -1610,7 +1610,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <li><a href="/india">India Canvases</a></li>
           <li><a href="/international">International Canvases</a></li>
           <li><a href="/wellness">Wellness Retreats</a></li>
-          <li><a href="/gift">Gift a Journey</a></li>
+          <li><a href="https://wa.me/918751997519?text=*Gift%20a%20Journey%20Inquiry*">Gift a Journey</a></li>
           <li><a href="/destinations">Mystery Escapes</a></li>
         </ul>
       </div>
