@@ -1276,6 +1276,54 @@ html, body {
 
 </style>
 
+
+<style>
+/* --- ANTIGRAVITY HERO TYPOGRAPHY & SLIDER FIX --- */
+#text-container {
+    position: relative;
+    min-height: 140px; 
+    display: flex;
+    align-items: center;
+}
+
+/* Fix the overlapping text bug */
+.slider-text-group {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease-in-out, visibility 0.6s;
+}
+
+.slider-text-group.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+}
+
+/* Desktop Baseline Sizes */
+.hero-title { font-size: 3.5rem !important; margin-bottom: 0px !important; }
+.hero-sub { font-size: 1.2rem !important; }
+
+/* Mobile Downscaling: 50% reduction for title, 40% for subtitle */
+@media (max-width: 768px) {
+    #text-container {
+        min-height: 100px; /* Prevents the CTA button from jumping up and down */
+    }
+    .hero-title { 
+        font-size: 1.75rem !important; /* Exactly 50% of desktop */
+        line-height: 1.2 !important;
+    }
+    .hero-sub { 
+        font-size: 0.75rem !important; /* Roughly 40% reduction */
+        line-height: 1.4 !important;
+        margin-top: 8px !important; 
+    }
+}
+</style>
+
 </head>
 <body>
 
