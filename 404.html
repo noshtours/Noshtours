@@ -137,6 +137,44 @@ html, body {
 }
 </style>
 
+
+<style>
+/* --- ANTIGRAVITY FLUID RESPONSIVENESS & TYPOGRAPHY (+20%) --- */
+html, body {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important; /* Stops right-side cropping */
+    overflow-y: auto !important; /* Explicitly guarantees vertical scrolling is unlocked */
+    box-sizing: border-box !important;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+@media (max-width: 768px) {
+    /* Enlarging Text by 20% to naturally fill the gap */
+    .hero-title { 
+        font-size: 2.1rem !important; /* Increased from 1.75rem */
+        line-height: 1.1 !important; 
+    }
+    .hero-sub { 
+        font-size: 0.9rem !important; /* Increased from 0.75rem */
+        line-height: 1.4 !important; 
+        margin-top: 12px !important; 
+    }
+    
+    /* Releasing the strict height constraints */
+    #text-container { 
+        min-height: auto !important; 
+        padding-bottom: 20px !important;
+    }
+    .hero-video-side, #video-container { 
+        margin-top: 0px !important; /* Resetting the forced lift */
+        transform: none !important;
+    }
+}
+</style>
+
 </head>
 <body>
 <div class="num">404</div>
@@ -191,6 +229,51 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.reveal, section, .dest-card, .diff-left').forEach(element => {
     scrollObserver.observe(element);
   });
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // The exact 5 pristine links requested
+    const navLinksHTML = `
+        <a href="/india" class="menu-item" style="display:block; padding:12px 0; color:#1a202c; text-decoration:none; font-family:'Cormorant Garamond', serif; font-size:1.4rem; border-bottom:1px solid #eee;">India</a>
+        <a href="/international" class="menu-item" style="display:block; padding:12px 0; color:#1a202c; text-decoration:none; font-family:'Cormorant Garamond', serif; font-size:1.4rem; border-bottom:1px solid #eee;">International</a>
+        <a href="/wellness" class="menu-item" style="display:block; padding:12px 0; color:#1a202c; text-decoration:none; font-family:'Cormorant Garamond', serif; font-size:1.4rem; border-bottom:1px solid #eee;">Wellness</a>
+        <a href="/blog" class="menu-item" style="display:block; padding:12px 0; color:#1a202c; text-decoration:none; font-family:'Cormorant Garamond', serif; font-size:1.4rem; border-bottom:1px solid #eee;">Journal</a>
+        <a href="/about" class="menu-item" style="display:block; padding:12px 0; color:#1a202c; text-decoration:none; font-family:'Cormorant Garamond', serif; font-size:1.4rem;">Our Story</a>
+    `;
+
+    // Locate the hamburger icon (targeting common SVG/Button structures)
+    const hamburgerBtn = document.querySelector('button:has(svg), .hamburger, [aria-label="menu"]');
+    
+    if (hamburgerBtn) {
+        // Create a dedicated mobile overlay container
+        const mobileOverlay = document.createElement('div');
+        mobileOverlay.id = 'antigravity-mobile-menu';
+        mobileOverlay.style.display = 'none';
+        mobileOverlay.style.position = 'absolute';
+        mobileOverlay.style.top = '70px'; // Drops down just below the header
+        mobileOverlay.style.left = '0';
+        mobileOverlay.style.width = '100%';
+        mobileOverlay.style.background = '#F6F5F2'; // Matching your brand off-white
+        mobileOverlay.style.padding = '20px 30px';
+        mobileOverlay.style.zIndex = '9999';
+        mobileOverlay.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+        
+        mobileOverlay.innerHTML = navLinksHTML;
+        hamburgerBtn.parentElement.appendChild(mobileOverlay);
+
+        // Bind the toggle click event
+        hamburgerBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (mobileOverlay.style.display === 'none') {
+                mobileOverlay.style.display = 'block';
+            } else {
+                mobileOverlay.style.display = 'none';
+            }
+        });
+    }
 });
 </script>
 
