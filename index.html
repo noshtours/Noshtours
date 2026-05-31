@@ -1338,6 +1338,45 @@ html, body {
 }
 </style>
 
+
+<style>
+/* --- ANTIGRAVITY HERO GAP & FOOTER OVERRIDE --- */
+
+/* 1. Prevent Right-Side Cropping on Mobile */
+html, body {
+    overflow-x: hidden !important;
+    width: 100%;
+}
+footer, .footer {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+}
+
+/* 2. Absolute 2mm Gap Enforcement on Mobile */
+@media (max-width: 768px) {
+    #text-container {
+        min-height: 0px !important; /* Shatters the invisible wall */
+        height: auto !important;
+        padding-bottom: 0px !important;
+        margin-bottom: 0px !important;
+    }
+    .slider-text-group {
+        padding-bottom: 0px !important;
+    }
+    .hero-sub {
+        margin-bottom: 4px !important; /* Leaves exactly enough breathing room */
+        padding-bottom: 0px !important;
+    }
+    .hero-video-side, #video-container {
+        margin-top: -15px !important; /* Pulls the video container up */
+        transform: translateY(-12px); /* Physically drags the video up the Y-axis */
+        position: relative;
+        z-index: 10;
+    }
+}
+</style>
+
 </head>
 <body>
 
