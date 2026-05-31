@@ -1099,10 +1099,10 @@ div, section, main, header, footer {
     <div>
       <div class="footer-col-title">Gift Options</div>
       <ul class="footer-links">
-        <li><a href="#">Gift a Canvas</a></li>
-        <li><a href="#">Nosh Coins</a></li>
-        <li><a href="#">Corporate Gifting</a></li>
-        <li><a href="#">Birthday Canvases</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">Gift a Canvas</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">Nosh Coins</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">Corporate Gifting</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">Birthday Canvases</a></li>
       </ul>
     </div>
     <div>
@@ -1186,7 +1186,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Bind the toggle click event
         hamburgerBtn.addEventListener('click', (e) => {
-            e.preventDefault();
+            e/* .preventDefault() neutralised by Antigravity */;
             if (mobileOverlay.style.display === 'none') {
                 mobileOverlay.style.display = 'block';
             } else {
@@ -1221,7 +1221,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(mobileMenu);
 
     hamburgerBtn.addEventListener("click", (e) => {
-        e.preventDefault();
+        e/* .preventDefault() neutralised by Antigravity */;
         e.stopPropagation();
         if (mobileMenu.style.display === "none" || mobileMenu.style.display === "") {
             mobileMenu.style.display = "flex";

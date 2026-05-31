@@ -876,20 +876,20 @@ div, section, main, header, footer {
     <div>
       <div class="footer-col-title">Categories</div>
       <ul class="footer-links">
-        <li><a href="#">Kerala Wellness</a></li>
-        <li><a href="#">India Mystery Luxury</a></li>
-        <li><a href="#">Travel Gifting</a></li>
-        <li><a href="#">Destination Deep Dives</a></li>
-        <li><a href="#">Ayurveda Guide</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">Kerala Wellness</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">India Mystery Luxury</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">Travel Gifting</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">Destination Deep Dives</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">Ayurveda Guide</a></li>
       </ul>
     </div>
     <div>
       <div class="footer-col-title">Popular</div>
       <ul class="footer-links">
-        <li><a href="#">Kerala Ayurveda Retreat</a></li>
-        <li><a href="#">Kashmir in October</a></li>
-        <li><a href="#">Japan Ryokan Circuit</a></li>
-        <li><a href="#">How to Gift a Trip</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">Kerala Ayurveda Retreat</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">Kashmir in October</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">Japan Ryokan Circuit</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">How to Gift a Trip</a></li>
       </ul>
     </div>
     <div>
@@ -1007,7 +1007,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Bind the toggle click event
         hamburgerBtn.addEventListener('click', (e) => {
-            e.preventDefault();
+            e/* .preventDefault() neutralised by Antigravity */;
             if (mobileOverlay.style.display === 'none') {
                 mobileOverlay.style.display = 'block';
             } else {
@@ -1042,7 +1042,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(mobileMenu);
 
     hamburgerBtn.addEventListener("click", (e) => {
-        e.preventDefault();
+        e/* .preventDefault() neutralised by Antigravity */;
         e.stopPropagation();
         if (mobileMenu.style.display === "none" || mobileMenu.style.display === "") {
             mobileMenu.style.display = "flex";

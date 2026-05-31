@@ -2569,21 +2569,21 @@ div, section, main, header, footer {
     <div>
       <div class="footer-col-title">Asia</div>
       <ul class="footer-links">
-        <li><a href="#">Bali · Indonesia</a></li>
-        <li><a href="#">Japan · Silent Country</a></li>
-        <li><a href="#">Vietnam · Long South</a></li>
-        <li><a href="#">Thailand · Bangkok</a></li>
-        <li><a href="#">Singapore · City-State</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">Bali · Indonesia</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">Japan · Silent Country</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">Vietnam · Long South</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">Thailand · Bangkok</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">Singapore · City-State</a></li>
       </ul>
     </div>
     <div>
       <div class="footer-col-title">Europe & Ocean</div>
       <ul class="footer-links">
-        <li><a href="#">Switzerland · Lauterbrunnen</a></li>
-        <li><a href="#">Switzerland · Zermatt</a></li>
-        <li><a href="#">France · Paris & Provence</a></li>
-        <li><a href="#">Maldives · Deep Blue</a></li>
-        <li><a href="#">Sri Lanka · Forgotten Isle</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">Switzerland · Lauterbrunnen</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">Switzerland · Zermatt</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">France · Paris & Provence</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">Maldives · Deep Blue</a></li>
+        <li><a href="https://wa.me/919567632255?text=*I%20want%20to%20explore%20this%20Canvas*">Sri Lanka · Forgotten Isle</a></li>
       </ul>
     </div>
     <div>
@@ -2659,7 +2659,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Bind the toggle click event
         hamburgerBtn.addEventListener('click', (e) => {
-            e.preventDefault();
+            e/* .preventDefault() neutralised by Antigravity */;
             if (mobileOverlay.style.display === 'none') {
                 mobileOverlay.style.display = 'block';
             } else {
@@ -2694,7 +2694,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(mobileMenu);
 
     hamburgerBtn.addEventListener("click", (e) => {
-        e.preventDefault();
+        e/* .preventDefault() neutralised by Antigravity */;
         e.stopPropagation();
         if (mobileMenu.style.display === "none" || mobileMenu.style.display === "") {
             mobileMenu.style.display = "flex";

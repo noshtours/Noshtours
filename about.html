@@ -2570,7 +2570,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Bind the toggle click event
         hamburgerBtn.addEventListener('click', (e) => {
-            e.preventDefault();
+            e/* .preventDefault() neutralised by Antigravity */;
             if (mobileOverlay.style.display === 'none') {
                 mobileOverlay.style.display = 'block';
             } else {
@@ -2605,7 +2605,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(mobileMenu);
 
     hamburgerBtn.addEventListener("click", (e) => {
-        e.preventDefault();
+        e/* .preventDefault() neutralised by Antigravity */;
         e.stopPropagation();
         if (mobileMenu.style.display === "none" || mobileMenu.style.display === "") {
             mobileMenu.style.display = "flex";
