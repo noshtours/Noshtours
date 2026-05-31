@@ -1202,6 +1202,38 @@ img { -webkit-user-drag: none; user-select: none; }
     .footer-grid { text-align: left !important; }
 }
 
+
+/* --- ANTIGRAVITY PHASE 1 UI/UX OVERRIDES --- */
+/* 1. Nuke Broken GSAP Animations */
+.reveal, .hidden, [style*="opacity: 0"], .hidden-section, .dest-card, .canvas-card {
+    opacity: 1 !important; transform: none !important; visibility: visible !important; display: block !important;
+}
+/* 2. Fix Founder Portraits */
+.founder-img, .team-image { object-position: top center !important; object-fit: cover !important; }
+/* 3. Wellness Padding */
+.wellness-hero-overlay { padding-bottom: 20px !important; }
+.empty-space-fix { display: none !important; }
+/* 4. Split Video Slider Layout */
+.hero-video-slider { display: flex; align-items: center; background: #1C2B3A; height: 100vh; width: 100%; overflow: hidden; position: relative; }
+.hero-text-side { width: 50%; padding: 0 5vw; z-index: 10; position: relative; }
+.slider-text-group { position: absolute; top: 50%; transform: translateY(-50%); opacity: 0; visibility: hidden; transition: opacity 1s ease-in-out, visibility 1s ease-in-out; width: 80%; }
+.slider-text-group.active { opacity: 1; visibility: visible; position: relative; transform: translateY(0); }
+.hero-video-side { width: 50%; display: flex; justify-content: center; align-items: center; height: 100%; position: relative; }
+.slider-video { position: absolute; height: 85vh; width: auto; aspect-ratio: 9/16; border-radius: 24px; object-fit: cover; box-shadow: 0 20px 50px rgba(0,0,0,0.5); opacity: 0; visibility: hidden; transition: opacity 1.2s ease-in-out; }
+.slider-video.active { opacity: 1; visibility: visible; }
+.hero-cta-fixed { position: relative; z-index: 20; margin-top: 30px; }
+/* Global Mobile Alignments */
+@media(max-width:768px) {
+    .hero-video-slider { flex-direction: column; height: auto; padding-top: 120px; padding-bottom: 40px; }
+    .hero-text-side { width: 100%; text-align: center; padding: 0 20px 20px; min-height: 250px; }
+    .slider-text-group { width: 100%; position: absolute; left: 0; padding: 0 20px; text-align: center; }
+    .slider-text-group.active { position: relative; }
+    .hero-video-side { width: 100%; height: 70vh; }
+    .slider-video { width: 90%; height: 100%; aspect-ratio: auto; }
+    .section, .hero { padding-left: 15px !important; padding-right: 15px !important; }
+    img { border-radius: 12px !important; }
+}
+
 </style>
 </head>
 <body>
@@ -1220,415 +1252,53 @@ img { -webkit-user-drag: none; user-select: none; }
 </div>
 
 
-<section class="hero" id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-dot-grid"></div>
 
-  <iframe
-    class="hero-crystal-frame"
-    srcdoc="<!DOCTYPE html>
-<html>
-<head>
-<meta charset=&quot;UTF-8&quot;>
-<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
-<style>
-* { margin:0; padding:0; box-sizing:border-box; }
-html, body {
-  width:100%; height:100%;
-  background:transparent;
-  overflow:hidden;
-}
-canvas {
-  width:100% !important;
-  height:100% !important;
-  display:block;
-}
-.clbl {
-  position:absolute;
-  opacity:0;
-  pointer-events:none;
-  transition:opacity 1s ease;
-  z-index:10;
-}
-.clbl-inner {
-  background:rgba(253,246,236,0.88);
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-  border:1px solid rgba(232,149,26,0.25);
-  border-radius:12px;
-  padding:10px 16px;
-  box-shadow:0 8px 32px rgba(0,0,0,0.08), 0 1px 0 rgba(255,255,255,0.6) inset;
-}
-.clbl-dest {
-  font-family:&quot;Barlow Condensed&quot;,sans-serif;
-  font-size:13px; font-weight:700;
-  color:#1C2B3A; letter-spacing:0.4px;
-}
-.clbl-price {
-  font-size:11px; font-weight:400;
-  color:#E8951A; margin-top:3px;
-  font-family:&quot;Barlow&quot;,sans-serif;
-}
-@keyframes f0 { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-7px)} }
-@keyframes f1 { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-5px)} }
-@keyframes f2 { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-9px)} }
-
-/* --- NOSH AGENT TYPE OVERHAUL --- */
-@media(max-width:768px) {
-  body { font-size: 120% !important; }
-  h1, .hero-title { font-size: 54px !important; line-height: 1.1 !important; font-weight: 700 !important; }
-  h2, .section-title { font-size: 42px !important; line-height: 1.15 !important; }
-  p, .hero-sub, .section-sub, .dest-desc { font-size: 19px !important; line-height: 1.6 !important; display: block !important; opacity: 1 !important; }
-  .nav-links { display:none; flex-direction:column; position:absolute; top:80px; left:0; right:0; background:rgba(255,255,255,0.98); padding:24px; border-radius:16px; box-shadow:0 10px 40px rgba(0,0,0,0.15); text-align:center; gap:20px;}
-  .nav-links.active { display:flex; }
-}
-
-
-/* ANTIGRAVITY UI/UX OVERRIDES */
-/* 1. Kill Broken GSAP/ScrollReveal - Force 100% Visibility */
-.reveal, .hidden, [style*="opacity: 0"], .hidden-section, .dest-card {
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
-}
-/* 2. About Page Portrait Fixes */
-.founder-img, .team-image {
-    object-position: top center !important;
-    object-fit: cover !important;
-}
-/* 3. Wellness Padding Fix */
-.wellness-hero-overlay { padding-bottom: 20px !important; }
-.empty-space-fix { display: none !important; }
-/* 4. Global Mobile Flow Alignments */
-@media(max-width:768px) {
-    .section, .hero { padding-left: 15px !important; padding-right: 15px !important; }
-    img { border-radius: 12px !important; }
-    .footer-grid { text-align: left !important; }
-}
-
-</style>
-<link href=&quot;https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&amp;family=Barlow+Condensed:wght@600;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;>
-<script src=&quot;https://unpkg.com/three@0.150.1/build/three.min.js&quot;></script>
-<script src=&quot;https://unpkg.com/three@0.150.1/examples/js/environments/RoomEnvironment.js&quot;></script>
-</head>
-<body>
-
-<canvas id=&quot;c&quot;></canvas>
-
-<div class=&quot;clbl&quot; id=&quot;l0&quot; style=&quot;top:14%;left:4%;&quot;>
-  <div class=&quot;clbl-inner&quot;>
-    <div class=&quot;clbl-dest&quot;>Kashmir · The Crown</div>
-    <div class=&quot;clbl-price&quot;>From ₹85,000 · All Inclusive</div>
+<div class="hero-video-slider">
+  <div class="hero-text-side">
+    <div id="text-container">
+        <div class="slider-text-group active">
+            <h1 class="hero-title" style="color:#fff; font-family:'Cormorant Garamond',serif; line-height:1;">Unscripted reunions in the world's most pristine corners.</h1>
+            <p class="hero-sub" style="color:rgba(255,255,255,0.8); margin-top:16px;">Let your Nosh Brain handle the logistics. You just show up and celebrate with your inner circle.</p>
+        </div>
+        <div class="slider-text-group">
+            <h1 class="hero-title" style="color:#fff; font-family:'Cormorant Garamond',serif; line-height:1;">Absolute Discretion.<br>Infinite Celebration.</h1>
+            <p class="hero-sub" style="color:rgba(255,255,255,0.8); margin-top:16px;">Your exclusive girls' getaway, fiercely guarded and flawlessly curated by our travel architects.</p>
+        </div>
+        <div class="slider-text-group">
+            <h1 class="hero-title" style="color:#fff; font-family:'Cormorant Garamond',serif; line-height:1;">Legacy Milestones, Seamlessly Orchestrated.</h1>
+            <p class="hero-sub" style="color:rgba(255,255,255,0.8); margin-top:16px;">Bespoke family celebrations and private dining experiences, crafted seamlessly so you can focus entirely on the memories.</p>
+        </div>
+        <div class="slider-text-group">
+            <h1 class="hero-title" style="color:#fff; font-family:'Cormorant Garamond',serif; line-height:1;">Celebrity-style access and absolute privacy.</h1>
+            <p class="hero-sub" style="color:rgba(255,255,255,0.8); margin-top:16px;">Begin your forever with a canvas designed exclusively for the world's most discerning travellers. Total discretion, elite access.</p>
+        </div>
+    </div>
+    <div class="hero-cta-fixed">
+        <button class="btn-primary" onclick="window.location.href='https://wa.me/919567632255?text=%F0%9F%8E%A8%20*New%20Canvas%20Enquiry*%0A%F0%9F%93%8D%20*Destination%3A*%20%5BEnter%5D%0A%F0%9F%93%85%20*Travel%20dates%3A*%20%5BEnter%5D%0A%F0%9F%91%A5%20*Group%20size%3A*%20%5BEnter%5D%0A%F0%9F%93%B1%20*Contact%3A*%20%5BEnter%5D%0A%F0%9F%93%A7%20*Email%3A*%20%5BEnter%5D%0A%F0%9F%8E%82%20*Date%20of%20birth%3A*%20%5BEnter%5D'">Let's talk to check whether we could help you ! →</button>
+    </div>
+  </div>
+  <div class="hero-video-side" id="video-container">
+    <video class="slider-video active" autoplay muted loop playsinline><source src="/videos/15118051_1080_1920_30fps.mp4" type="video/mp4"></video>
+    <video class="slider-video" autoplay muted loop playsinline><source src="/videos/6666635-uhd_2160_4096_25fps.mp4" type="video/mp4"></video>
+    <video class="slider-video" autoplay muted loop playsinline><source src="/videos/7509450-hd_1066_1920_25fps.mp4" type="video/mp4"></video>
+    <video class="slider-video" autoplay muted loop playsinline><source src="/videos/8503162-uhd_2160_3840_24fps.mp4" type="video/mp4"></video>
   </div>
 </div>
-<div class=&quot;clbl&quot; id=&quot;l1&quot; style=&quot;top:52%;left:2%;&quot;>
-  <div class=&quot;clbl-inner&quot;>
-    <div class=&quot;clbl-dest&quot;>Maldives · The Deep Blue</div>
-    <div class=&quot;clbl-price&quot;>From ₹1,45,000 · All Inclusive</div>
-  </div>
-</div>
-<div class=&quot;clbl&quot; id=&quot;l2&quot; style=&quot;top:78%;left:8%;&quot;>
-  <div class=&quot;clbl-inner&quot;>
-    <div class=&quot;clbl-dest&quot;>Switzerland · The White Ridge</div>
-    <div class=&quot;clbl-price&quot;>From ₹3,10,000 · All Inclusive</div>
-  </div>
-</div>
-<div class=&quot;clbl&quot; id=&quot;l3&quot; style=&quot;top:30%;right:4%;&quot;>
-  <div class=&quot;clbl-inner&quot;>
-    <div class=&quot;clbl-dest&quot;>Japan · The Silent Country</div>
-    <div class=&quot;clbl-price&quot;>From ₹2,25,000 · All Inclusive</div>
-  </div>
-</div>
-
-<script>
-const canvas = document.getElementById('c');
-const renderer = new THREE.WebGLRenderer({ canvas, alpha:true, antialias:true, powerPreference:'high-performance' });
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-renderer.setClearColor(0x000000, 0);
-renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.2;
-renderer.outputEncoding = THREE.sRGBEncoding;
-
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
-camera.position.set(0, 0, 5.5);
-
-function resize() {
-  const w = canvas.clientWidth, h = canvas.clientHeight;
-  renderer.setSize(w, h, false);
-  camera.aspect = w/h;
-  camera.updateProjectionMatrix();
-}
-resize();
-window.addEventListener('resize', resize);
-
-const pmrem = new THREE.PMREMGenerator(renderer);
-pmrem.compileEquirectangularShader();
-const env = pmrem.fromScene(new THREE.RoomEnvironment(), 0.06).texture;
-scene.environment = env;
-
-const G = new THREE.Group();
-scene.add(G);
-
-function makeOct(sx, sy, sz) {
-  const g = new THREE.OctahedronGeometry(1.0, 0);
-  g.scale(sx, sy, sz);
-  return g;
-}
-
-const mat = new THREE.MeshPhysicalMaterial({
-  color: 0xfcf0e0,
-  metalness: 0.0,
-  roughness: 0.06,
-  transmission: 0.94,
-  thickness: 2.5,
-  ior: 1.8,
-  transparent: true,
-  opacity: 0.90,
-  side: THREE.DoubleSide,
-  clearcoat: 1.0,
-  clearcoatRoughness: 0.04,
-  envMapIntensity: 1.4,
-  attenuationColor: new THREE.Color(0xf5c87a),
-  attenuationDistance: 3.0,
-});
-G.add(new THREE.Mesh(makeOct(0.68, 1.65, 0.68), mat));
-
-const coreM = new THREE.MeshBasicMaterial({ color:0xE8951A, transparent:true, opacity:0.12 });
-const coreOct = new THREE.OctahedronGeometry(1.0,0);
-coreOct.scale(0.38, 1.2, 0.38);
-const core = new THREE.Mesh(coreOct, coreM);
-G.add(core);
-
-[
-  { s:[0.28,0.75,0.28], p:[1.5,0.5,0.2],  r:[0.3,0,0.5]    },
-  { s:[0.22,0.58,0.22], p:[-1.3,-0.6,0.3],r:[-0.2,0.6,0.1] },
-  { s:[0.18,0.48,0.18], p:[0.7,-1.5,0.2], r:[0.1,0.3,-0.3]  },
-  { s:[0.14,0.38,0.14], p:[-0.4,1.7,-0.2],r:[0.6,0.1,0.2]  },
-  { s:[0.12,0.32,0.12], p:[1.1,-0.9,-0.3],r:[0.4,0.8,-0.1]  },
-].forEach(d => {
-  const m = new THREE.MeshPhysicalMaterial({
-    color:0xfcf0e0, metalness:0, roughness:0.08,
-    transmission:0.9, thickness:0.9, ior:1.65,
-    transparent:true, opacity:0.75, side:THREE.DoubleSide,
-    clearcoat:0.9, clearcoatRoughness:0.06,
-    envMapIntensity:1.2,
-  });
-  const mesh = new THREE.Mesh(makeOct(...d.s), m);
-  mesh.position.set(...d.p);
-  mesh.rotation.set(...d.r);
-  G.add(mesh);
-});
-
-const wm = new THREE.MeshBasicMaterial({ color:0xC4962A, wireframe:true, transparent:true, opacity:0.08 });
-G.add(new THREE.Mesh(makeOct(0.70, 1.67, 0.70), wm));
-
-for (let i=0; i<8; i++) {
-  const a = (i/8)*Math.PI*2;
-  const g = new THREE.BufferGeometry().setFromPoints([
-    new THREE.Vector3(0,0,0),
-    new THREE.Vector3(Math.cos(a)*4.5, Math.sin(a)*2.5-0.3, Math.sin(a*1.3)*0.6)
-  ]);
-  G.add(new THREE.Line(g, new THREE.LineBasicMaterial({
-    color: i%2===0 ? 0xE8951A : 0xC4962A,
-    transparent:true, opacity:0.05+(i%3)*0.015
-  })));
-}
-
-const pGeo = new THREE.BufferGeometry();
-const pCount = 220;
-const pPos = new Float32Array(pCount*3);
-for (let i=0;i<pCount;i++) {
-  pPos[i*3]   = (Math.random()-0.5)*9;
-  pPos[i*3+1] = (Math.random()-0.5)*7;
-  pPos[i*3+2] = (Math.random()-0.5)*4 - 1;
-}
-pGeo.setAttribute('position', new THREE.BufferAttribute(pPos,3));
-const pMat = new THREE.PointsMaterial({ color:0xC4962A, size:0.025, transparent:true, opacity:0.35, sizeAttenuation:true });
-scene.add(new THREE.Points(pGeo, pMat));
-
-scene.add(new THREE.AmbientLight(0xfdf6ec, 1.4));
-const key = new THREE.DirectionalLight(0xffffff, 1.6); key.position.set(3,4,3); scene.add(key);
-const orange = new THREE.PointLight(0xE8951A, 1.4, 8); orange.position.set(-2.5,1.5,2); scene.add(orange);
-const gold   = new THREE.PointLight(0xC4962A, 0.9, 6); gold.position.set(2.5,-2,1); scene.add(gold);
-const rim    = new THREE.PointLight(0xfdf6ec, 0.6, 5); rim.position.set(0,4,-3); scene.add(rim);
-
-let mx=0.5, my=0.5, tx=0, ty=0;
-document.addEventListener('mousemove', e => {
-  mx = e.clientX/window.innerWidth;
-  my = e.clientY/window.innerHeight;
-});
-try {
-  window.parent.document.addEventListener('mousemove', e => {
-    mx = e.clientX/window.parent.innerWidth;
-    my = e.clientY/window.parent.innerHeight;
-  });
-} catch(e) {}
-
-let ft=0;
-(function tick(){
-  requestAnimationFrame(tick);
-  ft += 0.007;
-  tx += ((mx-0.5)*1.1 - tx)*0.03;
-  ty += (-(my-0.5)*0.7 - ty)*0.03;
-  G.rotation.y = ft*0.16 + tx;
-  G.rotation.x = Math.sin(ft*0.28)*0.1 + ty;
-  G.rotation.z = Math.sin(ft*0.19)*0.05;
-  G.position.y = Math.sin(ft*0.48)*0.14;
-  coreM.opacity  = 0.1 + Math.sin(ft*1.4)*0.07;
-  orange.intensity = 1.1 + Math.sin(ft*1.7)*0.4;
-  pMat.opacity   = 0.28 + Math.sin(ft*0.38)*0.1;
-  renderer.render(scene, camera);
-})();
-
-setTimeout(() => {
-  ['l0','l1','l2','l3'].forEach((id,i) => {
-    setTimeout(() => {
-      const el = document.getElementById(id);
-      if(!el) return;
-      el.style.opacity = '1';
-      el.style.animation = `f${i%3} ${3+i*0.4}s ease-in-out infinite`;
-    }, 800 + i*350);
-  });
-}, 600);
-</script>
-
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const scrollObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { 
-      if(entry.isIntersecting) {
-        entry.target.classList.add('visible'); 
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'none';
-      }
-    });
-  }, { threshold: 0.05, rootMargin: '0px 0px -10px 0px' });
-  document.querySelectorAll('.reveal, section, .dest-card, .diff-left').forEach(element => {
-    scrollObserver.observe(element);
-  });
+    const texts = document.querySelectorAll('.slider-text-group');
+    const videos = document.querySelectorAll('.slider-video');
+    let currentIndex = 0;
+    setInterval(() => {
+        texts[currentIndex].classList.remove('active');
+        videos[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % texts.length;
+        texts[currentIndex].classList.add('active');
+        videos[currentIndex].classList.add('active');
+    }, 6000);
 });
 </script>
 
-</body>
-</html>"
-    title="Nosh Crystal"
-    scrolling="no"
-    allowtransparency="true"
-    frameborder="0"
-  ></iframe>
-
-  <div class="hero-content">
-    
-    <div class="hero-media-slot" id="hero-media-slot">
-       <img src="/images/hero-international.jpg" alt="Nosh Tours" loading="lazy">
-    </div>
-
-    <div class="hero-eyebrow" id="ey">
-      <div class="hero-ey-dot"></div>
-      <span class="hero-ey-text">Renowned Travel Architects · 20 Canvases</span>
-    </div>
-    <h1 class="hero-title" id="ht">
-      We give travel <br>
-      back its <em>soul.</em>
-    </h1>
-    <div class="hero-rule" id="hr"></div>
-    <p class="hero-sub" id="hs">
-      Fixed pricing. No itinerary spoilers. 
-      Celebrity-style access to pristine 
-      destinations. Your Nosh Brain handles everything.
-    </p>
-    <div class="hero-actions" id="ha">
-      <button class="hero-single-cta" id="hero-cta" onclick="openCanvasForm()">
-        <span class="hero-cta-text">June &amp; July are filling. See what we build.</span>
-        <span class="hero-cta-arrow">→</span>
-      </button>
-    </div>
-
-    <div class="canvas-form-overlay" id="canvas-form-overlay">
-      <div class="canvas-form" id="canvas-form">
-        <div class="canvas-form-header">
-          <div class="canvas-form-title">Secure Your Canvas.</div>
-          <div class="canvas-form-sub">Four questions. We handle everything else.</div>
-          <button class="canvas-form-close" onclick="closeCanvasForm()">✕</button>
-        </div>
-        <div class="canvas-form-fields">
-          <div class="canvas-field-row">
-            <div class="canvas-field-group">
-              <label class="canvas-label">Where do you want to go?</label>
-              <select class="canvas-input" id="cf-destination">
-                <option value="">Choose a canvas</option>
-                <option>Kashmir · The Crown</option>
-                <option>Kerala · Ayurveda</option>
-                <option>Maldives · The Deep Blue</option>
-                <option>Bali · The Emerald Isle</option>
-                <option>Japan · The Silent Country</option>
-                <option>Vietnam · The Long South</option>
-                <option>Switzerland · Lauterbrunnen</option>
-                <option>Switzerland · Zermatt</option>
-                <option>France · Paris &amp; Provence</option>
-                <option>Thailand · Bangkok &amp; Beyond</option>
-                <option>Singapore · The City-State</option>
-                <option>Sri Lanka · The Forgotten Isle</option>
-                <option>Uzbekistan · The Silk Road</option>
-                <option>Kazakhstan · The Steppe</option>
-                <option>Surprise me — Nosh picks</option>
-              </select>
-            </div>
-            <div class="canvas-field-group">
-              <label class="canvas-label">How many travellers?</label>
-              <select class="canvas-input" id="cf-group">
-                <option value="">Select group size</option>
-                <option>Solo — just me</option>
-                <option>2 — Couple</option>
-                <option>3–4 — Small group</option>
-                <option>5–8 — Group</option>
-                <option>9–15 — Large group</option>
-                <option>16+ — Custom group</option>
-              </select>
-            </div>
-          </div>
-          <div class="canvas-field-group">
-            <label class="canvas-label">When are you travelling?</label>
-            <input class="canvas-input" id="cf-travel-date" type="text" placeholder="e.g. June 15–22, 2026" autocomplete="off">
-          </div>
-          <div class="canvas-field-row">
-            <div class="canvas-field-group">
-              <label class="canvas-label">Your name &amp; WhatsApp</label>
-              <input class="canvas-input" id="cf-contact" type="text" placeholder="Priya · +91 98765 43210" autocomplete="off">
-            </div>
-            <div class="canvas-field-group">
-              <label class="canvas-label">Email address</label>
-              <input class="canvas-input" id="cf-email" type="email" placeholder="priya@email.com" autocomplete="email">
-            </div>
-          </div>
-          <div class="canvas-field-group">
-            <label class="canvas-label">Date of birth <span style="font-size:10px;font-weight:400;color:rgba(28,43,58,0.35);letter-spacing:0;text-transform:none">(helps us personalise your canvas)</span></label>
-            <input class="canvas-input" id="cf-dob" type="text" placeholder="DD / MM / YYYY" autocomplete="bday" maxlength="14">
-          </div>
-        </div>
-        <button class="canvas-form-submit" id="cf-submit" onclick="sendToWhatsApp()">
-          <span class="cf-submit-text">Send to a Nosh Brain →</span>
-        </button>
-        <div class="canvas-form-note">
-          Sends directly to WhatsApp. No spam. Your Brain replies in under 2 hours.
-        </div>
-      </div>
-    </div>
-    <div class="hero-rating" id="hrat">
-      <div class="hero-stars">
-        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-      </div>
-      <span class="hero-rat-text">5.0 &nbsp;·&nbsp; 400+ Journeys · Fixed Pricing Always</span>
-    </div>
-  </div>
-
-  <div class="hero-vert">Nosh Tours LLP &nbsp;·&nbsp; Est. 2022</div>
-  <div class="hero-scroll">
-    <span class="hero-scroll-lbl">Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
-</section>
 
 <div class="press-strip" id="press-strip">
   <div class="press-label-row">
