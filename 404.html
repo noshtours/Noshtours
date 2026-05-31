@@ -250,6 +250,26 @@ div, section, main, header, footer {
 }
 </style>
 
+
+<style>
+/* Force the OS to handle vertical swipes natively, bypassing JS smooth-scroll hijackers */
+html, body, main, section, .main-wrapper, #wrapper, header, footer {
+    touch-action: pan-y pinch-zoom !important;
+    overscroll-behavior-y: auto !important;
+}
+
+/* Ensure horizontal swiping elements (like your destination cards) still work left-to-right */
+.canvas-scroll-container, .hero-video-slider {
+    touch-action: pan-x pan-y pinch-zoom !important;
+}
+
+/* Neutralize any invisible full-screen overlays that might be eating single clicks */
+.prevent-scroll, .scroll-lock, #preloader {
+    pointer-events: none !important;
+    display: none !important;
+}
+</style>
+
 </head>
 <body>
 <div class="num">404</div>
