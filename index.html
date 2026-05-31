@@ -1295,51 +1295,51 @@ html, body {
 
 
 
+
 <div class="hero-video-slider">
   <div class="hero-text-side">
     <div id="text-container">
         <div class="slider-text-group active">
-            <h1 class="hero-title" style="color:#fff; font-family:'Cormorant Garamond',serif; line-height:1;">Unscripted reunions in the world's most pristine corners.</h1>
-            <p class="hero-sub" style="color:rgba(255,255,255,0.8); margin-top:16px;">Let your Nosh Brain handle the logistics. You just show up and celebrate with your inner circle.</p>
+            <h1 class="hero-title" style="color:#fff; font-family:'Cormorant Garamond',serif; line-height:1.1;">Absolute discretion.<br>Unscripted luxury.</h1>
+            <p class="hero-sub" style="color:rgba(255,255,255,0.8); margin-top:16px;">Begin your forever with a canvas designed exclusively for the world's most discerning travellers.</p>
         </div>
         <div class="slider-text-group">
-            <h1 class="hero-title" style="color:#fff; font-family:'Cormorant Garamond',serif; line-height:1;">Absolute Discretion.<br>Infinite Celebration.</h1>
-            <p class="hero-sub" style="color:rgba(255,255,255,0.8); margin-top:16px;">Your exclusive girls' getaway, fiercely guarded and flawlessly curated by our travel architects.</p>
-        </div>
-        <div class="slider-text-group">
-            <h1 class="hero-title" style="color:#fff; font-family:'Cormorant Garamond',serif; line-height:1;">Legacy Milestones, Seamlessly Orchestrated.</h1>
-            <p class="hero-sub" style="color:rgba(255,255,255,0.8); margin-top:16px;">Bespoke family celebrations and private dining experiences, crafted seamlessly so you can focus entirely on the memories.</p>
-        </div>
-        <div class="slider-text-group">
-            <h1 class="hero-title" style="color:#fff; font-family:'Cormorant Garamond',serif; line-height:1;">Celebrity-style access and absolute privacy.</h1>
-            <p class="hero-sub" style="color:rgba(255,255,255,0.8); margin-top:16px;">Begin your forever with a canvas designed exclusively for the world's most discerning travellers. Total discretion, elite access.</p>
+            <h1 class="hero-title" style="color:#fff; font-family:'Cormorant Garamond',serif; line-height:1.1;">Legacy milestones,<br>seamlessly orchestrated.</h1>
+            <p class="hero-sub" style="color:rgba(255,255,255,0.8); margin-top:16px;">Bespoke celebrations crafted seamlessly. You just show up and celebrate with your inner circle.</p>
         </div>
     </div>
-    <div class="hero-cta-fixed">
-        <button class="btn-primary" onclick="window.location.href='https://wa.me/919567632255?text=%F0%9F%8E%A8%20*New%20Canvas%20Enquiry*%0A%F0%9F%93%8D%20*Destination%3A*%20%5BEnter%5D%0A%F0%9F%93%85%20*Travel%20dates%3A*%20%5BEnter%5D%0A%F0%9F%91%A5%20*Group%20size%3A*%20%5BEnter%5D%0A%F0%9F%93%B1%20*Contact%3A*%20%5BEnter%5D%0A%F0%9F%93%A7%20*Email%3A*%20%5BEnter%5D%0A%F0%9F%8E%82%20*Date%20of%20birth%3A*%20%5BEnter%5D'">Let's talk to check whether we could help you ! →</button>
+    
+    <div class="hero-cta-fixed" style="margin-top: 32px;">
+        <a href="https://wa.me/919567632255?text=*New%20Canvas%20Enquiry*%0A*Destination%3A*%20%5BEnter%5D%0A*Travel%20dates%3A*%20%5BEnter%5D%0A*Group%20size%3A*%20%5BEnter%5D%0A*Contact%3A*%20%5BEnter%5D%0A*Email%3A*%20%5BEnter%5D%0A*Date%20of%20birth%3A*%20%5BEnter%5D#primary" class="btn-primary" style="width:fit-content">Let's talk to check whether we could help you ! →</a>
     </div>
   </div>
+  
   <div class="hero-video-side" id="video-container">
-    <video poster="/images/blog-luxury.jpg" aria-hidden="true" preload="metadata" class="slider-video active" autoplay muted loop playsinline><source src="/videos/15118051_1080_1920_30fps.mp4" type="video/mp4"></video>
-    <video poster="/images/blog-luxury.jpg" aria-hidden="true" preload="metadata" class="slider-video" autoplay muted loop playsinline><source src="/videos/6666635-uhd_2160_4096_25fps.mp4" type="video/mp4"></video>
-    <video poster="/images/blog-luxury.jpg" aria-hidden="true" preload="metadata" class="slider-video" autoplay muted loop playsinline><source src="/videos/7509450-hd_1066_1920_25fps.mp4" type="video/mp4"></video>
-    <video poster="/images/blog-luxury.jpg" aria-hidden="true" preload="metadata" class="slider-video" autoplay muted loop playsinline><source src="/videos/8503162-uhd_2160_3840_24fps.mp4" type="video/mp4"></video>
+    <video class="slider-video active" aria-hidden="true" poster="/images/blog-luxury.webp" preload="metadata" autoplay muted loop playsinline><source src="/videos/8503162-uhd_2160_3840_24fps.mp4" type="video/mp4"></video>
+    <video class="slider-video" aria-hidden="true" poster="/images/blog-luxury.webp" preload="metadata" autoplay muted loop playsinline><source src="/videos/7509450-hd_1066_1920_25fps.mp4" type="video/mp4"></video>
   </div>
 </div>
+
+
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const texts = document.querySelectorAll('.slider-text-group');
-    const videos = document.querySelectorAll('.slider-video');
+document.addEventListener("DOMContentLoaded", () => {
+    const texts = document.querySelectorAll(".slider-text-group");
+    const videos = document.querySelectorAll(".slider-video");
+    if (texts.length === 0 || videos.length === 0) return;
+    
     let currentIndex = 0;
     setInterval(() => {
-        texts[currentIndex].classList.remove('active');
-        videos[currentIndex].classList.remove('active');
+        texts[currentIndex].classList.remove("active");
+        videos[currentIndex].classList.remove("active");
+        
         currentIndex = (currentIndex + 1) % texts.length;
-        texts[currentIndex].classList.add('active');
-        videos[currentIndex].classList.add('active');
-    }, 6000);
+        
+        texts[currentIndex].classList.add("active");
+        videos[currentIndex].classList.add("active");
+    }, 6000); // 6 second rotation
 });
 </script>
+
 
 
 <div class="press-strip" id="press-strip">
