@@ -699,6 +699,49 @@ html, body {
 }
 </style>
 
+
+<!-- MASTER LAYOUT FIX JUNE 1 -->
+<style>
+/* 1. Shatter the Master Scroll Locks */
+html, body {
+    overflow-y: auto !important; 
+    overflow-x: hidden !important; 
+    height: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+/* 2. Release the Hero Viewport Trap */
+.hero-video-slider {
+    height: auto !important;
+    min-height: 85vh !important;
+    overflow: hidden !important; /* Keeps video contained, but allows the section to grow/scroll */
+}
+
+/* 3. Fluid Typography & Gap Alignment (iPhone/Samsung Auto-Scale) */
+@media (max-width: 768px) {
+    .hero-title { 
+        font-size: 2.2rem !important; 
+        line-height: 1.1 !important; 
+        margin-bottom: 0 !important;
+    }
+    .hero-sub { 
+        font-size: 0.95rem !important; 
+        margin-top: 10px !important; 
+        margin-bottom: 4px !important;
+    }
+    #text-container { 
+        min-height: 0 !important; 
+        padding-bottom: 0 !important; 
+    }
+    .hero-video-side, #video-container { 
+        margin-top: -12px !important; /* The 2mm Gap */
+        position: relative !important; 
+        z-index: 10 !important; 
+        transform: translateY(-8px) !important;
+    }
+}
+</style>
+
 </head>
 <body>
 
@@ -1119,6 +1162,43 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+});
+</script>
+
+
+<!-- MASTER NAV FIX JUNE 1 -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // Target the exact class identified in the X-Ray
+    const hamburgerBtn = document.querySelector(".nav-menu-btn");
+    if (!hamburgerBtn) return;
+
+    // Create a fullscreen overlay appended directly to the BODY so it cannot be hidden by parent containers
+    const mobileMenu = document.createElement("div");
+    mobileMenu.id = "master-mobile-nav";
+    mobileMenu.style.cssText = "display: none; position: fixed; top: 70px; left: 0; width: 100vw; height: calc(100vh - 70px); background: #F6F5F2; z-index: 999999; padding: 32px 24px; overflow-y: auto; flex-direction: column; gap: 24px;";
+
+    mobileMenu.innerHTML = `
+        <a href="/india" style="font-family:'Cormorant Garamond', serif; font-size: 2.2rem; color: #1C2B3A; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 12px; display: block;">India</a>
+        <a href="/international" style="font-family:'Cormorant Garamond', serif; font-size: 2.2rem; color: #1C2B3A; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 12px; display: block;">International</a>
+        <a href="/wellness" style="font-family:'Cormorant Garamond', serif; font-size: 2.2rem; color: #1C2B3A; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 12px; display: block;">Wellness</a>
+        <a href="/blog" style="font-family:'Cormorant Garamond', serif; font-size: 2.2rem; color: #1C2B3A; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 12px; display: block;">Journal</a>
+        <a href="/about" style="font-family:'Cormorant Garamond', serif; font-size: 2.2rem; color: #1C2B3A; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 12px; display: block;">Our Story</a>
+    `;
+
+    document.body.appendChild(mobileMenu);
+
+    hamburgerBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (mobileMenu.style.display === "none" || mobileMenu.style.display === "") {
+            mobileMenu.style.display = "flex";
+            document.body.style.overflow = "hidden"; // Lock background scroll when menu is open
+        } else {
+            mobileMenu.style.display = "none";
+            document.body.style.overflow = "auto"; // Restore scroll when closed
+        }
+    });
 });
 </script>
 
