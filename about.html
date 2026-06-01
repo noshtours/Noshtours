@@ -2198,7 +2198,7 @@ window.addEventListener('load', () => {
 </script>
 </head>
 <body>
-<div id="nosh-preloader"><div class="preloader-text">नमस्ते</div></div>
+
 <div class="scroll-touch top" id="scroll-top"></div>
 <div class="scroll-touch bottom" id="scroll-bottom"></div>
 <!-- NAV -->
@@ -2566,7 +2566,6 @@ window.addEventListener('load', () => {
 <span class="trust-pill"><span class="trust-dot"></span>Zero Hidden Charges</span>
 </div>
 </div>
-
 <div style="text-align: center; margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); width: 100%;">
 <p style="font-family: 'Inter', sans-serif; font-size: 0.85rem; color: #a7a7a7; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase;">SECURE PAYMENTS BY RAZORPAY</p>
 <div style="display: flex; justify-content: center;">
@@ -2697,5 +2696,49 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 </script>
+
+<!-- ANTIGRAVITY FACE CENTERING SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // Target the specific names on the About Page
+    const keywords = ['Aditya', 'Akshay'];
+    const allTextNodes = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    
+    let node;
+    while (node = allTextNodes.nextNode()) {
+        if (keywords.some(kw => node.nodeValue.includes(kw))) {
+            let parent = node.parentElement;
+            
+            // Walk up the DOM tree to find the structural container holding the image
+            for (let i = 0; i < 5; i++) {
+                if (!parent) break;
+                
+                const container = parent.parentElement;
+                if (container) {
+                    const imgs = container.querySelectorAll('img');
+                    if (imgs.length > 0) {
+                        // Apply the digital camera zoom and face-centering focus
+                        imgs.forEach(img => {
+                            img.style.objectFit = 'cover';
+                            img.style.objectPosition = 'center 15%'; // Locks focus on the upper-center (face)
+                            img.style.transform = 'scale(1.35)'; // 35% Zoom in
+                            img.style.transition = 'transform 0.5s ease-in-out';
+                            
+                            // Prevent the zoomed image from spilling out of its frame
+                            if (img.parentElement) {
+                                img.parentElement.style.overflow = 'hidden';
+                                img.parentElement.style.borderRadius = '16px'; 
+                            }
+                        });
+                        break; // Target acquired, stop walking the tree
+                    }
+                }
+                parent = parent.parentElement;
+            }
+        }
+    }
+});
+</script>
+
 </body>
 </html>
