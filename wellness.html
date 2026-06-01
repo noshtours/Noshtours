@@ -2470,8 +2470,74 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
     display: none !important;
 }
 </style>
+<!-- ANTIGRAVITY CINEMATIC ENGINE -->
+<style>
+/* 10. The Namaste Preloader Shield */
+#nosh-preloader {
+    position: fixed; inset: 0; background: #1C2B3A; z-index: 99999;
+    display: flex; justify-content: center; align-items: center;
+    color: #d1752b; font-family: 'Cormorant Garamond', serif; font-size: 4rem;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s;
+}
+.preloader-text { animation: gentlePulse 2s infinite; }
+@keyframes gentlePulse { 0% { opacity: 0.7; transform: scale(0.98); } 50% { opacity: 1; transform: scale(1.02); } 100% { opacity: 0.7; transform: scale(0.98); } }
+
+/* 1. Strict Left-Aligned Footer */
+footer { text-align: left !important; }
+footer .col, footer ul, footer li { text-align: left !important; align-items: flex-start !important; justify-content: flex-start !important; }
+footer .social-icons { justify-content: flex-start !important; }
+
+/* 3 & 7. Auto-Movable Cards & Touch-Lit Animation */
+.swipe-carousel-wrap {
+    display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 20px; padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.swipe-carousel-wrap::-webkit-scrollbar { display: none; }
+.card-touch-lit {
+    scroll-snap-align: center; flex-shrink: 0; width: 85%; max-width: 350px;
+    opacity: 0.5; filter: grayscale(40%); transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 16px; overflow: hidden;
+}
+/* Focus state for active card in view */
+.card-touch-lit:hover, .card-touch-lit:active, .card-touch-lit:focus {
+    opacity: 1; filter: grayscale(0%); transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(209,117,43,0.3);
+}
+
+/* 4. Watery Text Effect for International Title */
+.watery-title {
+    background: linear-gradient(to right, #ffffff, #8ca8d9, #ffffff, #8ca8d9);
+    background-size: 200% auto; color: transparent;
+    -webkit-background-clip: text; background-clip: text;
+    animation: waterFlow 4s linear infinite; text-shadow: 0px 4px 15px rgba(140, 168, 217, 0.4);
+}
+@keyframes waterFlow { to { background-position: 200% center; } }
+
+/* 5 & 8. Fluid Burnt Orange Breathing CTAs */
+@keyframes fluidOrange { 0% { background-position: 0% 50%; box-shadow: 0 4px 15px rgba(209,117,43,0.2); } 50% { background-position: 100% 50%; box-shadow: 0 8px 25px rgba(209,117,43,0.6); } 100% { background-position: 0% 50%; box-shadow: 0 4px 15px rgba(209,117,43,0.2); } }
+a[href*="wa.me"], button[onclick*="wa.me"], .whatsapp-btn, .btn-primary {
+    background: linear-gradient(270deg, #d1752b, #f5a623, #e65c00, #d1752b) !important;
+    background-size: 300% 300% !important; animation: fluidOrange 4s ease infinite !important;
+    color: #fff !important; border: none !important; transition: transform 0.3s ease !important;
+}
+a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
+    transform: translateY(-4px) scale(1.02) !important;
+}
+.w-card, .dest-card, .canvas-card { padding-bottom: 90px !important; position: relative; }
+.price-tag, .cta-wrap { bottom: 25px !important; position: absolute; z-index: 10; }
+</style>
+<script>
+// Preloader Execution Logic
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('nosh-preloader');
+    if(preloader) {
+        setTimeout(() => { preloader.style.opacity = '0'; setTimeout(() => { preloader.style.visibility = 'hidden'; preloader.style.display = 'none'; }, 800); }, 2200);
+    }
+});
+</script>
 </head>
 <body>
+<div id="nosh-preloader"><div class="preloader-text">नमस्ते</div></div>
 <!-- Kerala Leaf Entrance Canvas -->
 <canvas id="leaf-canvas"></canvas>
 <!-- Scroll orange touch -->
@@ -2523,7 +2589,6 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
       where slowing down is the entire point.
     </p>
 <div class="hero-actions" id="hero-actions">
-
 <a class="btn-ghost" href="https://wa.me/919567632255?text=UTR:%20WELLNESS-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">
         Speak to a Nosh Brain
       </a>
@@ -2648,12 +2713,74 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 <div class="w-filter">
 <button class="w-filter-btn active" data-wfilter="all">All Canvases</button>
+</div>
+</div>
+<div class="w-grid" id="w-grid"><div class="w-card w-card-sealed w-card-mushroom" data-mushroom="true" data-sealed="true" data-type="kerala" style="position:relative;overflow:visible"><div class="w-card-body w-card-body-sealed">
+<div class="pass-icon-row">
+<span class="pass-icon">◈</span>
+<span class="pass-label">Nosh Tourship Pass · Access Only</span>
+</div>
+<div class="sealed-heading">Munroe Island</div>
+<p class="sealed-body">
+              This canvas is not listed. It is not bookable.
+              Access is extended exclusively to holders of the
+              <strong style="color:var(--gold)">Lifetime Nosh Tourship Pass</strong> —
+              a designation given by invitation to a select profile
+              of discerning travellers worldwide.
+              If you believe your profile warrants consideration,
+              we would like to hear from you.
+            </p>
+<a class="sealed-cta" href="https://wa.me/919567632255?text=UTR:%20WELLNESS-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">
+              Submit Your Profile →
+            </a>
+</div><div class="w-card-img-wrap" style="position:relative">
+<img alt="Sealed Canvas" class="w-card-img w-card-img-blur" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_4c69b92ca7504fafb619432bfcb9a4a6~mv2.jpg"/>
+<div class="w-card-overlay" style="background:rgba(6,14,8,0.72)"></div>
+<div class="seal-overlay">
+<div class="seal-icon">⬡</div>
+<div class="seal-title">Munroe Island</div>
+<div class="seal-subtitle-hidden">The River Delta</div>
+<div class="seal-nights">2N · Kerala, India</div>
+<div class="seal-tag">Lifetime Nosh Tourship Pass</div>
+</div>
+</div>
+<div class="mushroom-stage" id="mshroom-stage" style="display:none"><div class="mushroom-halo"></div><svg class="mushroom-svg" fill="none" viewbox="0 0 80 90" xmlns="http://www.w3.org/2000/svg"><ellipse cx="40" cy="83" fill="rgba(45,80,22,0.4)" rx="18" ry="5"></ellipse><rect fill="#8B6914" height="42" rx="5" width="12" x="34" y="42"></rect><rect fill="url(#stemGrad)" height="42" rx="5" width="12" x="34" y="42"></rect><ellipse cx="40" cy="38" fill="url(#capGrad)" rx="36" ry="22"></ellipse><ellipse cx="40" cy="38" fill="url(#capSpots)" opacity="0.6" rx="36" ry="22"></ellipse><ellipse cx="40" cy="55" fill="rgba(253,246,236,0.9)" rx="28" ry="8"></ellipse><circle cx="24" cy="30" fill="rgba(255,255,255,0.5)" r="3.5"></circle><circle cx="40" cy="22" fill="rgba(255,255,255,0.45)" r="4.5"></circle><circle cx="55" cy="32" fill="rgba(255,255,255,0.4)" r="3"></circle><circle cx="32" cy="40" fill="rgba(255,255,255,0.35)" r="2.5"></circle><circle cx="52" cy="24" fill="rgba(255,255,255,0.4)" r="2"></circle><defs><lineargradient gradientunits="userSpaceOnUse" id="stemGrad" x1="34" x2="46" y1="42" y2="84"><stop offset="0%" stop-color="#A0781E"></stop><stop offset="100%" stop-color="#6B4F10"></stop></lineargradient><radialgradient cx="40%" cy="35%" id="capGrad" r="60%"><stop offset="0%" stop-color="#C4962A"></stop><stop offset="40%" stop-color="#8B5E1A"></stop><stop offset="100%" stop-color="#5C3A0D"></stop></radialgradient><radialgradient cx="50%" cy="50%" id="capSpots" r="50%"><stop offset="0%" stop-color="rgba(255,220,100,0.3)"></stop><stop offset="100%" stop-color="transparent"></stop></radialgradient></defs></svg></div>
+
+
+</div><div class="w-card w-card-sealed w-card-mushroom" data-mushroom="true" data-sealed="true" data-type="kerala" style="position:relative;overflow:visible"><div class="w-card-body w-card-body-sealed">
+<div class="pass-icon-row">
+<span class="pass-icon">◈</span>
+<span class="pass-label">Nosh Tourship Pass · Access Only</span>
+</div>
+<div class="sealed-heading">Kodaikanal</div>
+<p class="sealed-body">
+              This canvas is not listed. It is not bookable.
+              Access is extended exclusively to holders of the
+              <strong style="color:var(--gold)">Lifetime Nosh Tourship Pass</strong> —
+              a designation given by invitation to a select profile
+              of discerning travellers worldwide.
+              If you believe your profile warrants consideration,
+              we would like to hear from you.
+            </p>
+<a class="sealed-cta" href="https://wa.me/919567632255?text=UTR:%20WELLNESS-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">
+              Submit Your Profile →
+            </a>
+</div><div class="w-card-img-wrap" style="position:relative">
+<img alt="Sealed Canvas" class="w-card-img w-card-img-blur" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_4c69b92ca7504fafb619432bfcb9a4a6~mv2.jpg"/>
+<div class="w-card-overlay" style="background:rgba(6,14,8,0.72)"></div>
+<div class="seal-overlay">
+<div class="seal-icon">⬡</div>
+<div class="seal-title">Kodaikanal</div>
+<div class="seal-subtitle-hidden">Southern Mist</div>
+<div class="seal-nights">3N · Kerala, India</div>
+<div class="seal-tag">Lifetime Nosh Tourship Pass</div>
+</div>
+</div>
+<div class="mushroom-stage" id="mshroom-stage" style="display:none"><div class="mushroom-halo"></div><svg class="mushroom-svg" fill="none" viewbox="0 0 80 90" xmlns="http://www.w3.org/2000/svg"><ellipse cx="40" cy="83" fill="rgba(45,80,22,0.4)" rx="18" ry="5"></ellipse><rect fill="#8B6914" height="42" rx="5" width="12" x="34" y="42"></rect><rect fill="url(#stemGrad)" height="42" rx="5" width="12" x="34" y="42"></rect><ellipse cx="40" cy="38" fill="url(#capGrad)" rx="36" ry="22"></ellipse><ellipse cx="40" cy="38" fill="url(#capSpots)" opacity="0.6" rx="36" ry="22"></ellipse><ellipse cx="40" cy="55" fill="rgba(253,246,236,0.9)" rx="28" ry="8"></ellipse><circle cx="24" cy="30" fill="rgba(255,255,255,0.5)" r="3.5"></circle><circle cx="40" cy="22" fill="rgba(255,255,255,0.45)" r="4.5"></circle><circle cx="55" cy="32" fill="rgba(255,255,255,0.4)" r="3"></circle><circle cx="32" cy="40" fill="rgba(255,255,255,0.35)" r="2.5"></circle><circle cx="52" cy="24" fill="rgba(255,255,255,0.4)" r="2"></circle><defs><lineargradient gradientunits="userSpaceOnUse" id="stemGrad" x1="34" x2="46" y1="42" y2="84"><stop offset="0%" stop-color="#A0781E"></stop><stop offset="100%" stop-color="#6B4F10"></stop></lineargradient><radialgradient cx="40%" cy="35%" id="capGrad" r="60%"><stop offset="0%" stop-color="#C4962A"></stop><stop offset="40%" stop-color="#8B5E1A"></stop><stop offset="100%" stop-color="#5C3A0D"></stop></radialgradient><radialgradient cx="50%" cy="50%" id="capSpots" r="50%"><stop offset="0%" stop-color="rgba(255,220,100,0.3)"></stop><stop offset="100%" stop-color="transparent"></stop></radialgradient></defs></svg></div>
 
 
 </div>
-</div>
-<div class="w-grid" id="w-grid">
-<div class="w-card" data-sealed="false" data-type="kerala">
+<div class="w-card card-touch-lit" data-sealed="false" data-type="kerala">
 <div class="w-card-img-wrap">
 <img alt="Kerala" class="w-card-img" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_98d5931810d24e2aa340d4a47857bf46~mv2.jpg"/>
 <div class="w-card-overlay"></div>
@@ -2678,7 +2805,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 </div>
 </div>
-<div class="w-card" data-sealed="false" data-type="kerala">
+<div class="w-card card-touch-lit" data-sealed="false" data-type="kerala">
 <div class="w-card-img-wrap">
 <img alt="Munnar" class="w-card-img" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_98d5931810d24e2aa340d4a47857bf46~mv2.jpg"/>
 <div class="w-card-overlay"></div>
@@ -2703,7 +2830,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 </div>
 </div>
-<div class="w-card" data-sealed="false" data-type="kerala">
+<div class="w-card card-touch-lit" data-sealed="false" data-type="kerala">
 <div class="w-card-img-wrap">
 <img alt="Alleppey" class="w-card-img" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_98d5931810d24e2aa340d4a47857bf46~mv2.jpg"/>
 <div class="w-card-overlay"></div>
@@ -2728,7 +2855,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 </div>
 </div>
-<div class="w-card" data-sealed="false" data-type="kerala">
+<div class="w-card card-touch-lit" data-sealed="false" data-type="kerala">
 <div class="w-card-img-wrap">
 <img alt="Thekkady" class="w-card-img" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_98d5931810d24e2aa340d4a47857bf46~mv2.jpg"/>
 <div class="w-card-overlay"></div>
@@ -2753,7 +2880,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 </div>
 </div>
-<div class="w-card" data-sealed="false" data-type="kerala">
+<div class="w-card card-touch-lit" data-sealed="false" data-type="kerala">
 <div class="w-card-img-wrap">
 <img alt="Wayanad" class="w-card-img" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_98d5931810d24e2aa340d4a47857bf46~mv2.jpg"/>
 <div class="w-card-overlay"></div>
@@ -2778,7 +2905,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 </div>
 </div>
-<div class="w-card" data-sealed="false" data-type="kerala">
+<div class="w-card card-touch-lit" data-sealed="false" data-type="kerala">
 <div class="w-card-img-wrap">
 <img alt="Kozhikode" class="w-card-img" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_98d5931810d24e2aa340d4a47857bf46~mv2.jpg"/>
 <div class="w-card-overlay"></div>
@@ -2803,72 +2930,8 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 </div>
 </div>
-<div class="w-card w-card-sealed w-card-mushroom" data-mushroom="true" data-sealed="true" data-type="kerala" style="position:relative;overflow:visible">
-<div class="mushroom-stage" id="mshroom-stage" style="display:none"><div class="mushroom-halo"></div><svg class="mushroom-svg" fill="none" viewbox="0 0 80 90" xmlns="http://www.w3.org/2000/svg"><ellipse cx="40" cy="83" fill="rgba(45,80,22,0.4)" rx="18" ry="5"></ellipse><rect fill="#8B6914" height="42" rx="5" width="12" x="34" y="42"></rect><rect fill="url(#stemGrad)" height="42" rx="5" width="12" x="34" y="42"></rect><ellipse cx="40" cy="38" fill="url(#capGrad)" rx="36" ry="22"></ellipse><ellipse cx="40" cy="38" fill="url(#capSpots)" opacity="0.6" rx="36" ry="22"></ellipse><ellipse cx="40" cy="55" fill="rgba(253,246,236,0.9)" rx="28" ry="8"></ellipse><circle cx="24" cy="30" fill="rgba(255,255,255,0.5)" r="3.5"></circle><circle cx="40" cy="22" fill="rgba(255,255,255,0.45)" r="4.5"></circle><circle cx="55" cy="32" fill="rgba(255,255,255,0.4)" r="3"></circle><circle cx="32" cy="40" fill="rgba(255,255,255,0.35)" r="2.5"></circle><circle cx="52" cy="24" fill="rgba(255,255,255,0.4)" r="2"></circle><defs><lineargradient gradientunits="userSpaceOnUse" id="stemGrad" x1="34" x2="46" y1="42" y2="84"><stop offset="0%" stop-color="#A0781E"></stop><stop offset="100%" stop-color="#6B4F10"></stop></lineargradient><radialgradient cx="40%" cy="35%" id="capGrad" r="60%"><stop offset="0%" stop-color="#C4962A"></stop><stop offset="40%" stop-color="#8B5E1A"></stop><stop offset="100%" stop-color="#5C3A0D"></stop></radialgradient><radialgradient cx="50%" cy="50%" id="capSpots" r="50%"><stop offset="0%" stop-color="rgba(255,220,100,0.3)"></stop><stop offset="100%" stop-color="transparent"></stop></radialgradient></defs></svg></div>
-<div class="w-card-img-wrap" style="position:relative">
-<img alt="Sealed Canvas" class="w-card-img w-card-img-blur" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_4c69b92ca7504fafb619432bfcb9a4a6~mv2.jpg"/>
-<div class="w-card-overlay" style="background:rgba(6,14,8,0.72)"></div>
-<div class="seal-overlay">
-<div class="seal-icon">⬡</div>
-<div class="seal-title">Kodaikanal</div>
-<div class="seal-subtitle-hidden">Southern Mist</div>
-<div class="seal-nights">3N · Kerala, India</div>
-<div class="seal-tag">Lifetime Nosh Tourship Pass</div>
-</div>
-</div>
-<div class="w-card-body w-card-body-sealed">
-<div class="pass-icon-row">
-<span class="pass-icon">◈</span>
-<span class="pass-label">Nosh Tourship Pass · Access Only</span>
-</div>
-<div class="sealed-heading">Kodaikanal</div>
-<p class="sealed-body">
-              This canvas is not listed. It is not bookable.
-              Access is extended exclusively to holders of the
-              <strong style="color:var(--gold)">Lifetime Nosh Tourship Pass</strong> —
-              a designation given by invitation to a select profile
-              of discerning travellers worldwide.
-              If you believe your profile warrants consideration,
-              we would like to hear from you.
-            </p>
-<a class="sealed-cta" href="https://wa.me/919567632255?text=UTR:%20WELLNESS-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">
-              Submit Your Profile →
-            </a>
-</div>
-</div>
-<div class="w-card w-card-sealed w-card-mushroom" data-mushroom="true" data-sealed="true" data-type="kerala" style="position:relative;overflow:visible">
-<div class="mushroom-stage" id="mshroom-stage" style="display:none"><div class="mushroom-halo"></div><svg class="mushroom-svg" fill="none" viewbox="0 0 80 90" xmlns="http://www.w3.org/2000/svg"><ellipse cx="40" cy="83" fill="rgba(45,80,22,0.4)" rx="18" ry="5"></ellipse><rect fill="#8B6914" height="42" rx="5" width="12" x="34" y="42"></rect><rect fill="url(#stemGrad)" height="42" rx="5" width="12" x="34" y="42"></rect><ellipse cx="40" cy="38" fill="url(#capGrad)" rx="36" ry="22"></ellipse><ellipse cx="40" cy="38" fill="url(#capSpots)" opacity="0.6" rx="36" ry="22"></ellipse><ellipse cx="40" cy="55" fill="rgba(253,246,236,0.9)" rx="28" ry="8"></ellipse><circle cx="24" cy="30" fill="rgba(255,255,255,0.5)" r="3.5"></circle><circle cx="40" cy="22" fill="rgba(255,255,255,0.45)" r="4.5"></circle><circle cx="55" cy="32" fill="rgba(255,255,255,0.4)" r="3"></circle><circle cx="32" cy="40" fill="rgba(255,255,255,0.35)" r="2.5"></circle><circle cx="52" cy="24" fill="rgba(255,255,255,0.4)" r="2"></circle><defs><lineargradient gradientunits="userSpaceOnUse" id="stemGrad" x1="34" x2="46" y1="42" y2="84"><stop offset="0%" stop-color="#A0781E"></stop><stop offset="100%" stop-color="#6B4F10"></stop></lineargradient><radialgradient cx="40%" cy="35%" id="capGrad" r="60%"><stop offset="0%" stop-color="#C4962A"></stop><stop offset="40%" stop-color="#8B5E1A"></stop><stop offset="100%" stop-color="#5C3A0D"></stop></radialgradient><radialgradient cx="50%" cy="50%" id="capSpots" r="50%"><stop offset="0%" stop-color="rgba(255,220,100,0.3)"></stop><stop offset="100%" stop-color="transparent"></stop></radialgradient></defs></svg></div>
-<div class="w-card-img-wrap" style="position:relative">
-<img alt="Sealed Canvas" class="w-card-img w-card-img-blur" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_4c69b92ca7504fafb619432bfcb9a4a6~mv2.jpg"/>
-<div class="w-card-overlay" style="background:rgba(6,14,8,0.72)"></div>
-<div class="seal-overlay">
-<div class="seal-icon">⬡</div>
-<div class="seal-title">Munroe Island</div>
-<div class="seal-subtitle-hidden">The River Delta</div>
-<div class="seal-nights">2N · Kerala, India</div>
-<div class="seal-tag">Lifetime Nosh Tourship Pass</div>
-</div>
-</div>
-<div class="w-card-body w-card-body-sealed">
-<div class="pass-icon-row">
-<span class="pass-icon">◈</span>
-<span class="pass-label">Nosh Tourship Pass · Access Only</span>
-</div>
-<div class="sealed-heading">Munroe Island</div>
-<p class="sealed-body">
-              This canvas is not listed. It is not bookable.
-              Access is extended exclusively to holders of the
-              <strong style="color:var(--gold)">Lifetime Nosh Tourship Pass</strong> —
-              a designation given by invitation to a select profile
-              of discerning travellers worldwide.
-              If you believe your profile warrants consideration,
-              we would like to hear from you.
-            </p>
-<a class="sealed-cta" href="https://wa.me/919567632255?text=UTR:%20WELLNESS-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">
-              Submit Your Profile →
-            </a>
-</div>
-</div>
+
+
 <div class="w-card w-card-sealed" data-sealed="true" data-type="kerala">
 <div class="w-card-img-wrap" style="position:relative">
 <img alt="Sealed Canvas" class="w-card-img w-card-img-blur" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_4c69b92ca7504fafb619432bfcb9a4a6~mv2.jpg"/>
@@ -2946,8 +3009,6 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
             </p>
 <a class="sealed-cta" href="https://wa.me/919567632255?text=UTR:%20WELLNESS-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">Request an Invitation →</a>
 </div>
-
-
 <div class="swipe-dots" id="swipe-dots" style="display:none"></div>
 </section>
 <!-- AYURVEDA EXPLAINER -->
@@ -3002,7 +3063,6 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
       </p>
 </div>
 <div class="cta-actions reveal">
-
 <a class="btn-ghost" href="https://wa.me/919567632255?text=UTR:%20WELLNESS-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A" style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.2)">
         WhatsApp Nosh Tours Now.
       </a>
@@ -3010,7 +3070,6 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 </section>
 <!-- FOOTER -->
-
 <footer>
 <div class="footer-grid">
 <div>

@@ -2383,8 +2383,77 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
     display: none !important;
 }
 </style>
+
+<!-- ANTIGRAVITY CINEMATIC ENGINE -->
+<style>
+/* 10. The Namaste Preloader Shield */
+#nosh-preloader {
+    position: fixed; inset: 0; background: #1C2B3A; z-index: 99999;
+    display: flex; justify-content: center; align-items: center;
+    color: #d1752b; font-family: 'Cormorant Garamond', serif; font-size: 4rem;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s;
+}
+.preloader-text { animation: gentlePulse 2s infinite; }
+@keyframes gentlePulse { 0% { opacity: 0.7; transform: scale(0.98); } 50% { opacity: 1; transform: scale(1.02); } 100% { opacity: 0.7; transform: scale(0.98); } }
+
+/* 1. Strict Left-Aligned Footer */
+footer { text-align: left !important; }
+footer .col, footer ul, footer li { text-align: left !important; align-items: flex-start !important; justify-content: flex-start !important; }
+footer .social-icons { justify-content: flex-start !important; }
+
+/* 3 & 7. Auto-Movable Cards & Touch-Lit Animation */
+.swipe-carousel-wrap {
+    display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 20px; padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.swipe-carousel-wrap::-webkit-scrollbar { display: none; }
+.card-touch-lit {
+    scroll-snap-align: center; flex-shrink: 0; width: 85%; max-width: 350px;
+    opacity: 0.5; filter: grayscale(40%); transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 16px; overflow: hidden;
+}
+/* Focus state for active card in view */
+.card-touch-lit:hover, .card-touch-lit:active, .card-touch-lit:focus {
+    opacity: 1; filter: grayscale(0%); transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(209,117,43,0.3);
+}
+
+/* 4. Watery Text Effect for International Title */
+.watery-title {
+    background: linear-gradient(to right, #ffffff, #8ca8d9, #ffffff, #8ca8d9);
+    background-size: 200% auto; color: transparent;
+    -webkit-background-clip: text; background-clip: text;
+    animation: waterFlow 4s linear infinite; text-shadow: 0px 4px 15px rgba(140, 168, 217, 0.4);
+}
+@keyframes waterFlow { to { background-position: 200% center; } }
+
+/* 5 & 8. Fluid Burnt Orange Breathing CTAs */
+@keyframes fluidOrange { 0% { background-position: 0% 50%; box-shadow: 0 4px 15px rgba(209,117,43,0.2); } 50% { background-position: 100% 50%; box-shadow: 0 8px 25px rgba(209,117,43,0.6); } 100% { background-position: 0% 50%; box-shadow: 0 4px 15px rgba(209,117,43,0.2); } }
+a[href*="wa.me"], button[onclick*="wa.me"], .whatsapp-btn, .btn-primary {
+    background: linear-gradient(270deg, #d1752b, #f5a623, #e65c00, #d1752b) !important;
+    background-size: 300% 300% !important; animation: fluidOrange 4s ease infinite !important;
+    color: #fff !important; border: none !important; transition: transform 0.3s ease !important;
+}
+a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
+    transform: translateY(-4px) scale(1.02) !important;
+}
+.w-card, .dest-card, .canvas-card { padding-bottom: 90px !important; position: relative; }
+.price-tag, .cta-wrap { bottom: 25px !important; position: absolute; z-index: 10; }
+</style>
+
+<script>
+// Preloader Execution Logic
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('nosh-preloader');
+    if(preloader) {
+        setTimeout(() => { preloader.style.opacity = '0'; setTimeout(() => { preloader.style.visibility = 'hidden'; preloader.style.display = 'none'; }, 800); }, 2200);
+    }
+});
+</script>
+
 </head>
 <body>
+<div id="nosh-preloader"><div class="preloader-text">नमस्ते</div></div>
 <!-- NAV -->
 <div class="nav-wrap">
 <nav class="nav">
@@ -2417,6 +2486,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 <div class="hero-eyebrow" id="hero-ey">
 <div class="hero-ey-dot"></div>
+<h1 style="font-family:'Cormorant Garamond', serif; font-size: 3rem; color: #fff; margin-bottom: 15px; text-shadow: 0 4px 10px rgba(0,0,0,0.5); padding: 0 20px;">Dekho Apna Desh 2.0 🇮🇳</h1>
 <span class="hero-ey-text">India Canvases · Fixed Pricing</span>
 </div>
 <h1 class="hero-title" id="hero-title">

@@ -2113,8 +2113,77 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
     display: none !important;
 }
 </style>
+
+<!-- ANTIGRAVITY CINEMATIC ENGINE -->
+<style>
+/* 10. The Namaste Preloader Shield */
+#nosh-preloader {
+    position: fixed; inset: 0; background: #1C2B3A; z-index: 99999;
+    display: flex; justify-content: center; align-items: center;
+    color: #d1752b; font-family: 'Cormorant Garamond', serif; font-size: 4rem;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s;
+}
+.preloader-text { animation: gentlePulse 2s infinite; }
+@keyframes gentlePulse { 0% { opacity: 0.7; transform: scale(0.98); } 50% { opacity: 1; transform: scale(1.02); } 100% { opacity: 0.7; transform: scale(0.98); } }
+
+/* 1. Strict Left-Aligned Footer */
+footer { text-align: left !important; }
+footer .col, footer ul, footer li { text-align: left !important; align-items: flex-start !important; justify-content: flex-start !important; }
+footer .social-icons { justify-content: flex-start !important; }
+
+/* 3 & 7. Auto-Movable Cards & Touch-Lit Animation */
+.swipe-carousel-wrap {
+    display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 20px; padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.swipe-carousel-wrap::-webkit-scrollbar { display: none; }
+.card-touch-lit {
+    scroll-snap-align: center; flex-shrink: 0; width: 85%; max-width: 350px;
+    opacity: 0.5; filter: grayscale(40%); transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 16px; overflow: hidden;
+}
+/* Focus state for active card in view */
+.card-touch-lit:hover, .card-touch-lit:active, .card-touch-lit:focus {
+    opacity: 1; filter: grayscale(0%); transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(209,117,43,0.3);
+}
+
+/* 4. Watery Text Effect for International Title */
+.watery-title {
+    background: linear-gradient(to right, #ffffff, #8ca8d9, #ffffff, #8ca8d9);
+    background-size: 200% auto; color: transparent;
+    -webkit-background-clip: text; background-clip: text;
+    animation: waterFlow 4s linear infinite; text-shadow: 0px 4px 15px rgba(140, 168, 217, 0.4);
+}
+@keyframes waterFlow { to { background-position: 200% center; } }
+
+/* 5 & 8. Fluid Burnt Orange Breathing CTAs */
+@keyframes fluidOrange { 0% { background-position: 0% 50%; box-shadow: 0 4px 15px rgba(209,117,43,0.2); } 50% { background-position: 100% 50%; box-shadow: 0 8px 25px rgba(209,117,43,0.6); } 100% { background-position: 0% 50%; box-shadow: 0 4px 15px rgba(209,117,43,0.2); } }
+a[href*="wa.me"], button[onclick*="wa.me"], .whatsapp-btn, .btn-primary {
+    background: linear-gradient(270deg, #d1752b, #f5a623, #e65c00, #d1752b) !important;
+    background-size: 300% 300% !important; animation: fluidOrange 4s ease infinite !important;
+    color: #fff !important; border: none !important; transition: transform 0.3s ease !important;
+}
+a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
+    transform: translateY(-4px) scale(1.02) !important;
+}
+.w-card, .dest-card, .canvas-card { padding-bottom: 90px !important; position: relative; }
+.price-tag, .cta-wrap { bottom: 25px !important; position: absolute; z-index: 10; }
+</style>
+
+<script>
+// Preloader Execution Logic
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('nosh-preloader');
+    if(preloader) {
+        setTimeout(() => { preloader.style.opacity = '0'; setTimeout(() => { preloader.style.visibility = 'hidden'; preloader.style.display = 'none'; }, 800); }, 2200);
+    }
+});
+</script>
+
 </head>
 <body>
+<div id="nosh-preloader"><div class="preloader-text">नमस्ते</div></div>
 <!-- ══ NAV ══════════════════════════════════════════ -->
 <div class="nav-wrap">
 <nav class="nav">
@@ -2181,7 +2250,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 </div>
 <div class="dest-grid" id="dest-grid">
-<div class="dest-card" data-region="southeast-asia" data-tag="wellness">
+<div class="dest-card card-touch-lit" data-region="southeast-asia" data-tag="wellness">
 <div class="dest-img-wrap">
 <img alt="Bali · The Emerald Isle" class="dest-img" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_ca0307d412c74c6eb54cb1c640cda421~mv2.jpg"/>
 <div class="dest-overlay"></div>
@@ -2204,7 +2273,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 </div>
 </div>
-<div class="dest-card" data-region="southeast-asia" data-tag="hot">
+<div class="dest-card card-touch-lit" data-region="southeast-asia" data-tag="hot">
 <div class="dest-img-wrap">
 <img alt="Thailand · Bangkok &amp; Beyond" class="dest-img" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_b98815a6659a40cca792e6b34c2561a9~mv2.jpg"/>
 <div class="dest-overlay"></div>
@@ -2227,7 +2296,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 </div>
 </div>
-<div class="dest-card" data-region="indian-ocean" data-tag="island">
+<div class="dest-card card-touch-lit" data-region="indian-ocean" data-tag="island">
 <div class="dest-img-wrap">
 <img alt="Maldives · The Deep Blue" class="dest-img" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_fd395236424a4967a333b8b77702e9d5~mv2.jpg"/>
 <div class="dest-overlay"></div>
@@ -2250,7 +2319,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 </div>
 </div>
-<div class="dest-card" data-region="east-asia" data-tag="premium">
+<div class="dest-card card-touch-lit" data-region="east-asia" data-tag="premium">
 <div class="dest-img-wrap">
 <img alt="Japan · The Silent Country" class="dest-img" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_50601934be9844fbae296a891d802326~mv2.jpg"/>
 <div class="dest-overlay"></div>
@@ -2273,7 +2342,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 </div>
 </div>
-<div class="dest-card" data-region="india" data-tag="india">
+<div class="dest-card card-touch-lit" data-region="india" data-tag="india">
 <div class="dest-img-wrap">
 <img alt="Kashmir · The Crown" class="dest-img" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_47e0f85948bd4485866b9cdc76d2b4f1~mv2.jpg"/>
 <div class="dest-overlay"></div>
@@ -2296,7 +2365,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 </div>
 </div>
-<div class="dest-card" data-region="india" data-tag="wellness">
+<div class="dest-card card-touch-lit" data-region="india" data-tag="wellness">
 <div class="dest-img-wrap">
 <img alt="Kerala · The Emerald Veil" class="dest-img" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_0b72c78162154716acb49be3d5dfca9e~mv2.jpg"/>
 <div class="dest-overlay"></div>
@@ -2319,7 +2388,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 </div>
 </div>
-<div class="dest-card" data-region="europe" data-tag="europe">
+<div class="dest-card card-touch-lit" data-region="europe" data-tag="europe">
 <div class="dest-img-wrap">
 <img alt="Switzerland · Lauterbrunnen" class="dest-img" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_5fe75b0659b8497c8fe5ed5290eed611~mv2.jpg"/>
 <div class="dest-overlay"></div>
@@ -2342,7 +2411,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 </div>
 </div>
-<div class="dest-card" data-region="europe" data-tag="europe">
+<div class="dest-card card-touch-lit" data-region="europe" data-tag="europe">
 <div class="dest-img-wrap">
 <img alt="Switzerland · Zermatt" class="dest-img" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_c8d51d17ad034f258af7632ab6699f56~mv2.jpg"/>
 <div class="dest-overlay"></div>
@@ -2365,7 +2434,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 </div>
 </div>
-<div class="dest-card" data-region="europe" data-tag="europe">
+<div class="dest-card card-touch-lit" data-region="europe" data-tag="europe">
 <div class="dest-img-wrap">
 <img alt="France · Paris &amp; Provence" class="dest-img" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_b4b8d1d65a3b4994bcd5eb4d09a1583d~mv2.jpg"/>
 <div class="dest-overlay"></div>
@@ -2388,7 +2457,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 </div>
 </div>
-<div class="dest-card" data-region="southeast-asia" data-tag="asia">
+<div class="dest-card card-touch-lit" data-region="southeast-asia" data-tag="asia">
 <div class="dest-img-wrap">
 <img alt="Vietnam · The Long South" class="dest-img" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_1f78c3527343474eb73fc1fcda5e2631~mv2.jpg"/>
 <div class="dest-overlay"></div>
@@ -2411,7 +2480,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 </div>
 </div>
-<div class="dest-card" data-region="southeast-asia" data-tag="asia">
+<div class="dest-card card-touch-lit" data-region="southeast-asia" data-tag="asia">
 <div class="dest-img-wrap">
 <img alt="Singapore · The City-State" class="dest-img" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_fa71a380f0454705be9e071cbd56e8d0~mv2.jpg"/>
 <div class="dest-overlay"></div>
@@ -2434,7 +2503,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 </div>
 </div>
-<div class="dest-card" data-region="indian-ocean" data-tag="hidden">
+<div class="dest-card card-touch-lit" data-region="indian-ocean" data-tag="hidden">
 <div class="dest-img-wrap">
 <img alt="Sri Lanka · The Forgotten Isle" class="dest-img" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_51b0656689db4b0eb1907cdf0eed6373~mv2.jpg"/>
 <div class="dest-overlay"></div>
@@ -2457,7 +2526,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 </div>
 </div>
-<div class="dest-card" data-region="central-asia" data-tag="offbeat">
+<div class="dest-card card-touch-lit" data-region="central-asia" data-tag="offbeat">
 <div class="dest-img-wrap">
 <img alt="Uzbekistan · The Ancient Route" class="dest-img" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_3c8a84db02f142409bcabc4ec12ebd74~mv2.jpg"/>
 <div class="dest-overlay"></div>
@@ -2480,7 +2549,7 @@ html, body, main, section, .main-wrapper, #wrapper, header, footer {
 </div>
 </div>
 </div>
-<div class="dest-card" data-region="central-asia" data-tag="offbeat">
+<div class="dest-card card-touch-lit" data-region="central-asia" data-tag="offbeat">
 <div class="dest-img-wrap">
 <img alt="Kazakhstan · The Silk Road" class="dest-img" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_b1f37eebbec64bf7a64b102ddde12a4a~mv2.jpg"/>
 <div class="dest-overlay"></div>
