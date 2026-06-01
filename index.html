@@ -1546,15 +1546,25 @@ a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
 .w-card, .dest-card, .canvas-card { padding-bottom: 90px !important; position: relative; }
 .price-tag, .cta-wrap { bottom: 25px !important; position: absolute; z-index: 10; }
 </style>
+
 <script>
-// Preloader Execution Logic
-window.addEventListener('load', () => {
-    const preloader = document.getElementById('nosh-preloader');
-    if(preloader) {
-        setTimeout(() => { preloader.style.opacity = '0'; setTimeout(() => { preloader.style.visibility = 'hidden'; preloader.style.display = 'none'; }, 500); }, 1000);
-    }
-});
+(function() {
+    const killPreloader = () => {
+        const p = document.getElementById('nosh-preloader');
+        if(p) {
+            p.style.opacity = '0';
+            setTimeout(() => p.remove(), 500); // Completely amputate from the DOM
+        }
+    };
+    
+    // Hard-coded absolute vanish at 1.0s + 0.5s fade = 1.5 seconds total
+    setTimeout(killPreloader, 1000);
+    
+    // Absolute Failsafe if the browser throttles the main thread
+    window.addEventListener('load', () => setTimeout(killPreloader, 100));
+})();
 </script>
+
 </head>
 <body>
 <div id="nosh-preloader"><div class="preloader-text">नमस्ते</div></div>
