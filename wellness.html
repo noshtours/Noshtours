@@ -2523,7 +2523,7 @@ a[href*="wa.me"], button[onclick*="wa.me"], .whatsapp-btn, .btn-primary {
 a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
     transform: translateY(-4px) scale(1.02) !important;
 }
-.w-card, .dest-card, .canvas-card { padding-bottom: 90px !important; position: relative; }
+.w-card, .dest-card, .canvas-card { padding-bottom: 25px !important; position: relative; }
 .price-tag, .cta-wrap { bottom: 25px !important; position: absolute; z-index: 10; }
 </style>
 </head>
@@ -2545,7 +2545,7 @@ a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
 <li><a href="/india">India</a></li>
 <li><a href="/international">International</a></li>
 <li><a class="nav-active" href="/wellness">Wellness</a></li>
-<li><a href="/about">Our Story</a></li>
+<li><a href="/offerings">Offerings</a></li><li><a href="/about">Our Story</a></li>
 <li><a class="nav-cta" href="https://wa.me/919567632255?text=UTR:%20WELLNESS-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">Ready to Fly?</a></li>
 </ul>
 <button aria-label="Menu" class="nav-menu-btn">
@@ -2612,8 +2612,6 @@ a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
 <!-- KERALA FEATURE -->
 <section class="kerala-feature">
 <div class="kerala-inner">
-<div>
-<div class="kerala-eyebrow reveal">India's Strongest SEO Page for a Reason</div>
 <h2 class="kerala-title reveal">
         Kerala Ayurveda.<br/>Done <em>properly.</em>
 </h2>
@@ -2640,38 +2638,38 @@ a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
 </div>
 <!-- Panchakarma accordion -->
 <div class="pk-accordion reveal" id="pk-accordion">
-<div class="pk-item open">
-<div class="pk-header">
+<details class="pk-item open" style="; margin-bottom: 15px; border-bottom: 1px solid #d1752b; padding-bottom: 10px;">
+<summary class="pk-header" style="; cursor: pointer; list-style: none; font-weight: 700; outline: none;">
 <span class="pk-day">Day 1–2</span>
 <span class="pk-name">Purvakarma — Preparation</span>
 <span class="pk-arrow">▾</span>
-</div>
-<div class="pk-body">Prakriti assessment (40–60 min). Abhyanga synchronized oil massage. Simplified diet begins. You feel pampered. The real work hasn't started yet.</div>
-</div>
-<div class="pk-item">
-<div class="pk-header">
+</summary>
+<div class="pk-body" style="">Prakriti assessment (40–60 min). Abhyanga synchronized oil massage. Simplified diet begins. You feel pampered. The real work hasn't started yet.</div>
+</details>
+<details class="pk-item" style="; margin-bottom: 15px; border-bottom: 1px solid #d1752b; padding-bottom: 10px;">
+<summary class="pk-header" style="; cursor: pointer; list-style: none; font-weight: 700; outline: none;">
 <span class="pk-day">Day 3–4</span>
 <span class="pk-name">Oleation Phase</span>
 <span class="pk-arrow">▾</span>
-</div>
-<div class="pk-body">Internal oleation — medicated ghee before dawn. Quantity increases daily. Day four is commonly the hardest. Fatigue, mild nausea, emotional unpredictability. The protocol is working.</div>
-</div>
-<div class="pk-item">
-<div class="pk-header">
+</summary>
+<div class="pk-body" style="">Internal oleation — medicated ghee before dawn. Quantity increases daily. Day four is commonly the hardest. Fatigue, mild nausea, emotional unpredictability. The protocol is working.</div>
+</details>
+<details class="pk-item" style="; margin-bottom: 15px; border-bottom: 1px solid #d1752b; padding-bottom: 10px;">
+<summary class="pk-header" style="; cursor: pointer; list-style: none; font-weight: 700; outline: none;">
 <span class="pk-day">Day 5</span>
 <span class="pk-name">Virechana — Purgation</span>
 <span class="pk-arrow">▾</span>
-</div>
-<div class="pk-body">The central therapeutic event. Administered by the physician in the morning. By evening you feel lighter in a way that is difficult to describe to someone who hasn't experienced it.</div>
-</div>
-<div class="pk-item">
-<div class="pk-header">
+</summary>
+<div class="pk-body" style="">The central therapeutic event. Administered by the physician in the morning. By evening you feel lighter in a way that is difficult to describe to someone who hasn't experienced it.</div>
+</details>
+<details class="pk-item" style="; margin-bottom: 15px; border-bottom: 1px solid #d1752b; padding-bottom: 10px;">
+<summary class="pk-header" style="; cursor: pointer; list-style: none; font-weight: 700; outline: none;">
 <span class="pk-day">Day 6–7</span>
 <span class="pk-name">Paschatkarma — The Reset</span>
 <span class="pk-arrow">▾</span>
-</div>
-<div class="pk-body">Shirodhara. Nasyam. Kizhi. The body is now in its most receptive state. Sleep on night six is commonly the deepest in years. You leave quieter than you arrived.</div>
-</div>
+</summary>
+<div class="pk-body" style="">Shirodhara. Nasyam. Kizhi. The body is now in its most receptive state. Sleep on night six is commonly the deepest in years. You leave quieter than you arrived.</div>
+</details>
 </div>
 </div>
 <!-- Image stack -->
@@ -2687,7 +2685,7 @@ a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
 <img alt="Munnar Kerala" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_4c69b92ca7504fafb619432bfcb9a4a6~mv2.jpg"/>
 </div>
 </div>
-</div>
+
 </section>
 <!-- WELLNESS CANVASES GRID -->
 <section class="canvases-section" id="canvases">
@@ -3063,62 +3061,40 @@ a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
 </div>
 </div>
 </section>
-<footer>
-<div class="footer-grid">
+
+<footer style="background-color: #1C2B3A; color: #fff; padding: 60px 20px 40px; font-family: 'Inter', sans-serif; margin-top: 40px;">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 40px;">
 <div>
-<div class="footer-brand">Nosh<span>.</span></div>
-<p class="footer-tagline">Fixed pricing. No spoilers. Wellness canvases designed around the traveller who needs stillness more than sightseeing.</p>
+<a href="/" style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: #fff; text-decoration: none; font-weight: bold;">NOSH<span style="color: #d1752b;">.</span></a>
 </div>
-<div>
-<div class="footer-col-title">Wellness Canvases
-<div class="nosh-social-links" style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 25px; margin-bottom: 25px;">
-<a href="https://www.instagram.com/noshtours?igsh=MTljaWN0cnNmYXhqcQ==" style="color: #d1752b; font-family: 'Inter', sans-serif; font-weight: 700; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s;" target="_blank">Instagram</a>
-<a href="https://www.facebook.com/share/1cnRSKrwfh/" style="color: #d1752b; font-family: 'Inter', sans-serif; font-weight: 700; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s;" target="_blank">Facebook</a>
-<a href="https://www.linkedin.com/in/adityatg?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=android_app" style="color: #d1752b; font-family: 'Inter', sans-serif; font-weight: 700; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s;" target="_blank">LinkedIn</a>
-<a href="https://adityatg.substack.com/p/they-deserved-better-so-we-built" style="color: #d1752b; font-family: 'Inter', sans-serif; font-weight: 700; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s;" target="_blank">Substack</a>
+<!-- Sitemap Links -->
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px;">
+<a href="/india" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">India</a>
+<a href="/international" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">International</a>
+<a href="/offerings" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Offerings</a>
+<a href="/wellness" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Wellness</a>
+<a href="/journal" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Journal</a>
+<a href="/about" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Our Story</a>
+<a href="/gift" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Gift a Journey</a>
 </div>
+<!-- Social Links -->
+<div style="display: flex; gap: 20px; font-size: 0.9rem;">
+<a href="https://www.instagram.com/noshtours?igsh=MTljaWN0cnNmYXhqcQ==" style="color: #fff; text-decoration: none;" target="_blank">Instagram</a>
+<a href="https://www.facebook.com/share/1cnRSKrwfh/" style="color: #fff; text-decoration: none;" target="_blank">Facebook</a>
+<a href="https://www.linkedin.com/in/adityatg?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=android_app" style="color: #fff; text-decoration: none;" target="_blank">LinkedIn</a>
+<a href="https://adityatg.substack.com/p/they-deserved-better-so-we-built" style="color: #fff; text-decoration: none;" target="_blank">Substack</a>
 </div>
-<ul class="footer-links">
-<li><a href="/destinations">Kerala · Ayurveda Protocol</a></li>
-<li><a href="/destinations">Munnar · Tea Estate</a></li>
-<li><a href="/destinations">Bali · Ubud Healer</a></li>
-<li><a href="/destinations">Sri Lanka · Slow Coast</a></li>
-<li><a href="/destinations">Provence · Lavender</a></li>
-</ul>
-</div>
-<div>
-<div class="footer-col-title">Company</div>
-<ul class="footer-links">
-<li><a href="/about">Our Story</a></li>
-<li><a href="/journal">The Nosh Journal</a></li>
-<li><a href="/india">India Canvases</a></li>
-<li><a href="/international">International</a></li>
-</ul>
-</div>
-<div>
-<div class="footer-col-title">Contact</div>
-<ul class="footer-links">
-<li><a class="btn-primary" href="https://wa.me/919567632255?text=UTR:%20WELLNESS-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">Reserve your ayurveda retreat</a></li>
-<li><a href="mailto:nosh.tours@gmail.com">Email Us</a></li>
-<li><a href="https://wa.me/919567632255?text=UTR:%20WELLNESS-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">+91 95676 32255</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-<span class="footer-copy">© 2026 Nosh Tours LLP · All rights reserved</span>
-<div class="footer-trust">
-<span class="trust-pill"><span class="trust-dot"></span>Physician-Led</span>
-<span class="trust-pill"><span class="trust-dot"></span>Fixed Pricing</span>
-<span class="trust-pill"><span class="trust-dot"></span>6 Wellness Canvases</span>
-</div>
-</div>
-<div style="text-align: center; margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); width: 100%;">
-<p style="font-family: 'Inter', sans-serif; font-size: 0.85rem; color: #a7a7a7; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase;">SECURE PAYMENTS BY RAZORPAY</p>
+<!-- Razorpay Trust Block -->
+<div style="border-top: 1px solid rgba(255,255,255,0.1); width: 100%; max-width: 400px; padding-top: 30px;">
+<p style="font-size: 0.8rem; color: #a7a7a7; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase;">SECURE PAYMENTS BY RAZORPAY</p>
 <div style="display: flex; justify-content: center;">
 <form><script async="" data-payment_button_id="pl_SwDrPo0lAWjW4m" src="https://checkout.razorpay.com/v1/payment-button.js"></script></form>
 </div>
 </div>
+<p style="font-size: 0.8rem; color: #777;">© 2026 Nosh Tours LLP. All rights reserved.</p>
+</div>
 </footer>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const scrollObserver = new IntersectionObserver((entries) => {

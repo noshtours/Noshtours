@@ -521,7 +521,7 @@ a[href*="wa.me"], button[onclick*="wa.me"], .whatsapp-btn, .btn-primary {
 a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
     transform: translateY(-4px) scale(1.02) !important;
 }
-.w-card, .dest-card, .canvas-card { padding-bottom: 90px !important; position: relative; }
+.w-card, .dest-card, .canvas-card { padding-bottom: 25px !important; position: relative; }
 .price-tag, .cta-wrap { bottom: 25px !important; position: absolute; z-index: 10; }
 </style>
 </head>
@@ -536,7 +536,7 @@ a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
 <li><a href="/">Home</a></li>
 <li><a href="/destinations">Destinations</a></li>
 <li><a href="/wellness">Wellness</a></li>
-<li><a href="/about">Our Story</a></li>
+<li><a href="/offerings">Offerings</a></li><li><a href="/about">Our Story</a></li>
 <li><a class="nav-active" href="/journal">Journal</a></li>
 <li><a class="nav-cta" href="https://wa.me/919567632255?text=UTR:%20JOURNAL-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">Ready to Fly?</a></li>
 </ul>
@@ -885,62 +885,40 @@ a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
 </div>
 </main>
 <!-- FOOTER -->
-<footer>
-<div class="footer-grid">
+
+<footer style="background-color: #1C2B3A; color: #fff; padding: 60px 20px 40px; font-family: 'Inter', sans-serif; margin-top: 40px;">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 40px;">
 <div>
-<div class="footer-brand">Nosh<span>.</span></div>
-<p class="footer-tagline">Stories from India's first canvas-oriented travel architects. Written from the field, not the desk.</p>
+<a href="/" style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: #fff; text-decoration: none; font-weight: bold;">NOSH<span style="color: #d1752b;">.</span></a>
 </div>
-<div>
-<div class="footer-col-title">Categories
-<div class="nosh-social-links" style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 25px; margin-bottom: 25px;">
-<a href="https://www.instagram.com/noshtours?igsh=MTljaWN0cnNmYXhqcQ==" style="color: #d1752b; font-family: 'Inter', sans-serif; font-weight: 700; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s;" target="_blank">Instagram</a>
-<a href="https://www.facebook.com/share/1cnRSKrwfh/" style="color: #d1752b; font-family: 'Inter', sans-serif; font-weight: 700; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s;" target="_blank">Facebook</a>
-<a href="https://www.linkedin.com/in/adityatg?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=android_app" style="color: #d1752b; font-family: 'Inter', sans-serif; font-weight: 700; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s;" target="_blank">LinkedIn</a>
-<a href="https://adityatg.substack.com/p/they-deserved-better-so-we-built" style="color: #d1752b; font-family: 'Inter', sans-serif; font-weight: 700; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s;" target="_blank">Substack</a>
+<!-- Sitemap Links -->
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px;">
+<a href="/india" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">India</a>
+<a href="/international" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">International</a>
+<a href="/offerings" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Offerings</a>
+<a href="/wellness" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Wellness</a>
+<a href="/journal" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Journal</a>
+<a href="/about" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Our Story</a>
+<a href="/gift" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Gift a Journey</a>
 </div>
+<!-- Social Links -->
+<div style="display: flex; gap: 20px; font-size: 0.9rem;">
+<a href="https://www.instagram.com/noshtours?igsh=MTljaWN0cnNmYXhqcQ==" style="color: #fff; text-decoration: none;" target="_blank">Instagram</a>
+<a href="https://www.facebook.com/share/1cnRSKrwfh/" style="color: #fff; text-decoration: none;" target="_blank">Facebook</a>
+<a href="https://www.linkedin.com/in/adityatg?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=android_app" style="color: #fff; text-decoration: none;" target="_blank">LinkedIn</a>
+<a href="https://adityatg.substack.com/p/they-deserved-better-so-we-built" style="color: #fff; text-decoration: none;" target="_blank">Substack</a>
 </div>
-<ul class="footer-links">
-<li><a href="https://wa.me/919567632255?text=UTR:%20JOURNAL-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">Kerala Wellness</a></li>
-<li><a href="https://wa.me/919567632255?text=UTR:%20JOURNAL-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">India Mystery Luxury</a></li>
-<li><a href="https://wa.me/918751997519?text=UTR:%20NOSH-GIFT-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">Travel Gifting</a></li>
-<li><a href="https://wa.me/919567632255?text=UTR:%20JOURNAL-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">Destination Deep Dives</a></li>
-<li><a href="https://wa.me/919567632255?text=UTR:%20JOURNAL-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">Ayurveda Guide</a></li>
-</ul>
-</div>
-<div>
-<div class="footer-col-title">Popular</div>
-<ul class="footer-links">
-<li><a href="https://wa.me/919567632255?text=UTR:%20JOURNAL-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">Kerala Ayurveda Retreat</a></li>
-<li><a href="https://wa.me/919567632255?text=UTR:%20JOURNAL-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">Kashmir in October</a></li>
-<li><a href="https://wa.me/919567632255?text=UTR:%20JOURNAL-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">Japan Ryokan Circuit</a></li>
-<li><a href="https://wa.me/918751997519?text=UTR:%20NOSH-GIFT-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">How to Gift a Trip</a></li>
-</ul>
-</div>
-<div>
-<div class="footer-col-title">Contact</div>
-<ul class="footer-links">
-<li><a href="https://wa.me/919567632255?text=UTR:%20JOURNAL-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">WhatsApp Nosh Tours Now.</a></li>
-<li><a href="mailto:nosh.tours@gmail.com">Email</a></li>
-<li><a href="/about">Our Story</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-<span class="footer-copy">© 2026 Nosh Tours LLP · All rights reserved</span>
-<div class="footer-trust">
-<span class="trust-pill"><span class="trust-dot"></span>21 Articles</span>
-<span class="trust-pill"><span class="trust-dot"></span>7 Categories</span>
-<span class="trust-pill"><span class="trust-dot"></span>Written by Nosh Brains</span>
-</div>
-</div>
-<div style="text-align: center; margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); width: 100%;">
-<p style="font-family: 'Inter', sans-serif; font-size: 0.85rem; color: #a7a7a7; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase;">SECURE PAYMENTS BY RAZORPAY</p>
+<!-- Razorpay Trust Block -->
+<div style="border-top: 1px solid rgba(255,255,255,0.1); width: 100%; max-width: 400px; padding-top: 30px;">
+<p style="font-size: 0.8rem; color: #a7a7a7; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase;">SECURE PAYMENTS BY RAZORPAY</p>
 <div style="display: flex; justify-content: center;">
 <form><script async="" data-payment_button_id="pl_SwDrPo0lAWjW4m" src="https://checkout.razorpay.com/v1/payment-button.js"></script></form>
 </div>
 </div>
+<p style="font-size: 0.8rem; color: #777;">© 2026 Nosh Tours LLP. All rights reserved.</p>
+</div>
 </footer>
+
 <script>
 // ── FILTER ────────────────────────────────────────────
 document.querySelectorAll('.jf-btn').forEach(btn => {
