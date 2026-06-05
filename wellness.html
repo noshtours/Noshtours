@@ -2526,6 +2526,37 @@ a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
 .w-card, .dest-card, .canvas-card { padding-bottom: 25px !important; position: relative; }
 .price-tag, .cta-wrap { bottom: 25px !important; position: absolute; z-index: 10; }
 </style>
+
+<!-- ANTIGRAVITY ACCORDION & CARD FIX -->
+<style>
+/* Fix 6 & 7: Accordion Alignment & Dynamic Arrow State */
+details summary {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    list-style: none !important;
+    cursor: pointer;
+    padding: 12px 0 !important;
+    font-weight: 700 !important;
+    outline: none !important;
+}
+details summary::-webkit-details-marker { display: none !important; }
+details summary::after {
+    content: '▼' !important;
+    font-size: 0.8rem !important;
+    color: #d1752b !important;
+    transition: transform 0.3s ease !important;
+}
+details[open] summary::after {
+    transform: rotate(180deg) !important;
+}
+details[open] > div {
+    padding-top: 10px !important;
+    padding-bottom: 15px !important;
+}
+/* Fix 5: Wellness Card Breathing Room */
+[style*="bottom: -20px"], [style*="bottom:-20px"], .card-inner-text { padding-bottom: 25px !important; }
+</style>
 </head>
 <body>
 <!-- Kerala Leaf Entrance Canvas -->
@@ -2642,7 +2673,7 @@ a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
 <summary class="pk-header" style="; cursor: pointer; list-style: none; font-weight: 700; outline: none;">
 <span class="pk-day">Day 1–2</span>
 <span class="pk-name">Purvakarma — Preparation</span>
-<span class="pk-arrow">▾</span>
+
 </summary>
 <div class="pk-body" style="">Prakriti assessment (40–60 min). Abhyanga synchronized oil massage. Simplified diet begins. You feel pampered. The real work hasn't started yet.</div>
 </details>
@@ -2650,7 +2681,7 @@ a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
 <summary class="pk-header" style="; cursor: pointer; list-style: none; font-weight: 700; outline: none;">
 <span class="pk-day">Day 3–4</span>
 <span class="pk-name">Oleation Phase</span>
-<span class="pk-arrow">▾</span>
+
 </summary>
 <div class="pk-body" style="">Internal oleation — medicated ghee before dawn. Quantity increases daily. Day four is commonly the hardest. Fatigue, mild nausea, emotional unpredictability. The protocol is working.</div>
 </details>
@@ -2658,7 +2689,7 @@ a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
 <summary class="pk-header" style="; cursor: pointer; list-style: none; font-weight: 700; outline: none;">
 <span class="pk-day">Day 5</span>
 <span class="pk-name">Virechana — Purgation</span>
-<span class="pk-arrow">▾</span>
+
 </summary>
 <div class="pk-body" style="">The central therapeutic event. Administered by the physician in the morning. By evening you feel lighter in a way that is difficult to describe to someone who hasn't experienced it.</div>
 </details>
@@ -2666,7 +2697,7 @@ a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
 <summary class="pk-header" style="; cursor: pointer; list-style: none; font-weight: 700; outline: none;">
 <span class="pk-day">Day 6–7</span>
 <span class="pk-name">Paschatkarma — The Reset</span>
-<span class="pk-arrow">▾</span>
+
 </summary>
 <div class="pk-body" style="">Shirodhara. Nasyam. Kizhi. The body is now in its most receptive state. Sleep on night six is commonly the deepest in years. You leave quieter than you arrived.</div>
 </details>
@@ -2685,7 +2716,6 @@ a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
 <img alt="Munnar Kerala" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_4c69b92ca7504fafb619432bfcb9a4a6~mv2.jpg"/>
 </div>
 </div>
-
 </section>
 <!-- WELLNESS CANVASES GRID -->
 <section class="canvases-section" id="canvases">
@@ -3061,7 +3091,6 @@ a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
 </div>
 </div>
 </section>
-
 <footer style="background-color: #1C2B3A; color: #fff; padding: 60px 20px 40px; font-family: 'Inter', sans-serif; margin-top: 40px;">
 <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 40px;">
 <div>
@@ -3094,7 +3123,6 @@ a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
 <p style="font-size: 0.8rem; color: #777;">© 2026 Nosh Tours LLP. All rights reserved.</p>
 </div>
 </footer>
-
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const scrollObserver = new IntersectionObserver((entries) => {
