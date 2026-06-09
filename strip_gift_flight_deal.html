@@ -1,0 +1,198 @@
+<!-- ============================================================
+  NOSH — Gift-page-only Sticky Strip (Flight Deals)
+  Scope: shows ONLY on the Nosh Gift main page.
+  Wix Custom Embeds API: position BODY_START, pageFilter.pageIds = [Gift page ID].
+  Taller than the anniversary strip — two-line composition, generous gap.
+  ============================================================ -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/></noscript>
+<style>
+  .nosh-deal-strip{
+    --navy:#1C2B3A;--cream:#FDF6EC;--ocean:#1B6CA8;--ocean-bright:#2a8fd4;
+    position:relative;width:100%;box-sizing:border-box;
+    background:#070c12;color:var(--cream);overflow:hidden;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:40px;padding:22px 44px;font-family:'Space Grotesk',sans-serif;
+    min-height:78px;
+  }
+  .nosh-deal-strip *{box-sizing:border-box}
+
+  /* Gemini-style aurora behind text */
+  .nosh-deal-strip .aurora{position:absolute;inset:-140% -10%;z-index:0;pointer-events:none;opacity:.4;filter:blur(36px) saturate(1.25);overflow:hidden;transition:opacity .6s ease,filter .6s ease}
+  .nosh-deal-strip .blob{position:absolute;border-radius:50%;mix-blend-mode:screen;will-change:transform}
+  .nosh-deal-strip .b1{width:24%;height:360%;left:6%;top:-130%;background:radial-gradient(circle at 50% 50%,#1c4fd4 0%,rgba(28,79,212,0) 66%);animation:dealDrift1 22s ease-in-out infinite}
+  .nosh-deal-strip .b2{width:22%;height:340%;left:34%;top:-120%;background:radial-gradient(circle at 50% 50%,#1fbf8f 0%,rgba(31,191,143,0) 66%);animation:dealDrift2 27s ease-in-out infinite}
+  .nosh-deal-strip .b3{width:26%;height:380%;right:26%;top:-140%;background:radial-gradient(circle at 50% 50%,#e85aa8 0%,rgba(232,90,168,0) 64%);animation:dealDrift1 24s ease-in-out infinite reverse}
+  .nosh-deal-strip .b4{width:20%;height:320%;right:6%;top:-110%;background:radial-gradient(circle at 50% 50%,#2a8fd4 0%,rgba(42,143,212,0) 68%);animation:dealDrift2 30s ease-in-out infinite reverse}
+  @keyframes dealDrift1{0%,100%{transform:translateX(0) scale(1)}50%{transform:translateX(24%) scale(1.14)}}
+  @keyframes dealDrift2{0%,100%{transform:translateX(0) scale(1.06)}50%{transform:translateX(-22%) scale(.9)}}
+  .nosh-deal-strip.lit .aurora{opacity:.6;filter:blur(30px) saturate(1.35) brightness(1.15)}
+
+  /* text block — two-line composition with breathing room */
+  .nosh-deal-strip .copy{position:relative;z-index:1;display:flex;flex-direction:column;gap:5px;flex:1;min-width:0}
+  .nosh-deal-strip .line1{font-weight:600;font-size:17px;letter-spacing:-.005em;line-height:1.25;color:var(--cream)}
+  .nosh-deal-strip .line1 .accent{color:var(--ocean-bright);font-weight:700}
+  .nosh-deal-strip .line2{font-weight:400;font-size:13.5px;letter-spacing:.01em;line-height:1.4;color:rgba(253,246,236,.7)}
+  .nosh-deal-strip .line2 b{color:rgba(253,246,236,.95);font-weight:600}
+
+  /* CTA */
+  .nosh-deal-strip .cta{
+    position:relative;z-index:1;flex-shrink:0;
+    font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;background:var(--ocean);padding:13px 26px;border-radius:50px;
+    text-decoration:none;white-space:nowrap;
+    transition:transform .25s,box-shadow .25s,background .25s;
+    box-shadow:0 10px 22px -10px rgba(27,108,168,.6);
+  }
+  .nosh-deal-strip .cta:hover{transform:translateY(-1px);background:var(--ocean-bright);box-shadow:0 14px 28px -10px rgba(42,143,212,.7)}
+  .nosh-deal-strip .cta .arrow{display:inline-block;margin-left:6px;transition:transform .25s}
+  .nosh-deal-strip .cta:hover .arrow{transform:translateX(3px)}
+
+  @media(max-width:860px){
+    .nosh-deal-strip{flex-direction:column;align-items:flex-start;gap:18px;padding:20px 22px 22px;min-height:0}
+    .nosh-deal-strip .copy{gap:6px}
+    .nosh-deal-strip .line1{font-size:16px}
+    .nosh-deal-strip .line2{font-size:13px}
+    .nosh-deal-strip .cta{align-self:stretch;text-align:center;padding:14px 20px}
+  }
+
+/* --- NOSH AGENT TYPE OVERHAUL --- */
+@media(max-width:768px) {
+  body { font-size: 120% !important; }
+  h1, .hero-title { font-size: 54px !important; line-height: 1.1 !important; font-weight: 700 !important; }
+  h2, .section-title { font-size: 42px !important; line-height: 1.15 !important; }
+  p, .hero-sub, .section-sub, .dest-desc { font-size: 19px !important; line-height: 1.6 !important; display: block !important; opacity: 1 !important; }
+  .nav-links { display:none; flex-direction:column; position:absolute; top:80px; left:0; right:0; background:rgba(255,255,255,0.98); padding:24px; border-radius:16px; box-shadow:0 10px 40px rgba(0,0,0,0.15); text-align:center; gap:20px;}
+  .nav-links.active { display:flex; }
+}
+
+
+/* ANTIGRAVITY UI/UX OVERRIDES */
+/* 1. Kill Broken GSAP/ScrollReveal - Force 100% Visibility */
+.reveal, .hidden, [style*="opacity: 0"], .hidden-section, .dest-card {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+}
+/* 2. About Page Portrait Fixes */
+.founder-img, .team-image {
+    object-position: top center !important;
+    object-fit: cover !important;
+}
+/* 3. Wellness Padding Fix */
+.wellness-hero-overlay { padding-bottom: 20px !important; }
+.empty-space-fix { display: none !important; }
+/* 4. Global Mobile Flow Alignments */
+@media(max-width:768px) {
+    .section, .hero { padding-left: 15px !important; padding-right: 15px !important; }
+    img { border-radius: 12px !important; }
+    .footer-grid { text-align: left !important; }
+}
+
+
+/* --- ANTIGRAVITY PHASE 1 UI/UX OVERRIDES --- */
+/* 1. Nuke Broken GSAP Animations */
+.reveal, .hidden, [style*="opacity: 0"], .hidden-section, .dest-card, .canvas-card {
+    opacity: 1 !important; transform: none !important; visibility: visible !important; display: block !important;
+}
+/* 2. Fix Founder Portraits */
+.founder-img, .team-image { object-position: top center !important; object-fit: cover !important; }
+/* 3. Wellness Padding */
+.wellness-hero-overlay { padding-bottom: 20px !important; }
+.empty-space-fix { display: none !important; }
+/* 4. Split Video Slider Layout */
+.hero-video-slider { display: flex; align-items: center; background: #1C2B3A; height: 100vh; width: 100%; overflow: hidden; position: relative; }
+.hero-text-side { width: 50%; padding: 0 5vw; z-index: 10; position: relative; }
+.slider-text-group { position: absolute; top: 50%; transform: translateY(-50%); opacity: 0; visibility: hidden; transition: opacity 1s ease-in-out, visibility 1s ease-in-out; width: 80%; }
+.slider-text-group.active { opacity: 1; visibility: visible; position: relative; transform: translateY(0); }
+.hero-video-side { width: 50%; display: flex; justify-content: center; align-items: center; height: 100%; position: relative; }
+.slider-video { position: absolute; height: 85vh; width: auto; aspect-ratio: 9/16; border-radius: 24px; object-fit: cover; box-shadow: 0 20px 50px rgba(0,0,0,0.5); opacity: 0; visibility: hidden; transition: opacity 1.2s ease-in-out; }
+.slider-video.active { opacity: 1; visibility: visible; }
+.hero-cta-fixed { position: relative; z-index: 20; margin-top: 30px; }
+/* Global Mobile Alignments */
+@media(max-width:768px) {
+    .hero-video-slider { flex-direction: column; height: auto; padding-top: 120px; padding-bottom: 40px; }
+    .hero-text-side { width: 100%; text-align: center; padding: 0 20px 20px; min-height: 250px; }
+    .slider-text-group { width: 100%; position: absolute; left: 0; padding: 0 20px; text-align: center; }
+    .slider-text-group.active { position: relative; }
+    .hero-video-side { width: 100%; height: 70vh; }
+    .slider-video { width: 90%; height: 100%; aspect-ratio: auto; }
+    .section, .hero { padding-left: 15px !important; padding-right: 15px !important; }
+    img { border-radius: 12px !important; }
+}
+
+
+/* --- ANTIGRAVITY CONTRAST & ACCESSIBILITY HARDENING --- */
+.eyebrow, p.eyebrow, [class*="eyebrow"] { color: #D97706 !important; font-weight: 700 !important; opacity: 1 !important; }
+.diff-link, a.diff-link, .diff\.link { color: #1C2B3A !important; font-weight: 700 !important; text-decoration: underline !important; opacity: 1 !important; }
+.section-sub, p.section-sub, .section\.sub { color: #2D3748 !important; opacity: 1 !important; }
+.footer-col-title, .footer\.col\.title { color: #FFFFFF !important; font-weight: 700 !important; opacity: 1 !important; }
+.footer-copy, .footer\.copy, span.footer\.copy { color: #E2E8F0 !important; opacity: 1 !important; }
+.trust-pill, .trust\.pill, span.trust\.pill { color: #FFFFFF !important; background-color: #2D3748 !important; font-weight: 600 !important; opacity: 1 !important; }
+
+
+/* --- ANTIGRAVITY WCAG CONTRAST FIX --- */
+.eyebrow, p.eyebrow, [class*="eyebrow"] { color: #92400E !important; } 
+
+</style>
+<div class="nosh-deal-strip">
+<div class="aurora">
+<span class="blob b1"></span>
+<span class="blob b2"></span>
+<span class="blob b3"></span>
+<span class="blob b4"></span>
+</div>
+<div class="copy">
+<div class="line1">One <span class="accent">price</span> that actually fits in your scope.</div>
+<div class="line2">All-inclusive · <b>FB / HB meals</b> · <b>Ungooooogleable</b> tours &amp; flight deals.</div>
+</div>
+<a class="cta" href="https://wa.me/918751997519?text=UTR:%20FLIGHT-DEAL-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">Tailor my plan in 24 hrs<span class="arrow">→</span></a>
+</div>
+<script>
+(function(){
+  var strip=document.querySelector('.nosh-deal-strip');
+  if(strip){
+    var off;
+    function light(){strip.classList.add('lit');clearTimeout(off);off=setTimeout(function(){strip.classList.remove('lit');},900);}
+    strip.addEventListener('pointermove',light);
+    strip.addEventListener('pointerdown',light);
+    strip.addEventListener('touchstart',light,{passive:true});
+    strip.addEventListener('mouseenter',function(){strip.classList.add('lit');});
+    strip.addEventListener('mouseleave',function(){strip.classList.remove('lit');});
+  }
+})();
+</script>
+<footer style="background-color: #1C2B3A; color: #fff; padding: 60px 20px 40px; font-family: 'Inter', sans-serif; margin-top: 40px;">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 40px;">
+<div>
+<a href="/" style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: #fff; text-decoration: none; font-weight: bold;">NOSH<span style="color: #d1752b;">.</span></a>
+</div>
+<!-- Sitemap Links -->
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px;">
+<a href="/india" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">India</a>
+<a href="/international" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">International</a>
+<a href="/offerings" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Offerings</a>
+<a href="/wellness" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Wellness</a>
+<a href="/journal" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Journal</a>
+<a href="/about" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Our Story</a>
+<a href="/gift" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Gift a Journey</a>
+</div>
+<!-- Social Links -->
+<div style="display: flex; gap: 20px; font-size: 0.9rem;">
+<a href="https://www.instagram.com/noshtours?igsh=MTljaWN0cnNmYXhqcQ==" style="color: #fff; text-decoration: none;" target="_blank">Instagram</a>
+<a href="https://www.facebook.com/share/1cnRSKrwfh/" style="color: #fff; text-decoration: none;" target="_blank">Facebook</a>
+<a href="https://www.linkedin.com/in/adityatg?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=android_app" style="color: #fff; text-decoration: none;" target="_blank">LinkedIn</a>
+<a href="https://adityatg.substack.com/p/they-deserved-better-so-we-built" style="color: #fff; text-decoration: none;" target="_blank">Substack</a>
+</div>
+<!-- Razorpay Trust Block -->
+<div style="border-top: 1px solid rgba(255,255,255,0.1); width: 100%; max-width: 400px; padding-top: 30px;">
+<p style="font-size: 0.8rem; color: #a7a7a7; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase;">SECURE PAYMENTS BY RAZORPAY</p>
+<div style="display: flex; justify-content: center;">
+<form><script async="" data-payment_button_id="pl_SwDrPo0lAWjW4m" src="https://checkout.razorpay.com/v1/payment-button.js"></script></form>
+</div>
+</div>
+<p style="font-size: 0.8rem; color: #777;">© 2026 Nosh Tours LLP. All rights reserved.</p>
+</div>
+</footer>

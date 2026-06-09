@@ -1,11 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Page Not Found | Nosh Tours</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Erica+One&family=Young+Serif&family=Nothing+You+Could+Do&family=Outfit:wght@400;700&family=Big+Shoulders+Text:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Erica+One&amp;family=Young+Serif&amp;family=Nothing+You+Could+Do&amp;family=Outfit:wght@400;700&amp;family=Big+Shoulders+Text:wght@700&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Erica+One&amp;family=Young+Serif&amp;family=Nothing+You+Could+Do&amp;family=Outfit:wght@400;700&amp;family=Big+Shoulders+Text:wght@700&amp;display=swap" rel="stylesheet"/></noscript>
 <style>
 :root{--orange:#E89A3C;--ink:#1F2937;--cream:#FFF4E0;--green:#25D366;}
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -18,19 +20,311 @@ p{font-family:'Young Serif',serif;font-style:italic;font-size:1.1rem;color:rgba(
 .btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
 .btn-home{background:var(--orange);color:var(--ink);padding:14px 32px;border:3px solid var(--cream);font-family:'Big Shoulders Text',sans-serif;font-size:.75rem;letter-spacing:.18em;text-decoration:none;}
 .btn-wa{background:var(--green);color:var(--ink);padding:14px 32px;border:3px solid var(--cream);font-family:'Big Shoulders Text',sans-serif;font-size:.75rem;letter-spacing:.18em;text-decoration:none;}
+
+/* --- NOSH AGENT TYPE OVERHAUL --- */
+@media(max-width:768px) {
+  body { font-size: 120% !important; }
+  h1, .hero-title { font-size: 54px !important; line-height: 1.1 !important; font-weight: 700 !important; }
+  h2, .section-title { font-size: 42px !important; line-height: 1.15 !important; }
+  p, .hero-sub, .section-sub, .dest-desc { font-size: 19px !important; line-height: 1.6 !important; display: block !important; opacity: 1 !important; }
+  .nav-links { display:none; flex-direction:column; position:absolute; top:80px; left:0; right:0; background:rgba(255,255,255,0.98); padding:24px; border-radius:16px; box-shadow:0 10px 40px rgba(0,0,0,0.15); text-align:center; gap:20px;}
+  .nav-links.active { display:flex; }
+}
+
+
+/* ANTIGRAVITY UI/UX OVERRIDES */
+/* 1. Kill Broken GSAP/ScrollReveal - Force 100% Visibility */
+.reveal, .hidden, [style*="opacity: 0"], .hidden-section, .dest-card {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+}
+/* 2. About Page Portrait Fixes */
+.founder-img, .team-image {
+    object-position: top center !important;
+    object-fit: cover !important;
+}
+/* 3. Wellness Padding Fix */
+.wellness-hero-overlay { padding-bottom: 20px !important; }
+.empty-space-fix { display: none !important; }
+/* 4. Global Mobile Flow Alignments */
+@media(max-width:768px) {
+    .section, .hero { padding-left: 15px !important; padding-right: 15px !important; }
+    img { border-radius: 12px !important; }
+    .footer-grid { text-align: left !important; }
+}
+
+
+/* --- ANTIGRAVITY PHASE 1 UI/UX OVERRIDES --- */
+/* 1. Nuke Broken GSAP Animations */
+.reveal, .hidden, [style*="opacity: 0"], .hidden-section, .dest-card, .canvas-card {
+    opacity: 1 !important; transform: none !important; visibility: visible !important; display: block !important;
+}
+/* 2. Fix Founder Portraits */
+.founder-img, .team-image { object-position: top center !important; object-fit: cover !important; }
+/* 3. Wellness Padding */
+.wellness-hero-overlay { padding-bottom: 20px !important; }
+.empty-space-fix { display: none !important; }
+/* 4. Split Video Slider Layout */
+.hero-video-slider { display: flex; align-items: center; background: #1C2B3A; height: 100vh; width: 100%; overflow: hidden; position: relative; }
+.hero-text-side { width: 50%; padding: 0 5vw; z-index: 10; position: relative; }
+.slider-text-group { position: absolute; top: 50%; transform: translateY(-50%); opacity: 0; visibility: hidden; transition: opacity 1s ease-in-out, visibility 1s ease-in-out; width: 80%; }
+.slider-text-group.active { opacity: 1; visibility: visible; position: relative; transform: translateY(0); }
+.hero-video-side { width: 50%; display: flex; justify-content: center; align-items: center; height: 100%; position: relative; }
+.slider-video { position: absolute; height: 85vh; width: auto; aspect-ratio: 9/16; border-radius: 24px; object-fit: cover; box-shadow: 0 20px 50px rgba(0,0,0,0.5); opacity: 0; visibility: hidden; transition: opacity 1.2s ease-in-out; }
+.slider-video.active { opacity: 1; visibility: visible; }
+.hero-cta-fixed { position: relative; z-index: 20; margin-top: 30px; }
+/* Global Mobile Alignments */
+@media(max-width:768px) {
+    .hero-video-slider { flex-direction: column; height: auto; padding-top: 120px; padding-bottom: 40px; }
+    .hero-text-side { width: 100%; text-align: center; padding: 0 20px 20px; min-height: 250px; }
+    .slider-text-group { width: 100%; position: absolute; left: 0; padding: 0 20px; text-align: center; }
+    .slider-text-group.active { position: relative; }
+    .hero-video-side { width: 100%; height: 70vh; }
+    .slider-video { width: 90%; height: 100%; aspect-ratio: auto; }
+    .section, .hero { padding-left: 15px !important; padding-right: 15px !important; }
+    img { border-radius: 12px !important; }
+}
+
+
+/* --- ANTIGRAVITY CONTRAST & ACCESSIBILITY HARDENING --- */
+.eyebrow, p.eyebrow, [class*="eyebrow"] { color: #D97706 !important; font-weight: 700 !important; opacity: 1 !important; }
+.diff-link, a.diff-link, .diff\.link { color: #1C2B3A !important; font-weight: 700 !important; text-decoration: underline !important; opacity: 1 !important; }
+.section-sub, p.section-sub, .section\.sub { color: #2D3748 !important; opacity: 1 !important; }
+.footer-col-title, .footer\.col\.title { color: #FFFFFF !important; font-weight: 700 !important; opacity: 1 !important; }
+.footer-copy, .footer\.copy, span.footer\.copy { color: #E2E8F0 !important; opacity: 1 !important; }
+.trust-pill, .trust\.pill, span.trust\.pill { color: #FFFFFF !important; background-color: #2D3748 !important; font-weight: 600 !important; opacity: 1 !important; }
+
+
+/* --- ANTIGRAVITY WCAG CONTRAST FIX --- */
+.eyebrow, p.eyebrow, [class*="eyebrow"] { color: #92400E !important; } 
+
 </style>
-<link rel="stylesheet" href="/mobile.css">
+<link href="/mobile.css" rel="stylesheet"/>
+<style>
+/* ANTIGRAVITY NATIVE APP LOCK */
+html, body {
+    touch-action: manipulation;
+    -ms-touch-action: manipulation;
+    overscroll-behavior-y: none;
+}
+
+/* --- ANTIGRAVITY CONTRAST & ACCESSIBILITY HARDENING --- */
+.eyebrow, p.eyebrow, [class*="eyebrow"] { color: #D97706 !important; font-weight: 700 !important; opacity: 1 !important; }
+.diff-link, a.diff-link, .diff\.link { color: #1C2B3A !important; font-weight: 700 !important; text-decoration: underline !important; opacity: 1 !important; }
+.section-sub, p.section-sub, .section\.sub { color: #2D3748 !important; opacity: 1 !important; }
+.footer-col-title, .footer\.col\.title { color: #FFFFFF !important; font-weight: 700 !important; opacity: 1 !important; }
+.footer-copy, .footer\.copy, span.footer\.copy { color: #E2E8F0 !important; opacity: 1 !important; }
+.trust-pill, .trust\.pill, span.trust\.pill { color: #FFFFFF !important; background-color: #2D3748 !important; font-weight: 600 !important; opacity: 1 !important; }
+
+
+/* --- ANTIGRAVITY WCAG CONTRAST FIX --- */
+.eyebrow, p.eyebrow, [class*="eyebrow"] { color: #92400E !important; } 
+
+</style>
+<style>
+/* --- ANTIGRAVITY GAP REDUCTION & SCROLLER FIX --- */
+@media (max-width: 768px) {
+    .hero-cta-fixed { margin-top: 12px !important; }
+    .hero-video-side, #video-container { margin-top: 8px !important; }
+    .hero-video-slider { gap: 8px !important; padding-bottom: 8px !important; }
+    
+    /* Sleek horizontal scrolling for new destination cards */
+    .canvas-scroll-container::-webkit-scrollbar { display: none; }
+    .canvas-scroll-container { -ms-overflow-style: none; scrollbar-width: none; }
+}
+</style>
+<style>
+/* --- ANTIGRAVITY FLUID RESPONSIVENESS & TYPOGRAPHY (+20%) --- */
+html, body {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important; /* Stops right-side cropping */
+    overflow-y: auto !important; /* Explicitly guarantees vertical scrolling is unlocked */
+    box-sizing: border-box !important;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+@media (max-width: 768px) {
+    /* Enlarging Text by 20% to naturally fill the gap */
+    .hero-title { 
+        font-size: 2.1rem !important; /* Increased from 1.75rem */
+        line-height: 1.1 !important; 
+    }
+    .hero-sub { 
+        font-size: 0.9rem !important; /* Increased from 0.75rem */
+        line-height: 1.4 !important; 
+        margin-top: 12px !important; 
+    }
+    
+    /* Releasing the strict height constraints */
+    #text-container { 
+        min-height: auto !important; 
+        padding-bottom: 20px !important;
+    }
+    .hero-video-side, #video-container { 
+        margin-top: 0px !important; /* Resetting the forced lift */
+        transform: none !important;
+    }
+}
+</style>
+<!-- MASTER LAYOUT FIX JUNE 1 -->
+<style>
+/* 1. Shatter the Master Scroll Locks */
+html, body {
+    overflow-y: auto !important; 
+    overflow-x: hidden !important; 
+    height: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+/* 2. Release the Hero Viewport Trap */
+.hero-video-slider {
+    height: auto !important;
+    min-height: 85vh !important;
+    overflow: hidden !important; /* Keeps video contained, but allows the section to grow/scroll */
+}
+
+/* 3. Fluid Typography & Gap Alignment (iPhone/Samsung Auto-Scale) */
+@media (max-width: 768px) {
+    .hero-title { 
+        font-size: 2.2rem !important; 
+        line-height: 1.1 !important; 
+        margin-bottom: 0 !important;
+    }
+    .hero-sub { 
+        font-size: 0.95rem !important; 
+        margin-top: 10px !important; 
+        margin-bottom: 4px !important;
+    }
+    #text-container { 
+        min-height: 0 !important; 
+        padding-bottom: 0 !important; 
+    }
+    .hero-video-side, #video-container { 
+        margin-top: -12px !important; /* The 2mm Gap */
+        position: relative !important; 
+        z-index: 10 !important; 
+        transform: translateY(-8px) !important;
+    }
+}
+</style>
+<!-- ANTIGRAVITY MASTER RESPONSIVE GRID -->
+<style>
+html, body {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit !important;
+}
+
+/* Force structural containers to remain fluid on iPhone 15/16/17 & Premium Androids */
+div, section, main, header, footer {
+    max-width: 100% !important;
+}
+
+/* Ensure no inner layout hidden property kills the global viewport scroll */
+.main-wrapper, #__next, #root, #wrapper {
+    overflow: visible !important;
+    height: auto !important;
+}
+</style>
+<style>
+/* Force the OS to handle vertical swipes natively, bypassing JS smooth-scroll hijackers */
+html, body, main, section, .main-wrapper, #wrapper, header, footer {
+    touch-action: pan-y pinch-zoom !important;
+    overscroll-behavior-y: auto !important;
+}
+
+/* Ensure horizontal swiping elements (like your destination cards) still work left-to-right */
+.canvas-scroll-container, .hero-video-slider {
+    touch-action: pan-x pan-y pinch-zoom !important;
+}
+
+/* Neutralize any invisible full-screen overlays that might be eating single clicks */
+.prevent-scroll, .scroll-lock, #preloader {
+    pointer-events: none !important;
+    display: none !important;
+}
+</style>
+<!-- ANTIGRAVITY CINEMATIC ENGINE -->
+<style>
+/* 10. The Namaste Preloader Shield */
+#nosh-preloader {
+    position: fixed; inset: 0; background: #1C2B3A; z-index: 99999;
+    display: flex; justify-content: center; align-items: center;
+    color: #d1752b; font-family: 'Cormorant Garamond', serif; font-size: 4rem;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s;
+}
+.preloader-text { animation: gentlePulse 2s infinite; }
+@keyframes gentlePulse { 0% { opacity: 0.7; transform: scale(0.98); } 50% { opacity: 1; transform: scale(1.02); } 100% { opacity: 0.7; transform: scale(0.98); } }
+
+/* 1. Strict Left-Aligned Footer */
+footer { text-align: left !important; }
+footer .col, footer ul, footer li { text-align: left !important; align-items: flex-start !important; justify-content: flex-start !important; }
+footer .social-icons { justify-content: flex-start !important; }
+
+/* 3 & 7. Auto-Movable Cards & Touch-Lit Animation */
+.swipe-carousel-wrap {
+    display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 20px; padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.swipe-carousel-wrap::-webkit-scrollbar { display: none; }
+.card-touch-lit {
+    scroll-snap-align: center; flex-shrink: 0; width: 85%; max-width: 350px;
+    opacity: 0.5; filter: grayscale(40%); transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 16px; overflow: hidden;
+}
+/* Focus state for active card in view */
+.card-touch-lit:hover, .card-touch-lit:active, .card-touch-lit:focus {
+    opacity: 1; filter: grayscale(0%); transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(209,117,43,0.3);
+}
+
+/* 4. Watery Text Effect for International Title */
+.watery-title {
+    background: linear-gradient(to right, #ffffff, #8ca8d9, #ffffff, #8ca8d9);
+    background-size: 200% auto; color: transparent;
+    -webkit-background-clip: text; background-clip: text;
+    animation: waterFlow 4s linear infinite; text-shadow: 0px 4px 15px rgba(140, 168, 217, 0.4);
+}
+@keyframes waterFlow { to { background-position: 200% center; } }
+
+/* 5 & 8. Fluid Burnt Orange Breathing CTAs */
+@keyframes fluidOrange { 0% { background-position: 0% 50%; box-shadow: 0 4px 15px rgba(209,117,43,0.2); } 50% { background-position: 100% 50%; box-shadow: 0 8px 25px rgba(209,117,43,0.6); } 100% { background-position: 0% 50%; box-shadow: 0 4px 15px rgba(209,117,43,0.2); } }
+a[href*="wa.me"], button[onclick*="wa.me"], .whatsapp-btn, .btn-primary {
+    background: linear-gradient(270deg, #d1752b, #f5a623, #e65c00, #d1752b) !important;
+    background-size: 300% 300% !important; animation: fluidOrange 4s ease infinite !important;
+    color: #fff !important; border: none !important; transition: transform 0.3s ease !important;
+}
+a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
+    transform: translateY(-4px) scale(1.02) !important;
+}
+.w-card, .dest-card, .canvas-card { padding-bottom: 25px !important; position: relative; }
+.price-tag, .cta-wrap { bottom: 25px !important; position: absolute; z-index: 10; }
+</style>
 </head>
 <body>
 <div class="num">404</div>
 <div class="content">
-  <span class="hand">oops — this page is still a mystery.</span>
-  <h1>Page Not Found.</h1>
-  <p>Looks like this page is one surprise we didn't plan. But your unscripted luxury escape is right around the corner.</p>
-  <div class="btns">
-    <a href="/" class="btn-home">← Back to Home</a>
-    <a href="https://wa.me/919567632255" class="btn-wa">💬 Start on WhatsApp</a>
-  </div>
+<span class="hand">oops — this page is still a mystery.</span>
+<h1>Page Not Found.</h1>
+<p>Looks like this page is one surprise we didn't plan. But your unscripted luxury escape is right around the corner.</p>
+<div class="btns">
+<a class="btn-wa" href="https://wa.me/919567632255?text=UTR:%20404-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">💬 Start on WhatsApp</a>
+</div>
 </div>
 <script>
 (function(){
@@ -55,9 +349,163 @@ p{font-family:'Young Serif',serif;font-style:italic;font-size:1.1rem;color:rgba(
 })();
 </script>
 <!-- Sticky WhatsApp — mobile only -->
-<a href="https://wa.me/919567632255?text=Hi%20Nosh%20Tours%2C%20I%27d%20like%20to%20plan%20a%20trip" 
-   class="sticky-wa" target="_blank" rel="noopener">
-  💬 &nbsp;Book via WhatsApp
+<a class="sticky-wa" href="https://wa.me/919567632255?text=UTR:%20404-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A" rel="noopener" target="_blank">
+  💬  Book via WhatsApp
 </a>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { 
+      if(entry.isIntersecting) {
+        entry.target.classList.add('visible'); 
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'none';
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -10px 0px' });
+  document.querySelectorAll('.reveal, section, .dest-card, .diff-left').forEach(element => {
+    scrollObserver.observe(element);
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // The exact 5 pristine links requested
+    const navLinksHTML = `
+        <a href="/india" class="menu-item" style="display:block; padding:12px 0; color:#1a202c; text-decoration:none; font-family:'Cormorant Garamond', serif; font-size:1.4rem; border-bottom:1px solid #eee;">India</a>
+        <a href="/international" class="menu-item" style="display:block; padding:12px 0; color:#1a202c; text-decoration:none; font-family:'Cormorant Garamond', serif; font-size:1.4rem; border-bottom:1px solid #eee;">International</a>
+        <a href="/wellness" class="menu-item" style="display:block; padding:12px 0; color:#1a202c; text-decoration:none; font-family:'Cormorant Garamond', serif; font-size:1.4rem; border-bottom:1px solid #eee;">Wellness</a>
+        <a href="/blog" class="menu-item" style="display:block; padding:12px 0; color:#1a202c; text-decoration:none; font-family:'Cormorant Garamond', serif; font-size:1.4rem; border-bottom:1px solid #eee;">Journal</a>
+        <a href="/about" class="menu-item" style="display:block; padding:12px 0; color:#1a202c; text-decoration:none; font-family:'Cormorant Garamond', serif; font-size:1.4rem;">Our Story</a>
+    `;
+
+    // Locate the hamburger icon (targeting common SVG/Button structures)
+    const hamburgerBtn = document.querySelector('button:has(svg), .hamburger, [aria-label="menu"]');
+    
+    if (hamburgerBtn) {
+        // Create a dedicated mobile overlay container
+        const mobileOverlay = document.createElement('div');
+        mobileOverlay.id = 'antigravity-mobile-menu';
+        mobileOverlay.style.display = 'none';
+        mobileOverlay.style.position = 'absolute';
+        mobileOverlay.style.top = '70px'; // Drops down just below the header
+        mobileOverlay.style.left = '0';
+        mobileOverlay.style.width = '100%';
+        mobileOverlay.style.background = '#F6F5F2'; // Matching your brand off-white
+        mobileOverlay.style.padding = '20px 30px';
+        mobileOverlay.style.zIndex = '9999';
+        mobileOverlay.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+        
+        mobileOverlay.innerHTML = navLinksHTML;
+        hamburgerBtn.parentElement.appendChild(mobileOverlay);
+
+        // Bind the toggle click event
+        hamburgerBtn.addEventListener('click', (e) => {
+            e/* .preventDefault() neutralised by Antigravity */;
+            if (mobileOverlay.style.display === 'none') {
+                mobileOverlay.style.display = 'block';
+            } else {
+                mobileOverlay.style.display = 'none';
+            }
+        });
+    }
+});
+</script>
+<!-- MASTER NAV FIX JUNE 1 -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // Target the exact class identified in the X-Ray
+    const hamburgerBtn = document.querySelector(".nav-menu-btn");
+    if (!hamburgerBtn) return;
+
+    // Create a fullscreen overlay appended directly to the BODY so it cannot be hidden by parent containers
+    const mobileMenu = document.createElement("div");
+    mobileMenu.id = "master-mobile-nav";
+    mobileMenu.style.cssText = "display: none; position: fixed; top: 70px; left: 0; width: 100vw; height: calc(100vh - 70px); background: #F6F5F2; z-index: 999999; padding: 32px 24px; overflow-y: auto; flex-direction: column; gap: 24px;";
+
+    mobileMenu.innerHTML = `
+        <a href="/india" style="font-family:'Cormorant Garamond', serif; font-size: 2.2rem; color: #1C2B3A; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 12px; display: block;">India</a>
+        <a href="/international" style="font-family:'Cormorant Garamond', serif; font-size: 2.2rem; color: #1C2B3A; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 12px; display: block;">International</a>
+        <a href="/wellness" style="font-family:'Cormorant Garamond', serif; font-size: 2.2rem; color: #1C2B3A; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 12px; display: block;">Wellness</a>
+        <a href="/blog" style="font-family:'Cormorant Garamond', serif; font-size: 2.2rem; color: #1C2B3A; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 12px; display: block;">Journal</a>
+        <a href="/about" style="font-family:'Cormorant Garamond', serif; font-size: 2.2rem; color: #1C2B3A; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 12px; display: block;">Our Story</a>
+    `;
+
+    document.body.appendChild(mobileMenu);
+
+    hamburgerBtn.addEventListener("click", (e) => {
+        e/* .preventDefault() neutralised by Antigravity */;
+        e.stopPropagation();
+        if (mobileMenu.style.display === "none" || mobileMenu.style.display === "") {
+            mobileMenu.style.display = "flex";
+            document.body.style.overflow = "hidden"; // Lock background scroll when menu is open
+        } else {
+            mobileMenu.style.display = "none";
+            document.body.style.overflow = "auto"; // Restore scroll when closed
+        }
+    });
+});
+</script>
+<style>
+/* 1. Obliterate the Right-Hand Hero Gap */
+html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+.hero-video-slider, .hero-section, header, footer, [class*="hero"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+/* Overriding inline fixed-width traps flagged in telemetry */
+* { max-width: 100% !important; }
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // 2. CTA Sniper: Eradicate "Build your Canvas" to prevent decision fatigue
+    const allElements = document.querySelectorAll('a, button, .btn');
+    allElements.forEach(el => {
+        if (el.textContent && el.textContent.trim().toLowerCase().includes('build your canvas')) {
+            el.style.display = 'none';
+            el.style.pointerEvents = 'none';
+            el.style.opacity = '0';
+        }
+    });
+});
+</script>
+<footer style="background-color: #1C2B3A; color: #fff; padding: 60px 20px 40px; font-family: 'Inter', sans-serif; margin-top: 40px;">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 40px;">
+<div>
+<a href="/" style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: #fff; text-decoration: none; font-weight: bold;">NOSH<span style="color: #d1752b;">.</span></a>
+</div>
+<!-- Sitemap Links -->
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px;">
+<a href="/india" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">India</a>
+<a href="/international" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">International</a>
+<a href="/offerings" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Offerings</a>
+<a href="/wellness" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Wellness</a>
+<a href="/journal" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Journal</a>
+<a href="/about" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Our Story</a>
+<a href="/gift" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Gift a Journey</a>
+</div>
+<!-- Social Links -->
+<div style="display: flex; gap: 20px; font-size: 0.9rem;">
+<a href="https://www.instagram.com/noshtours?igsh=MTljaWN0cnNmYXhqcQ==" style="color: #fff; text-decoration: none;" target="_blank">Instagram</a>
+<a href="https://www.facebook.com/share/1cnRSKrwfh/" style="color: #fff; text-decoration: none;" target="_blank">Facebook</a>
+<a href="https://www.linkedin.com/in/adityatg?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=android_app" style="color: #fff; text-decoration: none;" target="_blank">LinkedIn</a>
+<a href="https://adityatg.substack.com/p/they-deserved-better-so-we-built" style="color: #fff; text-decoration: none;" target="_blank">Substack</a>
+</div>
+<!-- Razorpay Trust Block -->
+<div style="border-top: 1px solid rgba(255,255,255,0.1); width: 100%; max-width: 400px; padding-top: 30px;">
+<p style="font-size: 0.8rem; color: #a7a7a7; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase;">SECURE PAYMENTS BY RAZORPAY</p>
+<div style="display: flex; justify-content: center;">
+<form><script async="" data-payment_button_id="pl_SwDrPo0lAWjW4m" src="https://checkout.razorpay.com/v1/payment-button.js"></script></form>
+</div>
+</div>
+<p style="font-size: 0.8rem; color: #777;">© 2026 Nosh Tours LLP. All rights reserved.</p>
+</div>
+</footer>
 </body>
 </html>

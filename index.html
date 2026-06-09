@@ -1,955 +1,1987 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nosh Tours — You've Been Putting Yourself Last Long Enough</title>
-<meta name="description" content="Nosh Tours crafts all-inclusive, fixed-price unscripted journeys across India and beyond. Built block by block around you. No hidden charges. 50+ Nosh Brains.">
-<link rel="canonical" href="https://noshtours.com/">
-<meta property="og:title" content="Nosh Tours — Unscripted Luxury Travel">
-<meta property="og:description" content="Build the trip you actually want. One fixed price. 50+ specialists. Zero drama.">
-<meta property="og:image" content="https://noshtours.com/images/hero-india.jpg">
-<meta property="og:url" content="https://noshtours.com/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Baloo+2:wght@500;600;700;800&family=Barlow+Condensed:wght@400;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="/images/hero-india.jpg">
-<script defer src="/_vercel/speed-insights/script.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nosh Tours — India's First Canvas-Oriented Travel Architects</title>
+<meta content="Fixed pricing. No itinerary spoilers. 20 luxury canvases across Asia and Europe. Built by Nosh Brains in Pune and Thrissur. Recognised in Thailand 2025 and Indonesia 2026." name="description"/>
+<link href="https://www.noshtours.com/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.noshtours.com/" property="og:url"/>
+<meta content="Nosh Tours — India's First Canvas-Oriented Travel Architects" property="og:title"/>
+<meta content="Fixed pricing. No itinerary spoilers. 20 luxury canvases across Asia and Europe. Built by Nosh Brains in Pune and Thrissur. Recognised in Thailand 2025 and Indonesia 2026." property="og:description"/>
+<meta content="https://raw.githubusercontent.com/noshtours/Noshtours/main/logo.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Nosh Tours" property="og:site_name"/>
+<meta content="en_IN" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@noshtours" name="twitter:site"/>
+<meta content="Nosh Tours — India's First Canvas-Oriented Travel Architects" name="twitter:title"/>
+<meta content="Fixed pricing. No itinerary spoilers. 20 luxury canvases across Asia and Europe. Built by Nosh Brains in Pune and Thrissur. Recognised in Thailand 2025 and Indonesia 2026." name="twitter:description"/>
+<meta content="https://raw.githubusercontent.com/noshtours/Noshtours/main/logo.png" name="twitter:image"/>
+<meta content="IN-MH" name="geo.region"/>
+<meta content="Pune, Maharashtra, India" name="geo.placename"/>
+<meta content="18.5204, 73.8567" name="ICBM"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large" name="robots"/>
+<meta content="Nosh Tours LLP" name="author"/>
+<meta content="#1C2B3A" name="theme-color"/>
+<link href="/logo.png" rel="icon"/>
+<link href="/logo.png" rel="apple-touch-icon"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TravelAgency",
+      "@id": "https://www.noshtours.com/#org",
+      "name": "Nosh Tours LLP",
+      "description": "Fixed pricing. No itinerary spoilers. 20 luxury canvases across Asia and Europe. Built by Nosh Brains in Pune and Thrissur.",
+      "url": "https://www.noshtours.com/",
+      "image": "https://raw.githubusercontent.com/noshtours/Noshtours/main/logo.png",
+      "priceRange": "₹₹₹",
+      "currenciesAccepted": "INR",
+      "openingHours": "Mo-Su 09:00-21:00",
+      "telephone": "+91-95676-32255",
+      "email": "nosh.tours@gmail.com"
+    }
+  ]
+}
+</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&amp;family=Barlow:wght@300;400;500;600;700&amp;family=Barlow+Condensed:wght@500;600;700;800;900&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&amp;family=Barlow:wght@300;400;500;600;700&amp;family=Barlow+Condensed:wght@500;600;700;800;900&amp;display=swap" rel="stylesheet"/></noscript>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-h1,h2,h3{font-family:var(--fh);}
-.section-eyebrow,.eyebrow,.step-label,.badge-txt{font-family:var(--fz);}
-body{background:var(--cream);font-family:'Barlow',sans-serif;background:#FDF6EC;color:#1C2B3A;overflow-x:hidden;line-height:1.5}
-img{max-width:100%;height:auto;display:block}
+
+/* ── TOKENS ─────────────────────────────────────────── */
+:root {
+  --orange:   #E8951A;
+  --navy:     #1C2B3A;
+  --gold:     #C4962A;
+  --offwhite: #FDF6EC;
+  --sand:     #F3EDE3;
+  --muted:    #7A6F66;
+  --charcoal: #2C2C2C;
+  --white:    #FFFFFF;
+  --green:    #1F3028;
+  --nav-h:    72px;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Barlow',sans-serif;
+  background:var(--white);
+  color:var(--charcoal);
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
 a{text-decoration:none;color:inherit}
-:root{
-  --fh:'Fredoka',sans-serif;
-  --fz:'Baloo 2',sans-serif;
-  --cream:#FAF0E4;
-  --sep-h:12px;
 
-  --orange:#E8951A;--navy:#1C2B3A;--cream:#FDF6EC;
-  --gold:#C4962A;--charcoal:#2C2C2C;
-  --ff-display:'Erica One',serif;
-  --ff-ui:'Outfit',sans-serif;
-  --ff-cond:'Barlow Condensed',sans-serif;
-  --ff-body:'Barlow',sans-serif;
+/* ── NAV ─────────────────────────────────────────────── */
+.nav-wrap{
+  position:fixed;top:20px;left:50%;
+  transform:translateX(-50%);
+  width:calc(100% - 40px);
+  max-width:1160px;
+  z-index:1000;
+}
+.nav{
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(12px);
+  border-radius:16px;
+  padding:0 28px;
+  height:var(--nav-h);
+  display:flex;align-items:center;
+  justify-content:space-between;
+  box-shadow:0 4px 32px rgba(0,0,0,0.08);
+}
+.nav-logo{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:20px;font-weight:800;
+  letter-spacing:1px;color:var(--navy);
+  text-transform:uppercase;
+}
+.nav-logo span{color:var(--orange)}
+.nav-links{
+  display:flex;gap:32px;
+  list-style:none;
+}
+.nav-links a{
+  font-size:13px;font-weight:500;
+  color:var(--charcoal);
+  letter-spacing:0.3px;
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--orange)}
+.nav-cta{
+  background:var(--navy);
+  color:var(--white)!important;
+  padding:10px 22px;
+  border-radius:8px;
+  font-size:13px;font-weight:600;
+  letter-spacing:0.3px;
+  transition:background .2s!important;
+}
+.nav-cta:hover{background:var(--orange)!important}
+.nav-menu-btn{
+  display:none;
+  background:var(--sand);
+  border:none;border-radius:8px;
+  width:44px;height:44px;
+  cursor:pointer;
+  flex-direction:column;
+  align-items:center;justify-content:center;gap:5px;
+}
+.nav-menu-btn span{
+  display:block;width:22px;height:2px;
+  background:var(--navy);border-radius:2px;
 }
 
-/* ── NAV ─────────────────────────────────────────── */
-.nav{position:sticky;top:0;z-index:1000;background:#1C2B3A;border-bottom:2px solid #E8951A;height:60px;display:flex;align-items:center;padding:0 24px}
-.nav-brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.nav-logo{width:34px;height:34px;object-fit:contain}
-.nav-wordmark{font-family:'Barlow Condensed',sans-serif;font-family:var(--ff-cond);font-weight:800;font-size:1.05rem;letter-spacing:.2em;color:#FDF6EC;text-transform:uppercase}
-.nav-wordmark em{color:#E8951A;font-style:normal}
-.nav-links{display:flex;align-items:center;margin-left:auto}
-.nav-links a{font-family:var(--ff-cond);font-weight:600;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(253,246,236,.78);padding:0 12px;height:60px;display:flex;align-items:center;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap}
-.nav-links a:hover,.nav-links a.active{color:#E8951A;border-bottom-color:#E8951A}
-.nav-wa{margin-left:10px;background:#E8951A;color:#1C2B3A !important;font-weight:800 !important;border-radius:4px;padding:0 14px !important;height:36px !important;border-bottom:none !important;font-size:.7rem !important}
-.nav-wa:hover{background:#C4962A !important;color:#fff !important}
-.nav-ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;margin-left:auto}
-.nav-ham span{display:block;width:24px;height:2px;background:#FDF6EC;border-radius:2px;transition:transform .25s,opacity .25s}
-.nav-ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.nav-ham.open span:nth-child(2){opacity:0}
-.nav-ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+/* ── HERO ────────────────────────────────────────────── */
+.hero{
+  position:relative;
+  width:100%;height:100vh;
+  min-height:700px;
+  overflow:visible;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to bottom,
+      rgba(10,18,26,0.15) 0%,
+      rgba(10,18,26,0.05) 40%,
+      rgba(10,18,26,0.65) 75%,
+      rgba(10,18,26,0.88) 100%),
+    url('https://static.wixstatic.com/media/04c7d9_05c6270cddde46d9994b120421aeb2aa~mv2.jpg')
+    center/cover no-repeat;
+}
+/* Animated grain overlay */
+.hero-bg::after{
+  content:'';
+  position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity:0.6;
+  pointer-events:none;
+}
+.hero-content{
+  position:relative;z-index:2;
+  height:100%;
+  display:flex;flex-direction:column;
+  justify-content:flex-end;
+  padding:0 52px 64px;
+  max-width:1200px;
+  margin:0 auto;
+}
+.hero-rating{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:18px;
+  animation:fadeUp .8s ease both;
+  animation-delay:.2s;
+}
+.hero-stars{
+  display:flex;gap:3px;
+}
+.hero-stars span{
+  font-size:16px;color:var(--orange);
+}
+.hero-rating-text{
+  font-size:13px;font-weight:500;
+  color:rgba(255,255,255,0.85);
+  letter-spacing:0.5px;
+}
+.hero-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(52px,7vw,88px);
+  font-weight:600;line-height:1.0;
+  color:var(--white);
+  margin-bottom:20px;
+  animation:fadeUp .9s ease both;
+  animation-delay:.35s;
+}
+.hero-title em{
+  font-style:italic;color:var(--orange);
+}
+.hero-sub{
+  font-size:clamp(15px,1.8vw,18px);
+  font-weight:300;
+  color:rgba(255,255,255,0.75);
+  line-height:1.6;
+  max-width:520px;
+  margin-bottom:36px;
+  animation:fadeUp .9s ease both;
+  animation-delay:.5s;
+}
+.hero-actions{
+  display:flex;align-items:center;gap:16px;
+  animation:fadeUp .9s ease both;
+  animation-delay:.65s;
+  flex-wrap:wrap;
+}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--orange);
+  color:var(--white);
+  font-family:'Barlow',sans-serif;
+  font-size:14px;font-weight:700;
+  letter-spacing:0.5px;
+  padding:16px 32px;
+  border-radius:10px;
+  border:none;cursor:pointer;
+  transition:transform .2s,background .2s;
+  text-transform:uppercase;
+}
+.btn-primary:hover{
+  background:#d4841A;
+  transform:translateY(-2px);
+}
+.btn-primary svg{
+  width:16px;height:16px;
+  transition:transform .2s;
+}
+.btn-primary:hover svg{transform:translateX(4px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(8px);
+  color:var(--white);
+  font-size:14px;font-weight:500;
+  padding:16px 28px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.2);
+  cursor:pointer;
+  transition:background .2s;
+}
+.btn-ghost:hover{background:rgba(255,255,255,0.2)}
+/* No-spoilers pill */
+.hero-badge{
+  position:absolute;
+  bottom:64px;right:52px;
+  z-index:3;
+  background:rgba(0,0,0,0.45);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:100px;
+  padding:8px 16px;
+  display:flex;align-items:center;gap:8px;
+  animation:fadeUp .8s ease both;
+  animation-delay:.8s;
+}
+.hero-badge-dot{
+  width:7px;height:7px;
+  border-radius:50%;
+  background:var(--orange);
+  animation:pulse 2s ease infinite;
+}
+.hero-badge span{
+  font-size:12px;font-weight:500;
+  color:rgba(255,255,255,0.9);
+  letter-spacing:0.5px;
+}
+/* Scroll cue */
+.hero-scroll{
+  position:absolute;bottom:28px;
+  left:50%;transform:translateX(-50%);
+  z-index:3;
+  display:flex;flex-direction:column;
+  align-items:center;gap:8px;
+  animation:fadeIn 1s ease both 1.2s;
+}
+.hero-scroll span{
+  font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.45);
+}
+.scroll-line{
+  width:1px;height:40px;
+  background:linear-gradient(to bottom,
+    rgba(255,255,255,0.4),
+    rgba(255,255,255,0));
+  animation:scrollLine 1.8s ease infinite;
+}
 
-/* ── HERO ─────────────────────────────────────────── */
-.hero{min-height:100svh;position:relative;overflow:hidden;display:flex;align-items:center;padding:80px 64px}
-.hero-bg{position:absolute;inset:0;background-image:url('/images/hero-india.jpg'),linear-gradient(135deg,#1C2B3A 0%,#2C4A63 100%);background-color:#1C2B3A;background-size:cover;background-position:center 40%}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(28,43,58,.88) 0%,rgba(28,43,58,.65) 50%,rgba(28,43,58,.2) 100%)}
-.hero-inner{position:relative;z-index:1;max-width:680px}
-.hero-eyebrow{font-family:var(--ff-cond);font-weight:600;font-size:.76rem;letter-spacing:.28em;text-transform:uppercase;color:#E8951A;margin-bottom:20px;display:flex;align-items:center;gap:10px}
-.hero-eyebrow::before{content:'';width:32px;height:1px;background:#E8951A}
-.hero-title{font-family:var(--ff-display);font-size:clamp(2.8rem,7.5vw,5.8rem);line-height:.95;color:#FDF6EC;margin-bottom:24px;letter-spacing:-.01em}
-.hero-title .accent{color:#E8951A}
-.hero-sub{font-size:clamp(1rem,2.2vw,1.15rem);color:rgba(253,246,236,.75);line-height:1.75;max-width:520px;margin-bottom:40px}
-.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
-.btn-p{font-family:var(--ff-ui);font-weight:700;font-size:.88rem;letter-spacing:.06em;text-transform:uppercase;background:#E8951A;color:#1C2B3A;padding:16px 30px;border-radius:4px;display:inline-flex;align-items:center;gap:8px;min-height:52px;transition:background .2s,transform .15s}
-.btn-p:hover{background:#C4962A;transform:translateY(-2px)}
-.btn-g{font-family:var(--ff-ui);font-weight:600;font-size:.88rem;letter-spacing:.06em;text-transform:uppercase;border:1.5px solid rgba(253,246,236,.3);color:rgba(253,246,236,.85);padding:16px 30px;border-radius:4px;display:inline-flex;align-items:center;gap:8px;min-height:52px;transition:border-color .2s,color .2s}
-.btn-g:hover{border-color:#E8951A;color:#E8951A}
-.hero-badges{margin-top:48px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.badge{font-family:var(--ff-cond);font-weight:600;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(253,246,236,.5);padding:6px 12px;border:1px solid rgba(253,246,236,.15);border-radius:100px}
-.badge strong{color:#E8951A}
+/* ── SECTION COMMONS ─────────────────────────────────── */
+.section{padding:96px 0}
+.wrap{
+  max-width:1160px;
+  margin:0 auto;
+  padding:0 40px;
+}
+.eyebrow{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px;font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--orange);
+  margin-bottom:12px;
+}
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(36px,4vw,58px);
+  font-weight:600;
+  line-height:1.1;
+  color:var(--navy);
+}
+.section-title.light{color:var(--white)}
+.section-sub{
+  font-size:16px;font-weight:300;
+  color:var(--muted);line-height:1.7;
+  max-width:520px;margin-top:12px;
+}
+.section-sub.light{color:rgba(255,255,255,0.65)}
 
-/* ── SOCIAL PROOF TABS (replaces stats) ───────────── */
-.sp-strip{background:#1C2B3A;border-bottom:1px solid rgba(232,149,26,.2);padding:0 64px}
-.sp-inner{display:flex;align-items:stretch;gap:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-.sp-inner::-webkit-scrollbar{display:none}
-.sp-tab{flex-shrink:0;display:flex;align-items:center;gap:8px;padding:16px 20px;font-family:var(--ff-cond);font-weight:600;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(253,246,236,.5);border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap}
-.sp-tab:hover{color:#E8951A;border-bottom-color:#E8951A}
-.sp-tab .sp-icon{font-size:1rem;flex-shrink:0}
-.sp-divider{width:1px;background:rgba(253,246,236,.08);margin:10px 0;flex-shrink:0}
+/* ── DIFFERENCE SECTION ──────────────────────────────── */
+.diff{background:var(--white)}
+.diff-grid{
+  display:flex;
+  flex-direction:column;
+  max-width:760px;
+}
+.diff-left{}
+.diff-body{
+  font-size:16px;font-weight:300;
+  color:var(--muted);line-height:1.85;
+  margin:24px 0 32px;
+  max-width:480px;
+}
+.diff-link{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:14px;font-weight:600;
+  color:var(--orange);
+  letter-spacing:0.3px;
+  transition:gap .2s;
+}
+.diff-link:hover{gap:12px}
+.diff-stats{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+.stat-card{
+  background:var(--offwhite);
+  border:1px solid rgba(196,150,42,0.2);
+  border-radius:14px;
+  padding:28px 24px;
+  transition:transform .25s,border-color .25s;
+}
+.stat-card:hover{
+  transform:translateY(-4px);
+  border-color:var(--gold);
+}
+.stat-num{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:46px;font-weight:800;
+  color:var(--orange);line-height:1;
+  margin-bottom:6px;
+}
+.stat-label{
+  font-size:13px;font-weight:400;
+  color:var(--muted);line-height:1.4;
+}
 
-/* ── SHARED SECTION STYLES ───────────────────────── */
-.eyebrow{font-family:var(--fz);font-family:var(--ff-cond);font-weight:600;font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;color:#E8951A;margin-bottom:12px;display:flex;align-items:center;gap:10px}
-.eyebrow::before{content:'';width:24px;height:1px;background:#E8951A}
-.sec-title{font-family:var(--ff-display);font-size:clamp(1.9rem,4.5vw,3.4rem);line-height:1;letter-spacing:-.01em;margin-bottom:12px}
-.sec-sub{font-size:1rem;color:rgba(28,43,58,.6);max-width:540px;line-height:1.75;margin-bottom:40px}
-.btn-d{font-family:var(--ff-ui);font-weight:800;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;background:#1C2B3A;color:#FDF6EC;padding:18px 36px;border-radius:4px;display:inline-flex;align-items:center;gap:10px;min-height:56px;transition:background .2s,transform .15s}
-.btn-d:hover{background:#243447;transform:translateY(-2px)}
+/* ── DESTINATIONS PREVIEW ────────────────────────────── */
+.destinations{background:var(--white)}
+.dest-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-bottom:48px;
+}
+.dest-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.dest-card{
+  border-radius:16px;
+  overflow:visible;
+  background:var(--white);
+  border:1px solid rgba(0,0,0,0.07);
+  transition:transform .3s,box-shadow .3s;
+  cursor:pointer;
+}
+.dest-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 60px rgba(0,0,0,0.1);
+}
+.dest-img-wrap{
+  position:relative;
+  aspect-ratio:4/3;
+  overflow:visible;
+}
+.dest-img{
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .5s ease;
+}
+.dest-card:hover .dest-img{transform:scale(1.06)}
+.dest-badge{
+  position:absolute;top:14px;left:14px;
+  display:flex;align-items:center;gap:6px;
+  background:var(--white);
+  border-radius:100px;
+  padding:5px 12px 5px 8px;
+  font-size:12px;font-weight:600;
+  color:var(--charcoal);
+  box-shadow:0 2px 12px rgba(0,0,0,0.12);
+}
+.dest-badge-fire{font-size:14px}
+.dest-info{padding:20px}
+.dest-name-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:8px;
+}
+.dest-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:600;
+  color:var(--navy);
+}
+.dest-rating{
+  display:flex;align-items:center;gap:5px;
+  font-size:13px;font-weight:500;
+  color:var(--charcoal);
+}
+.dest-rating-star{color:var(--gold)}
+.dest-desc{
+  font-size:13px;font-weight:300;
+  color:var(--muted);line-height:1.6;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:visible;
+}
 
-/* ── INDIA SECTION ────────────────────────────────── */
-.india-sec{padding:96px 64px;background:#FDF6EC}
-.canvas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-bottom:40px}
-.canvas-card{border-radius:10px;overflow:hidden;position:relative;height:340px;cursor:pointer;transition:transform .3s,box-shadow .3s}
-.canvas-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(28,43,58,.18)}
-.canvas-photo{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .4s}
-.canvas-card:hover .canvas-photo{transform:scale(1.05)}
-.canvas-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(28,43,58,.9) 0%,rgba(28,43,58,.15) 50%,transparent 100%)}
-.canvas-info{position:absolute;bottom:0;left:0;right:0;padding:22px 20px;z-index:2}
-.canvas-tag{font-family:var(--ff-cond);font-weight:600;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:#E8951A;margin-bottom:4px}
-.canvas-name{font-family:var(--ff-display);font-size:1.65rem;color:#FDF6EC;line-height:1;margin-bottom:6px}
-.canvas-sub{font-size:.78rem;color:rgba(253,246,236,.65);margin-bottom:12px}
-.canvas-cta{font-family:var(--ff-cond);font-weight:700;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#E8951A;display:inline-flex;align-items:center;gap:6px}
-.canvas-cta::after{content:'→';transition:transform .2s}
-.canvas-card:hover .canvas-cta::after{transform:translateX(4px)}
+/* ── WHY NOSH FULL-WIDTH ─────────────────────────────── */
+.why{
+  background:var(--navy);
+  position:relative;
+  overflow:visible;
+}
+.why::before{
+  content:'';
+  position:absolute;
+  top:-200px;right:-200px;
+  width:600px;height:600px;
+  border-radius:50%;
+  border:1px solid rgba(232,149,26,0.08);
+}
+.why::after{
+  content:'';
+  position:absolute;
+  bottom:-150px;left:-100px;
+  width:400px;height:400px;
+  border-radius:50%;
+  border:1px solid rgba(232,149,26,0.06);
+}
+.why-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+  position:relative;z-index:1;
+}
+.why-features{
+  display:flex;
+  flex-direction:column;
+  gap:32px;
+  margin-top:48px;
+}
+.why-feat{
+  display:flex;gap:20px;
+  align-items:flex-start;
+}
+.why-feat-icon{
+  width:44px;height:44px;
+  flex-shrink:0;
+  background:rgba(232,149,26,0.12);
+  border-radius:10px;
+  display:flex;align-items:center;
+  justify-content:center;
+  font-size:20px;
+}
+.why-feat-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:17px;font-weight:700;
+  color:var(--white);
+  letter-spacing:.3px;
+  margin-bottom:5px;
+}
+.why-feat-body{
+  font-size:14px;font-weight:300;
+  color:rgba(255,255,255,0.55);
+  line-height:1.65;
+}
+.why-image-col{
+  position:relative;
+}
+.why-img-main{
+  width:100%;
+  border-radius:20px;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  box-shadow:0 40px 80px rgba(0,0,0,0.4);
+}
+.why-img-float{
+  position:absolute;
+  bottom:-28px;left:-36px;
+  width:200px;
+  border-radius:14px;
+  overflow:visible;
+  box-shadow:0 20px 50px rgba(0,0,0,0.3);
+  border:4px solid var(--navy);
+}
+.why-img-float img{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+}
+.why-float-caption{
+  background:var(--white);
+  padding:10px 14px;
+}
+.why-float-caption strong{
+  display:block;
+  font-size:12px;font-weight:700;
+  color:var(--navy);
+}
+.why-float-caption span{
+  font-size:11px;
+  color:var(--muted);
+}
 
-/* ── INTERNATIONAL SECTION ────────────────────────── */
-.intl-sec{padding:96px 64px;background:#1C2B3A}
-.intl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-bottom:40px}
-.intl-card{border-radius:10px;overflow:hidden;position:relative;height:340px;cursor:pointer;transition:transform .3s,box-shadow .3s}
-.intl-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.4)}
-.intl-photo{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .4s}
-.intl-card:hover .intl-photo{transform:scale(1.05)}
-.intl-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(28,43,58,.92) 0%,rgba(28,43,58,.1) 55%,transparent 100%)}
-/* International CSS gradients (swaps to real photos on /images/ deploy) */
-.d-bali .intl-photo{background:linear-gradient(160deg,#2d6b2a,#4a9a3a 35%,#7ab850 55%,#c8a030 75%,#1a5a2a)}
-.d-maldives .intl-photo{background:linear-gradient(180deg,#1a5a8a,#0b7ea3 25%,#3ab8d8 50%,#80d8e8 65%,#f5f0e8 80%,#e8d8c0)}
-.d-thailand .intl-photo{background:linear-gradient(170deg,#e85a2a,#e8951a 30%,#f0c060 55%,#50a8d0 70%,#1a5a8a)}
-.d-vietnam .intl-photo{background:linear-gradient(160deg,#1a6b5a,#2a8a6a 30%,#5aaa8a 55%,#3a7a9a 75%,#0a4a6a)}
-.d-srilanka .intl-photo{background:linear-gradient(170deg,#b84a1c,#d87840 30%,#e8b060 55%,#4a8a3a 70%,#2a5a2a)}
-.d-uzbekistan .intl-photo{background:linear-gradient(160deg,#1a3a7a,#c4962a 30%,#e8b830 55%,#1a5a9a 70%,#0a2a5a)}
-.intl-info{position:absolute;bottom:0;left:0;right:0;padding:20px;z-index:2}
-.intl-region{font-family:var(--ff-cond);font-weight:600;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:#E8951A;margin-bottom:3px}
-.intl-name{font-family:var(--ff-display);font-size:1.65rem;color:#FDF6EC;line-height:1;margin-bottom:6px}
-.intl-tag{font-size:.78rem;color:rgba(253,246,236,.62);margin-bottom:10px}
-.intl-price{font-family:var(--ff-cond);font-weight:700;font-size:.75rem;letter-spacing:.08em;color:rgba(253,246,236,.7)}
-.intl-price span{color:#E8951A;font-size:.95rem}
+/* ── GIFT CTA ────────────────────────────────────────── */
+.gift{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:560px;
+  overflow:visible;
+}
+.gift-left{
+  background:var(--navy);
+  padding:80px 64px;
+  display:flex;flex-direction:column;
+  justify-content:center;
+  position:relative;
+  overflow:visible;
+}
+.gift-left::before{
+  content:'';
+  position:absolute;top:-100px;right:-100px;
+  width:300px;height:300px;
+  border-radius:50%;
+  border:1px solid rgba(232,149,26,0.1);
+}
+.gift-left .eyebrow{position:relative;z-index:1}
+.gift-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(36px,3.5vw,52px);
+  font-weight:600;line-height:1.1;
+  color:var(--white);
+  margin:12px 0 20px;
+  position:relative;z-index:1;
+}
+.gift-body{
+  font-size:16px;font-weight:300;
+  color:rgba(255,255,255,0.6);
+  line-height:1.7;
+  max-width:400px;
+  margin-bottom:36px;
+  position:relative;z-index:1;
+}
+.gift-price{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(232,149,26,0.12);
+  border:1px solid rgba(232,149,26,0.25);
+  border-radius:8px;
+  padding:10px 18px;
+  font-size:13px;font-weight:600;
+  color:var(--orange);
+  margin-bottom:28px;
+  position:relative;z-index:1;
+}
+.gift-right{
+  position:relative;overflow:visible;
+}
+.gift-right img{
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .6s ease;
+}
+.gift-right:hover img{transform:scale(1.04)}
+.gift-right-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to right,
+    rgba(28,43,58,0.4),transparent);
+}
 
-/* ── COMPARISON TABLE ─────────────────────────────── */
-.compare-sec{padding:80px 64px;background:#fff}
-.compare-table{width:100%;border-collapse:collapse;margin-top:48px;border-radius:10px;overflow:hidden}
-.compare-table th{padding:16px 24px;font-family:var(--ff-cond);font-weight:700;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase}
-.compare-table th:first-child{background:rgba(28,43,58,.06);color:rgba(28,43,58,.5);text-align:left;width:50%}
-.compare-table th:last-child{background:#E8951A;color:#1C2B3A;text-align:left;width:50%}
-.compare-table td{padding:16px 24px;font-size:.95rem;line-height:1.55;border-bottom:1px solid rgba(28,43,58,.06)}
-.compare-table td:first-child{background:rgba(28,43,58,.02);color:rgba(28,43,58,.55)}
-.compare-table td:last-child{background:rgba(232,149,26,.04);color:#1C2B3A;font-weight:600}
-.compare-table td:last-child::before{content:'✓  ';color:#E8951A;font-weight:700}
-.compare-table tr:last-child td{border-bottom:none}
+/* ── CONTACT STRIP ───────────────────────────────────── */
+.contact-strip{
+  background:var(--sand);
+  padding:72px 0;
+}
+.contact-inner{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:48px;
+  align-items:center;
+}
+.contact-text .section-title{font-size:40px}
+.contact-text .section-sub{margin-top:10px}
+.contact-actions{
+  display:flex;flex-direction:column;gap:14px;
+  align-items:flex-start;
+}
+.contact-action-btn{
+  display:flex;align-items:center;gap:12px;
+  background:var(--white);
+  border-radius:12px;
+  padding:14px 22px;
+  min-width:220px;
+  box-shadow:0 2px 16px rgba(0,0,0,0.06);
+  transition:transform .2s,box-shadow .2s;
+  cursor:pointer;
+}
+.contact-action-btn:hover{
+  transform:translateX(4px);
+  box-shadow:0 6px 24px rgba(0,0,0,0.1);
+}
+.contact-icon{
+  width:40px;height:40px;
+  border-radius:10px;
+  display:flex;align-items:center;
+  justify-content:center;
+  font-size:18px;
+  flex-shrink:0;
+}
+.contact-icon.wa{background:#25D366;color:var(--white)}
+.contact-icon.mail{background:var(--navy);color:var(--white);font-size:16px}
+.contact-btn-label{
+  font-size:11px;font-weight:600;
+  letter-spacing:1px;text-transform:uppercase;
+  color:var(--muted);margin-bottom:2px;
+}
+.contact-btn-val{
+  font-size:14px;font-weight:600;
+  color:var(--navy);
+}
 
-/* ── SOCIAL PROOF LINKS SECTION ───────────────────── */
-.proof-sec{padding:60px 64px;background:#1C2B3A}
-.proof-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:40px}
-.proof-card{background:rgba(253,246,236,.04);border:1px solid rgba(253,246,236,.1);border-radius:10px;padding:20px 18px;display:flex;flex-direction:column;gap:8px;transition:background .2s,border-color .2s,transform .2s}
-.proof-card:hover{background:rgba(232,149,26,.08);border-color:rgba(232,149,26,.4);transform:translateY(-3px)}
-.proof-card-icon{font-size:1.4rem}
-.proof-card-label{font-family:var(--ff-cond);font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#E8951A}
-.proof-card-desc{font-size:.82rem;color:rgba(253,246,236,.55);line-height:1.5;flex:1}
-.proof-card-cta{font-family:var(--ff-cond);font-weight:600;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(253,246,236,.45);display:flex;align-items:center;gap:4px;margin-top:4px;transition:color .2s}
-.proof-card:hover .proof-card-cta{color:#E8951A}
+/* ── FOOTER ──────────────────────────────────────────── */
+footer{
+  background:var(--green);
+  padding:72px 0 32px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:48px;
+  padding-bottom:56px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.footer-brand-name{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:22px;font-weight:800;
+  color:var(--white);
+  letter-spacing:1px;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+.footer-brand-name span{color:var(--orange)}
+.footer-tagline{
+  font-size:14px;font-weight:300;
+  color:rgba(255,255,255,0.5);
+  line-height:1.65;
+  max-width:280px;
+  margin-bottom:24px;
+}
+.footer-socials{
+  display:flex;gap:10px;
+}
+.social-btn{
+  width:38px;height:38px;
+  border-radius:8px;
+  background:rgba(255,255,255,0.08);
+  display:flex;align-items:center;
+  justify-content:center;
+  font-size:15px;
+  transition:background .2s,transform .2s;
+  cursor:pointer;
+}
+.social-btn:hover{
+  background:var(--orange);
+  transform:translateY(-2px);
+}
+.footer-col-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:13px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,0.4);
+  margin-bottom:20px;
+}
+.footer-links{
+  list-style:none;
+  display:flex;flex-direction:column;gap:10px;
+}
+.footer-links a{
+  font-size:14px;font-weight:300;
+  color:rgba(255,255,255,0.65);
+  transition:color .2s;
+}
+.footer-links a:hover{color:var(--orange)}
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-top:28px;
+  flex-wrap:wrap;gap:12px;
+}
+.footer-copy{
+  font-size:12px;font-weight:300;
+  color:rgba(255,255,255,0.3);
+  letter-spacing:0.3px;
+}
+.footer-trust{
+  display:flex;gap:20px;
+}
+.trust-pill{
+  display:flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:600;
+  letter-spacing:1px;text-transform:uppercase;
+  color:rgba(255,255,255,0.3);
+}
+.trust-pill-dot{
+  width:4px;height:4px;border-radius:50%;
+  background:var(--orange);opacity:.6;
+}
 
-/* ── HOW IT WORKS ─────────────────────────────────── */
-.hiw-sec{padding:96px 64px;background:#FDF6EC}
-.hiw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
-.hiw-card{background:#fff;border-radius:10px;padding:36px 28px;border:1px solid rgba(28,43,58,.07);position:relative;transition:box-shadow .3s,transform .3s}
-.hiw-card:hover{box-shadow:0 12px 40px rgba(28,43,58,.1);transform:translateY(-3px)}
-.hiw-num{font-family:var(--ff-display);font-size:4rem;color:rgba(232,149,26,.1);line-height:1;position:absolute;top:18px;right:18px}
-.hiw-icon{width:48px;height:48px;background:#E8951A;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:20px}
-.hiw-title{font-family:var(--ff-cond);font-weight:700;font-size:1.05rem;color:#1C2B3A;margin-bottom:10px;letter-spacing:.02em}
-.hiw-desc{font-size:.9rem;color:rgba(28,43,58,.62);line-height:1.7}
+/* ── ANIMATIONS ──────────────────────────────────────── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeIn{
+  from{opacity:0}to{opacity:1}
+}
 
-/* ── GIFTING SECTION ──────────────────────────────── */
-.gift-sec{padding:96px 64px;background:#1C2B3A;overflow:hidden}
-.gift-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1100px;margin:0 auto}
-.gift-img-wrap{position:relative;border-radius:12px;overflow:hidden}
-.gift-img-wrap img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px}
-.gift-img-wrap::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,149,26,.15),transparent);z-index:1;border-radius:12px}
-.gift-accent{display:inline-block;background:rgba(232,149,26,.12);border:1px solid rgba(232,149,26,.3);border-radius:100px;padding:8px 18px;font-family:var(--ff-cond);font-weight:600;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:#E8951A;margin-bottom:20px}
-.gift-title{font-family:var(--ff-display);font-size:clamp(2rem,4vw,3rem);color:#FDF6EC;line-height:.96;margin-bottom:16px}
-.gift-sub{color:rgba(253,246,236,.65);font-size:1rem;line-height:1.75;margin-bottom:36px}
-.gift-pillars{display:flex;flex-direction:column;gap:16px;margin-bottom:36px}
-.gift-pillar{display:flex;gap:14px;align-items:flex-start}
-.gift-pillar-icon{width:36px;height:36px;background:rgba(232,149,26,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;margin-top:2px}
-.gift-pillar-title{font-family:var(--ff-cond);font-weight:700;font-size:.88rem;letter-spacing:.04em;color:#FDF6EC;margin-bottom:3px}
-.gift-pillar-desc{font-size:.85rem;color:rgba(253,246,236,.55);line-height:1.6}
-.gift-founder-quote{border-left:2px solid #E8951A;padding-left:16px;margin-top:0}
-.gift-founder-quote p{font-size:.88rem;font-style:italic;color:rgba(253,246,236,.6);line-height:1.65;margin-bottom:6px}
-.gift-founder-quote cite{font-family:var(--ff-cond);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#E8951A}
+  to{transform:translateX(-50%)}
+}
+@keyframes scrollLine{
+  0%{transform:scaleY(0);transform-origin:top;opacity:1}
+  50%{transform:scaleY(1);transform-origin:top;opacity:1}
+  100%{transform:scaleY(1);transform-origin:bottom;opacity:0}
+}
+@keyframes pulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.5;transform:scale(1.3)}
+}
 
-/* ── REELS ────────────────────────────────────────── */
-.reels-sec{padding:80px 0;background:#111820;overflow:hidden}
-.reels-hd{padding:0 64px;margin-bottom:36px}
-.reels-scroll{display:flex;gap:16px;overflow-x:auto;padding:4px 64px 20px;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#E8951A rgba(253,246,236,.08);-webkit-overflow-scrolling:touch}
-.reels-scroll::-webkit-scrollbar{height:4px}
-.reels-scroll::-webkit-scrollbar-track{background:rgba(253,246,236,.05)}
-.reels-scroll::-webkit-scrollbar-thumb{background:#E8951A;border-radius:2px}
-.reel-slot{flex:0 0 220px;scroll-snap-align:start;border-radius:12px;overflow:hidden;background:rgba(253,246,236,.05);border:1px solid rgba(253,246,236,.08)}
-.reel-embed{width:100%;height:390px;background:rgba(28,43,58,.5);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
-.reel-ph-icon{font-size:1.8rem;opacity:.35}
-.reel-ph-text{font-family:var(--ff-cond);font-size:.72rem;letter-spacing:.1em;color:rgba(253,246,236,.35);text-align:center;padding:0 14px}
-.reel-iframe{width:100%;height:390px;border:none}
-.reel-label{padding:12px 14px;font-family:var(--ff-cond);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(253,246,236,.4)}
+/* Scroll reveal */
+.reveal{
+  opacity:0;
+  transform:translateY(32px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
 
-/* ── NOSH BRAINS ──────────────────────────────────── */
-.brains-sec{padding:80px 64px;background:linear-gradient(135deg,#1C2B3A 60%,#243447);position:relative;overflow:hidden}
-.brains-sec::before{content:'50+';font-family:var(--ff-display);font-size:20rem;color:rgba(232,149,26,.04);position:absolute;right:-40px;top:50%;transform:translateY(-50%);line-height:1;pointer-events:none}
-.brains-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1100px}
-.brains-count{font-family:var(--ff-display);font-size:5rem;color:#E8951A;line-height:1;margin-bottom:6px}
-.brains-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
-.brain-pill{background:rgba(253,246,236,.05);border:1px solid rgba(232,149,26,.22);border-radius:100px;padding:7px 16px;font-family:var(--ff-cond);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(253,246,236,.65)}
-.brains-right{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.brain-stat{background:rgba(253,246,236,.04);border:1px solid rgba(253,246,236,.07);border-radius:10px;padding:22px 18px}
-.brain-stat-n{font-family:var(--ff-display);font-size:2.2rem;color:#E8951A;line-height:1;margin-bottom:4px}
-.brain-stat-l{font-family:var(--ff-cond);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(253,246,236,.45)}
-
-/* ── TESTIMONIALS ─────────────────────────────────── */
-.testi-sec{padding:80px 64px;background:#fff}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
-.testi-card{background:#FDF6EC;border-radius:10px;padding:28px 24px;border-left:3px solid #E8951A;transition:box-shadow .3s}
-.testi-card:hover{box-shadow:0 8px 32px rgba(28,43,58,.1)}
-.testi-stars{color:#E8951A;font-size:.95rem;margin-bottom:14px;letter-spacing:2px}
-.testi-quote{font-size:.92rem;color:#1C2B3A;line-height:1.75;margin-bottom:18px;font-style:italic}
-.testi-name{font-family:var(--ff-cond);font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#1C2B3A}
-.testi-dest{font-size:.76rem;color:#E8951A;margin-top:2px}
-
-/* ── GOVERNMENT RECOGNITION ───────────────────────── */
-.recog-sec{padding:80px 64px;background:#111820}
-.recog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:40px;margin-bottom:48px}
-.recog-card{background:rgba(253,246,236,.04);border:1px solid rgba(253,246,236,.08);border-radius:10px;overflow:hidden;transition:border-color .2s,transform .2s;padding:20px 18px}
-.recog-card:hover{border-color:rgba(232,149,26,.35);transform:translateY(-3px)}
-.recog-card h1,.recog-card h2,.recog-card h3{font-family:var(--fh);}
-.recog-flag{font-size:.8rem;font-family:var(--ff-cond);font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#E8951A;margin-bottom:4px}
-.recog-title{font-family:var(--ff-display);font-size:1.05rem;color:#FDF6EC;margin-bottom:4px}
-.recog-sub{font-size:.78rem;color:rgba(253,246,236,.45);line-height:1.55;margin-bottom:0}
-.recog-link{display:flex;align-items:center;justify-content:center;gap:6px;padding:12px 18px;font-family:var(--ff-cond);font-weight:600;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#E8951A;border-top:1px solid rgba(253,246,236,.06);transition:background .2s}
-.recog-link:hover{background:rgba(232,149,26,.07)}
-.press-row{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;padding-top:40px;border-top:1px solid rgba(253,246,236,.06)}
-.press-link{font-family:var(--ff-cond);font-weight:700;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(253,246,236,.45);transition:color .2s}
-.press-link:hover{color:#E8951A}
-
-/* ── IS NOSH FOR YOU ──────────────────────────────── */
-.qualifier-sec{padding:80px 64px;background:#FDF6EC}
-.qualifier-inner{max-width:720px;margin:0 auto}
-.qualifier-list{margin-top:36px;display:flex;flex-direction:column;gap:14px}
-.q-item{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;background:#fff;border-radius:8px;border:1px solid rgba(28,43,58,.07)}
-.q-check{width:28px;height:28px;background:#E8951A;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#1C2B3A;font-weight:800;font-size:.85rem;flex-shrink:0;margin-top:2px}
-.q-text{font-size:.95rem;color:#1C2B3A;line-height:1.6}
-.q-note{margin-top:32px;padding:20px 22px;background:#1C2B3A;border-radius:8px;font-size:.88rem;color:rgba(253,246,236,.7);line-height:1.7;font-style:italic}
-.q-note strong{color:#E8951A;font-style:normal}
-
-/* ── FAQ ──────────────────────────────────────────── */
-.faq-sec{padding:80px 64px;background:#fff}
-.faq-list{max-width:740px;margin:40px auto 0}
-.faq-item{border-bottom:1px solid rgba(28,43,58,.09)}
-.faq-q{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;text-align:left}
-.faq-q-text{font-family:var(--ff-cond);font-weight:700;font-size:1rem;color:#1C2B3A}
-.faq-icon{width:24px;height:24px;flex-shrink:0;background:#E8951A;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem;transition:transform .25s}
-.faq-item.open .faq-icon{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
-.faq-a-inner{padding:0 0 20px;font-size:.93rem;color:rgba(28,43,58,.68);line-height:1.75}
-.faq-item.open .faq-a{max-height:300px}
-
-/* ── VARIANT 3 GIFTING CTA SECTION ───────────────── */
-.gift2-sec{padding:96px 64px;background:#E8951A;position:relative;overflow:hidden;text-align:center}
-.gift2-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(28,43,58,.08),transparent)}
-.gift2-sec h2{font-family:var(--ff-display);font-size:clamp(2.4rem,6vw,4.8rem);color:#1C2B3A;line-height:.94;margin-bottom:16px;position:relative}
-.gift2-sec p{font-size:1.1rem;color:rgba(28,43,58,.75);max-width:560px;margin:0 auto 40px;line-height:1.7;position:relative}
-.gift2-options{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:40px;position:relative}
-.gift2-opt{background:rgba(28,43,58,.08);border:1.5px solid rgba(28,43,58,.15);border-radius:100px;padding:10px 22px;font-family:var(--ff-cond);font-weight:600;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#1C2B3A;transition:background .2s}
-.gift2-opt:hover{background:rgba(28,43,58,.15)}
-
-/* ── FINAL CTA ────────────────────────────────────── */
-.cta-sec{padding:100px 64px;background:#1C2B3A;text-align:center;position:relative;overflow:hidden}
-.cta-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 50% 50%,rgba(232,149,26,.07),transparent)}
-.cta-sec h2{font-family:var(--ff-display);font-size:clamp(2.2rem,6vw,4.5rem);color:#FDF6EC;line-height:.95;margin-bottom:16px;position:relative}
-.cta-sec p{font-size:1.1rem;color:rgba(253,246,236,.65);max-width:480px;margin:0 auto 40px;line-height:1.7;position:relative}
-
-/* ── FOOTER ───────────────────────────────────────── */
-footer{background:#0c1118;padding:60px 64px 32px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:40px;margin-bottom:48px}
-.footer-tagline{font-family:var(--ff-display);font-size:1.25rem;color:#FDF6EC;margin-bottom:10px}
-.footer-sub{font-size:.83rem;color:rgba(253,246,236,.45);line-height:1.7;max-width:260px}
-.footer-col h4{font-family:var(--ff-cond);font-weight:700;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#E8951A;margin-bottom:16px}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
-.footer-col ul li a{font-size:.86rem;color:rgba(253,246,236,.5);transition:color .2s}
-.footer-col ul li a:hover{color:#E8951A}
-.soc-links{display:flex;flex-direction:column;gap:10px}
-.soc-link{display:flex;align-items:center;gap:10px;font-size:.86rem;color:rgba(253,246,236,.5);transition:color .2s}
-.soc-link:hover{color:#E8951A}
-.soc-icon{width:30px;height:30px;background:rgba(253,246,236,.05);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
-.footer-bottom{border-top:1px solid rgba(253,246,236,.07);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-.footer-copy{font-size:.76rem;color:rgba(253,246,236,.28)}
-.footer-legal{display:flex;gap:18px}
-.footer-legal a{font-size:.76rem;color:rgba(253,246,236,.28);transition:color .2s}
-.footer-legal a:hover{color:#E8951A}
-
-/* ── STICKY WHATSAPP ──────────────────────────────── */
-.sticky-wa{display:none;position:fixed;bottom:0;left:0;right:0;background:#25D366;color:#1C2B3A;font-family:var(--ff-ui);font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:16px 20px;align-items:center;justify-content:center;gap:8px;z-index:998;border-top:2px solid #1C2B3A;min-height:52px;text-decoration:none}
-
-/* ── RESPONSIVE ───────────────────────────────────── */
+/* ── RESPONSIVE ──────────────────────────────────────── */
 @media(max-width:1024px){
-  .hero,.india-sec,.intl-sec,.compare-sec,.proof-sec,.hiw-sec,
-  .gift-sec,.reels-sec,.brains-sec,.testi-sec,.recog-sec,
-  .qualifier-sec,.faq-sec,.gift2-sec,.cta-sec{padding-left:40px;padding-right:40px}
-  .reels-hd{padding-left:40px;padding-right:40px}
-  .reels-scroll{padding-left:40px;padding-right:40px}
-  .sp-strip{padding:0 40px}
-  footer{padding-left:40px;padding-right:40px}
-  .hiw-grid{grid-template-columns:1fr 1fr}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .brains-inner,.gift-inner{grid-template-columns:1fr;gap:40px}
-}
-@media(max-width:768px){
-  .nav-ham{display:flex}
-  .nav-links{display:none;flex-direction:column;position:fixed;top:60px;left:0;right:0;background:#1C2B3A;border-top:2px solid #E8951A;padding:16px 20px 24px;z-index:999;box-shadow:0 8px 32px rgba(0,0,0,.4);gap:0}
-  .nav-links.open{display:flex}
-  .nav-links a{height:auto;padding:13px 0;border-bottom:1px solid rgba(253,246,236,.07);border-left:none;font-size:.88rem}
-  .nav-links a:last-child{border-bottom:none}
-  .nav-wa{margin-left:0;width:100%;justify-content:center;height:44px !important;margin-top:10px;border-radius:4px}
-  .hero,.india-sec,.intl-sec,.compare-sec,.proof-sec,.hiw-sec,
-  .gift-sec,.brains-sec,.testi-sec,.recog-sec,
-  .qualifier-sec,.faq-sec,.gift2-sec,.cta-sec{padding-left:20px;padding-right:20px}
-  .reels-hd,.reels-scroll{padding-left:20px;padding-right:20px}
-  .sp-strip{padding:0 16px}
-  footer{padding:40px 20px 24px}
-  .hero{padding-top:60px;padding-bottom:56px;min-height:90svh}
-  .hero-title{font-size:clamp(2.5rem,11vw,4rem)}
-  .hero-ctas{flex-direction:column}
-  .btn-p,.btn-g{width:100%;justify-content:center}
-  .canvas-grid,.intl-grid{grid-template-columns:1fr}
-  .hiw-grid,.testi-grid{grid-template-columns:1fr;gap:14px}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .brains-inner{grid-template-columns:1fr}
-  .brains-right{grid-template-columns:1fr 1fr}
-  .brains-sec::before{font-size:8rem;right:-10px}
-  .gift-inner{grid-template-columns:1fr}
-  .compare-table{font-size:.85rem}
-  .compare-table th,.compare-table td{padding:12px 14px}
-  .gift2-options{flex-direction:column;align-items:center}
-  .gift2-opt{width:100%;max-width:320px;justify-content:center;display:flex}
-  .btn-d{width:100%;justify-content:center}
-  .sticky-wa{display:flex}
-  body{padding-bottom:52px}
-  .reel-slot{flex:0 0 195px}
-}
-@media(max-width:480px){
-  .footer-grid{grid-template-columns:1fr}
-  .canvas-card,.intl-card{height:295px}
-  .proof-grid{grid-template-columns:1fr 1fr}
+  .canvas-grid{grid-template-columns:repeat(2,1fr)}
+  .canvas-card:first-child{grid-row:auto;aspect-ratio:3/4}
+  .diff-grid,.why-inner,.gift{grid-template-columns:1fr}
+  .gift-right{min-height:340px}
 }
 
-/* Colorful tile separator */
-.nosh-sep{display:flex;height:var(--sep-h,12px);width:100%;overflow:hidden;flex-shrink:0}
-.nosh-sep span{flex:1;height:100%}
+/* ── 20% LARGER MOBILE FONTS & LAYOUT FIXES ──────────── */
+@media(max-width:768px){
+  .nav-links{display:none; flex-direction:column; position:absolute; top:80px; left:0; right:0; background:rgba(255,255,255,0.98); padding:24px; border-radius:16px; box-shadow:0 10px 40px rgba(0,0,0,0.15); text-align:center; gap:20px;}
+  .nav-links.active{display:flex;}
+  .nav-cta{display:none}
+  .nav-menu-btn{display:flex}
+  .hero-content{padding:0 24px 48px; width:100%; justify-content:flex-end;}
+  .hero-crystal-frame{width:100%; height:52%; opacity:0.28;}
+  .hero-badge{right:24px;bottom:56px}
+  .hero-vert{display:none;}
+  .wrap{padding:0 20px}
+  .section{padding:64px 0}
+  .diff-stats, .canvas-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .contact-inner{grid-template-columns:1fr}
+  .canvases-header{flex-direction:column;align-items:flex-start;gap:16px}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+  
+  /* The 20% Font Scaling */
+  .hero-title { font-size: 56px !important; line-height: 1.1; }
+  .hero-sub { display: block !important; font-size: 19px !important; margin-bottom: 24px; color: rgba(255,255,255,0.9); }
+  .section-title { font-size: 42px !important; line-height: 1.15; }
+  .section-sub { font-size: 19px !important; color: var(--muted) !important; }
+  .section-sub.light { color: rgba(255,255,255,0.8) !important; }
+  .diff-body { font-size: 19px !important; }
+  .dest-name { font-size: 26px !important; }
+  .dest-desc { font-size: 16px !important; }
+  .why-feat-title { font-size: 20px !important; }
+  .why-feat-body { font-size: 17px !important; }
+  .gift-title { font-size: 42px !important; }
+  .gift-body { font-size: 19px !important; }
+  .footer-tagline, .footer-links a, .contact-btn-val { font-size: 16px !important; }
+}
+
+
+/* ══ CRYSTAL HERO ═══════════════════════════════════════ */
+.hero {
+  position:relative; width:100%; min-height:100vh; height:auto;
+  min-height:700px; overflow:visible;
+  background:#f8f3ec;
+}
+.hero-bg {
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 55% 65% at 78% 52%, rgba(232,149,26,0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 35% 45% at 12% 28%, rgba(196,150,42,0.05) 0%, transparent 50%),
+    #f8f3ec;
+}
+/* Dot grid */
+.hero-dot-grid {
+  position:absolute; inset:0; z-index:1; pointer-events:none;
+  background-image:radial-gradient(circle, rgba(28,43,58,0.07) 1px, transparent 1px);
+  background-size:32px 32px;
+}
+/* Crystal iframe — right side */
+.hero-crystal-frame {
+  position:absolute;
+  right:0; top:0;
+  width:54%; height:100%;
+  z-index:2; border:none;
+  background:transparent;
+}
+/* Left content */
+.hero-content {
+  position:absolute; left:0; top:0; bottom:0;
+  width:50%;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:0 0 0 72px; z-index:3;
+}
+.hero-eyebrow {
+  display:flex; align-items:center; gap:10px;
+  margin-bottom:22px;
+  opacity:0; transform:translateY(18px);
+}
+.hero-ey-dot {
+  width:6px; height:6px; border-radius:50%;
+  background:var(--orange); flex-shrink:0;
+}
+.hero-ey-text {
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:11px; font-weight:700;
+  letter-spacing:3.5px; text-transform:uppercase;
+  color:var(--orange);
+}
+.hero-title {
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(54px,5.8vw,90px);
+  font-weight:600; line-height:1.0;
+  color:var(--navy); margin-bottom:22px;
+  opacity:0; transform:translateY(36px);
+}
+.hero-title em {
+  font-style:italic; color:var(--orange); display:block;
+}
+.hero-rule {
+  width:0; height:1px;
+  background:linear-gradient(to right, var(--orange), transparent);
+  margin-bottom:20px; opacity:0;
+}
+.hero-sub {
+  font-size:16px; font-weight:300;
+  color:var(--muted); line-height:1.8;
+  max-width:390px; margin-bottom:40px;
+  opacity:0; transform:translateY(20px);
+}
+.hero-actions {
+  display:flex; gap:14px; align-items:center;
+  flex-wrap:wrap;
+  opacity:0; transform:translateY(20px);
+}
+.btn-navy {
+  display:inline-flex; align-items:center; gap:10px;
+  background:var(--navy); color:#fff;
+  font-family:"Barlow",sans-serif;
+  font-size:13px; font-weight:700; letter-spacing:0.5px;
+  padding:15px 30px; border-radius:10px; border:none;
+  cursor:pointer; text-transform:uppercase;
+  transition:background .2s, transform .2s;
+}
+.btn-navy:hover { background:var(--orange); transform:translateY(-2px); }
+.btn-navy svg { width:15px; height:15px; transition:transform .2s; }
+.btn-navy:hover svg { transform:translateX(4px); }
+.btn-ring {
+  display:inline-flex; align-items:center; gap:8px;
+  background:transparent; color:var(--navy);
+  font-size:13px; font-weight:500;
+  padding:14px 22px; border-radius:10px;
+  border:1.5px solid rgba(28,43,58,0.18);
+  cursor:pointer; transition:border-color .2s, color .2s;
+}
+.btn-ring:hover { border-color:var(--orange); color:var(--orange); }
+.hero-rating {
+  display:flex; align-items:center; gap:10px;
+  margin-top:32px; opacity:0; transform:translateY(14px);
+}
+.hero-stars span { font-size:12px; color:var(--gold); }
+.hero-rat-text {
+  font-size:12px; font-weight:400;
+  color:var(--muted); letter-spacing:0.2px;
+}
+/* Vertical brand mark */
+.hero-vert {
+  position:absolute; right:22px; top:50%; z-index:4;
+  transform:translateY(-50%) rotate(90deg);
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:9px; font-weight:700;
+  letter-spacing:3px; text-transform:uppercase;
+  color:rgba(28,43,58,0.18); white-space:nowrap;
+}
+/* Scroll cue */
+.hero-scroll {
+  position:absolute; bottom:34px; left:50%;
+  transform:translateX(-50%); z-index:5;
+  display:flex; flex-direction:column; align-items:center; gap:8px;
+}
+.hero-scroll-lbl {
+  font-size:9px; letter-spacing:2.5px;
+  text-transform:uppercase; color:rgba(28,43,58,0.25);
+}
+.scroll-line {
+  width:1px; height:38px;
+  background:linear-gradient(to bottom, rgba(28,43,58,0.25), transparent);
+  animation:scrollLine 2s ease infinite;
+}
+@keyframes scrollLine {
+  0%   { transform:scaleY(0); transform-origin:top; opacity:1; }
+  50%  { transform:scaleY(1); transform-origin:top; opacity:1; }
+  100% { transform:scaleY(1); transform-origin:bottom; opacity:0; }
+}
+
+
+/* ══════════════════════════════════════════════════════
+   NOSH UNIVERSAL BUTTON GRADIENT SYSTEM
+   Applied globally to every CTA across all pages.
+════════════════════════════════════════════════════════ */
+
+:root {
+  --btn-grad:       linear-gradient(135deg, #E8951A 0%, #C4621A 55%, #E8B49A 100%);
+  --btn-grad-hover: linear-gradient(135deg, #f0a030 0%, #d4741a 55%, #f0c4a8 100%);
+  --btn-sheen:      linear-gradient(135deg, rgba(255,255,255,0.13) 0%, transparent 55%);
+  --btn-glow:       0 6px 28px rgba(232,149,26,0.32), 0 2px 8px rgba(196,98,26,0.18);
+  --btn-glow-hover: 0 10px 40px rgba(232,149,26,0.42), 0 3px 12px rgba(196,98,26,0.25);
+}
+
+.btn-primary, .nav-cta {
+  background: var(--btn-grad) !important;
+  border: none !important;
+  color: #fff !important;
+  box-shadow: var(--btn-glow) !important;
+  position: relative !important;
+  overflow: visible !important;
+  transition: transform 0.22s cubic-bezier(0.34,1.2,0.64,1), box-shadow 0.22s ease, filter 0.22s ease !important;
+}
+
+.btn-primary::before, .nav-cta::before {
+  content: '' !important;
+  position: absolute !important; inset: 0 !important;
+  background: var(--btn-sheen) !important;
+  pointer-events: none !important; z-index: 1 !important;
+  border-radius: inherit !important;
+}
+
+.btn-primary > *, .nav-cta > * {
+  position: relative !important; z-index: 2 !important;
+}
+
+.btn-primary:hover, .nav-cta:hover {
+  background: var(--btn-grad-hover) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--btn-glow-hover) !important;
+  filter: brightness(1.04) !important;
+}
+
+/* ══ HERO SINGLE CTA — JUNE & JULY ════════════════════ */
+
+.hero-single-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 36px;
+  border-radius: 12px;
+  border: 1.5px solid transparent;
+  font-family: "Barlow", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #fff;
+  cursor: pointer;
+  overflow: visible;
+  outline: none;
+  background: linear-gradient(120deg, #E8951A 0%, #C4621A 30%, #E8B49A 55%, #E8951A 75%, #C4621A 100%);
+  background-size: 250% 100%;
+  animation: gradientShift 4s ease infinite;
+  box-shadow: 0 8px 32px rgba(232,149,26,0.35), 0 2px 8px rgba(196,98,26,0.2);
+  transition: background-color 0.5s ease, border-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-single-cta::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 50%);
+  pointer-events: none; border-radius: inherit; transition: opacity 0.4s ease;
+}
+
+.hero-cta-arrow {
+  display: inline-block; font-size: 18px; transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1); line-height: 1;
+}
+.hero-single-cta:hover .hero-cta-arrow { transform: translateX(5px); }
+.hero-single-cta:hover { box-shadow: 0 12px 44px rgba(232,149,26,0.45), 0 4px 12px rgba(196,98,26,0.25); transform: translateY(-2px); }
+
+.hero-single-cta.clicked {
+  animation: none !important; background: transparent !important; background-color: transparent !important;
+  border-color: rgba(255,255,255,0.35) !important; color: rgba(255,255,255,0.9) !important;
+  box-shadow: none !important; transform: none !important;
+}
+.hero-single-cta.clicked::before { opacity: 0 !important; }
+.hero-single-cta.clicked .hero-cta-arrow { opacity: 0; transform: translateX(8px); }
+
+/* ══ CANVAS FORM OVERLAY ═══════════════════════════════ */
+.canvas-form-overlay {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(6, 12, 18, 0.88); backdrop-filter: blur(16px);
+  display: flex; align-items: flex-end; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+}
+.canvas-form-overlay.open { opacity: 1; pointer-events: all; }
+
+.canvas-form {
+  width: 100%; max-width: 560px; background: #fff;
+  border-radius: 24px 24px 0 0; padding: 36px 36px 28px;
+  transform: translateY(100%); transition: transform 0.5s cubic-bezier(0.34, 1.2, 0.64, 1);
+  position: relative; max-height: 92vh; overflow-y: auto;
+}
+.canvas-form::-webkit-scrollbar { width: 3px; }
+.canvas-form::-webkit-scrollbar-thumb { background: rgba(232,149,26,0.3); border-radius: 3px; }
+.canvas-form-overlay.open .canvas-form { transform: translateY(0); }
+
+.canvas-form-header { margin-bottom: 28px; position: relative; }
+.canvas-form-title { font-family: "Cormorant Garamond", serif; font-size: 32px; font-weight: 600; color: var(--navy); line-height: 1; margin-bottom: 6px; }
+.canvas-form-sub { font-size: 13px; font-weight: 300; color: var(--muted); letter-spacing: 0.3px; }
+.canvas-form-close { position: absolute; top: 0; right: 0; background: var(--sand); border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 14px; cursor: pointer; color: var(--navy); display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+.canvas-form-close:hover { background: #e0d8cf; }
+
+.canvas-form-fields { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+.canvas-field-group { display: flex; flex-direction: column; gap: 6px; }
+.canvas-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 480px) { .canvas-field-row { grid-template-columns: 1fr; } }
+.canvas-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+.canvas-input { font-family: "Barlow", sans-serif; font-size: 14px; font-weight: 400; color: var(--navy); background: var(--offwhite); border: 1.5px solid rgba(28,43,58,0.1); border-radius: 10px; padding: 13px 16px; outline: none; transition: border-color 0.2s, box-shadow 0.2s; appearance: none; -webkit-appearance: none; width: 100%; }
+.canvas-input:focus { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(232,149,26,0.1); }
+.canvas-input::placeholder { color: rgba(28,43,58,0.35); }
+
+.canvas-form-submit {
+  width: 100%; padding: 16px; border: none; border-radius: 12px;
+  background: linear-gradient(135deg, #E8951A 0%, #C4621A 55%, #E8B49A 100%); background-size: 200% 100%; animation: gradientShift 4s ease infinite;
+  color: #fff; font-family: "Barlow", sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer;
+  box-shadow: 0 6px 24px rgba(232,149,26,0.3); transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: visible;
+}
+.canvas-form-submit::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 55%); pointer-events: none; }
+.canvas-form-submit:hover { transform: translateY(-1px); box-shadow: 0 10px 32px rgba(232,149,26,0.4); }
+.canvas-form-submit.sending { animation: none; background: linear-gradient(135deg, #2D5016, #1F3028) !important; }
+.canvas-form-note { text-align: center; font-size: 11px; font-weight: 400; color: var(--muted); margin-top: 12px; letter-spacing: 0.2px; }
+
+@media (max-width: 600px) {
+  .canvas-form { border-radius: 20px 20px 0 0; padding: 28px 24px 24px; }
+  .canvas-form-overlay { align-items: flex-end; }
+}
+
+/* ══ SEAMLESS APP FEEL ════════════════════════════════ */
+.section, .diff, .why, .gift, .contact-strip, footer { transition: none; position: relative; }
+.diff::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, var(--offwhite), transparent); pointer-events: none; z-index: 1; }
+.why::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to top, rgba(28,43,58,0.95), transparent); pointer-events: none; z-index: 1; }
+.section { padding: 88px 0; }
+a, button { -webkit-tap-highlight-color: transparent; }
+img { -webkit-user-drag: none; user-select: none; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(232,149,26,0.3); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(232,149,26,0.6); }
+
+/* ══ HERO MEDIA CONTAINER ════════════════════════════ */
+.hero-media-strip { position: relative; width: 100%; background: var(--navy); overflow: visible; z-index: 2; }
+.hero-media-container { max-width: 1160px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: center; }
+.hero-media-slot { width: 100%; margin-bottom: 28px; border-radius: 14px; overflow: visible; position: relative; min-height: 0; }
+.hero-media-slot:has(img), .hero-media-slot:has(video) { aspect-ratio: 16 / 7; background: rgba(28,43,58,0.06); }
+.hero-media-slot img, .hero-media-slot video { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 14px; }
+.hero-media-slot video { pointer-events: none; }
+.hero-media-slot:empty::before { content: ''; position: absolute; inset: 0; border: 2px dashed rgba(232,149,26,0.2); border-radius: inherit; pointer-events: none; }
+
+@media (max-width: 768px) {
+  .hero-media-slot:has(img), .hero-media-slot:has(video) { aspect-ratio: 16 / 9; margin-bottom: 20px; }
+}
+
+/* ══ PRESS & RECOGNITION STRIP ═══════════════════════ */
+.press-strip { background: var(--navy); padding: 32px 0 28px; overflow: visible; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative; }
+.press-strip::before, .press-strip::after { content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none; }
+.press-strip::before { left: 0; background: linear-gradient(to right, var(--navy), transparent); }
+.press-strip::after { right: 0; background: linear-gradient(to left, var(--navy), transparent); }
+.press-label-row { text-align: center; margin-bottom: 20px; }
+.press-label { font-family: "Barlow Condensed", sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+.press-label span { display: inline-block; width: 32px; height: 1px; background: rgba(255,255,255,0.12); vertical-align: middle; margin: 0 10px; }
+.press-marquee-wrap { overflow: visible; white-space: nowrap; }
+.press-marquee { display: inline-flex; align-items: center; gap: 0; animation: pressMarquee 36s linear infinite; }
+.press-marquee:hover { animation-play-state: paused; }
+@keyframes pressMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.press-item { display: inline-flex; align-items: center; gap: 0; padding: 0 52px; position: relative; cursor: default; transition: opacity 0.3s ease; }
+.press-item:hover .press-name { opacity: 1; }
+.press-item::after { content: '·'; position: absolute; right: 0; color: rgba(232,149,26,0.3); font-size: 18px; line-height: 1; }
+.press-name { font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.38); white-space: nowrap; transition: color 0.3s ease, opacity 0.3s ease; letter-spacing: 0.3px; }
+.press-item:hover .press-name { color: rgba(255,255,255,0.75); }
+
+/* Brand-specific styling */
+.press-name.ahmedabad-mirror { font-family: "Barlow Condensed", sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; }
+.press-name.ceo-magazine { font-family: "Cormorant Garamond", serif; font-size: 17px; font-weight: 400; letter-spacing: 1px; font-style: italic; }
+.press-name.travel-leisure { font-family: "Cormorant Garamond", serif; font-size: 17px; font-weight: 600; letter-spacing: 0.5px; }
+.press-name.conde-nast { font-family: "Barlow Condensed", sans-serif; font-size: 14px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; }
+.press-name.thailand-trade { font-family: "Barlow", sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.8px; }
+.press-name.thailand-trade em { font-style: normal; color: rgba(232,149,26,0.6); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; vertical-align: super; margin-left: 4px; }
+.press-name.indonesia-circuit { font-family: "Barlow", sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.8px; }
+.press-name.indonesia-circuit em { font-style: normal; color: rgba(232,149,26,0.6); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; vertical-align: super; margin-left: 4px; }
+
+
+/* --- NOSH AGENT TYPE OVERHAUL --- */
+@media(max-width:768px) {
+  body { font-size: 120% !important; }
+  h1, .hero-title { font-size: 54px !important; line-height: 1.1 !important; font-weight: 700 !important; }
+  h2, .section-title { font-size: 42px !important; line-height: 1.15 !important; }
+  p, .hero-sub, .section-sub, .dest-desc { font-size: 19px !important; line-height: 1.6 !important; display: block !important; opacity: 1 !important; }
+  .nav-links { display:none; flex-direction:column; position:absolute; top:80px; left:0; right:0; background:rgba(255,255,255,0.98); padding:24px; border-radius:16px; box-shadow:0 10px 40px rgba(0,0,0,0.15); text-align:center; gap:20px;}
+  .nav-links.active { display:flex; }
+}
+
+
+/* ANTIGRAVITY UI/UX OVERRIDES */
+/* 1. Kill Broken GSAP/ScrollReveal - Force 100% Visibility */
+.reveal, .hidden, [style*="opacity: 0"], .hidden-section, .dest-card {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+}
+/* 2. About Page Portrait Fixes */
+.founder-img, .team-image {
+    object-position: top center !important;
+    object-fit: cover !important;
+}
+/* 3. Wellness Padding Fix */
+.wellness-hero-overlay { padding-bottom: 20px !important; }
+.empty-space-fix { display: none !important; }
+/* 4. Global Mobile Flow Alignments */
+@media(max-width:768px) {
+    .section, .hero { padding-left: 15px !important; padding-right: 15px !important; }
+    img { border-radius: 12px !important; }
+    .footer-grid { text-align: left !important; }
+}
+
+
+/* --- ANTIGRAVITY PHASE 1 UI/UX OVERRIDES --- */
+/* 1. Nuke Broken GSAP Animations */
+.reveal, .hidden, [style*="opacity: 0"], .hidden-section, .dest-card, .canvas-card {
+    opacity: 1 !important; transform: none !important; visibility: visible !important; display: block !important;
+}
+/* 2. Fix Founder Portraits */
+.founder-img, .team-image { object-position: top center !important; object-fit: cover !important; }
+/* 3. Wellness Padding */
+.wellness-hero-overlay { padding-bottom: 20px !important; }
+.empty-space-fix { display: none !important; }
+/* 4. Split Video Slider Layout */
+.hero-video-slider { display: flex; align-items: center; background: #1C2B3A; min-height: 85vh; height: auto; width: 100%; overflow: visible; position: relative; }
+.hero-text-side { width: 50%; padding: 0 5vw; z-index: 10; position: relative; }
+.slider-text-group { position: absolute; top: 50%; transform: translateY(-50%); opacity: 0; visibility: hidden; transition: opacity 1s ease-in-out, visibility 1s ease-in-out; width: 80%; }
+.slider-text-group.active { opacity: 1; visibility: visible; position: relative; transform: translateY(0); }
+.hero-video-side { width: 50%; display: flex; justify-content: center; align-items: center; height: 100%; position: relative; }
+.slider-video { position: absolute; height: 85vh; width: auto; aspect-ratio: 9/16; border-radius: 24px; object-fit: cover; box-shadow: 0 20px 50px rgba(0,0,0,0.5); opacity: 0; visibility: hidden; transition: opacity 1.2s ease-in-out; }
+.slider-video.active { opacity: 1; visibility: visible; }
+.hero-cta-fixed { position: relative; z-index: 20; margin-top: 30px; }
+/* Global Mobile Alignments */
+@media(max-width:768px) {
+    .hero-video-slider { flex-direction: column; height: auto; padding-top: 120px; padding-bottom: 40px; }
+    .hero-text-side { width: 100%; text-align: center; padding: 0 20px 20px; min-height: 250px; }
+    .slider-text-group { width: 100%; position: absolute; left: 0; padding: 0 20px; text-align: center; }
+    .slider-text-group.active { position: relative; }
+    .hero-video-side { width: 100%; height: 70vh; }
+    .slider-video { width: 90%; height: 100%; aspect-ratio: auto; }
+    .section, .hero { padding-left: 15px !important; padding-right: 15px !important; }
+    img { border-radius: 12px !important; }
+}
+
+
+/* --- ANTIGRAVITY CONTRAST & ACCESSIBILITY HARDENING --- */
+.eyebrow, p.eyebrow, [class*="eyebrow"] { color: #D97706 !important; font-weight: 700 !important; opacity: 1 !important; }
+.diff-link, a.diff-link, .diff\.link { color: #1C2B3A !important; font-weight: 700 !important; text-decoration: underline !important; opacity: 1 !important; }
+.section-sub, p.section-sub, .section\.sub { color: #2D3748 !important; opacity: 1 !important; }
+.footer-col-title, .footer\.col\.title { color: #FFFFFF !important; font-weight: 700 !important; opacity: 1 !important; }
+.footer-copy, .footer\.copy, span.footer\.copy { color: #E2E8F0 !important; opacity: 1 !important; }
+.trust-pill, .trust\.pill, span.trust\.pill { color: #FFFFFF !important; background-color: #2D3748 !important; font-weight: 600 !important; opacity: 1 !important; }
+
+
+/* --- ANTIGRAVITY WCAG CONTRAST FIX --- */
+.eyebrow, p.eyebrow, [class*="eyebrow"] { color: #92400E !important; } 
 
 </style>
+<style>
+/* ANTIGRAVITY NATIVE APP LOCK */
+html, body {
+    touch-action: manipulation;
+    -ms-touch-action: manipulation;
+    overscroll-behavior-y: none;
+}
+
+/* --- ANTIGRAVITY CONTRAST & ACCESSIBILITY HARDENING --- */
+.eyebrow, p.eyebrow, [class*="eyebrow"] { color: #D97706 !important; font-weight: 700 !important; opacity: 1 !important; }
+.diff-link, a.diff-link, .diff\.link { color: #1C2B3A !important; font-weight: 700 !important; text-decoration: underline !important; opacity: 1 !important; }
+.section-sub, p.section-sub, .section\.sub { color: #2D3748 !important; opacity: 1 !important; }
+.footer-col-title, .footer\.col\.title { color: #FFFFFF !important; font-weight: 700 !important; opacity: 1 !important; }
+.footer-copy, .footer\.copy, span.footer\.copy { color: #E2E8F0 !important; opacity: 1 !important; }
+.trust-pill, .trust\.pill, span.trust\.pill { color: #FFFFFF !important; background-color: #2D3748 !important; font-weight: 600 !important; opacity: 1 !important; }
+
+
+/* --- ANTIGRAVITY WCAG CONTRAST FIX --- */
+.eyebrow, p.eyebrow, [class*="eyebrow"] { color: #92400E !important; } 
+
+</style>
+<style>
+/* --- ANTIGRAVITY HERO TYPOGRAPHY & SLIDER FIX --- */
+#text-container {
+    position: relative;
+    min-height: 140px; 
+    display: flex;
+    align-items: center;
+}
+
+/* Fix the overlapping text bug */
+.slider-text-group {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease-in-out, visibility 0.6s;
+}
+
+.slider-text-group.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+}
+
+/* Desktop Baseline Sizes */
+.hero-title { font-size: 3.5rem !important; margin-bottom: 0px !important; }
+.hero-sub { font-size: 1.2rem !important; }
+
+/* Mobile Downscaling: 50% reduction for title, 40% for subtitle */
+@media (max-width: 768px) {
+    #text-container {
+        min-height: 70px; /* Prevents the CTA button from jumping up and down */
+    }
+    .hero-title { 
+        font-size: 1.75rem !important; /* Exactly 50% of desktop */
+        line-height: 1.2 !important;
+    }
+    .hero-sub { 
+        font-size: 0.75rem !important; /* Roughly 40% reduction */
+        line-height: 1.4 !important;
+        margin-top: 8px !important; 
+    }
+}
+</style>
+<style>
+/* --- ANTIGRAVITY GAP REDUCTION & SCROLLER FIX --- */
+@media (max-width: 768px) {
+    .hero-cta-fixed { margin-top: 12px !important; }
+    .hero-video-side, #video-container { margin-top: -25px !important; position: relative; z-index: 10; }
+    .hero-video-slider { gap: 1px !important; padding-bottom: 8px !important; }
+    
+    /* Sleek horizontal scrolling for new destination cards */
+    .canvas-scroll-container::-webkit-scrollbar { display: none; }
+    .canvas-scroll-container { -ms-overflow-style: none; scrollbar-width: none; }
+}
+</style>
+<style>
+/* --- ANTIGRAVITY HERO GAP & FOOTER OVERRIDE --- */
+
+/* 1. Prevent Right-Side Cropping on Mobile */
+html, body {
+    overflow-x: hidden !important;
+    width: 100%;
+}
+footer, .footer {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+}
+
+/* 2. Absolute 2mm Gap Enforcement on Mobile */
+@media (max-width: 768px) {
+    #text-container {
+        min-height: 0px !important; /* Shatters the invisible wall */
+        height: auto !important;
+        padding-bottom: 0px !important;
+        margin-bottom: 0px !important;
+    }
+    .slider-text-group {
+        padding-bottom: 0px !important;
+    }
+    .hero-sub {
+        margin-bottom: 4px !important; /* Leaves exactly enough breathing room */
+        padding-bottom: 0px !important;
+    }
+    .hero-video-side, #video-container {
+        margin-top: -15px !important; /* Pulls the video container up */
+        transform: translateY(-12px); /* Physically drags the video up the Y-axis */
+        position: relative;
+        z-index: 10;
+    }
+}
+</style>
+<style>
+/* --- ANTIGRAVITY FLUID RESPONSIVENESS & TYPOGRAPHY (+20%) --- */
+html, body {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important; /* Stops right-side cropping */
+    overflow-y: auto !important; /* Explicitly guarantees vertical scrolling is unlocked */
+    box-sizing: border-box !important;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+@media (max-width: 768px) {
+    /* Enlarging Text by 20% to naturally fill the gap */
+    .hero-title { 
+        font-size: 2.1rem !important; /* Increased from 1.75rem */
+        line-height: 1.1 !important; 
+    }
+    .hero-sub { 
+        font-size: 0.9rem !important; /* Increased from 0.75rem */
+        line-height: 1.4 !important; 
+        margin-top: 12px !important; 
+    }
+    
+    /* Releasing the strict height constraints */
+    #text-container { 
+        min-height: auto !important; 
+        padding-bottom: 20px !important;
+    }
+    .hero-video-side, #video-container { 
+        margin-top: 0px !important; /* Resetting the forced lift */
+        transform: none !important;
+    }
+}
+</style>
+<!-- MASTER LAYOUT FIX JUNE 1 -->
+<style>
+/* 1. Shatter the Master Scroll Locks */
+html, body {
+    overflow-y: auto !important; 
+    overflow-x: hidden !important; 
+    height: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+/* 2. Release the Hero Viewport Trap */
+.hero-video-slider {
+    height: auto !important;
+    min-height: 85vh !important;
+    overflow: visible !important; /* Keeps video contained, but allows the section to grow/scroll */
+}
+
+/* 3. Fluid Typography & Gap Alignment (iPhone/Samsung Auto-Scale) */
+@media (max-width: 768px) {
+    .hero-title { 
+        font-size: 2.2rem !important; 
+        line-height: 1.1 !important; 
+        margin-bottom: 0 !important;
+    }
+    .hero-sub { 
+        font-size: 0.95rem !important; 
+        margin-top: 10px !important; 
+        margin-bottom: 4px !important;
+    }
+    #text-container { 
+        min-height: 0 !important; 
+        padding-bottom: 0 !important; 
+    }
+    .hero-video-side, #video-container { 
+        margin-top: -12px !important; /* The 2mm Gap */
+        position: relative !important; 
+        z-index: 10 !important; 
+        transform: translateY(-8px) !important;
+    }
+}
+</style>
+<!-- ANTIGRAVITY MASTER RESPONSIVE GRID -->
+<style>
+html, body {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit !important;
+}
+
+/* Force structural containers to remain fluid on iPhone 15/16/17 & Premium Androids */
+div, section, main, header, footer {
+    max-width: 100% !important;
+}
+
+/* Ensure no inner layout hidden property kills the global viewport scroll */
+.main-wrapper, #__next, #root, #wrapper {
+    overflow: visible !important;
+    height: auto !important;
+}
+</style>
+<style>
+/* Force the OS to handle vertical swipes natively, bypassing JS smooth-scroll hijackers */
+html, body, main, section, .main-wrapper, #wrapper, header, footer {
+    touch-action: pan-y pinch-zoom !important;
+    overscroll-behavior-y: auto !important;
+}
+
+/* Ensure horizontal swiping elements (like your destination cards) still work left-to-right */
+.canvas-scroll-container, .hero-video-slider {
+    touch-action: pan-x pan-y pinch-zoom !important;
+}
+
+/* Neutralize any invisible full-screen overlays that might be eating single clicks */
+.prevent-scroll, .scroll-lock, #preloader {
+    pointer-events: none !important;
+    display: none !important;
+}
+</style>
+<!-- ANTIGRAVITY CINEMATIC ENGINE -->
+<style>
+/* 10. The Namaste Preloader Shield */
+#nosh-preloader {
+    position: fixed; inset: 0; background: #1C2B3A; z-index: 99999;
+    display: flex; justify-content: center; align-items: center;
+    color: #d1752b; font-family: 'Cormorant Garamond', serif; font-size: 4rem;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s;
+}
+.preloader-text { animation: gentlePulse 2s infinite; }
+@keyframes gentlePulse { 0% { opacity: 0.7; transform: scale(0.98); } 50% { opacity: 1; transform: scale(1.02); } 100% { opacity: 0.7; transform: scale(0.98); } }
+
+/* 1. Strict Left-Aligned Footer */
+footer { text-align: left !important; }
+footer .col, footer ul, footer li { text-align: left !important; align-items: flex-start !important; justify-content: flex-start !important; }
+footer .social-icons { justify-content: flex-start !important; }
+
+/* 3 & 7. Auto-Movable Cards & Touch-Lit Animation */
+.swipe-carousel-wrap {
+    display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 20px; padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.swipe-carousel-wrap::-webkit-scrollbar { display: none; }
+.card-touch-lit {
+    scroll-snap-align: center; flex-shrink: 0; width: 85%; max-width: 350px;
+    opacity: 0.5; filter: grayscale(40%); transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 16px; overflow: hidden;
+}
+/* Focus state for active card in view */
+.card-touch-lit:hover, .card-touch-lit:active, .card-touch-lit:focus {
+    opacity: 1; filter: grayscale(0%); transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(209,117,43,0.3);
+}
+
+/* 4. Watery Text Effect for International Title */
+.watery-title {
+    background: linear-gradient(to right, #ffffff, #8ca8d9, #ffffff, #8ca8d9);
+    background-size: 200% auto; color: transparent;
+    -webkit-background-clip: text; background-clip: text;
+    animation: waterFlow 4s linear infinite; text-shadow: 0px 4px 15px rgba(140, 168, 217, 0.4);
+}
+@keyframes waterFlow { to { background-position: 200% center; } }
+
+/* 5 & 8. Fluid Burnt Orange Breathing CTAs */
+@keyframes fluidOrange { 0% { background-position: 0% 50%; box-shadow: 0 4px 15px rgba(209,117,43,0.2); } 50% { background-position: 100% 50%; box-shadow: 0 8px 25px rgba(209,117,43,0.6); } 100% { background-position: 0% 50%; box-shadow: 0 4px 15px rgba(209,117,43,0.2); } }
+a[href*="wa.me"], button[onclick*="wa.me"], .whatsapp-btn, .btn-primary {
+    background: linear-gradient(270deg, #d1752b, #f5a623, #e65c00, #d1752b) !important;
+    background-size: 300% 300% !important; animation: fluidOrange 4s ease infinite !important;
+    color: #fff !important; border: none !important; transition: transform 0.3s ease !important;
+}
+a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
+    transform: translateY(-4px) scale(1.02) !important;
+}
+.w-card, .dest-card, .canvas-card { padding-bottom: 25px !important; position: relative; }
+.price-tag, .cta-wrap { bottom: 25px !important; position: absolute; z-index: 10; }
+</style>
+<script>
+(function() {
+    const killPreloader = () => {
+        const p = document.getElementById('nosh-preloader');
+        if(p) {
+            p.style.opacity = '0';
+            setTimeout(() => p.remove(), 500); // Completely amputate from the DOM
+        }
+    };
+    
+    // Hard-coded absolute vanish at 1.0s + 0.5s fade = 1.5 seconds total
+    setTimeout(killPreloader, 1000);
+    
+    // Absolute Failsafe if the browser throttles the main thread
+    window.addEventListener('load', () => setTimeout(killPreloader, 100));
+})();
+</script>
 </head>
 <body>
-
-<!-- NAV -->
-<nav class="nav">
-  <a href="/" class="nav-brand">
-    <img src="/logo.png" alt="Nosh Tours" class="nav-logo" onerror="this.style.display='none'">
-    <span class="nav-wordmark">NOSH<em>·</em>TOURS</span>
-  </a>
-  <div class="nav-links" id="navLinks">
-    <a href="/" class="active">Home</a>
-    <a href="/destinations">Destinations</a>
-    <a href="/international">International</a>
-    <a href="/india">India</a>
-    <a href="/nosh-block-builder">Experience</a>
-    <a href="/wellness">Wellness</a>
-    <a href="/blog">Journal</a>
-    <a href="/about">About</a>
-    <a href="https://wa.me/919567632255?text=Hi%20Nosh%20Tours%2C%20I%27d%20like%20to%20plan%20a%20trip"
-       class="nav-wa" target="_blank" rel="noopener">Book via WhatsApp</a>
-  </div>
-  <button class="nav-ham" id="navHam" aria-label="Menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+<div id="nosh-preloader"><div class="preloader-text">नमस्ते</div></div>
+<div class="nav-wrap">
+<nav class="nav" style="background:rgba(248,243,236,0.96);">
+<div class="nav-logo" style="color:var(--navy)">Nosh<span style="color:var(--orange)">.</span></div>
+<ul class="nav-links">
+<li><a href="/destinations">Canvases</a></li>
+<li><a href="/destinations">Destinations</a></li>
+<li><a href="/gift">Gift a Journey</a></li>
+<li><a class="nav-cta" href="https://wa.me/919567632255?text=UTR:%20INDEX-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">Ready to Fly?</a></li>
+</ul>
+<button aria-label="Menu" class="nav-menu-btn"><span></span><span></span><span></span></button>
 </nav>
-
-<!-- HERO — Variant 2 -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-inner">
-    <div class="hero-eyebrow">Unscripted Luxury Travel · India & Beyond</div>
-    <h1 class="hero-title">
-      You've been<br>putting yourself<br>
-      <span class="accent">last</span> long enough.
-    </h1>
-    <p class="hero-sub">
-      Build the trip you actually want — block by block, your rules, your pace.
-      One honest price that covers everything. No packages. No fine print. No drama.
-      Just your camera roll, full.
-    </p>
-    <div class="hero-ctas">
-      <a href="https://wa.me/919567632255?text=Hi%20Nosh%20Tours%2C%20I%27d%20like%20to%20build%20my%20trip"
-         class="btn-p" target="_blank" rel="noopener">💬 Build My Trip on WhatsApp</a>
-      <a href="/nosh-block-builder" class="btn-g">✦ Build Your Plan →</a>
-    </div>
-    <div class="hero-badges">
-      <span class="badge">All&#8209;Inclusive</span>
-      <span class="badge">Fixed Pricing</span>
-      <span class="badge">No Hidden Charges</span>
-      <span class="badge"><strong>50+</strong>&nbsp;Nosh Brains</span>
-      <span class="badge"><strong>7000+</strong>&nbsp;Community</span>
-    </div>
-  </div>
-</section>
-
-<!-- SOCIAL PROOF TABS (replaces stats strip) -->
-<div class="sp-strip">
-  <div class="sp-inner">
-    <a href="https://www.instagram.com/noshtours" target="_blank" rel="noopener" class="sp-tab">
-      <span class="sp-icon">📸</span> @noshtours on Instagram
-    </a>
-    <div class="sp-divider"></div>
-    <a href="https://www.linkedin.com/services/page/1945843425a5a55581" target="_blank" rel="noopener" class="sp-tab">
-      <span class="sp-icon">in</span> LinkedIn Services Page
-    </a>
-    <div class="sp-divider"></div>
-    <a href="https://www.theceo.in/amp/story/press-release/ditch-the-ordinary-nosh-tours-emerges-from-a-secret-passion-project" target="_blank" rel="noopener" class="sp-tab">
-      <span class="sp-icon">📰</span> The CEO Magazine Feature
-    </a>
-    <div class="sp-divider"></div>
-    <a href="https://www.ahmedabadmirror.com/ditch-the-ordinary-nosh-tours-emerges-from-a-secret-passion-project/81871420.html" target="_blank" rel="noopener" class="sp-tab">
-      <span class="sp-icon">📰</span> Ahmedabad Mirror Feature
-    </a>
-    <div class="sp-divider"></div>
-    <a href="https://www.instagram.com/p/DGQns3JTmpi/" target="_blank" rel="noopener" class="sp-tab">
-      <span class="sp-icon">🇹🇭</span> Thailand Tourism Appreciation — Aditya TG
-    </a>
-    <div class="sp-divider"></div>
-    <a href="https://www.instagram.com/p/DGQmhVEhjPI/" target="_blank" rel="noopener" class="sp-tab">
-      <span class="sp-icon">🇹🇭</span> Thailand Tourism Appreciation — Akshay Manoj
-    </a>
-    <div class="sp-divider"></div>
-    <a href="https://www.instagram.com/p/DVBaeehAaYs/" target="_blank" rel="noopener" class="sp-tab">
-      <span class="sp-icon">🇮🇩</span> Indonesia Tourism Recognition 2026
-    </a>
-  </div>
+<main>
+</main></div>
+<div class="hero-video-slider">
+<div class="hero-text-side">
+<div id="text-container">
+<!-- Slide 1: Couple / Post-Marriage Canvas -->
+<div class="slider-text-group active">
+<h1 class="hero-title" style="color:#fff; font-family:'Cormorant Garamond',serif; line-height:1.1;">Absolute discretion.<br/>Unscripted luxury.</h1>
+<p class="hero-sub" style="color:rgba(255,255,255,0.8); margin-top:16px;">Begin your forever with a canvas designed exclusively for the world's most discerning travellers.</p>
 </div>
-
-<div class="nosh-sep"><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span><span style="background:#6BCB77"></span><span style="background:#4D96FF"></span><span style="background:#FF6FC8"></span><span style="background:#FFA552"></span><span style="background:#A8DADC"></span><span style="background:#E9C46A"></span><span style="background:#48CAE4"></span><span style="background:#90BE6D"></span><span style="background:#F4A261"></span><span style="background:#E76F51"></span><span style="background:#52B788"></span><span style="background:#C77DFF"></span><span style="background:#FFB4A2"></span><span style="background:#56CFE1"></span><span style="background:#CAFFBF"></span><span style="background:#FFD6A5"></span><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span></div>
-<!-- INDIA DESTINATIONS -->
-<section class="india-sec">
-  <div class="eyebrow">Pick Your Canvas</div>
-  <h2 class="sec-title">India.<br>All of it.</h2>
-  <p class="sec-sub">Seven iconic Indian canvases. Each one an unscripted story waiting to be written by you.</p>
-  <div class="canvas-grid">
-
-    <div class="canvas-card">
-      <div class="canvas-photo" style="background-image:url('/images/india-kerala-card.jpg')"></div>
-      <div class="canvas-info">
-        <div class="canvas-tag">God's Own Country</div>
-        <div class="canvas-name">Kerala</div>
-        <div class="canvas-sub">Backwaters · Tea Estates · Ayurveda</div>
-        <a href="/india" class="canvas-cta">Explore Kerala</a>
-      </div>
-    </div>
-
-    <div class="canvas-card">
-      <div class="canvas-photo" style="background-image:url('/images/india-kashmir-card.jpg')"></div>
-      <div class="canvas-info">
-        <div class="canvas-tag">Paradise on Earth</div>
-        <div class="canvas-name">Kashmir</div>
-        <div class="canvas-sub">Dal Lake · Gulmarg · Pahalgam</div>
-        <a href="/india" class="canvas-cta">Explore Kashmir</a>
-      </div>
-    </div>
-
-    <div class="canvas-card">
-      <div class="canvas-photo" style="background-image:url('/images/india-himachal-card.jpg')"></div>
-      <div class="canvas-info">
-        <div class="canvas-tag">Alpine Escapes</div>
-        <div class="canvas-name">Himachal</div>
-        <div class="canvas-sub">Manali · Spiti · Dharamshala</div>
-        <a href="/india" class="canvas-cta">Explore Himachal</a>
-      </div>
-    </div>
-
-    <div class="canvas-card">
-      <div class="canvas-photo" style="background-image:url('/images/india-rajasthan-card.jpg')"></div>
-      <div class="canvas-info">
-        <div class="canvas-tag">Land of Royals</div>
-        <div class="canvas-name">Rajasthan</div>
-        <div class="canvas-sub">Palaces · Desert · Heritage Forts</div>
-        <a href="/india" class="canvas-cta">Explore Rajasthan</a>
-      </div>
-    </div>
-
-    <div class="canvas-card">
-      <div class="canvas-photo" style="background-image:url('/images/india-northeast-card.jpg')"></div>
-      <div class="canvas-info">
-        <div class="canvas-tag">India's Hidden Chapter</div>
-        <div class="canvas-name">Northeast</div>
-        <div class="canvas-sub">Meghalaya · Living Bridges · Kaziranga</div>
-        <a href="/india" class="canvas-cta">Explore Northeast</a>
-      </div>
-    </div>
-
-    <div class="canvas-card">
-      <div class="canvas-photo" style="background-image:url('/images/india-bhutan-card.jpg')"></div>
-      <div class="canvas-info">
-        <div class="canvas-tag">Land of the Thunder Dragon</div>
-        <div class="canvas-name">Bhutan</div>
-        <div class="canvas-sub">Dzongs · Tiger's Nest · Valleys</div>
-        <a href="/india" class="canvas-cta">Explore Bhutan</a>
-      </div>
-    </div>
-
-    <div class="canvas-card">
-      <div class="canvas-photo" style="background-image:url('/images/india-adventure-card.jpg')"></div>
-      <div class="canvas-info">
-        <div class="canvas-tag">Raw & Untamed</div>
-        <div class="canvas-name">Adventures</div>
-        <div class="canvas-sub">Mountain Roads · Passes · Off-Grid</div>
-        <a href="/india" class="canvas-cta">Explore Adventures</a>
-      </div>
-    </div>
-
-  </div>
-  <div style="text-align:center">
-    <a href="/destinations" class="btn-p" style="display:inline-flex">View All Destinations →</a>
-  </div>
-</section>
-
-<div class="nosh-sep"><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span><span style="background:#6BCB77"></span><span style="background:#4D96FF"></span><span style="background:#FF6FC8"></span><span style="background:#FFA552"></span><span style="background:#A8DADC"></span><span style="background:#E9C46A"></span><span style="background:#48CAE4"></span><span style="background:#90BE6D"></span><span style="background:#F4A261"></span><span style="background:#E76F51"></span><span style="background:#52B788"></span><span style="background:#C77DFF"></span><span style="background:#FFB4A2"></span><span style="background:#56CFE1"></span><span style="background:#CAFFBF"></span><span style="background:#FFD6A5"></span><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span></div>
-<!-- INTERNATIONAL SECTION -->
-<section class="intl-sec">
-  <div class="eyebrow" style="color:#E8951A">Chase Passport Stamps</div>
-  <h2 class="sec-title" style="color:#FDF6EC">Beyond India.<br><span style="color:#E8951A">Unscripted, always.</span></h2>
-  <p class="sec-sub" style="color:rgba(253,246,236,.6)">12 international destinations. Same building-block promise. Fixed pricing. No surprises.</p>
-  <div class="intl-grid">
-    <div class="intl-card d-bali"><div class="intl-photo"></div><div class="intl-info"><div class="intl-region">Southeast Asia</div><div class="intl-name">Bali</div><div class="intl-tag">Rice Terraces · Temples · Surf</div><div class="intl-price">From <span>₹85,000</span>/person</div></div></div>
-    <div class="intl-card d-maldives"><div class="intl-photo"></div><div class="intl-info"><div class="intl-region">Indian Ocean</div><div class="intl-name">Maldives</div><div class="intl-tag">Overwater Villas · Reefs · Sunrise</div><div class="intl-price">From <span>₹1,45,000</span>/person</div></div></div>
-    <div class="intl-card d-thailand"><div class="intl-photo"></div><div class="intl-info"><div class="intl-region">Southeast Asia</div><div class="intl-name">Thailand</div><div class="intl-tag">Islands · Bangkok · Street Food</div><div class="intl-price">From <span>₹78,000</span>/person</div></div></div>
-    <div class="intl-card d-vietnam"><div class="intl-photo"></div><div class="intl-info"><div class="intl-region">Southeast Asia</div><div class="intl-name">Vietnam</div><div class="intl-tag">Ha Long Bay · Hoi An · Hanoi</div><div class="intl-price">From <span>₹72,000</span>/person</div></div></div>
-    <div class="intl-card d-srilanka"><div class="intl-photo"></div><div class="intl-info"><div class="intl-region">Indian Ocean</div><div class="intl-name">Sri Lanka</div><div class="intl-tag">Sigiriya · Ella Train · Beaches</div><div class="intl-price">From <span>₹68,000</span>/person</div></div></div>
-    <div class="intl-card d-uzbekistan"><div class="intl-photo"></div><div class="intl-info"><div class="intl-region">Central Asia</div><div class="intl-name">Uzbekistan</div><div class="intl-tag">Silk Road · Registan · Bukhara</div><div class="intl-price">From <span>₹1,15,000</span>/person</div></div></div>
-  </div>
-  <div style="text-align:center">
-    <a href="/international" class="btn-p" style="display:inline-flex">Explore All 12 International Packages →</a>
-  </div>
-</section>
-
-<div class="nosh-sep"><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span><span style="background:#6BCB77"></span><span style="background:#4D96FF"></span><span style="background:#FF6FC8"></span><span style="background:#FFA552"></span><span style="background:#A8DADC"></span><span style="background:#E9C46A"></span><span style="background:#48CAE4"></span><span style="background:#90BE6D"></span><span style="background:#F4A261"></span><span style="background:#E76F51"></span><span style="background:#52B788"></span><span style="background:#C77DFF"></span><span style="background:#FFB4A2"></span><span style="background:#56CFE1"></span><span style="background:#CAFFBF"></span><span style="background:#FFD6A5"></span><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span></div>
-<!-- COMPARISON TABLE -->
-<section class="compare-sec">
-  <div class="eyebrow">Why Choose Nosh</div>
-  <h2 class="sec-title">What they book.<br>What Nosh builds.</h2>
-  <table class="compare-table">
-    <thead>
-      <tr>
-        <th>What you usually get</th>
-        <th>What Nosh Tours delivers</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>A package someone else designed two years ago</td><td>A journey built from your choices, right now</td></tr>
-      <tr><td>Hidden service charges revealed at checkout</td><td>One fixed price. What you see is what you pay</td></tr>
-      <tr><td>A generic hotel block-booked with 40 others</td><td>Hand-picked stays matched to your vibe and group</td></tr>
-      <tr><td>"Optional" tours that are actually mandatory</td><td>Exactly what you chose. Nothing more, nothing less</td></tr>
-      <tr><td>A customer service number that rings to a call centre</td><td>Aditya & Akshay's personal WhatsApp. Always</td></tr>
-      <tr><td>Itinerary locked weeks before you land</td><td>Flexible building blocks you can swap anytime</td></tr>
-    </tbody>
-  </table>
-</section>
-
-<div class="nosh-sep"><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span><span style="background:#6BCB77"></span><span style="background:#4D96FF"></span><span style="background:#FF6FC8"></span><span style="background:#FFA552"></span><span style="background:#A8DADC"></span><span style="background:#E9C46A"></span><span style="background:#48CAE4"></span><span style="background:#90BE6D"></span><span style="background:#F4A261"></span><span style="background:#E76F51"></span><span style="background:#52B788"></span><span style="background:#C77DFF"></span><span style="background:#FFB4A2"></span><span style="background:#56CFE1"></span><span style="background:#CAFFBF"></span><span style="background:#FFD6A5"></span><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span></div>
-<!-- SOCIAL PROOF LINKS SECTION -->
-<section class="proof-sec">
-  <div class="eyebrow" style="color:#E8951A">Trusted, Featured & Recognised</div>
-  <h2 class="sec-title" style="color:#FDF6EC">The proof is<br><span style="color:#E8951A">everywhere.</span></h2>
-  <div class="proof-grid">
-    <a href="https://www.instagram.com/noshtours" target="_blank" rel="noopener" class="proof-card">
-      <div class="proof-card-icon">📸</div>
-      <div class="proof-card-label">Instagram</div>
-      <div class="proof-card-desc">Real trips. Real travellers. Behind-the-scenes with Nosh Tours.</div>
-      <div class="proof-card-cta">@noshtours →</div>
-    </a>
-    <a href="https://www.linkedin.com/services/page/1945843425a5a55581" target="_blank" rel="noopener" class="proof-card">
-      <div class="proof-card-icon">in</div>
-      <div class="proof-card-label">LinkedIn</div>
-      <div class="proof-card-desc">Professional profile, services overview and founder stories.</div>
-      <div class="proof-card-cta">View Services Page →</div>
-    </a>
-    <a href="https://www.theceo.in/amp/story/press-release/ditch-the-ordinary-nosh-tours-emerges-from-a-secret-passion-project" target="_blank" rel="noopener" class="proof-card">
-      <div class="proof-card-icon">📰</div>
-      <div class="proof-card-label">The CEO Magazine</div>
-      <div class="proof-card-desc">"Ditch the Ordinary: Nosh Tours Emerges from a Secret Passion Project"</div>
-      <div class="proof-card-cta">Read the Feature →</div>
-    </a>
-    <a href="https://www.ahmedabadmirror.com/ditch-the-ordinary-nosh-tours-emerges-from-a-secret-passion-project/81871420.html" target="_blank" rel="noopener" class="proof-card">
-      <div class="proof-card-icon">📰</div>
-      <div class="proof-card-label">Ahmedabad Mirror</div>
-      <div class="proof-card-desc">Media feature on how Nosh Tours disrupted the luxury travel space.</div>
-      <div class="proof-card-cta">Read the Article →</div>
-    </a>
-    <a href="https://www.instagram.com/p/DGQns3JTmpi/" target="_blank" rel="noopener" class="proof-card">
-      <div class="proof-card-icon">🇹🇭</div>
-      <div class="proof-card-label">Thailand Tourism 2025</div>
-      <div class="proof-card-desc">Official appreciation to Aditya TG from the Thailand Tourism Police Dept.</div>
-      <div class="proof-card-cta">View on Instagram →</div>
-    </a>
-    <a href="https://www.instagram.com/p/DGQmhVEhjPI/" target="_blank" rel="noopener" class="proof-card">
-      <div class="proof-card-icon">🇹🇭</div>
-      <div class="proof-card-label">Thailand Tourism 2025</div>
-      <div class="proof-card-desc">Official appreciation to Akshay Manoj from the Thailand Tourism Police Dept.</div>
-      <div class="proof-card-cta">View on Instagram →</div>
-    </a>
-    <a href="https://www.instagram.com/p/DVBaeehAaYs/" target="_blank" rel="noopener" class="proof-card">
-      <div class="proof-card-icon">🇮🇩</div>
-      <div class="proof-card-label">Indonesia Tourism 2026</div>
-      <div class="proof-card-desc">Recognition from Indonesia's Travel & Tourism Dept. to both founding partners.</div>
-      <div class="proof-card-cta">View on Instagram →</div>
-    </a>
-    <a href="https://www.instagram.com/p/DVBaeehAaYs/" target="_blank" rel="noopener" class="proof-card">
-      <div class="proof-card-icon">🌏</div>
-      <div class="proof-card-label">Our Journeys</div>
-      <div class="proof-card-desc">Follow our curated travel stories from across Asia and Europe.</div>
-      <div class="proof-card-cta">See Our Journeys →</div>
-    </a>
-  </div>
-</section>
-
-<div class="nosh-sep"><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span><span style="background:#6BCB77"></span><span style="background:#4D96FF"></span><span style="background:#FF6FC8"></span><span style="background:#FFA552"></span><span style="background:#A8DADC"></span><span style="background:#E9C46A"></span><span style="background:#48CAE4"></span><span style="background:#90BE6D"></span><span style="background:#F4A261"></span><span style="background:#E76F51"></span><span style="background:#52B788"></span><span style="background:#C77DFF"></span><span style="background:#FFB4A2"></span><span style="background:#56CFE1"></span><span style="background:#CAFFBF"></span><span style="background:#FFD6A5"></span><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span></div>
-<!-- HOW IT WORKS -->
-<section class="hiw-sec">
-  <div class="eyebrow">The Nosh Method</div>
-  <h2 class="sec-title">How we build<br>your journey.</h2>
-  <p class="sec-sub">Not a package. Not a template. A journey assembled block by block, around you.</p>
-  <div class="hiw-grid">
-    <div class="hiw-card">
-      <div class="hiw-num">01</div>
-      <div class="hiw-icon">🧩</div>
-      <div class="hiw-title">Choose Your Building Blocks</div>
-      <p class="hiw-desc">Pick your destination, duration, accommodation tier, activities, meal plan. Every block is yours to choose or swap. No pre-built packages.</p>
-    </div>
-    <div class="hiw-card">
-      <div class="hiw-num">02</div>
-      <div class="hiw-icon">⚙️</div>
-      <div class="hiw-title">50+ Nosh Brains Execute</div>
-      <p class="hiw-desc">Our in-house specialists handle every logistical detail — flights, transfers, hotels, permits, reservations. You just show up at the airport.</p>
-    </div>
-    <div class="hiw-card">
-      <div class="hiw-num">03</div>
-      <div class="hiw-icon">✈️</div>
-      <div class="hiw-title">One Fixed Price. No Surprises.</div>
-      <p class="hiw-desc">Everything quoted upfront. No hidden service charges. No optional extras that are actually mandatory. The price you see is the price you pay.</p>
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:48px">
-    <a href="/nosh-block-builder" class="btn-p" style="display:inline-flex">Build Your Experience →</a>
-  </div>
-</section>
-
-<!-- SELF-GIFTING SECTION -->
-<section class="gift-sec">
-  <div class="gift-inner">
-    <div class="gift-img-wrap">
-      <img src="/images/gifting-accessories.jpg" alt="Travel gifting with Nosh Tours" loading="lazy">
-    </div>
-    <div>
-      <div class="gift-accent">Self-Gifting · Surprise · Every Occasion</div>
-      <h2 class="gift-title">The best gift has<br>never been something<br>you can wrap.</h2>
-      <p class="gift-sub">Surprise your partner. Celebrate your parents. Mark the promotion you've been ignoring. Or just — finally — do the trip for yourself.</p>
-      <div class="gift-pillars">
-        <div class="gift-pillar">
-          <div class="gift-pillar-icon">🎁</div>
-          <div>
-            <div class="gift-pillar-title">Self-Gifting</div>
-            <div class="gift-pillar-desc">You've been putting it off for years. The trip you promised yourself. Someday is now.</div>
-          </div>
-        </div>
-        <div class="gift-pillar">
-          <div class="gift-pillar-icon">💍</div>
-          <div>
-            <div class="gift-pillar-title">Surprise Your Partner</div>
-            <div class="gift-pillar-desc">We plan it in secret. They think it's a regular trip. It never is.</div>
-          </div>
-        </div>
-        <div class="gift-pillar">
-          <div class="gift-pillar-icon">👨‍👩‍👧</div>
-          <div>
-            <div class="gift-pillar-title">Gift Your Inner Circle</div>
-            <div class="gift-pillar-desc">Parents. Best friends. The ones who deserve the trip of their lives.</div>
-          </div>
-        </div>
-      </div>
-      <div class="gift-founder-quote">
-        <p>"Every trip we've designed as a gift has ended with someone in tears — the good kind."</p>
-        <cite>— Aditya TG, Co-Founder, Nosh Tours</cite>
-      </div>
-      <div style="margin-top:28px">
-        <a href="https://wa.me/919567632255?text=Hi%20Nosh%20Tours%2C%20I%27d%20like%20to%20plan%20a%20surprise%20trip"
-           class="btn-p" target="_blank" rel="noopener">💬 Plan a Surprise Trip →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="nosh-sep"><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span><span style="background:#6BCB77"></span><span style="background:#4D96FF"></span><span style="background:#FF6FC8"></span><span style="background:#FFA552"></span><span style="background:#A8DADC"></span><span style="background:#E9C46A"></span><span style="background:#48CAE4"></span><span style="background:#90BE6D"></span><span style="background:#F4A261"></span><span style="background:#E76F51"></span><span style="background:#52B788"></span><span style="background:#C77DFF"></span><span style="background:#FFB4A2"></span><span style="background:#56CFE1"></span><span style="background:#CAFFBF"></span><span style="background:#FFD6A5"></span><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span></div>
-<!-- CUSTOMER REELS -->
-<section class="reels-sec">
-  <div class="reels-hd">
-    <div class="eyebrow" style="color:#E8951A">Real Travellers. Real Stories.</div>
-    <h2 class="sec-title" style="color:#FDF6EC">See what<br><span style="color:#E8951A">unscripted</span> looks like.</h2>
-  </div>
-  <div class="reels-scroll">
-    <div class="reel-slot"><div class="reel-embed" id="reel1"><div class="reel-ph-icon">▶</div><div class="reel-ph-text">Bhutan Couple Touring Vibe</div></div><div class="reel-label">Bhutan · Couple</div></div>
-    <div class="reel-slot"><div class="reel-embed" id="reel2"><div class="reel-ph-icon">▶</div><div class="reel-ph-text">Bali Family Surprise</div></div><div class="reel-label">Bali · Family</div></div>
-    <div class="reel-slot"><div class="reel-embed" id="reel3"><div class="reel-ph-icon">▶</div><div class="reel-ph-text">Phuket & Krabi Romantic Getaway</div></div><div class="reel-label">Thailand · Romantic</div></div>
-    <div class="reel-slot"><div class="reel-embed" id="reel4"><div class="reel-ph-icon">▶</div><div class="reel-ph-text">Maldives Couple — Self Gift</div></div><div class="reel-label">Maldives · Self-Gift</div></div>
-    <div class="reel-slot" style="display:flex;align-items:center;justify-content:center;background:rgba(232,149,26,.06);border:1px dashed rgba(232,149,26,.25)">
-      <div style="text-align:center;padding:20px">
-        <div style="font-size:1.8rem;margin-bottom:10px">📸</div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#E8951A;margin-bottom:8px">Follow for More</div>
-        <a href="https://instagram.com/noshtours" target="_blank" rel="noopener"
-           style="font-family:'Barlow Condensed',sans-serif;font-size:.72rem;color:rgba(253,246,236,.5);text-transform:uppercase;letter-spacing:.08em">@noshtours →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="nosh-sep"><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span><span style="background:#6BCB77"></span><span style="background:#4D96FF"></span><span style="background:#FF6FC8"></span><span style="background:#FFA552"></span><span style="background:#A8DADC"></span><span style="background:#E9C46A"></span><span style="background:#48CAE4"></span><span style="background:#90BE6D"></span><span style="background:#F4A261"></span><span style="background:#E76F51"></span><span style="background:#52B788"></span><span style="background:#C77DFF"></span><span style="background:#FFB4A2"></span><span style="background:#56CFE1"></span><span style="background:#CAFFBF"></span><span style="background:#FFD6A5"></span><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span></div>
-<!-- NOSH BRAINS -->
-<section class="brains-sec">
-  <div class="brains-inner">
-    <div>
-      <div class="eyebrow" style="color:#E8951A">The Team Behind Every Tour</div>
-      <div class="brains-count">50+</div>
-      <h2 class="sec-title" style="color:#FDF6EC;font-size:clamp(1.8rem,3.5vw,2.6rem)">Nosh Brains.<br>In-house. Always.</h2>
-      <p class="sec-sub" style="color:rgba(253,246,236,.6)">Not outsourced. Not automated. Every tour is handled by in-house specialists who eat, breathe and live travel.</p>
-      <div class="brains-pills">
-        <span class="brain-pill">Itinerary Design</span>
-        <span class="brain-pill">Hotel Partnerships</span>
-        <span class="brain-pill">Flight Bookings</span>
-        <span class="brain-pill">On-Ground Support</span>
-        <span class="brain-pill">Visa Assistance</span>
-        <span class="brain-pill">Guest Relations</span>
-      </div>
-    </div>
-    <div class="brains-right">
-      <div class="brain-stat"><div class="brain-stat-n">₹5Cr+</div><div class="brain-stat-l">Revenue in 3 Years</div></div>
-      <div class="brain-stat"><div class="brain-stat-n">₹50K</div><div class="brain-stat-l">Started With</div></div>
-      <div class="brain-stat"><div class="brain-stat-n">7000+</div><div class="brain-stat-l">Community</div></div>
-      <div class="brain-stat"><div class="brain-stat-n">0</div><div class="brain-stat-l">Hidden Charges</div></div>
-    </div>
-  </div>
-</section>
-
-<div class="nosh-sep"><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span><span style="background:#6BCB77"></span><span style="background:#4D96FF"></span><span style="background:#FF6FC8"></span><span style="background:#FFA552"></span><span style="background:#A8DADC"></span><span style="background:#E9C46A"></span><span style="background:#48CAE4"></span><span style="background:#90BE6D"></span><span style="background:#F4A261"></span><span style="background:#E76F51"></span><span style="background:#52B788"></span><span style="background:#C77DFF"></span><span style="background:#FFB4A2"></span><span style="background:#56CFE1"></span><span style="background:#CAFFBF"></span><span style="background:#FFD6A5"></span><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span></div>
-<!-- TESTIMONIALS -->
-<section class="testi-sec">
-  <div class="eyebrow">What Travellers Say</div>
-  <h2 class="sec-title">Stories from<br>the road.</h2>
-  <div class="testi-grid">
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">"We'd tried 3 other operators before Nosh. None came close to this level of detail. Every single thing — airport pickup to the last dinner — was exactly as promised. No surprises, no drama."</p>
-      <div class="testi-name">Riya & Karan Mehta</div>
-      <div class="testi-dest">Kashmir Mystery Holiday</div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">"The building-blocks concept is genius. I could choose what I wanted and leave out what I didn't. No arguing with a salesperson. No being forced into a 'standard package'. Just my trip, my way."</p>
-      <div class="testi-name">Priya Nair</div>
-      <div class="testi-dest">Kerala & Backwaters</div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">"Fixed price, no hidden charges — I was sceptical. But they meant it exactly. The final bill was what was quoted. In 15 years of travelling, this has never happened with any operator before."</p>
-      <div class="testi-name">Amit Sharma</div>
-      <div class="testi-dest">Uzbekistan Silk Road</div>
-    </div>
-  </div>
-</section>
-
-<div class="nosh-sep"><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span><span style="background:#6BCB77"></span><span style="background:#4D96FF"></span><span style="background:#FF6FC8"></span><span style="background:#FFA552"></span><span style="background:#A8DADC"></span><span style="background:#E9C46A"></span><span style="background:#48CAE4"></span><span style="background:#90BE6D"></span><span style="background:#F4A261"></span><span style="background:#E76F51"></span><span style="background:#52B788"></span><span style="background:#C77DFF"></span><span style="background:#FFB4A2"></span><span style="background:#56CFE1"></span><span style="background:#CAFFBF"></span><span style="background:#FFD6A5"></span><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span></div>
-<!-- IS NOSH RIGHT FOR YOU -->
-<section class="qualifier-sec">
-  <div class="qualifier-inner">
-    <div class="eyebrow">Be Honest With Yourself</div>
-    <h2 class="sec-title">Is Nosh Tours<br>right for you?</h2>
-    <p class="sec-sub">We're not for everyone. And we're fine with that.</p>
-    <div class="qualifier-list">
-      <div class="q-item"><div class="q-check">✓</div><div class="q-text">You want a trip designed around <strong>you</strong> — not a pre-built package a hundred others have taken</div></div>
-      <div class="q-item"><div class="q-check">✓</div><div class="q-text">You want <strong>one honest price</strong> with zero surprises at checkout or on the ground</div></div>
-      <div class="q-item"><div class="q-check">✓</div><div class="q-text">You'd rather someone else handle every logistical detail so you can <strong>just show up</strong></div></div>
-      <div class="q-item"><div class="q-check">✓</div><div class="q-text">You're planning something <strong>meaningful</strong> — for yourself, your partner, your parents, or a milestone moment</div></div>
-      <div class="q-item"><div class="q-check">✓</div><div class="q-text">You've had one too many "almost-but-not-quite" trips and you're done settling</div></div>
-    </div>
-    <div class="q-note">We're probably not the right fit if you're looking for the cheapest option on the market. <strong>We're the best option.</strong> There's a difference.</div>
-    <div style="margin-top:32px;text-align:center">
-      <a href="https://wa.me/919567632255?text=Hi%20Nosh%20Tours%2C%20I%27d%20like%20to%20plan%20a%20trip"
-         class="btn-p" target="_blank" rel="noopener" style="display:inline-flex">I'm Ready → Let's Build My Trip</a>
-    </div>
-  </div>
-</section>
-
-<div class="nosh-sep"><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span><span style="background:#6BCB77"></span><span style="background:#4D96FF"></span><span style="background:#FF6FC8"></span><span style="background:#FFA552"></span><span style="background:#A8DADC"></span><span style="background:#E9C46A"></span><span style="background:#48CAE4"></span><span style="background:#90BE6D"></span><span style="background:#F4A261"></span><span style="background:#E76F51"></span><span style="background:#52B788"></span><span style="background:#C77DFF"></span><span style="background:#FFB4A2"></span><span style="background:#56CFE1"></span><span style="background:#CAFFBF"></span><span style="background:#FFD6A5"></span><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span></div>
-<!-- FAQ -->
-<section class="faq-sec">
-  <div style="text-align:center">
-    <div class="eyebrow" style="justify-content:center">Have Questions?</div>
-    <h2 class="sec-title">Frequently Asked</h2>
-  </div>
-  <div class="faq-list">
-    <div class="faq-item"><button class="faq-q"><span class="faq-q-text">What does "all-inclusive" actually mean at Nosh Tours?</span><span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">All-inclusive means flights, accommodation, transfers, activities, and meals (as specified) are covered in the quoted price. No surprise add-ons at check-in. No "optional" tours that are actually required. What you see at booking is the final price.</div></div></div>
-    <div class="faq-item"><button class="faq-q"><span class="faq-q-text">How do building blocks work?</span><span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Building blocks are the modular components of your trip — destination, duration, hotel tier, activities, meal plan, transport type. You pick what you want, skip what you don't. We assemble them into a seamless itinerary at one fixed price.</div></div></div>
-    <div class="faq-item"><button class="faq-q"><span class="faq-q-text">Are Nosh Tours trips group tours or private?</span><span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Both. We run curated group journeys with our 7,000+ Travel Entrepreneur community, and fully private custom journeys for families, couples, and corporates. The building-blocks model applies to both.</div></div></div>
-    <div class="faq-item"><button class="faq-q"><span class="faq-q-text">Can you plan a surprise trip for someone else?</span><span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Absolutely — this is one of our most requested services. We coordinate entirely with you in secret. The recipient sees nothing until you decide to reveal it. We've done anniversary surprises, parent getaways, and friend group reveals.</div></div></div>
-    <div class="faq-item"><button class="faq-q"><span class="faq-q-text">How do I start planning?</span><span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">The fastest way is WhatsApp — message us on +91 95676 32255. Our team typically responds within 2 hours. Alternatively, visit our Experience Builder to shortlist your building blocks first.</div></div></div>
-  </div>
-</section>
-
-<!-- VARIANT 3 — GIFTING CTA (above final CTA) -->
-<section class="gift2-sec">
-  <h2>What do you give<br>someone who has<br>everything?</h2>
-  <p>Surprise your partner. Celebrate your parents. Mark the promotion. Gift the one thing they'll talk about at every dinner for the next ten years.</p>
-  <div class="gift2-options">
-    <span class="gift2-opt">💍 Anniversary Surprise</span>
-    <span class="gift2-opt">👨‍👩‍👧 Gift for Parents</span>
-    <span class="gift2-opt">🎂 Birthday Getaway</span>
-    <span class="gift2-opt">🏆 Promotion Celebration</span>
-    <span class="gift2-opt">💼 Retirement Journey</span>
-    <span class="gift2-opt">🎁 Self-Gift</span>
-  </div>
-  <a href="https://wa.me/919567632255?text=Hi%20Nosh%20Tours%2C%20I%27d%20like%20to%20plan%20a%20gifting%20trip"
-     class="btn-d" target="_blank" rel="noopener">💬 Plan the Surprise →</a>
-</section>
-
-<div class="nosh-sep"><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span><span style="background:#6BCB77"></span><span style="background:#4D96FF"></span><span style="background:#FF6FC8"></span><span style="background:#FFA552"></span><span style="background:#A8DADC"></span><span style="background:#E9C46A"></span><span style="background:#48CAE4"></span><span style="background:#90BE6D"></span><span style="background:#F4A261"></span><span style="background:#E76F51"></span><span style="background:#52B788"></span><span style="background:#C77DFF"></span><span style="background:#FFB4A2"></span><span style="background:#56CFE1"></span><span style="background:#CAFFBF"></span><span style="background:#FFD6A5"></span><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span></div>
-<!-- FINAL CTA -->
-<section class="cta-sec">
-  <h2 style="color:#FDF6EC">No more someday.<br><span style="color:#E8951A">Just go.</span></h2>
-  <p>Tell us where. We'll handle everything else — from the first block to the last memory.</p>
-  <a href="https://wa.me/919567632255?text=Hi%20Nosh%20Tours%2C%20I%27d%20like%20to%20plan%20a%20trip"
-     class="btn-p" target="_blank" rel="noopener" style="display:inline-flex">💬 Message Us on WhatsApp</a>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div>
-      <img src="/logo.png" alt="Nosh Tours" style="width:40px;margin-bottom:14px" onerror="this.style.display='none'">
-      <div class="footer-tagline">Nosh Tours LLP</div>
-      <p class="footer-sub">India's most unscripted luxury travel brand. Built from ₹50K to ₹5Cr in three years by <a href="https://instagram.com/adtyatg" target="_blank" rel="noopener" style="color:#E8951A">Aditya TG</a> &amp; <a href="https://instagram.com/akshay__manoj" target="_blank" rel="noopener" style="color:#E8951A">Akshay Manoj</a>.</p>
-      <p class="footer-sub" style="margin-top:10px">📞 +91 95676 32255<br>✉ hello@noshtours.com</p>
-    </div>
-    <div class="footer-col">
-      <h4>Explore</h4>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/destinations">Destinations</a></li>
-        <li><a href="/international">International</a></li>
-        <li><a href="/india">India Trips</a></li>
-        <li><a href="/nosh-block-builder">Experience Builder</a></li>
-        <li><a href="/wellness">Wellness Retreats</a></li>
-        <li><a href="/blog">Travel Journal</a></li>
-        <li><a href="/about">About Us</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Featured In</h4>
-      <ul>
-        <li><a href="https://www.theceo.in/amp/story/press-release/ditch-the-ordinary-nosh-tours-emerges-from-a-secret-passion-project" target="_blank" rel="noopener">The CEO Magazine India ↗</a></li>
-        <li><a href="https://www.ahmedabadmirror.com/ditch-the-ordinary-nosh-tours-emerges-from-a-secret-passion-project/81871420.html" target="_blank" rel="noopener">Ahmedabad Mirror ↗</a></li>
-        <li><a href="https://www.instagram.com/p/DGQns3JTmpi/" target="_blank" rel="noopener">Thailand Tourism 2025 ↗</a></li>
-        <li><a href="https://www.instagram.com/p/DVBaeehAaYs/" target="_blank" rel="noopener">Indonesia Tourism 2026 ↗</a></li>
-      </ul>
-      <h4 style="margin-top:22px">Quick Links</h4>
-      <ul>
-        <li><a href="/blog/kerala-ayurveda-retreat-uk-travellers-2026">Kerala Ayurveda Guide</a></li>
-        <li><a href="/blog/what-is-unscripted-travel-india">What is Unscripted Travel?</a></li>
-        <li><a href="/blog/gift-luxury-trip-india-2026">Gift a Luxury Trip</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Connect</h4>
-      <div class="soc-links">
-        <a href="https://www.instagram.com/noshtours" target="_blank" rel="noopener" class="soc-link">
-          <span class="soc-icon">📸</span>@noshtours on Instagram
-        </a>
-        <a href="https://wa.me/919567632255" target="_blank" rel="noopener" class="soc-link">
-          <span class="soc-icon">💬</span>WhatsApp Us
-        </a>
-        <a href="https://www.linkedin.com/services/page/1945843425a5a55581" target="_blank" rel="noopener" class="soc-link">
-          <span class="soc-icon" style="font-family:sans-serif;font-weight:700;font-size:.75rem">in</span>LinkedIn Services
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="footer-copy">© 2026 Nosh Tours LLP · Mumbai, India</div>
-    <div class="footer-legal">
-      <a href="/">Privacy</a>
-      <a href="/">Terms</a>
-      <a href="/sitemap.xml">Sitemap</a>
-    </div>
-  </div>
-</footer>
-
-<!-- STICKY WHATSAPP -->
-<a href="https://wa.me/919567632255?text=Hi%20Nosh%20Tours%2C%20I%27d%20like%20to%20plan%20a%20trip"
-   class="sticky-wa" target="_blank" rel="noopener">
-  💬 &nbsp;Book via WhatsApp · +91 95676 32255
-</a>
-
+<!-- Slide 2: Milestones / Family Canvas -->
+<div class="slider-text-group">
+<h1 class="hero-title" style="color:#fff; font-family:'Cormorant Garamond',serif; line-height:1.1;">Legacy milestones,<br/>seamlessly orchestrated.</h1>
+<p class="hero-sub" style="color:rgba(255,255,255,0.8); margin-top:16px;">Bespoke celebrations crafted seamlessly. You just show up and celebrate with your inner circle.</p>
+</div>
+<!-- Slide 3: Friends / Celebration Canvas -->
+<div class="slider-text-group">
+<h1 class="hero-title" style="color:#fff; font-family:'Cormorant Garamond',serif; line-height:1.1;">Unfiltered celebrations.<br/>Zero logistics.</h1>
+<p class="hero-sub" style="color:rgba(255,255,255,0.8); margin-top:16px;">Gather your closest friends for an unscripted escape. We curate the canvas, you make the memories.</p>
+</div>
+<!-- Slide 4: Reunions Canvas -->
+<div class="slider-text-group">
+<h1 class="hero-title" style="color:#fff; font-family:'Cormorant Garamond',serif; line-height:1.1;">Unscripted reunions.<br/>Pristine corners.</h1>
+<p class="hero-sub" style="color:rgba(255,255,255,0.8); margin-top:16px;">Let your Nosh Brain handle the logistics. You just show up and reconnect with your inner circle.</p>
+</div>
+</div>
+</div>
+<div class="hero-video-side" id="video-container">
+<!-- 4 Videos loaded with metadata limits and poster safety nets -->
+<video aria-hidden="true" autoplay="" class="slider-video active" loop="" muted="" playsinline="" poster="/images/himachal-card.webp" preload="metadata"><source src="/videos/8503162-uhd_2160_3840_24fps.mp4" type="video/mp4"/></video>
+<video aria-hidden="true" autoplay="" class="slider-video" loop="" muted="" playsinline="" poster="/images/himachal-card.webp" preload="metadata"><source src="/videos/7509450-hd_1066_1920_25fps.mp4" type="video/mp4"/></video>
+<video aria-hidden="true" autoplay="" class="slider-video" loop="" muted="" playsinline="" poster="/images/himachal-card.webp" preload="metadata"><source src="/videos/13792985_2160_3840_30fps.mp4" type="video/mp4"/></video>
+<video aria-hidden="true" autoplay="" class="slider-video" loop="" muted="" playsinline="" poster="/images/himachal-card.webp" preload="metadata"><source src="/videos/15118051_1080_1920_30fps.mp4" type="video/mp4"/></video>
+</div>
+</div>
 <script>
-// Nav hamburger
-(function(){
-  var ham=document.getElementById('navHam'),nav=document.getElementById('navLinks');
-  if(!ham||!nav)return;
-  ham.addEventListener('click',function(){
-    var o=nav.classList.toggle('open');
-    ham.classList.toggle('open',o);
-    ham.setAttribute('aria-expanded',o);
-    document.body.style.overflow=o?'hidden':'';
-  });
-  nav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click',function(){
-      nav.classList.remove('open');ham.classList.remove('open');
-      ham.setAttribute('aria-expanded','false');document.body.style.overflow='';
-    });
-  });
-  document.addEventListener('click',function(e){
-    if(!ham.contains(e.target)&&!nav.contains(e.target)){
-      nav.classList.remove('open');ham.classList.remove('open');
-      ham.setAttribute('aria-expanded','false');document.body.style.overflow='';
-    }
-  });
-})();
-
-// FAQ
-document.querySelectorAll('.faq-q').forEach(function(b){
-  b.addEventListener('click',function(){
-    var it=b.closest('.faq-item'),open=it.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
-    if(!open)it.classList.add('open');
-  });
-});
-
-// Instagram Reel embeds
-var reels=[
-  'https://www.instagram.com/reel/DKkTktDo9mI/',
-  'https://www.instagram.com/reel/DHJstRCoS5w/',
-  'https://www.instagram.com/reel/DKkUn-vIAio/',
-  'https://www.instagram.com/reel/DHJrUArooxC/'
-];
-reels.forEach(function(url,i){
-  var slot=document.getElementById('reel'+(i+1));
-  if(!slot)return;
-  var id=url.match(/reel\/([A-Za-z0-9_-]+)/);
-  if(!id)return;
-  var embed='https://www.instagram.com/p/'+id[1]+'/embed/captioned/';
-  slot.innerHTML='<iframe class="reel-iframe" src="'+embed+'" frameborder="0" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe>';
+document.addEventListener("DOMContentLoaded", () => {
+    const texts = document.querySelectorAll(".slider-text-group");
+    const videos = document.querySelectorAll(".slider-video");
+    if (texts.length === 0 || videos.length === 0) return;
+    
+    let currentIndex = 0;
+    setInterval(() => {
+        texts[currentIndex].classList.remove("active");
+        videos[currentIndex].classList.remove("active");
+        
+        currentIndex = (currentIndex + 1) % texts.length;
+        
+        texts[currentIndex].classList.add("active");
+        videos[currentIndex].classList.add("active");
+    }, 6000); // 6 second rotation
 });
 </script>
-</body>
+<div class="press-strip" id="press-strip">
+<div class="press-label-row">
+<span class="press-label">
+<span></span>As recognised by<span></span>
+</span>
+</div>
+<div class="press-marquee-wrap">
+<div class="press-marquee">
+<div class="press-item"><span class="press-name ahmedabad-mirror">Ahmedabad Mirror</span></div>
+<div class="press-item"><span class="press-name ceo-magazine">The CEO Magazine India</span></div>
+<div class="press-item"><span class="press-name travel-leisure">Travel + Leisure</span></div>
+<div class="press-item"><span class="press-name conde-nast">Condé Nast Traveller</span></div>
+<div class="press-item"><span class="press-name thailand-trade">Thailand Travel Trade<em>2025</em></span></div>
+<div class="press-item"><span class="press-name indonesia-circuit">Indonesia Hospitality Circuit<em>2026</em></span></div>
+<div class="press-item"><span class="press-name ahmedabad-mirror">Ahmedabad Mirror</span></div>
+<div class="press-item"><span class="press-name ceo-magazine">The CEO Magazine India</span></div>
+<div class="press-item"><span class="press-name travel-leisure">Travel + Leisure</span></div>
+<div class="press-item"><span class="press-name conde-nast">Condé Nast Traveller</span></div>
+<div class="press-item"><span class="press-name thailand-trade">Thailand Travel Trade<em>2025</em></span></div>
+<div class="press-item"><span class="press-name indonesia-circuit">Indonesia Hospitality Circuit<em>2026</em></span></div>
+</div>
+</div>
+</div>
+<section class="section diff" id="about">
+<div class="wrap">
+<div class="diff-grid">
+<div class="diff-left reveal">
+<h2 class="section-title">
+          India's first canvas-oriented travel <em>architects.</em>
+</h2>
+<p class="diff-body">
+          Nosh was founded in Pune and Thrissur with a single conviction:
+          every journey must be designed as a canvas — built from blocks
+          chosen by the guest, priced with full transparency, and executed
+          without a single hidden charge.  
+          Recognised by Thailand's travel trade in 2025 and by Indonesia's
+          hospitality circuit in 2026, Nosh has quietly become the name
+          that discerning travellers across India trust when they want
+          Asia and Europe done properly.
+        </p>
+<a class="diff-link" href="/destinations">
+          Explore all 20 canvases
+          <svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 16 16" width="16">
+<path d="M3 8h10M9 4l4 4-4 4"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="section destinations" id="destinations" style="padding-top:0;">
+<div class="wrap">
+<div class="dest-header reveal">
+<div>
+<p class="eyebrow">Our Canvases</p>
+<h2 class="section-title">Where do you want to disappear?</h2>
+</div>
+<a class="diff-link" href="/destinations">View all destinations →</a>
+<div style="display:flex;align-items:center;gap:8px;color:#d1752b;font-family:'Inter',sans-serif;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin:20px 0 10px 5%;"><span style="animation: fluidOrange 2s infinite;">Swipe to explore →</span></div>
+<div class="canvas-scroll-container" style="display: flex; overflow-x: auto; gap: 16px; scroll-snap-type: x mandatory; padding: 16px 0; -webkit-overflow-scrolling: touch;">
+<!-- Card 1: Kashmir -->
+<a href="/india" style="min-width: 280px; width: 85%; scroll-snap-align: center; text-decoration: none; color: inherit; display: block; flex-shrink: 0;">
+<div style="border: 1px solid #e2e8f0; border-radius: 16px; overflow: visible; height: 100%; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+<img src="/images/india-kashmir-card.webp" style="width: 100%; height: 200px; object-fit: cover;"/>
+<div style="padding: 20px;">
+<h3 style="font-size: 1.5rem; font-family: 'Cormorant Garamond', serif; color: #1a202c; margin: 0;">Kashmir &amp; The North</h3>
+<p style="font-size: 0.95rem; color: #4a5568; margin-top: 8px; line-height: 1.4;">Skiing in Gulmarg, private shikaras, and unscripted mountain passes.</p>
+</div>
+</div>
+</a>
+<!-- Card 2: Himachal Pradesh -->
+<a href="/india" style="min-width: 280px; width: 85%; scroll-snap-align: center; text-decoration: none; color: inherit; display: block; flex-shrink: 0;">
+<div style="border: 1px solid #e2e8f0; border-radius: 16px; overflow: visible; height: 100%; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+<img src="/images/himachal-card.webp" style="width: 100%; height: 200px; object-fit: cover;"/>
+<div style="padding: 20px;">
+<h3 style="font-size: 1.5rem; font-family: 'Cormorant Garamond', serif; color: #1a202c; margin: 0;">Himachal Pradesh</h3>
+<p style="font-size: 0.95rem; color: #4a5568; margin-top: 8px; line-height: 1.4;">Boutique Himalayan retreats, off-grid trails, and alpine luxury.</p>
+</div>
+</div>
+</a>
+<!-- Card 3: Sikkim & Darjeeling -->
+<a href="/india" style="min-width: 280px; width: 85%; scroll-snap-align: center; text-decoration: none; color: inherit; display: block; flex-shrink: 0;">
+<div style="border: 1px solid #e2e8f0; border-radius: 16px; overflow: visible; height: 100%; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+<img src="/images/sikkim-card.webp" style="width: 100%; height: 200px; object-fit: cover;"/>
+<div style="padding: 20px;">
+<h3 style="font-size: 1.5rem; font-family: 'Cormorant Garamond', serif; color: #1a202c; margin: 0;">Sikkim &amp; Darjeeling</h3>
+<p style="font-size: 0.95rem; color: #4a5568; margin-top: 8px; line-height: 1.4;">Exclusive tea estates, misty valleys, and remote monastery access.</p>
+</div>
+</div>
+</a>
+</div>
+<section class="section why">
+<div class="wrap">
+<div class="why-inner">
+<div class="reveal">
+<p class="eyebrow">Why Nosh</p>
+<h2 class="section-title light">Discover the world without the hassle.</h2>
+<p class="section-sub light">Let's make incredible trips accessible — without the stress, spreadsheets, or second-guessing.</p>
+<div class="why-features">
+<div class="why-feat">
+<div class="why-feat-icon">🔒</div>
+<div>
+<div class="why-feat-title">Fixed Pricing — Always</div>
+<p class="why-feat-body">The price you see is the price you pay. Not a starting price. Not a base rate. The number. Fixed on confirmation. Never moves.</p>
+</div>
+</div>
+<div class="why-feat">
+<div class="why-feat-icon">🧠</div>
+<div>
+<div class="why-feat-title">Your Nosh Brain — 24/7</div>
+<p class="why-feat-body">A dedicated travel specialist on WhatsApp for the duration. Every transfer, check-in, and curated moment — handled. You handle showing up.</p>
+</div>
+</div>
+<div class="why-feat">
+<div class="why-feat-icon">🎭</div>
+<div>
+<div class="why-feat-title">No Itinerary Spoilers</div>
+<p class="why-feat-body">We don't send itineraries. The experience reveals itself. Pristine communities. Celebrity-style access. Moments you can't Google in advance.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="why-image-col reveal reveal-delay-2">
+<img alt="Nosh Tours Experience" class="why-img-main" loading="lazy" src="/images/sikkim-card.webp"/>
+<div class="why-img-float">
+<img alt="Kerala Canvas" loading="lazy" src="/images/wellness-nature.jpg"/>
+<div class="why-float-caption">
+<strong>Kerala · The Emerald Veil</strong>
+<span>Physician-led Ayurveda · ₹75,000</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="gift" id="gift">
+<div class="gift-left">
+<p class="eyebrow">Gift A Canvas</p>
+<h2 class="gift-title">The only gift that lasts longer than the wrapping paper.</h2>
+<p class="gift-body">Gift a Nosh canvas to someone who has everything. Mystery destination. Fixed price. Reveal on arrival. Corporate gifting available.</p>
+<div class="gift-price">🎁  Starting ₹50,000 per person · All Inclusive</div>
+<a class="btn-primary" href="/gift" style="width:fit-content">
+      Gift a Journey →
+    </a>
+</div>
+<div class="gift-right">
+<img alt="Gift a Journey" loading="lazy" src="/images/blog-gift.jpg"/>
+<div class="gift-right-overlay"></div>
+</div>
+</section>
+<section class="contact-strip" id="contact">
+<div class="wrap">
+<div class="contact-inner">
+<div class="contact-text reveal">
+<p class="eyebrow">Let's Get You Moving</p>
+<h2 class="section-title">Come on. Let's get you moving.</h2>
+<p class="section-sub">No question too wild, no dream too big. We answer fast and actually give a damn.</p>
+</div>
+<div class="contact-actions reveal reveal-delay-2">
+<a class="contact-action-btn" href="https://wa.me/919567632255?text=UTR:%20INDEX-PAGE-ENQUIRY%0AName%3A%0ATravel%20dates-%20to%20%26%20fro%3A%0ADestination%3A%0AGuest%20counts%3A%0AEmail%3A%0ADOB%3A">
+<div class="contact-icon wa">💬</div>
+<div>
+<div class="contact-btn-label">WhatsApp Nosh Tours Now.</div>
+<div class="contact-btn-val">+91 95676 32255</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section style="padding: 60px 20px; background: #F6F5F2; max-width: 1200px; margin: 0 auto;">
+<h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: #1C2B3A; text-align: center; margin-bottom: 40px;">Frequently Asked Questions</h2>
+<div style="display: flex; flex-direction: column; gap: 20px;">
+<details style="background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+<summary style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.1rem; cursor: pointer; color: #1C2B3A;">How do I customize a Canvas?</summary>
+<p style="margin-top: 15px; font-family: 'Inter', sans-serif; color: #555; line-height: 1.6;">Every journey is tailored. Simply tap the WhatsApp button on any destination, and our travel architects will build a bespoke itinerary based on your preferences.</p>
+</details>
+<details style="background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+<summary style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.1rem; cursor: pointer; color: #1C2B3A;">Are flights included in the package?</summary>
+<p style="margin-top: 15px; font-family: 'Inter', sans-serif; color: #555; line-height: 1.6;">We offer both land-only and all-inclusive packages. We secure premium flight deals as part of your overall curated experience if requested.</p>
+</details>
+<details style="background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+<summary style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.1rem; cursor: pointer; color: #1C2B3A;">How does Travel Gifting work?</summary>
+<p style="margin-top: 15px; font-family: 'Inter', sans-serif; color: #555; line-height: 1.6;">You can purchase Nosh Coins or fully funded trips for loved ones. Reach out to our specialized gifting team via the WhatsApp link on the Gifting page to arrange it.</p>
+</details>
+</div>
+</section>
+<!-- NOSH STORY TOGGLE UI -->
+<section style="background: #1C2B3A; color: #fff; padding: 80px 20px; text-align: center; border-radius: 16px; margin: 40px 20px;">
+<h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; line-height: 1.2; margin-bottom: 30px;">We always love to share our personal stories with Guests</h2>
+<div onclick="window.location.href='/about'" style="display: inline-flex; align-items: center; background: #fff; border-radius: 40px; padding: 5px 25px 5px 5px; cursor: pointer; transition: transform 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+<div style="background: #222; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px;">
+<svg fill="none" height="20" stroke="#fff" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+</div>
+<span style="color: #222; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.1rem;">Our Story</span>
+</div>
+<p style="font-family: 'Inter', sans-serif; font-weight: 300; font-size: 1rem; opacity: 0.7; margin-top: 25px; letter-spacing: 0.5px;">Design Your Canvas with our Travel architects for an Unforgettable Journey</p>
+</section>
+<footer style="background-color: #1C2B3A; color: #fff; padding: 60px 20px 40px; font-family: 'Inter', sans-serif; margin-top: 40px;">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 40px;">
+<div>
+<a href="/" style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: #fff; text-decoration: none; font-weight: bold;">NOSH<span style="color: #d1752b;">.</span></a>
+</div>
+<!-- Sitemap Links -->
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px;">
+<a href="/india" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">India</a>
+<a href="/international" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">International</a>
+<a href="/offerings" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Offerings</a>
+<a href="/wellness" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Wellness</a>
+<a href="/journal" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Journal</a>
+<a href="/about" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Our Story</a>
+<a href="/gift" onmouseout="this.style.color='#a7a7a7'" onmouseover="this.style.color='#fff'" style="color: #a7a7a7; text-decoration: none; transition: color 0.3s;">Gift a Journey</a>
+</div>
+<!-- Social Links -->
+<div style="display: flex; gap: 20px; font-size: 0.9rem;">
+<a href="https://www.instagram.com/noshtours?igsh=MTljaWN0cnNmYXhqcQ==" style="color: #fff; text-decoration: none;" target="_blank">Instagram</a>
+<a href="https://www.facebook.com/share/1cnRSKrwfh/" style="color: #fff; text-decoration: none;" target="_blank">Facebook</a>
+<a href="https://www.linkedin.com/in/adityatg?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=android_app" style="color: #fff; text-decoration: none;" target="_blank">LinkedIn</a>
+<a href="https://adityatg.substack.com/p/they-deserved-better-so-we-built" style="color: #fff; text-decoration: none;" target="_blank">Substack</a>
+</div>
+<!-- Razorpay Trust Block -->
+<div style="border-top: 1px solid rgba(255,255,255,0.1); width: 100%; max-width: 400px; padding-top: 30px;">
+<p style="font-size: 0.8rem; color: #a7a7a7; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase;">SECURE PAYMENTS BY RAZORPAY</p>
+<div style="display: flex; justify-content: center;">
+<form><script async="" data-payment_button_id="pl_SwDrPo0lAWjW4m" src="https://checkout.razorpay.com/v1/payment-button.js"></script></form>
+</div>
+</div>
+<p style="font-size: 0.8rem; color: #777;">© 2026 Nosh Tours LLP. All rights reserved.</p>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { 
+      if(entry.isIntersecting) {
+        entry.target.classList.add('visible'); 
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'none';
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -10px 0px' });
+  document.querySelectorAll('.reveal, section, .dest-card, .diff-left').forEach(element => {
+    scrollObserver.observe(element);
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // The exact 5 pristine links requested
+    const navLinksHTML = `
+        <a href="/india" class="menu-item" style="display:block; padding:12px 0; color:#1a202c; text-decoration:none; font-family:'Cormorant Garamond', serif; font-size:1.4rem; border-bottom:1px solid #eee;">India</a>
+        <a href="/international" class="menu-item" style="display:block; padding:12px 0; color:#1a202c; text-decoration:none; font-family:'Cormorant Garamond', serif; font-size:1.4rem; border-bottom:1px solid #eee;">International</a>
+        <a href="/wellness" class="menu-item" style="display:block; padding:12px 0; color:#1a202c; text-decoration:none; font-family:'Cormorant Garamond', serif; font-size:1.4rem; border-bottom:1px solid #eee;">Wellness</a>
+        <a href="/blog" class="menu-item" style="display:block; padding:12px 0; color:#1a202c; text-decoration:none; font-family:'Cormorant Garamond', serif; font-size:1.4rem; border-bottom:1px solid #eee;">Journal</a>
+        <a href="/about" class="menu-item" style="display:block; padding:12px 0; color:#1a202c; text-decoration:none; font-family:'Cormorant Garamond', serif; font-size:1.4rem;">Our Story</a>
+    `;
+
+    // Locate the hamburger icon (targeting common SVG/Button structures)
+    const hamburgerBtn = document.querySelector('button:has(svg), .hamburger, [aria-label="menu"]');
+    
+    if (hamburgerBtn) {
+        // Create a dedicated mobile overlay container
+        const mobileOverlay = document.createElement('div');
+        mobileOverlay.id = 'antigravity-mobile-menu';
+        mobileOverlay.style.display = 'none';
+        mobileOverlay.style.position = 'absolute';
+        mobileOverlay.style.top = '70px'; // Drops down just below the header
+        mobileOverlay.style.left = '0';
+        mobileOverlay.style.width = '100%';
+        mobileOverlay.style.background = '#F6F5F2'; // Matching your brand off-white
+        mobileOverlay.style.padding = '20px 30px';
+        mobileOverlay.style.zIndex = '9999';
+        mobileOverlay.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+        
+        mobileOverlay.innerHTML = navLinksHTML;
+        hamburgerBtn.parentElement.appendChild(mobileOverlay);
+
+        // Bind the toggle click event
+        hamburgerBtn.addEventListener('click', (e) => {
+            e/* .preventDefault() neutralised by Antigravity */;
+            if (mobileOverlay.style.display === 'none') {
+                mobileOverlay.style.display = 'block';
+            } else {
+                mobileOverlay.style.display = 'none';
+            }
+        });
+    }
+});
+</script>
+<!-- MASTER NAV FIX JUNE 1 -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // Target the exact class identified in the X-Ray
+    const hamburgerBtn = document.querySelector(".nav-menu-btn");
+    if (!hamburgerBtn) return;
+
+    // Create a fullscreen overlay appended directly to the BODY so it cannot be hidden by parent containers
+    const mobileMenu = document.createElement("div");
+    mobileMenu.id = "master-mobile-nav";
+    mobileMenu.style.cssText = "display: none; position: fixed; top: 70px; left: 0; width: 100vw; height: calc(100vh - 70px); background: #F6F5F2; z-index: 999999; padding: 32px 24px; overflow-y: auto; flex-direction: column; gap: 24px;";
+
+    mobileMenu.innerHTML = `
+        <a href="/india" style="font-family:'Cormorant Garamond', serif; font-size: 2.2rem; color: #1C2B3A; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 12px; display: block;">India</a>
+        <a href="/international" style="font-family:'Cormorant Garamond', serif; font-size: 2.2rem; color: #1C2B3A; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 12px; display: block;">International</a>
+        <a href="/wellness" style="font-family:'Cormorant Garamond', serif; font-size: 2.2rem; color: #1C2B3A; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 12px; display: block;">Wellness</a>
+        <a href="/blog" style="font-family:'Cormorant Garamond', serif; font-size: 2.2rem; color: #1C2B3A; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 12px; display: block;">Journal</a>
+        <a href="/about" style="font-family:'Cormorant Garamond', serif; font-size: 2.2rem; color: #1C2B3A; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 12px; display: block;">Our Story</a>
+    `;
+
+    document.body.appendChild(mobileMenu);
+
+    hamburgerBtn.addEventListener("click", (e) => {
+        e/* .preventDefault() neutralised by Antigravity */;
+        e.stopPropagation();
+        if (mobileMenu.style.display === "none" || mobileMenu.style.display === "block" || mobileMenu.style.display === "") {
+            mobileMenu.style.display = "flex";
+            document.body.style.overflow = "hidden"; // Lock background scroll when menu is open
+        } else {
+            mobileMenu.style.display = "none";
+            document.body.style.overflow = "auto"; // Restore scroll when closed
+        }
+    });
+});
+</script>
+<style>
+/* 1. Obliterate the Right-Hand Hero Gap */
+html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+.hero-video-slider, .hero-section, header, footer, [class*="hero"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+/* Overriding inline fixed-width traps flagged in telemetry */
+* { max-width: 100% !important; }
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // 2. CTA Sniper: Eradicate "Build your Canvas" to prevent decision fatigue
+    const allElements = document.querySelectorAll('a, button, .btn');
+    allElements.forEach(el => {
+        if (el.textContent && el.textContent.trim().toLowerCase().includes('build your canvas')) {
+            el.style.display = 'none';
+            el.style.pointerEvents = 'none';
+            el.style.opacity = '0';
+        }
+    });
+});
+</script>
+</div></div></section></body>
 </html>
