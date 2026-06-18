@@ -85,137 +85,15 @@
     window.addEventListener('load', () => setTimeout(killPreloader, 100));
 })();
 </script>
-<style>
-  :root {
-    --ivory: #FDF6EC;
-    --navy: #1C2B3A;
-  }
-  body {
-    background-color: var(--ivory) !important;
-    color: var(--navy) !important;
-    font-family: 'Mono Trust Display', sans-serif;
-  }
-  .card, .offering-card, [class*="card"] {
-    background: #ffffff !important;
-    border-radius: 14px !important;
-    box-shadow: 0 4px 20px rgba(28, 43, 58, 0.08) !important;
-    border: 1px solid rgba(28, 43, 58, 0.1) !important;
-  }
-</style>
-<!-- NOSHTOURS PREMIUM DESIGN SYSTEM CORE -->
-<style>
-  :root {
-    --ivory: #FDF6EC;
-    --navy: #1C2B3A;
-    --accent: #E8951A;
-    --text-main: #1C2B3A;
-    --spacing-xs: 8px;
-    --spacing-sm: 16px;
-    --spacing-md: 24px;
-    --spacing-lg: 48px;
-    --shadow-premium: 0 10px 30px -5px rgba(28, 43, 58, 0.1);
-    --border-radius: 14px;
-  }
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    max-width: 100%;
-  }
 
-  html, body {
-    background-color: var(--ivory);
-    color: var(--text-main);
-    font-family: 'Afacad Flux', -apple-system, sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
-    width: 100%;
-  }
 
-  section {
-    padding: var(--spacing-lg) var(--spacing-sm);
-  }
-</style>
 <!-- REFINED PREMIUM TYPOGRAPHY & ELEVATION -->
-<style>
-  :root {
-    --font-scale-h1: clamp(2.5rem, 5vw, 4rem);
-    --font-scale-h2: clamp(2rem, 4vw, 3rem);
-    --font-scale-h3: 1.75rem;
-    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    --shadow-deep: 0 20px 25px -5px rgba(28, 43, 58, 0.1), 0 10px 10px -5px rgba(28, 43, 58, 0.04);
-    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
 
-  h1 { font-size: var(--font-scale-h1); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
-  h2 { font-size: var(--font-scale-h2); font-weight: 600; letter-spacing: -0.01em; }
-</style>
 <!-- PREMIUM LAYOUT ENGINE -->
-<style>
-  .nosh-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
-  }
 
-  .nosh-grid {
-    display: grid;
-    gap: var(--spacing-md);
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-
-  .nosh-flex-between {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
-  }
-
-  section {
-    padding: var(--spacing-lg) 0;
-  }
-
-  @media (max-width: 768px) {
-    :root {
-      --spacing-lg: 32px;
-    }
-  }
-</style>
 <!-- PREMIUM INTERACTION LAYER -->
-<style>
-  .reveal-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform, opacity;
-  }
-  .reveal-on-scroll.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
 
-  .nosh-sticky-widget {
-    position: fixed;
-    bottom: var(--spacing-md);
-    right: var(--spacing-md);
-    background: var(--navy);
-    color: #fff !important;
-    padding: 12px 24px;
-    border-radius: 50px;
-    box-shadow: var(--shadow-deep);
-    z-index: 1000;
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition-smooth);
-  }
-  .nosh-sticky-widget:hover {
-    transform: scale(1.05);
-    background: var(--accent);
-  }
-</style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -236,50 +114,43 @@
   });
 </script>
 <!-- PREMIUM NAVIGATION & HERO SYSTEM -->
+
+
+
+<!-- NOSHTOURS UNIFIED PREMIUM DESIGN SYSTEM -->
 <style>
-  .nosh-sticky-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(253, 246, 236, 0.95);
-    backdrop-filter: blur(10px);
-    z-index: 2000;
-    border-bottom: 1px solid rgba(28, 43, 58, 0.05);
-    transition: var(--transition-smooth);
-  }
-  
-  .nav-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
+  :root {
+    --ivory: #FDF6EC;
+    --navy: #1C2B3A;
+    --accent: #E8951A;
+    --text-main: #1C2B3A;
+    --border-radius: 14px;
+    --shadow-premium: 0 10px 30px -5px rgba(28, 43, 58, 0.1);
   }
 
-  .hero-overlay-wrapper {
-    position: relative;
-    overflow: hidden;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
   }
 
-  .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(28, 43, 58, 0.4), rgba(28, 43, 58, 0.1));
-    pointer-events: none;
-    z-index: 5;
+  html, body {
+    background-color: var(--ivory);
+    color: var(--navy);
+    font-family: 'Afacad Flux', -apple-system, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
   }
 
-  .hero-text-protection {
-    z-index: 10;
-    position: relative;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  .card, .offering-card, [class*="card"] {
+    background: #ffffff !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--shadow-premium) !important;
+    border: 1px solid rgba(28, 43, 58, 0.08) !important;
+    transition: all 0.4s ease;
   }
 </style>
-
-
 </head>
 <body>
 
