@@ -156,6 +156,17 @@
     border: 1px solid rgba(28, 43, 58, 0.08) !important;
     transition: all 0.4s ease;
   }
+
+  /* TYPOGRAPHIC SCRIM: High-readability overlays for hero states */
+  .hero-overlay-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(28, 43, 58, 0.25), rgba(28, 43, 58, 0.15));
+    pointer-events: none;
+    z-index: 2;
+  }
+
 </style>
 <!-- LUXURY UX: STAGGERED REVEALS & DEEP PADDING -->
 <style>
@@ -173,6 +184,17 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* TYPOGRAPHIC SCRIM: High-readability overlays for hero states */
+  .hero-overlay-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(28, 43, 58, 0.25), rgba(28, 43, 58, 0.15));
+    pointer-events: none;
+    z-index: 2;
+  }
+
 </style>
 
 <script>
@@ -398,7 +420,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="why-image-col reveal reveal-delay-2">
 <img alt="Nosh Tours Experience" class="why-img-main" loading="lazy" src="/images/sikkim-card.webp"/>
 <div class="why-img-float">
-<img alt="Kerala Canvas" loading="lazy" src="/images/wellness-nature.jpg"/>
+<img alt="Kerala Canvas" loading="lazy" src="/images/wellness-nature.webp"/>
 <div class="why-float-caption">
 <strong>Kerala · The Emerald Veil</strong>
 <span>Physician-led Ayurveda · ₹75,000</span>
@@ -419,7 +441,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </a>
 </div>
 <div class="gift-right">
-<img alt="Gift a Journey" loading="lazy" src="/images/blog-gift.jpg"/>
+<img alt="Gift a Journey" loading="lazy" src="/images/blog-gift.webp"/>
 <div class="gift-right-overlay"></div>
 </div>
 </section>
