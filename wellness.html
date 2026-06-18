@@ -133,6 +133,39 @@
   h1 { font-size: var(--font-scale-h1); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
   h2 { font-size: var(--font-scale-h2); font-weight: 600; letter-spacing: -0.01em; }
 </style>
+<!-- PREMIUM LAYOUT ENGINE -->
+<style>
+  .nosh-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+
+  .nosh-grid {
+    display: grid;
+    gap: var(--spacing-md);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .nosh-flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  section {
+    padding: var(--spacing-lg) 0;
+  }
+
+  @media (max-width: 768px) {
+    :root {
+      --spacing-lg: 32px;
+    }
+  }
+</style>
 </head>
 <body>
     
@@ -163,7 +196,7 @@
                 <img src="./images/wellness-protocols.webp" alt="Authentic Ayurvedic Panchakarma Protocols" style="width: 100%; max-height: 400px; object-fit: cover; margin: 30px auto;">
             </div>
             
-            <div class="timeline-grid">
+            <div class="timeline-grid"><div class="nosh-grid">
                 <div class="timeline-card">
                     <span class="timeline-days">15 Days</span>
                     <h3>Vamana & Nasya</h3>
@@ -202,7 +235,7 @@
             <img src="./images/wellness-journeys.webp" alt="Luxury Kerala Wellness Retreat" style="margin: 30px auto; max-height: 400px; object-fit: cover;">
         </div>
         
-        <div class="timeline-grid">
+        <div class="timeline-grid"><div class="nosh-grid">
             <div class="journey-card">
                 <h3>The 15-Day Reset</h3>
                 <p>Focus on Nasya or Vamana to clear immediate blockages and regulate the nervous system.</p>
