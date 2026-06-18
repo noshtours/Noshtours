@@ -154,6 +154,20 @@
     padding: var(--spacing-lg) var(--spacing-sm);
   }
 </style>
+<!-- REFINED PREMIUM TYPOGRAPHY & ELEVATION -->
+<style>
+  :root {
+    --font-scale-h1: clamp(2.5rem, 5vw, 4rem);
+    --font-scale-h2: clamp(2rem, 4vw, 3rem);
+    --font-scale-h3: 1.75rem;
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-deep: 0 20px 25px -5px rgba(28, 43, 58, 0.1), 0 10px 10px -5px rgba(28, 43, 58, 0.04);
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  h1 { font-size: var(--font-scale-h1); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+  h2 { font-size: var(--font-scale-h2); font-weight: 600; letter-spacing: -0.01em; }
+</style>
 </head>
 <body>
 <!-- NAV -->
