@@ -141,6 +141,39 @@
   h1 { font-size: var(--font-scale-h1); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
   h2 { font-size: var(--font-scale-h2); font-weight: 600; letter-spacing: -0.01em; }
 </style>
+<!-- PREMIUM LAYOUT ENGINE -->
+<style>
+  .nosh-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+
+  .nosh-grid {
+    display: grid;
+    gap: var(--spacing-md);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .nosh-flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  section {
+    padding: var(--spacing-lg) 0;
+  }
+
+  @media (max-width: 768px) {
+    :root {
+      --spacing-lg: 32px;
+    }
+  }
+</style>
 </head>
 <body>
 <!-- NAV -->
@@ -219,7 +252,7 @@
 <h2 class="coins-title">A currency built for <em>experiences.</em></h2>
 <p class="coins-subtitle">Nosh Coins are not vouchers. They are a giftable digital asset — sent on meaningful dates, redeemed for real experiences within the Nosh world.</p>
 </div>
-<div class="coins-grid">
+<div class="coins-grid"><div class="nosh-grid">
 <div class="coin-card reveal">
 <span class="coin-card-icon"><span style="font-weight:bold; color:#d1752b; letter-spacing: 0;">(N)</span></span>
 <div class="coin-card-title">Sent on meaningful dates</div>
@@ -348,7 +381,7 @@
         Six ways to spend what someone <em style="color:var(--orange)">gave you.</em>
 </h2>
 </div>
-<div class="redeem-grid">
+<div class="redeem-grid"><div class="nosh-grid">
 <div class="redeem-item reveal">
 <span class="redeem-icon">🍽️</span>
 <div class="redeem-title">Nosh Meals</div>
