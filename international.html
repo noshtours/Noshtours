@@ -136,13 +136,46 @@
   h1 { font-size: var(--font-scale-h1); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
   h2 { font-size: var(--font-scale-h2); font-weight: 600; letter-spacing: -0.01em; }
 </style>
+<!-- PREMIUM LAYOUT ENGINE -->
+<style>
+  .nosh-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+
+  .nosh-grid {
+    display: grid;
+    gap: var(--spacing-md);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .nosh-flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  section {
+    padding: var(--spacing-lg) 0;
+  }
+
+  @media (max-width: 768px) {
+    :root {
+      --spacing-lg: 32px;
+    }
+  }
+</style>
 </head>
 <body>
 <!-- Scroll orange touch indicators -->
 <div class="scroll-touch-indicator top" id="scroll-top"></div>
 <div class="scroll-touch-indicator bottom" id="scroll-bottom"></div>
 <!-- Grid cursor glow -->
-<div class="grid-cursor-glow" id="grid-glow"></div>
+<div class="grid-cursor-glow" id="grid-glow"><div class="nosh-grid"></div>
 <!-- NAV -->
 <div class="nav-wrap">
 <nav class="nav" id="main-nav">
@@ -235,7 +268,7 @@
 </div>
 <div class="dest-showing">Showing <span id="dest-count">13</span> canvases</div>
 </div>
-<div class="dest-grid" id="dest-grid">
+<div class="dest-grid" id="dest-grid"><div class="nosh-grid">
 <div class="dest-card card-touch-lit" data-continent="asia" data-tag="wellness">
 <div class="dest-img-wrap">
 <img alt="Bali · The Emerald Isle" class="dest-img" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_ca0307d412c74c6eb54cb1c640cda421~mv2.jpg"/>
