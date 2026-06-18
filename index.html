@@ -151,6 +151,39 @@
   h1 { font-size: var(--font-scale-h1); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
   h2 { font-size: var(--font-scale-h2); font-weight: 600; letter-spacing: -0.01em; }
 </style>
+<!-- PREMIUM LAYOUT ENGINE -->
+<style>
+  .nosh-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+
+  .nosh-grid {
+    display: grid;
+    gap: var(--spacing-md);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .nosh-flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  section {
+    padding: var(--spacing-lg) 0;
+  }
+
+  @media (max-width: 768px) {
+    :root {
+      --spacing-lg: 32px;
+    }
+  }
+</style>
 </head>
 <body>
 <div id="nosh-preloader"><div class="preloader-text">नमस्ते</div></div>
