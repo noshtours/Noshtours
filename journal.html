@@ -168,6 +168,39 @@
   h1 { font-size: var(--font-scale-h1); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
   h2 { font-size: var(--font-scale-h2); font-weight: 600; letter-spacing: -0.01em; }
 </style>
+<!-- PREMIUM LAYOUT ENGINE -->
+<style>
+  .nosh-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+
+  .nosh-grid {
+    display: grid;
+    gap: var(--spacing-md);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .nosh-flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  section {
+    padding: var(--spacing-lg) 0;
+  }
+
+  @media (max-width: 768px) {
+    :root {
+      --spacing-lg: 32px;
+    }
+  }
+</style>
 </head>
 <body>
 <!-- NAV -->
@@ -222,7 +255,7 @@
 </div>
 <div class="journal-divider"></div>
 <!-- ARTICLE GRID -->
-<div class="article-grid" id="article-grid">
+<div class="article-grid" id="article-grid"><div class="nosh-grid">
 <article class="article-card reveal" data-cat="ayurveda">
 <div class="ac-img">
 <img alt="The Panchakarma Protocol: What Actually Happens on Each of the 7 Days" loading="lazy" src="https://static.wixstatic.com/media/04c7d9_98d5931810d24e2aa340d4a47857bf46~mv2.jpg"/>
