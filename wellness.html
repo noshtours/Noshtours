@@ -166,6 +166,57 @@
     }
   }
 </style>
+<!-- PREMIUM INTERACTION LAYER -->
+<style>
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+  }
+  .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nosh-sticky-widget {
+    position: fixed;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    background: var(--navy);
+    color: #fff !important;
+    padding: 12px 24px;
+    border-radius: 50px;
+    box-shadow: var(--shadow-deep);
+    z-index: 1000;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+  }
+  .nosh-sticky-widget:hover {
+    transform: scale(1.05);
+    background: var(--accent);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = { threshold: 0.15 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.card, .offering-card, section, .nosh-grid > div').forEach(el => {
+      el.classList.add('reveal-on-scroll');
+      observer.observe(el);
+    });
+  });
+</script>
 </head>
 <body>
     
@@ -333,5 +384,6 @@
         <p style="margin: 0; font-size: 0.9rem;">&copy; 2026 Nosh Tours LLP. All Rights Reserved.</p>
     </footer>
 
+<a href="https://wa.me/noshtours" class="nosh-sticky-widget">Book Your Canvas</a>
 </body>
 </html>
