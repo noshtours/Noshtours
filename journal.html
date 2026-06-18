@@ -2,6 +2,7 @@
 
 <html lang="en">
 <head>
+<meta name="description" content="Bespoke, unscripted luxury travel canvases by Nosh Tours. Explore curated journeys across India and the globe with absolute discretion.">
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <meta charset="utf-8"/>
@@ -90,439 +91,33 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&amp;family=Barlow:wght@300;400;500;600;700&amp;family=Barlow+Condensed:wght@500;600;700;800;900&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
 <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&amp;family=Barlow:wght@300;400;500;600;700&amp;family=Barlow+Condensed:wght@500;600;700;800;900&amp;display=swap" rel="stylesheet"/></noscript>
-<style>
-:root {
-  --orange:#E8951A; --navy:#1C2B3A; --gold:#C4962A;
-  --offwhite:#FDF6EC; --sand:#F3EDE3; --muted:#7A6F66;
-  --charcoal:#2C2C2C; --green:#1F3028;
-  --btn-grad:linear-gradient(135deg,#E8951A 0%,#C4621A 55%,#E8B49A 100%);
-}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
-body{font-family:"Barlow",sans-serif;background:var(--offwhite);color:var(--charcoal);overflow-x:hidden;}
-a{text-decoration:none;color:inherit;}
-img{display:block;max-width:100%;}
-
-/* NAV */
-.nav-wrap{position:fixed;top:20px;left:50%;transform:translateX(-50%);width:calc(100% - 40px);max-width:1160px;z-index:1000;}
-.nav{background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-radius:16px;padding:0 28px;height:72px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 32px rgba(0,0,0,0.08);}
-.nav-logo{font-family:"Barlow Condensed",sans-serif;font-size:20px;font-weight:800;letter-spacing:1px;color:var(--navy);text-transform:uppercase;}
-.nav-links{display:flex;gap:28px;list-style:none;}
-.nav-links a{font-size:13px;font-weight:500;color:var(--charcoal);transition:color .2s;}
-.nav-links a:hover,.nav-active{color:var(--orange)!important;font-weight:600!important;}
-.nav-cta{background:var(--btn-grad)!important;color:#fff!important;padding:10px 22px;border-radius:8px;font-size:13px;font-weight:600;}
-.nav-menu-btn{display:none;background:var(--sand);border:none;border-radius:8px;width:44px;height:44px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;}
-.nav-menu-btn span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;}
-
-/* PAGE HEADER */
-.page-header{
-  padding:148px 0 64px;
-  background:var(--navy);
-  position:relative; overflow:hidden;
-}
-.page-header::after{
-  content:''; position:absolute; inset:0;
-  background:url('https://static.wixstatic.com/media/04c7d9_98d5931810d24e2aa340d4a47857bf46~mv2.jpg') center/cover no-repeat;
-  opacity:0.08; pointer-events:none;
-}
-.page-header-inner{max-width:1160px;margin:0 auto;padding:0 40px;position:relative;z-index:1;}
-.page-header-eyebrow{font-family:"Barlow Condensed",sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:12px;}
-.page-header-title{font-family:"Cormorant Garamond",serif;font-size:clamp(52px,6vw,88px);font-weight:300;color:#fff;line-height:0.95;letter-spacing:-2px;margin-bottom:16px;}
-.page-header-title em{font-style:italic;font-weight:600;color:var(--gold);}
-.page-header-sub{font-size:16px;font-weight:300;color:rgba(255,255,255,0.5);max-width:520px;line-height:1.7;}
-
-/* FILTER BAR */
-.journal-filter{
-  background:#fff;
-  border-bottom:1px solid rgba(0,0,0,0.06);
-  position:sticky;top:72px;z-index:90;
-  box-shadow:0 2px 16px rgba(0,0,0,0.04);
-}
-.jf-inner{max-width:1160px;margin:0 auto;padding:0 40px;display:flex;align-items:center;gap:0;overflow-x:auto;scrollbar-width:none;}
-.jf-inner::-webkit-scrollbar{display:none;}
-.jf-btn{flex-shrink:0;background:none;border:none;font-family:"Barlow",sans-serif;font-size:13px;font-weight:500;color:var(--muted);padding:16px 18px;cursor:pointer;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;}
-.jf-btn:hover{color:var(--navy);}
-.jf-btn.active{color:var(--orange);border-bottom-color:var(--orange);font-weight:600;}
-.jf-all{font-weight:600;}
-
-/* FEATURED ARTICLE */
-.journal-main{max-width:1160px;margin:0 auto;padding:56px 40px 0;}
-.article-featured{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:56px;align-items:center;
-  margin-bottom:72px;
-  cursor:pointer;
-}
-.af-img{border-radius:18px;overflow:hidden;aspect-ratio:16/10;}
-.af-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
-.article-featured:hover .af-img img{transform:scale(1.04);}
-.af-cat{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border-radius:100px;padding:4px 12px;margin-bottom:14px;}
-.af-title{font-family:"Cormorant Garamond",serif;font-size:clamp(28px,3vw,44px);font-weight:600;color:var(--navy);line-height:1.15;margin-bottom:14px;}
-.article-featured:hover .af-title{color:var(--orange);}
-.af-excerpt{font-size:15px;font-weight:300;color:var(--muted);line-height:1.75;margin-bottom:18px;}
-.af-meta{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:500;color:var(--muted);}
-.af-dot,.ac-dot{width:3px;height:3px;border-radius:50%;background:var(--muted);}
-/* Divider before grid */
-.journal-divider{max-width:1160px;margin:0 auto;padding:0 40px;border-top:1px solid rgba(0,0,0,0.07);margin-bottom:56px;}
-
-/* ARTICLE GRID */
-.article-grid{
-  max-width:1160px;margin:0 auto;padding:0 40px 80px;
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:32px;
-}
-.article-card{cursor:pointer;}
-.article-card:hover .ac-title{color:var(--orange);}
-.ac-img{border-radius:14px;overflow:hidden;aspect-ratio:4/3;position:relative;margin-bottom:16px;}
-.ac-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
-.article-card:hover .ac-img img{transform:scale(1.05);}
-.ac-cat{position:absolute;top:12px;left:12px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;border-radius:100px;padding:4px 10px;}
-.ac-body{}
-.ac-title{font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:600;color:var(--navy);line-height:1.25;margin-bottom:8px;transition:color .2s;}
-.ac-excerpt{font-size:13px;font-weight:300;color:var(--muted);line-height:1.65;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-.ac-meta{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:500;color:var(--muted);}
-.ac-author{font-weight:600;color:var(--charcoal);}
-
-/* Reveal */
-.reveal{opacity:0;transform:translateY(24px);}
-.reveal.visible{opacity:1;transform:translateY(0);transition:opacity .65s ease,transform .65s ease;}
-
-/* LOAD MORE */
-.load-more-wrap{text-align:center;padding:0 0 80px;}
-.btn-load{display:inline-flex;align-items:center;gap:10px;background:transparent;border:1.5px solid rgba(28,43,58,0.2);color:var(--navy);font-family:"Barlow",sans-serif;font-size:13px;font-weight:600;letter-spacing:.5px;padding:14px 32px;border-radius:10px;cursor:pointer;transition:all .2s;}
-.btn-load:hover{border-color:var(--orange);color:var(--orange);}
-
-/* FOOTER */
-footer{background:var(--green);padding:72px 0 32px;}
-.footer-grid{max-width:1160px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:52px;border-bottom:1px solid rgba(255,255,255,.08);}
-.footer-brand{font-family:"Barlow Condensed",sans-serif;font-size:22px;font-weight:800;color:#fff;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;}
-.footer-brand span{color:var(--orange);}
-.footer-tagline{font-size:14px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.65;max-width:280px;margin-bottom:24px;}
-.footer-socials{display:flex;gap:10px;}
-.social-btn{width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:15px;transition:background .2s,transform .2s;cursor:pointer;}
-.social-btn:hover{background:var(--orange);transform:translateY(-2px);}
-.footer-col-title{font-family:"Barlow Condensed",sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:18px;}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
-.footer-links a{font-size:14px;font-weight:300;color:rgba(255,255,255,.6);transition:color .2s;}
-.footer-links a:hover{color:var(--orange);}
-.footer-bottom{max-width:1160px;margin:0 auto;padding:24px 40px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
-.footer-copy{font-size:12px;font-weight:300;color:rgba(255,255,255,.28);}
-.footer-trust{display:flex;gap:20px;}
-.trust-pill{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.28);}
-.trust-dot{width:4px;height:4px;border-radius:50%;background:var(--orange);opacity:.55;}
-
-/* Scrollbar */
-::-webkit-scrollbar{width:4px;}
-::-webkit-scrollbar-track{background:transparent;}
-::-webkit-scrollbar-thumb{background:rgba(232,149,26,0.3);border-radius:4px;}
-
-@media(max-width:1024px){
-  .article-grid{grid-template-columns:repeat(2,1fr);}
-  .footer-grid{grid-template-columns:1fr 1fr;}
-}
-@media(max-width:768px){
-  .nav-links,.nav-cta{display:none;}
-  .nav-menu-btn{display:flex;}
-  .page-header-inner,.journal-main,.article-grid,.load-more-wrap{padding-left:24px;padding-right:24px;}
-  .jf-inner{padding:0 16px;}
-  .article-featured{grid-template-columns:1fr;gap:28px;}
-  .article-grid{grid-template-columns:1fr;}
-  .footer-grid{grid-template-columns:1fr;padding:0 24px;}
-  .footer-bottom{padding:20px 24px 0;flex-direction:column;align-items:flex-start;}
-}
-
-/* --- NOSH AGENT TYPE OVERHAUL --- */
-@media(max-width:768px) {
-  body { font-size: 120% !important; }
-  h1, .hero-title { font-size: 54px !important; line-height: 1.1 !important; font-weight: 700 !important; }
-  h2, .section-title { font-size: 42px !important; line-height: 1.15 !important; }
-  p, .hero-sub, .section-sub, .dest-desc { font-size: 19px !important; line-height: 1.6 !important; display: block !important; opacity: 1 !important; }
-  .nav-links { display:none; flex-direction:column; position:absolute; top:80px; left:0; right:0; background:rgba(255,255,255,0.98); padding:24px; border-radius:16px; box-shadow:0 10px 40px rgba(0,0,0,0.15); text-align:center; gap:20px;}
-  .nav-links.active { display:flex; }
-}
 
 
-/* ANTIGRAVITY UI/UX OVERRIDES */
-/* 1. Kill Broken GSAP/ScrollReveal - Force 100% Visibility */
-.reveal, .hidden, [style*="opacity: 0"], .hidden-section, .dest-card {
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
-}
-/* 2. About Page Portrait Fixes */
-.founder-img, .team-image {
-    object-position: top center !important;
-    object-fit: cover !important;
-}
-/* 3. Wellness Padding Fix */
-.wellness-hero-overlay { padding-bottom: 20px !important; }
-.empty-space-fix { display: none !important; }
-/* 4. Global Mobile Flow Alignments */
-@media(max-width:768px) {
-    .section, .hero { padding-left: 15px !important; padding-right: 15px !important; }
-    img { border-radius: 12px !important; }
-    .footer-grid { text-align: left !important; }
-}
 
 
-/* --- ANTIGRAVITY PHASE 1 UI/UX OVERRIDES --- */
-/* 1. Nuke Broken GSAP Animations */
-.reveal, .hidden, [style*="opacity: 0"], .hidden-section, .dest-card, .canvas-card {
-    opacity: 1 !important; transform: none !important; visibility: visible !important; display: block !important;
-}
-/* 2. Fix Founder Portraits */
-.founder-img, .team-image { object-position: top center !important; object-fit: cover !important; }
-/* 3. Wellness Padding */
-.wellness-hero-overlay { padding-bottom: 20px !important; }
-.empty-space-fix { display: none !important; }
-/* 4. Split Video Slider Layout */
-.hero-video-slider { display: flex; align-items: center; background: #1C2B3A; height: 100vh; width: 100%; overflow: hidden; position: relative; }
-.hero-text-side { width: 50%; padding: 0 5vw; z-index: 10; position: relative; }
-.slider-text-group { position: absolute; top: 50%; transform: translateY(-50%); opacity: 0; visibility: hidden; transition: opacity 1s ease-in-out, visibility 1s ease-in-out; width: 80%; }
-.slider-text-group.active { opacity: 1; visibility: visible; position: relative; transform: translateY(0); }
-.hero-video-side { width: 50%; display: flex; justify-content: center; align-items: center; height: 100%; position: relative; }
-.slider-video { position: absolute; height: 85vh; width: auto; aspect-ratio: 9/16; border-radius: 24px; object-fit: cover; box-shadow: 0 20px 50px rgba(0,0,0,0.5); opacity: 0; visibility: hidden; transition: opacity 1.2s ease-in-out; }
-.slider-video.active { opacity: 1; visibility: visible; }
-.hero-cta-fixed { position: relative; z-index: 20; margin-top: 30px; }
-/* Global Mobile Alignments */
-@media(max-width:768px) {
-    .hero-video-slider { flex-direction: column; height: auto; padding-top: 120px; padding-bottom: 40px; }
-    .hero-text-side { width: 100%; text-align: center; padding: 0 20px 20px; min-height: 250px; }
-    .slider-text-group { width: 100%; position: absolute; left: 0; padding: 0 20px; text-align: center; }
-    .slider-text-group.active { position: relative; }
-    .hero-video-side { width: 100%; height: 70vh; }
-    .slider-video { width: 90%; height: 100%; aspect-ratio: auto; }
-    .section, .hero { padding-left: 15px !important; padding-right: 15px !important; }
-    img { border-radius: 12px !important; }
-}
-
-
-/* --- ANTIGRAVITY CONTRAST & ACCESSIBILITY HARDENING --- */
-.eyebrow, p.eyebrow, [class*="eyebrow"] { color: #D97706 !important; font-weight: 700 !important; opacity: 1 !important; }
-.diff-link, a.diff-link, .diff\.link { color: #1C2B3A !important; font-weight: 700 !important; text-decoration: underline !important; opacity: 1 !important; }
-.section-sub, p.section-sub, .section\.sub { color: #2D3748 !important; opacity: 1 !important; }
-.footer-col-title, .footer\.col\.title { color: #FFFFFF !important; font-weight: 700 !important; opacity: 1 !important; }
-.footer-copy, .footer\.copy, span.footer\.copy { color: #E2E8F0 !important; opacity: 1 !important; }
-.trust-pill, .trust\.pill, span.trust\.pill { color: #FFFFFF !important; background-color: #2D3748 !important; font-weight: 600 !important; opacity: 1 !important; }
-
-
-/* --- ANTIGRAVITY WCAG CONTRAST FIX --- */
-.eyebrow, p.eyebrow, [class*="eyebrow"] { color: #92400E !important; } 
-
-</style>
-<style>
-/* ANTIGRAVITY NATIVE APP LOCK */
-html, body {
-    touch-action: manipulation;
-    -ms-touch-action: manipulation;
-    overscroll-behavior-y: none;
-}
-
-/* --- ANTIGRAVITY CONTRAST & ACCESSIBILITY HARDENING --- */
-.eyebrow, p.eyebrow, [class*="eyebrow"] { color: #D97706 !important; font-weight: 700 !important; opacity: 1 !important; }
-.diff-link, a.diff-link, .diff\.link { color: #1C2B3A !important; font-weight: 700 !important; text-decoration: underline !important; opacity: 1 !important; }
-.section-sub, p.section-sub, .section\.sub { color: #2D3748 !important; opacity: 1 !important; }
-.footer-col-title, .footer\.col\.title { color: #FFFFFF !important; font-weight: 700 !important; opacity: 1 !important; }
-.footer-copy, .footer\.copy, span.footer\.copy { color: #E2E8F0 !important; opacity: 1 !important; }
-.trust-pill, .trust\.pill, span.trust\.pill { color: #FFFFFF !important; background-color: #2D3748 !important; font-weight: 600 !important; opacity: 1 !important; }
-
-
-/* --- ANTIGRAVITY WCAG CONTRAST FIX --- */
-.eyebrow, p.eyebrow, [class*="eyebrow"] { color: #92400E !important; } 
-
-</style>
-<style>
-/* --- ANTIGRAVITY GAP REDUCTION & SCROLLER FIX --- */
-@media (max-width: 768px) {
-    .hero-cta-fixed { margin-top: 12px !important; }
-    .hero-video-side, #video-container { margin-top: 8px !important; }
-    .hero-video-slider { gap: 8px !important; padding-bottom: 8px !important; }
-    
-    /* Sleek horizontal scrolling for new destination cards */
-    .canvas-scroll-container::-webkit-scrollbar { display: none; }
-    .canvas-scroll-container { -ms-overflow-style: none; scrollbar-width: none; }
-}
-</style>
-<style>
-/* --- ANTIGRAVITY FLUID RESPONSIVENESS & TYPOGRAPHY (+20%) --- */
-html, body {
-    width: 100% !important;
-    max-width: 100vw !important;
-    overflow-x: hidden !important; /* Stops right-side cropping */
-    overflow-y: auto !important; /* Explicitly guarantees vertical scrolling is unlocked */
-    box-sizing: border-box !important;
-}
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-
-@media (max-width: 768px) {
-    /* Enlarging Text by 20% to naturally fill the gap */
-    .hero-title { 
-        font-size: 2.1rem !important; /* Increased from 1.75rem */
-        line-height: 1.1 !important; 
-    }
-    .hero-sub { 
-        font-size: 0.9rem !important; /* Increased from 0.75rem */
-        line-height: 1.4 !important; 
-        margin-top: 12px !important; 
-    }
-    
-    /* Releasing the strict height constraints */
-    #text-container { 
-        min-height: auto !important; 
-        padding-bottom: 20px !important;
-    }
-    .hero-video-side, #video-container { 
-        margin-top: 0px !important; /* Resetting the forced lift */
-        transform: none !important;
-    }
-}
-</style>
 <!-- MASTER LAYOUT FIX JUNE 1 -->
-<style>
-/* 1. Shatter the Master Scroll Locks */
-html, body {
-    overflow-y: auto !important; 
-    overflow-x: hidden !important; 
-    height: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-}
 
-/* 2. Release the Hero Viewport Trap */
-.hero-video-slider {
-    height: auto !important;
-    min-height: 85vh !important;
-    overflow: hidden !important; /* Keeps video contained, but allows the section to grow/scroll */
-}
-
-/* 3. Fluid Typography & Gap Alignment (iPhone/Samsung Auto-Scale) */
-@media (max-width: 768px) {
-    .hero-title { 
-        font-size: 2.2rem !important; 
-        line-height: 1.1 !important; 
-        margin-bottom: 0 !important;
-    }
-    .hero-sub { 
-        font-size: 0.95rem !important; 
-        margin-top: 10px !important; 
-        margin-bottom: 4px !important;
-    }
-    #text-container { 
-        min-height: 0 !important; 
-        padding-bottom: 0 !important; 
-    }
-    .hero-video-side, #video-container { 
-        margin-top: -12px !important; /* The 2mm Gap */
-        position: relative !important; 
-        z-index: 10 !important; 
-        transform: translateY(-8px) !important;
-    }
-}
-</style>
 <!-- ANTIGRAVITY MASTER RESPONSIVE GRID -->
-<style>
-html, body {
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    height: auto !important;
-    min-height: 100vh !important;
-    width: 100% !important;
-    max-width: 100vw !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-    -webkit-overflow-scrolling: touch !important;
-}
 
-*, *:before, *:after {
-    box-sizing: inherit !important;
-}
 
-/* Force structural containers to remain fluid on iPhone 15/16/17 & Premium Androids */
-div, section, main, header, footer {
-    max-width: 100% !important;
-}
-
-/* Ensure no inner layout hidden property kills the global viewport scroll */
-.main-wrapper, #__next, #root, #wrapper {
-    overflow: visible !important;
-    height: auto !important;
-}
-</style>
-<style>
-/* Force the OS to handle vertical swipes natively, bypassing JS smooth-scroll hijackers */
-html, body, main, section, .main-wrapper, #wrapper, header, footer {
-    touch-action: pan-y pinch-zoom !important;
-    overscroll-behavior-y: auto !important;
-}
-
-/* Ensure horizontal swiping elements (like your destination cards) still work left-to-right */
-.canvas-scroll-container, .hero-video-slider {
-    touch-action: pan-x pan-y pinch-zoom !important;
-}
-
-/* Neutralize any invisible full-screen overlays that might be eating single clicks */
-.prevent-scroll, .scroll-lock, #preloader {
-    pointer-events: none !important;
-    display: none !important;
-}
-</style>
 <!-- ANTIGRAVITY CINEMATIC ENGINE -->
+
 <style>
-/* 10. The Namaste Preloader Shield */
-#nosh-preloader {
-    position: fixed; inset: 0; background: #1C2B3A; z-index: 99999;
-    display: flex; justify-content: center; align-items: center;
-    color: #d1752b; font-family: 'Cormorant Garamond', serif; font-size: 4rem;
-    transition: opacity 0.8s ease-in-out, visibility 0.8s;
-}
-.preloader-text { animation: gentlePulse 2s infinite; }
-@keyframes gentlePulse { 0% { opacity: 0.7; transform: scale(0.98); } 50% { opacity: 1; transform: scale(1.02); } 100% { opacity: 0.7; transform: scale(0.98); } }
-
-/* 1. Strict Left-Aligned Footer */
-footer { text-align: left !important; }
-footer .col, footer ul, footer li { text-align: left !important; align-items: flex-start !important; justify-content: flex-start !important; }
-footer .social-icons { justify-content: flex-start !important; }
-
-/* 3 & 7. Auto-Movable Cards & Touch-Lit Animation */
-.swipe-carousel-wrap {
-    display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 20px; padding-bottom: 20px;
-    -webkit-overflow-scrolling: touch; scrollbar-width: none;
-}
-.swipe-carousel-wrap::-webkit-scrollbar { display: none; }
-.card-touch-lit {
-    scroll-snap-align: center; flex-shrink: 0; width: 85%; max-width: 350px;
-    opacity: 0.5; filter: grayscale(40%); transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-    border-radius: 16px; overflow: hidden;
-}
-/* Focus state for active card in view */
-.card-touch-lit:hover, .card-touch-lit:active, .card-touch-lit:focus {
-    opacity: 1; filter: grayscale(0%); transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(209,117,43,0.3);
-}
-
-/* 4. Watery Text Effect for International Title */
-.watery-title {
-    background: linear-gradient(to right, #ffffff, #8ca8d9, #ffffff, #8ca8d9);
-    background-size: 200% auto; color: transparent;
-    -webkit-background-clip: text; background-clip: text;
-    animation: waterFlow 4s linear infinite; text-shadow: 0px 4px 15px rgba(140, 168, 217, 0.4);
-}
-@keyframes waterFlow { to { background-position: 200% center; } }
-
-/* 5 & 8. Fluid Burnt Orange Breathing CTAs */
-@keyframes fluidOrange { 0% { background-position: 0% 50%; box-shadow: 0 4px 15px rgba(209,117,43,0.2); } 50% { background-position: 100% 50%; box-shadow: 0 8px 25px rgba(209,117,43,0.6); } 100% { background-position: 0% 50%; box-shadow: 0 4px 15px rgba(209,117,43,0.2); } }
-a[href*="wa.me"], button[onclick*="wa.me"], .whatsapp-btn, .btn-primary {
-    background: linear-gradient(270deg, #d1752b, #f5a623, #e65c00, #d1752b) !important;
-    background-size: 300% 300% !important; animation: fluidOrange 4s ease infinite !important;
-    color: #fff !important; border: none !important; transition: transform 0.3s ease !important;
-}
-a[href*="wa.me"]:hover, button[onclick*="wa.me"]:hover, .whatsapp-btn:hover {
-    transform: translateY(-4px) scale(1.02) !important;
-}
-.w-card, .dest-card, .canvas-card { padding-bottom: 25px !important; position: relative; }
-.price-tag, .cta-wrap { bottom: 25px !important; position: absolute; z-index: 10; }
+  :root {
+    --ivory: #FDF6EC;
+    --navy: #1C2B3A;
+  }
+  body {
+    background-color: var(--ivory) !important;
+    color: var(--navy) !important;
+    font-family: 'Mono Trust Display', sans-serif;
+  }
+  .card, .offering-card, [class*="card"] {
+    background: #ffffff !important;
+    border-radius: 14px !important;
+    box-shadow: 0 4px 20px rgba(28, 43, 58, 0.08) !important;
+    border: 1px solid rgba(28, 43, 58, 0.1) !important;
+  }
 </style>
 </head>
 <body>
@@ -1055,22 +650,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 </script>
-<style>
-/* 1. Obliterate the Right-Hand Hero Gap */
-html, body {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-}
-.hero-video-slider, .hero-section, header, footer, [class*="hero"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    overflow-x: hidden !important;
-}
-/* Overriding inline fixed-width traps flagged in telemetry */
-* { max-width: 100% !important; }
-</style>
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     // 2. CTA Sniper: Eradicate "Build your Canvas" to prevent decision fatigue
