@@ -166,6 +166,33 @@
     border: 1px solid rgba(28, 43, 58, 0.08) !important;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
+
+  /* STANDARDIZED LAYOUT & TYPOGRAPHY UTILITIES */
+  .nosh-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+
+  .nosh-grid {
+    display: grid;
+    gap: var(--spacing-md);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .nosh-flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  .nosh-h1 { font-family: var(--font-display); font-size: var(--font-scale-h1); line-height: 1.1; margin-bottom: var(--spacing-sm); }
+  .nosh-h2 { font-family: var(--font-main); font-size: var(--font-scale-h2); line-height: 1.2; margin-bottom: var(--spacing-sm); }
+  .nosh-p { font-size: 1.1rem; line-height: 1.6; color: var(--navy); opacity: 0.9; }
+
 </style>
 </head>
 <body>
