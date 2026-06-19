@@ -670,5 +670,45 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </div></div></section><a href="https://wa.me/noshtours" class="nosh-sticky-widget">Book Your Canvas</a>
 </div>
+<!-- HERO SLIDER LOGIC -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const v1 = document.getElementById('heroVideo1');
+    const v2 = document.getElementById('heroVideo2');
+    const title = document.querySelector('.hero-content-inner h1');
+    const subtitle = document.querySelector('.hero-content-inner h2');
+
+    const slides = [
+      { title: "Your Journey, Unscripted.", subtitle: "Discover the art of surprise luxury travel." },
+      { title: "Absolute Discretion.", subtitle: "Curated canvases for discerning travelers." }
+    ];
+
+    let current = 0;
+
+    setInterval(() => {
+      current = (current + 1) % slides.length;
+      
+      // Simple toggle for placeholder demo
+      if (current === 0) {
+        v1.style.display = 'block';
+        v2.style.display = 'none';
+      } else {
+        v1.style.display = 'none';
+        v2.style.display = 'block';
+      }
+
+      // Update Text with simple fade effect
+      title.style.opacity = 0;
+      subtitle.style.opacity = 0;
+      
+      setTimeout(() => {
+        title.textContent = slides[current].title;
+        subtitle.textContent = slides[current].subtitle;
+        title.style.opacity = 1;
+        subtitle.style.opacity = 1;
+      }, 500);
+    }, 6000);
+  });
+</script>
 </body>
 </html>
